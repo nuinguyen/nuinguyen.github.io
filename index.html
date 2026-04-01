@@ -8,8 +8,47 @@
     <title>Alarm & Reminder - Smart Alarm Clock for Chrome</title>
     <meta name="description"
         content="Simple alarm clock and reminder for Chrome. Create repeating alarms with custom sounds, snooze options and a clean, modern interface.">
+    <link rel="canonical" href="https://alarm-reminder.com/" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://alarm-reminder.com/">
+    <meta property="og:title" content="Alarm & Reminder - Smart Alarm Clock for Chrome">
+    <meta property="og:description" content="A focused alarm clock extension for Chrome — simple, reliable and designed to feel great every time it rings.">
+    <meta property="og:image" content="https://alarm-reminder.com/og-image.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://alarm-reminder.com/">
+    <meta property="twitter:title" content="Alarm & Reminder - Smart Alarm Clock for Chrome">
+    <meta property="twitter:description" content="Simple alarm clock and reminder for Chrome. Create repeating alarms with custom sounds and a modern interface.">
+    <meta property="twitter:image" content="https://alarm-reminder.com/twitter-image.png">
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Alarm & Reminder",
+      "operatingSystem": "ChromeOS, Windows, macOS, Linux",
+      "applicationCategory": "UtilitiesApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "ratingCount": "1250"
+      },
+      "description": "Simple alarm clock and reminder for Chrome. Create repeating alarms with custom sounds, snooze options and a clean, modern interface."
+    }
+    </script>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="icons/icon128.png">
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
         rel="stylesheet">
     <script>
@@ -183,6 +222,7 @@
                 </div>
                 <div>
                     <a href="https://chromewebstore.google.com/detail/alarm-clock-reminder-chro/apbmibchnilnanhnaphgoojbjinkkabi"
+                        aria-label="Add Alarm & Reminder to Chrome Web Store"
                         class="group relative inline-flex items-center justify-center px-6 py-2.5 font-semibold text-white transition-all duration-200 bg-primary-600 border border-transparent rounded-full hover:bg-primary-500 hover:shadow-[0_0_20px_rgba(99,102,241,0.4)] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-600 focus:ring-offset-gray-900">
                         <i class="fab fa-chrome mr-2 group-hover:animate-pulse"></i> Add to Chrome
                     </a>
@@ -191,8 +231,10 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="relative pt-40 pb-24 overflow-hidden min-h-screen flex items-center">
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="relative pt-40 pb-24 overflow-hidden min-h-screen flex items-center">
         <div class="absolute inset-0 bg-grid z-0"></div>
         <div class="max-w-7xl mx-auto px-4 relative z-10 w-full">
             <div class="flex flex-col lg:flex-row items-center gap-16">
@@ -219,6 +261,7 @@
 
                     <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
                         <a href="https://chromewebstore.google.com/detail/alarm-clock-reminder-chro/apbmibchnilnanhnaphgoojbjinkkabi"
+                            aria-label="Download from Chrome Web Store"
                             class="w-full sm:w-auto bg-white text-gray-900 px-8 py-4 rounded-full font-bold flex items-center justify-center space-x-3 hover:bg-gray-100 transition-all hover:scale-105 shadow-[0_0_30px_rgba(255,255,255,0.2)]">
                             <i class="fab fa-chrome text-xl"></i>
                             <span>Add to Chrome</span>
@@ -251,7 +294,7 @@
                         class="relative w-full aspect-[4/3] rounded-2xl image-placeholder shadow-2xl shadow-black/50 overflow-hidden transform rotate-2 hover:rotate-0 transition-transform duration-500">
                         <!-- Hero Image -->
                         <img src="/alarm_clock_reminders_0.png"
-                            alt="AlarmMaster AI dashboard preview" class="w-full h-full object-cover">
+                            alt="Main dashboard of the Alarm & Reminder Chrome extension" class="w-full h-full object-cover" fetchpriority="high">
 
                         <!-- Decorative floating UI elements (mockups) -->
                         <div class="absolute top-10 -left-10 glass-panel py-3 px-5 rounded-2xl border border-white/10 flex items-center gap-4 animate-pulse-glow"
@@ -315,8 +358,8 @@
                     </div>
                         <div class="w-full md:w-1/2">
                             <div class="w-full aspect-video rounded-2xl image-placeholder shadow-xl">
-                                <img src="/alarm_clock_reminders_1.png" alt="Alarm &amp; Reminder popup preview"
-                                    class="w-full h-full object-cover">
+                                <img src="/alarm_clock_reminders_1.png" alt="Feature for setting repeating alarms and custom sounds"
+                                    class="w-full h-full object-cover" loading="lazy">
                             </div>
                         </div>
                 </div>
@@ -344,8 +387,8 @@
                     </div>
                     <div class="w-full md:w-1/2">
                         <div class="w-full aspect-video rounded-2xl image-placeholder shadow-xl">
-                            <img src="/alarm_clock_reminders_2.png" alt="Alarm &amp; Reminder popup preview"
-                                class="w-full h-full object-cover">
+                            <img src="/alarm_clock_reminders_2.png" alt="Dark mode interface and custom color theme picker"
+                                class="w-full h-full object-cover" loading="lazy">
                         </div>
                     </div>
                 </div>
@@ -413,8 +456,8 @@
                         <p class="text-xl font-medium text-white shadow-sm mb-2">Preview of the popup interface</p>
                         <p class="text-sm text-gray-300">Clean layout with live clock, alarm list and a modern alarm editor.</p>
                     </div>
-                    <img src="/alarm_clock_reminders_1.png" alt="Alarm &amp; Reminder popup preview"
-                        class="w-full h-full object-cover">
+                    <img src="/alarm_clock_reminders_1.png" alt="Overview of the clean and modern user interface of the application"
+                        class="w-full h-full object-cover" loading="lazy">
                 </div>
             </div>
         </div>
@@ -456,7 +499,7 @@
             </div>
 
             <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between">
-                <p class="text-gray-500 text-sm mb-4 md:mb-0">&copy; 2026 AlarmMaster AI. All rights reserved.</p>
+                <p class="text-gray-500 text-sm mb-4 md:mb-0">&copy; 2026 Alarm &amp; Reminder Team. All rights reserved.</p>
                 <div class="flex space-x-4">
                     <a href="#"
                         class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-white/10 hover:text-white transition">
