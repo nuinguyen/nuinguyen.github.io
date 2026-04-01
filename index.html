@@ -1,65 +1,195 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alarm Master - Extension Báo Thức AI Thông Minh</title>
     <meta name="google-site-verification" content="Vrw7OPNliNr6Azu5WZKaImEuL8JjeZfeWrkTSvuzTV0" />
+    <title>AlarmMaster AI - The Ultimate Smart Alarm Extension</title>
+    <meta name="description"
+        content="A powerful, AI-driven alarm clock extension for your browser. Wake up better with custom sounds, smart notifications, and sleep tracking.">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/dist/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        gray: {
+                            900: '#0f111a',
+                            800: '#1a1d2d',
+                            700: '#2a2f45',
+                        },
+                        primary: {
+                            400: '#818cf8',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                        },
+                        accent: {
+                            400: '#2dd4bf',
+                            500: '#14b8a6',
+                        }
+                    },
+                    animation: {
+                        'gradient-x': 'gradient-x 15s ease infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-glow': 'pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        'gradient-x': {
+                            '0%, 100%': {
+                                'background-size': '200% 200%',
+                                'background-position': 'left center'
+                            },
+                            '50%': {
+                                'background-size': '200% 200%',
+                                'background-position': 'right center'
+                            },
+                        },
+                        'float': {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' },
+                        },
+                        'pulse-glow': {
+                            '0%, 100%': { opacity: 1, transform: 'scale(1)' },
+                            '50%': { opacity: .7, transform: 'scale(1.05)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
     <style>
         body {
-            font-family: 'Inter', sans-serif;
-            scroll-behavior: smooth;
+            background-color: #050505;
+            color: #ffffff;
+            overflow-x: hidden;
         }
-        .gradient-text {
-            background: linear-gradient(90deg, #4F46E5, #06B6D4);
+
+        .text-gradient {
+            background: linear-gradient(to right, #818cf8, #2dd4bf);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
-        .hero-pattern {
-            background-color: #ffffff;
-            background-image: radial-gradient(#4f46e510 1px, transparent 1px);
-            background-size: 20px 20px;
+
+        .bg-gradient-primary {
+            background: linear-gradient(135deg, #4f46e5 0%, #14b8a6 100%);
         }
-        .feature-card:hover {
-            transform: translateY(-5px);
+
+        .glass-panel {
+            background: rgba(26, 29, 45, 0.6);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
             transition: all 0.3s ease;
         }
-        .ai-glow {
-            box-shadow: 0 0 20px rgba(79, 70, 229, 0.4);
+
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(129, 140, 248, 0.3);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 40px -10px rgba(99, 102, 241, 0.2);
         }
-        @keyframes pulse-ai {
-            0% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.05); opacity: 0.8; }
-            100% { transform: scale(1); opacity: 1; }
+
+        .bg-grid {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            mask-image: linear-gradient(to bottom, transparent, black, transparent);
+            -webkit-mask-image: linear-gradient(to bottom, transparent, black, transparent);
         }
-        .animate-ai {
-            animation: pulse-ai 2s infinite;
+
+        .blob-glow {
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(99, 102, 241, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        /* Placeholder Image Stylings */
+        .image-placeholder {
+            background: linear-gradient(135deg, #1f2235 0%, #11131c 100%);
+            border: 1px dashed rgba(129, 140, 248, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(255, 255, 255, 0.4);
+            font-weight: 500;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .image-placeholder::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 40%, rgba(255, 255, 255, 0.05) 50%, transparent 60%);
+            background-size: 200% 200%;
+            animation: shimmer 3s infinite linear;
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: -100% 100%;
+            }
+
+            100% {
+                background-position: 100% -100%;
+            }
         }
     </style>
 </head>
-<body class="text-gray-900 hero-pattern">
+
+<body class="antialiased relative">
+
+    <!-- Ambient Glowing Blobs -->
+    <div class="blob-glow top-[-200px] left-[-100px] bg-primary-600/20"></div>
+    <div class="blob-glow top-[20%] right-[-200px] bg-accent-500/20"></div>
+    <div class="blob-glow bottom-[-100px] left-[20%] bg-purple-600/20"></div>
 
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+    <nav class="fixed w-full z-50 glass-panel border-b-0 border-white/5 top-0">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16 items-center">
-                <div class="flex items-center space-x-2">
-                    <div class="bg-indigo-600 p-2 rounded-lg">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center space-x-3 cursor-pointer">
+                    <div class="bg-gradient-primary p-2.5 rounded-xl shadow-lg shadow-primary-500/30">
                         <i class="fas fa-clock text-white text-xl"></i>
                     </div>
-                    <span class="text-xl font-bold tracking-tight">Alarm<span class="text-indigo-600">Master</span> <span class="text-xs bg-indigo-100 text-indigo-600 px-2 py-0.5 rounded-full ml-1">AI</span></span>
+                    <span class="text-2xl font-bold tracking-tight text-white">Alarm<span
+                            class="text-primary-400">Master</span>
+                        <span
+                            class="align-top ms-1 text-[10px] uppercase font-bold tracking-widest bg-white/10 text-accent-400 px-2 py-1 rounded-md border border-white/10">AI</span>
+                    </span>
                 </div>
-                <div class="hidden md:flex space-x-8 font-medium">
-                    <a href="#features" class="hover:text-indigo-600 transition">Tính năng</a>
-                    <a href="#ai-tools" class="hover:text-indigo-600 transition">Công cụ ✨</a>
-                    <a href="#how-it-works" class="hover:text-indigo-600 transition">Cách hoạt động</a>
+                <div class="hidden md:flex space-x-10 font-medium text-gray-300">
+                    <a href="#features" class="hover:text-white transition-colors">Features</a>
+                    <a href="#ai-tools" class="hover:text-white transition-colors flex items-center gap-1">AI Tools <i
+                            class="fas fa-sparkles text-accent-400 text-xs"></i></a>
+                    <a href="#how-it-works" class="hover:text-white transition-colors">How it works</a>
                 </div>
                 <div>
-                    <a href="#" class="bg-indigo-600 text-white px-5 py-2.5 rounded-full font-semibold hover:bg-indigo-700 transition shadow-lg shadow-indigo-200">
-                        Cài đặt ngay
+                    <a href="https://chromewebstore.google.com/detail/alarm-clock-reminder-chro/apbmibchnilnanhnaphgoojbjinkkabi"
+                        class="group relative inline-flex items-center justify-center px-6 py-2.5 font-semibold text-white transition-all duration-200 bg-primary-600 border border-transparent rounded-full hover:bg-primary-500 hover:shadow-[0_0_20px_rgba(99,102,241,0.4)] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-600 focus:ring-offset-gray-900">
+                        <i class="fab fa-chrome mr-2 group-hover:animate-pulse"></i> Add to Chrome
                     </a>
                 </div>
             </div>
@@ -67,136 +197,356 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="pt-32 pb-20 px-4">
-        <div class="max-w-7xl mx-auto text-center">
-            <div class="inline-flex items-center space-x-2 bg-indigo-50 border border-indigo-100 px-4 py-1.5 rounded-full mb-6">
-                <span class="flex h-2 w-2 rounded-full bg-indigo-600"></span>
-                <span class="text-sm font-semibold text-indigo-600 uppercase tracking-wider">Mới: Tích hợp sức mạnh Gemini AI</span>
+    <section class="relative pt-40 pb-24 overflow-hidden min-h-screen flex items-center">
+        <div class="absolute inset-0 bg-grid z-0"></div>
+        <div class="max-w-7xl mx-auto px-4 relative z-10 w-full">
+            <div class="flex flex-col lg:flex-row items-center gap-16">
+
+                <!-- Hero Content -->
+                <div class="w-full lg:w-1/2 text-center lg:text-left">
+                    <div
+                        class="inline-flex items-center space-x-2 glass-card px-4 py-2 rounded-full mb-8 border border-white/10 animate-fade-in-up">
+                        <span
+                            class="flex h-2.5 w-2.5 rounded-full bg-accent-400 shadow-[0_0_10px_#2dd4bf] animate-pulse"></span>
+                        <span class="text-sm font-semibold text-gray-300 tracking-wide">Powered by Google Gemini</span>
+                    </div>
+
+                    <h1 class="text-5xl md:text-6xl lg:text-7xl font-extrabold mb-6 leading-[1.1] tracking-tight">
+                        Wake up <br />
+                        <span class="text-gradient animate-gradient-x">Smarter.</span>
+                    </h1>
+
+                    <p
+                        class="text-lg md:text-xl text-gray-400 mb-10 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-light">
+                        More than just a clock. AlarmMaster AI uses artificial intelligence to craft your perfect
+                        morning routine, directly in your browser. Never oversleep again.
+                    </p>
+
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                        <button
+                            class="w-full sm:w-auto bg-white text-gray-900 px-8 py-4 rounded-full font-bold flex items-center justify-center space-x-3 hover:bg-gray-100 transition-all hover:scale-105 shadow-[0_0_30px_rgba(255,255,255,0.2)]">
+                            <i class="fab fa-chrome text-xl"></i>
+                            <span>Install for Free</span>
+                        </button>
+                        <button
+                            class="w-full sm:w-auto glass-card text-white px-8 py-4 rounded-full font-bold hover:bg-white/10 transition-all flex items-center justify-center space-x-2 hover:scale-105 gap-2 border border-white/20">
+                            <span>Explore Features</span>
+                            <i class="fas fa-arrow-down text-sm"></i>
+                        </button>
+                    </div>
+
+                    <div
+                        class="mt-10 flex items-center justify-center lg:justify-start gap-4 text-sm text-gray-500 hidden">
+                        <div class="flex -space-x-2">
+                            <div class="w-8 h-8 rounded-full bg-gray-700 border-2 border-gray-900"></div>
+                            <div class="w-8 h-8 rounded-full bg-gray-600 border-2 border-gray-900"></div>
+                            <div class="w-8 h-8 rounded-full bg-gray-500 border-2 border-gray-900"></div>
+                            <div
+                                class="w-8 h-8 rounded-full bg-primary-600 flex items-center justify-center border-2 border-gray-900 text-xs text-white">
+                                +</div>
+                        </div>
+                        <p>Trusted by <strong class="text-white">10,000+</strong> early risers</p>
+                    </div>
+                </div>
+
+                <!-- Hero Image Placeholder -->
+                <div class="w-full lg:w-1/2 mt-12 lg:mt-0 relative animate-float">
+                    <div class="absolute inset-0 bg-gradient-primary blur-[80px] opacity-30 rounded-full"></div>
+                    <div
+                        class="relative w-full aspect-[4/3] rounded-2xl image-placeholder shadow-2xl shadow-black/50 overflow-hidden transform rotate-2 hover:rotate-0 transition-transform duration-500">
+                        <!-- Hero Image -->
+                        <img src="/alarm_clock_eeminders_1.png"
+                            alt="AlarmMaster AI dashboard preview" class="w-full h-full object-cover">
+
+                        <!-- Decorative floating UI elements (mockups) -->
+                        <div class="absolute top-10 -left-10 glass-panel py-3 px-5 rounded-2xl border border-white/10 flex items-center gap-4 animate-pulse-glow"
+                            style="animation-delay: 1s;">
+                            <div
+                                class="w-10 h-10 rounded-full bg-accent-500/20 flex items-center justify-center text-accent-400">
+                                <i class="fas fa-bell"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs text-gray-400">Upcoming Alarm</p>
+                                <p class="text-lg font-bold">07:00 AM</p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="absolute bottom-10 -right-5 glass-panel py-3 px-5 rounded-2xl border border-white/10 flex items-center gap-3">
+                            <div
+                                class="w-8 h-8 rounded-full bg-primary-500/20 flex items-center justify-center text-primary-400">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <p class="text-sm font-medium">Sync Complete</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <h1 class="text-5xl md:text-7xl font-extrabold mb-6">
-                Báo thức thông minh <br>
-                <span class="gradient-text">Vượt xa mong đợi.</span>
-            </h1>
-            <p class="text-xl text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed">
-                Không chỉ là một chiếc đồng hồ, AlarmMaster AI sử dụng trí tuệ nhân tạo để thiết kế lộ trình thức dậy hoàn hảo cho riêng bạn.
-            </p>
-            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-                <button class="bg-gray-900 text-white px-8 py-4 rounded-xl font-bold flex items-center justify-center space-x-3 hover:bg-black transition">
-                    <i class="fab fa-chrome text-2xl"></i>
-                    <span>Thêm vào Chrome</span>
-                </button>
-                <button class="bg-white border-2 border-indigo-600 text-indigo-600 px-8 py-4 rounded-xl font-bold hover:bg-indigo-50 transition flex items-center justify-center space-x-2">
-                    <i class="fas fa-sparkles"></i>
-                    <span>Khám phá AI ✨</span>
-                </button>
+        </div>
+    </section>
+
+    <!-- Features Section with Image Placeholders -->
+    <section id="features" class="py-24 relative z-10">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-primary-400 font-semibold tracking-wide uppercase text-sm mb-3">Core Features</h2>
+                <h3 class="text-3xl md:text-5xl font-bold mb-6">Designed for <span
+                        class="text-gradient">Productivity</span></h3>
+                <p class="text-gray-400 max-w-2xl mx-auto text-lg">Everything you need to manage your time, boost your
+                    productivity, and wake up feeling refreshed.</p>
+            </div>
+
+            <div class="space-y-24">
+                <!-- Feature Row 1 (Image Right) -->
+                <div class="flex flex-col md:flex-row items-center gap-12 lg:gap-20">
+                    <div class="w-full md:w-1/2 space-y-6">
+                        <div
+                            class="w-14 h-14 bg-primary-500/10 border border-primary-500/20 rounded-2xl flex items-center justify-center text-primary-400 text-2xl shadow-[0_0_15px_rgba(99,102,241,0.2)]">
+                            <i class="fas fa-bell-concierge"></i>
+                        </div>
+                        <h4 class="text-3xl font-bold">Smart Background Notifications</h4>
+                        <p class="text-gray-400 text-lg leading-relaxed">
+                            Never miss an alarm, even when your browser is minimized or you're focused on another task.
+                            Our background service worker ensures your alarms fire with absolute precision.
+                        </p>
+                        <ul class="space-y-3 text-gray-300">
+                            <li class="flex items-center gap-3"><i class="fas fa-check-circle text-accent-400"></i>
+                                Works in the background</li>
+                            <li class="flex items-center gap-3"><i class="fas fa-check-circle text-accent-400"></i>
+                                High-priority system notifications</li>
+                            <li class="flex items-center gap-3"><i class="fas fa-check-circle text-accent-400"></i>
+                                Custom snooze durations</li>
+                        </ul>
+                    </div>
+                    <div class="w-full md:w-1/2">
+                        <div class="w-full aspect-video rounded-2xl image-placeholder shadow-xl">
+                            <div class="text-center">
+                                <i class="fas fa-image text-3xl mb-2 text-gray-500"></i>
+                                <p class="text-lg text-gray-400">Notification UI Preview</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feature Row 2 (Image Left) -->
+                <div class="flex flex-col md:flex-row-reverse items-center gap-12 lg:gap-20">
+                    <div class="w-full md:w-1/2 space-y-6">
+                        <div
+                            class="w-14 h-14 bg-purple-500/10 border border-purple-500/20 rounded-2xl flex items-center justify-center text-purple-400 text-2xl shadow-[0_0_15px_rgba(168,85,247,0.2)]">
+                            <i class="fas fa-cloud-arrow-up"></i>
+                        </div>
+                        <h4 class="text-3xl font-bold">Seamless Cloud Sync</h4>
+                        <p class="text-gray-400 text-lg leading-relaxed">
+                            Log into your Google profile on Chrome, and your alarms, settings, and custom AI sounds
+                            travel with you. Switch between your laptop and desktop effortlessly.
+                        </p>
+                        <ul class="space-y-3 text-gray-300">
+                            <li class="flex items-center gap-3"><i class="fas fa-check-circle text-purple-400"></i>
+                                Automatic cross-device sync</li>
+                            <li class="flex items-center gap-3"><i class="fas fa-check-circle text-purple-400"></i>
+                                Secure cloud storage</li>
+                            <li class="flex items-center gap-3"><i class="fas fa-check-circle text-purple-400"></i>
+                                Instant updates across clients</li>
+                        </ul>
+                    </div>
+                    <div class="w-full md:w-1/2">
+                        <div class="w-full aspect-video rounded-2xl image-placeholder shadow-xl">
+                            <div class="text-center">
+                                <i class="fas fa-image text-3xl mb-2 text-gray-500"></i>
+                                <p class="text-lg text-gray-400">Cloud Settings Preview</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- AI Interactive Tools Section -->
-    <section id="ai-tools" class="py-24 bg-gray-50 border-y border-gray-100">
-        <div class="max-w-7xl mx-auto px-4">
+    <section id="ai-tools" class="py-24 relative border-y border-white/5 bg-gray-900/50">
+        <!-- Background Gradient -->
+        <div
+            class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary-900/20 via-gray-900/0 to-gray-900/0 z-0">
+        </div>
+
+        <div class="max-w-7xl mx-auto px-4 relative z-10">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Sức mạnh từ Gemini AI ✨</h2>
-                <p class="text-gray-500 max-w-xl mx-auto">Trải nghiệm các tính năng độc quyền giúp mỗi buổi sáng trở nên đầy cảm hứng hơn bao giờ hết.</p>
+                <div
+                    class="inline-flex items-center justify-center space-x-2 bg-gradient-to-r from-primary-600/20 to-accent-600/20 border border-primary-500/30 px-5 py-2 rounded-full mb-4">
+                    <i class="fas fa-wand-magic-sparkles text-accent-400"></i>
+                    <span class="text-sm font-bold text-white uppercase tracking-wider">Gemini API Integration</span>
+                </div>
+                <h2 class="text-3xl md:text-5xl font-bold mb-4">The Magic of AI ✨</h2>
+                <p class="text-gray-400 max-w-xl mx-auto text-lg">Experience exclusive tools that make every morning
+                    inspirational and personalized perfectly for you.</p>
             </div>
 
-            <div class="grid lg:grid-cols-2 gap-12">
+            <div class="grid lg:grid-cols-2 gap-8">
                 <!-- Tool 1: AI Melody Gen -->
-                <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100">
-                    <div class="flex items-center space-x-3 mb-6">
-                        <div class="p-3 bg-purple-100 text-purple-600 rounded-2xl">
-                            <i class="fas fa-music text-xl"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold">Tạo nhạc chuông AI ✨</h3>
+                <div class="glass-card p-8 sm:p-10 rounded-3xl relative overflow-hidden group">
+                    <div
+                        class="absolute top-0 right-0 p-8 opacity-5 text-8xl group-hover:scale-110 transition-transform duration-500">
+                        <i class="fas fa-music"></i>
                     </div>
-                    <p class="text-gray-600 mb-6">Mô tả cảm giác bạn muốn khi thức dậy, Gemini sẽ tạo ra giai điệu báo thức phù hợp nhất.</p>
-                    <div class="space-y-4">
-                        <textarea id="ai-mood-input" rows="2" class="w-full p-4 bg-gray-50 border border-gray-200 rounded-2xl focus:ring-2 focus:ring-indigo-500 outline-none" placeholder="Ví dụ: Một buổi sáng mùa hè bình yên ở bãi biển với tiếng sóng vỗ..."></textarea>
-                        <button onclick="generateAIMusic()" id="btn-gen-music" class="w-full bg-indigo-600 text-white py-3 rounded-xl font-bold hover:bg-indigo-700 transition flex items-center justify-center space-x-2">
-                            <span>Tạo âm báo ngay ✨</span>
-                        </button>
-                        <div id="ai-music-result" class="hidden p-4 bg-indigo-50 rounded-xl border border-indigo-100 text-sm text-indigo-800">
-                            <!-- AI Content will load here -->
+                    <div class="relative z-10">
+                        <div class="flex items-center space-x-4 mb-6">
+                            <div
+                                class="w-12 h-12 bg-primary-500/20 text-primary-400 rounded-xl flex items-center justify-center border border-primary-500/30">
+                                <i class="fas fa-headphones-simple text-xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white">AI Alarm Composer</h3>
+                        </div>
+                        <p class="text-gray-400 mb-8 h-12">Describe how you want to feel when you wake up, and our AI
+                            will suggest the perfect musical structure.</p>
+
+                        <div class="space-y-4">
+                            <label class="block text-sm font-medium text-gray-300">Your desired morning mood</label>
+                            <textarea id="ai-mood-input" rows="2"
+                                class="w-full p-4 bg-gray-950/50 border border-white/10 rounded-xl focus:ring-2 focus:ring-primary-500 focus:border-transparent outline-none text-white placeholder-gray-600 transition"
+                                placeholder="e.g. A peaceful summer morning on the beach with gentle waves..."></textarea>
+
+                            <button onclick="generateAIMusic()" id="btn-gen-music"
+                                class="w-full bg-gradient-to-r from-primary-600 to-primary-500 text-white py-4 rounded-xl font-bold hover:shadow-[0_0_20px_rgba(79,70,229,0.4)] transition-all flex items-center justify-center space-x-2 hover:scale-[1.02]">
+                                <i class="fas fa-compact-disc"></i>
+                                <span>Generate Soundtrack Idea ✨</span>
+                            </button>
+
+                            <div id="ai-music-result"
+                                class="hidden p-5 bg-primary-900/20 rounded-xl border border-primary-500/30 text-sm text-primary-100/90 leading-relaxed backdrop-blur-sm">
+                                <!-- AI Content will load here -->
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Tool 2: AI Motivation -->
-                <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100">
-                    <div class="flex items-center space-x-3 mb-6">
-                        <div class="p-3 bg-orange-100 text-orange-600 rounded-2xl">
-                            <i class="fas fa-microphone text-xl"></i>
-                        </div>
-                        <h3 class="text-2xl font-bold">Lời chào buổi sáng AI ✨</h3>
+                <div class="glass-card p-8 sm:p-10 rounded-3xl relative overflow-hidden group">
+                    <div
+                        class="absolute top-0 right-0 p-8 opacity-5 text-8xl group-hover:scale-110 transition-transform duration-500">
+                        <i class="fas fa-microphone"></i>
                     </div>
-                    <p class="text-gray-600 mb-6">Báo thức sẽ không còn khô khan. AI sẽ tạo lời chào truyền cảm hứng dựa trên công việc của bạn.</p>
-                    <div class="space-y-4">
-                        <input id="ai-task-input" type="text" class="w-full p-4 bg-gray-50 border border-gray-200 rounded-2xl focus:ring-2 focus:ring-indigo-500 outline-none" placeholder="Hôm nay bạn cần làm gì? (Vd: Thuyết trình dự án)">
-                        <button onclick="generateAIMotivation()" id="btn-gen-motivation" class="w-full bg-gray-900 text-white py-3 rounded-xl font-bold hover:bg-black transition flex items-center justify-center space-x-2">
-                            <span>Tạo lời chào truyền động lực ✨</span>
-                        </button>
-                        <div id="ai-motivation-result" class="hidden p-4 bg-orange-50 rounded-xl border border-orange-100 text-sm italic text-orange-800">
-                            <!-- AI Content will load here -->
+                    <div class="relative z-10">
+                        <div class="flex items-center space-x-4 mb-6">
+                            <div
+                                class="w-12 h-12 bg-accent-500/20 text-accent-400 rounded-xl flex items-center justify-center border border-accent-500/30">
+                                <i class="fas fa-bolt text-xl"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white">AI Morning Motivation</h3>
                         </div>
-                        <!-- TTS Audio Playback -->
-                        <div id="tts-audio-container" class="hidden mt-4">
-                            <p class="text-xs text-gray-400 mb-2">Nghe thử với giọng đọc AI ✨</p>
-                            <audio id="tts-audio" controls class="w-full h-8"></audio>
+                        <p class="text-gray-400 mb-8 h-12">No more boring alarms. Enter your main goal for the day, and
+                            let AI wake you up with a custom motivational speech.</p>
+
+                        <div class="space-y-4">
+                            <label class="block text-sm font-medium text-gray-300">Your mission for today</label>
+                            <input id="ai-task-input" type="text"
+                                class="w-full p-4 bg-gray-950/50 border border-white/10 rounded-xl focus:ring-2 focus:ring-accent-500 focus:border-transparent outline-none text-white placeholder-gray-600 transition"
+                                placeholder="e.g. Present my project to the CEO">
+
+                            <button onclick="generateAIMotivation()" id="btn-gen-motivation"
+                                class="w-full bg-white text-gray-900 py-4 rounded-xl font-bold hover:bg-gray-100 hover:shadow-[0_0_20px_rgba(255,255,255,0.2)] transition-all flex items-center justify-center space-x-2 hover:scale-[1.02]">
+                                <i class="fas fa-bullhorn"></i>
+                                <span>Create Motivation Speech ✨</span>
+                            </button>
+
+                            <div id="ai-motivation-result"
+                                class="hidden p-5 bg-accent-900/20 rounded-xl border border-accent-500/30 text-sm italic text-accent-100 backdrop-blur-sm relative py-6">
+                                <i class="fas fa-quote-left absolute top-3 left-3 opacity-20 text-2xl"></i>
+                                <!-- AI Content will load here -->
+                            </div>
+
+                            <!-- TTS Audio Playback -->
+                            <div id="tts-audio-container"
+                                class="hidden mt-6 p-4 rounded-xl bg-gray-900/50 border border-white/5">
+                                <div class="flex items-center justify-between mb-3 text-sm">
+                                    <span class="text-gray-400 flex items-center gap-2"><i
+                                            class="fas fa-volume-up text-accent-400"></i> AI Voice Preview</span>
+                                </div>
+                                <audio id="tts-audio" controls
+                                    class="w-full h-10 filter sepia-[0.3] hue-rotate-[200deg] opacity-90"></audio>
+                            </div>
                         </div>
                     </div>
+                </div>
+            </div>
+
+            <!-- Overall Demo GIF Placeholder -->
+            <div class="mt-16 sm:mt-20">
+                <div
+                    class="w-full aspect-video md:aspect-[21/9] rounded-3xl image-placeholder shadow-2xl border border-white/10 max-w-5xl mx-auto overflow-hidden group">
+                    <div
+                        class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors z-10 flex flex-col items-center justify-center">
+                        <div
+                            class="w-20 h-20 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/20 mb-4 cursor-pointer hover:bg-white/20 hover:scale-110 transition-all shadow-[0_0_30px_rgba(255,255,255,0.2)]">
+                            <i class="fas fa-play text-2xl text-white ml-2"></i>
+                        </div>
+                        <p class="text-xl font-medium text-white shadow-sm">Watch the Extension Demo</p>
+                        <p class="text-sm text-gray-400 mt-2">(User to replace with GIF/Video)</p>
+                    </div>
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='800' height='400'%3E%3Crect width='800' height='400' fill='%231f2235'/%3E%3C/svg%3E"
+                        alt="Demo Cover Placeholder" class="w-full h-full object-cover">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Original Features Section -->
-    <section id="features" class="py-24 bg-white">
+    <!-- Footer -->
+    <footer class="bg-black pt-20 pb-10 border-t border-white/5 relative z-10">
         <div class="max-w-7xl mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Tính năng vượt trội</h2>
-                <p class="text-gray-500">Được thiết kế để tối ưu hóa năng suất và thời gian của bạn.</p>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+                <div class="md:col-span-2">
+                    <div class="flex items-center space-x-2 mb-6">
+                        <div class="bg-primary-600 p-2 rounded-lg">
+                            <i class="fas fa-clock text-white"></i>
+                        </div>
+                        <span class="text-xl font-bold text-white tracking-tight">Alarm<span
+                                class="text-primary-400">Master</span> AI</span>
+                    </div>
+                    <p class="text-gray-400 max-w-sm">
+                        Revolutionizing the way you start your day. The ultimate AI-powered smart alarm extension for
+                        modern browsers.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-6">Product</h4>
+                    <ul class="space-y-3 text-gray-400">
+                        <li><a href="#" class="hover:text-primary-400 transition">Features</a></li>
+                        <li><a href="#" class="hover:text-primary-400 transition">Integrations</a></li>
+                        <li><a href="#" class="hover:text-primary-400 transition">Changelog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-6">Legal</h4>
+                    <ul class="space-y-3 text-gray-400">
+                        <li><a href="#" class="hover:text-primary-400 transition">Privacy Policy</a></li>
+                        <li><a href="#" class="hover:text-primary-400 transition">Terms of Service</a></li>
+                        <li><a href="#" class="hover:text-primary-400 transition">Contact</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Feature 1 -->
-                <div class="p-8 rounded-3xl border border-gray-100 bg-gray-50 feature-card">
-                    <div class="w-12 h-12 bg-indigo-100 rounded-2xl flex items-center justify-center text-indigo-600 mb-6 text-xl">
-                        <i class="fas fa-bell"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Thông báo thông minh</h3>
-                    <p class="text-gray-600">Nhận thông báo ngay cả khi trình duyệt đang ở chế độ nền. Luôn đúng giờ tuyệt đối.</p>
-                </div>
-                <!-- Feature 2 -->
-                <div class="p-8 rounded-3xl border border-gray-100 bg-gray-50 feature-card">
-                    <div class="w-12 h-12 bg-pink-100 rounded-2xl flex items-center justify-center text-pink-600 mb-6 text-xl">
-                        <i class="fas fa-sync"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Đồng bộ đám mây</h3>
-                    <p class="text-gray-600">Tất cả báo thức của bạn được đồng bộ hóa trên mọi thiết bị đăng nhập Chrome.</p>
-                </div>
-                <!-- Feature 3 -->
-                <div class="p-8 rounded-3xl border border-gray-100 bg-gray-50 feature-card">
-                    <div class="w-12 h-12 bg-emerald-100 rounded-2xl flex items-center justify-center text-emerald-600 mb-6 text-xl">
-                        <i class="fas fa-brain"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3">Phân tích giấc ngủ ✨</h3>
-                    <p class="text-gray-600">Sử dụng AI để phân tích thời gian thức dậy tối ưu nhất để bạn không cảm thấy mệt mỏi.</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Footer (Same as before) -->
-    <footer class="bg-gray-50 pt-20 pb-10 border-t border-gray-200">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="text-center mb-8">
-                 <p class="text-gray-400 text-sm">&copy; 2024 AlarmMaster. Powered by Gemini Pro AI ✨</p>
+            <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between">
+                <p class="text-gray-500 text-sm mb-4 md:mb-0">&copy; 2026 AlarmMaster AI. All rights reserved.</p>
+                <div class="flex space-x-4">
+                    <a href="#"
+                        class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-white/10 hover:text-white transition">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#"
+                        class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-white/10 hover:text-white transition">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="#"
+                        class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:bg-white/10 hover:text-white transition">
+                        <i class="fab fa-discord"></i>
+                    </a>
+                </div>
             </div>
         </div>
     </footer>
 
+    <!-- Interactive Logic Scripts -->
     <script>
-        const apiKey = ""; // API Key sẽ được môi trường cung cấp
+        const apiKey = ""; // API Key will be injected via environment/extension
 
         // Function for Exponential Backoff (Helper)
         async function fetchWithRetry(url, options, retries = 5) {
@@ -205,12 +555,12 @@
                 try {
                     const response = await fetch(url, options);
                     if (response.ok) return await response.json();
-                    if (response.status !== 429 && response.status < 500) break; 
-                } catch (e) {}
+                    if (response.status !== 429 && response.status < 500) break;
+                } catch (e) { }
                 await new Promise(res => setTimeout(res, delay));
                 delay *= 2;
             }
-            throw new Error("Không thể kết nối với AI sau nhiều lần thử.");
+            throw new Error("Unable to connect to AI after multiple attempts.");
         }
 
         // Feature 1: AI Music Generator Description
@@ -218,17 +568,22 @@
             const input = document.getElementById('ai-mood-input').value;
             const resultDiv = document.getElementById('ai-music-result');
             const btn = document.getElementById('btn-gen-music');
-            if (!input) return;
+            if (!input) {
+                resultDiv.classList.remove('hidden');
+                resultDiv.innerHTML = "<span class='text-red-400'>Please enter a mood description first.</span>";
+                return;
+            }
 
             btn.disabled = true;
-            btn.innerHTML = '<i class="fas fa-spinner animate-spin"></i> <span>Đang sáng tác...</span>';
+            btn.innerHTML = '<i class="fas fa-spinner animate-spin"></i> <span>Composing...</span>';
             resultDiv.classList.remove('hidden');
-            resultDiv.innerHTML = "Đang phân tích tâm trạng của bạn...";
+            resultDiv.innerHTML = "<span class='animate-pulse'>Analyzing your mood and composing...</span>";
 
             try {
+                // Warning: Endpoint URL needs up-to-date active gemini model. Provided as template.
                 const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
                 const payload = {
-                    contents: [{ parts: [{ text: `Dựa trên mô tả tâm trạng sau: "${input}", hãy đề xuất một cấu trúc âm nhạc báo thức (vòng hợp âm, nhạc cụ, nhịp điệu) và một vài từ khóa âm thanh cụ thể. Trả lời bằng tiếng Việt, ngắn gọn trong 3 câu.` }] }]
+                    contents: [{ parts: [{ text: `Based on the following mood description: "${input}", suggest an alarm music structure (chord progression, instruments, rhythm) and some specific sound keywords. Answer in English, keep it concise within 3 sentences.` }] }]
                 };
 
                 const data = await fetchWithRetry(url, {
@@ -238,12 +593,12 @@
                 });
 
                 const aiText = data.candidates?.[0]?.content?.parts?.[0]?.text;
-                resultDiv.innerHTML = `<strong>Đề xuất từ AI:</strong><br>${aiText}`;
+                resultDiv.innerHTML = `<strong class='text-white'><i class="fas fa-magic text-primary-400 mr-2"></i>AI Suggestion:</strong><br><p class='mt-2'>${aiText || 'No response from AI.'}</p>`;
             } catch (error) {
-                resultDiv.innerHTML = "Có lỗi xảy ra. Vui lòng thử lại sau.";
+                resultDiv.innerHTML = "<span class='text-red-400'>An error occurred. Missing API Key or connection issue.</span>";
             } finally {
                 btn.disabled = false;
-                btn.innerHTML = '<span>Tạo âm báo ngay ✨</span>';
+                btn.innerHTML = '<i class="fas fa-compact-disc"></i> <span>Generate Soundtrack Idea ✨</span>';
             }
         }
 
@@ -255,18 +610,23 @@
             const audioContainer = document.getElementById('tts-audio-container');
             const audioPlayer = document.getElementById('tts-audio');
 
-            if (!task) return;
+            if (!task) {
+                resultDiv.classList.remove('hidden');
+                resultDiv.innerHTML = "<span class='text-red-400'>Please enter your goals for today.</span>";
+                return;
+            }
 
             btn.disabled = true;
-            btn.innerHTML = '<i class="fas fa-spinner animate-spin"></i> <span>Đang suy nghĩ...</span>';
+            btn.innerHTML = '<i class="fas fa-spinner animate-spin text-gray-900"></i> <span class="text-gray-900">Brainstorming...</span>';
             resultDiv.classList.remove('hidden');
-            resultDiv.innerHTML = "Đang soạn lời chúc...";
+            resultDiv.innerHTML = "<span class='animate-pulse'>Drafting your custom greeting...</span>";
+            audioContainer.classList.add('hidden');
 
             try {
                 // Step 1: Generate Motivation Text
                 const textUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
                 const textPayload = {
-                    contents: [{ parts: [{ text: `Viết một câu chào buổi sáng cực kỳ truyền động lực và năng lượng cho một người hôm nay có nhiệm vụ: "${task}". Câu chào nên ngắn gọn (dưới 30 từ) và hào hứng.` }] }]
+                    contents: [{ parts: [{ text: `Write an extremely motivating and energetic morning greeting for someone who has the following task today: "${task}". The greeting should be concise (under 30 words) and enthusiastic.` }] }]
                 };
 
                 const textData = await fetchWithRetry(textUrl, {
@@ -276,37 +636,39 @@
                 });
 
                 const motivationText = textData.candidates?.[0]?.content?.parts?.[0]?.text;
-                resultDiv.innerHTML = `"${motivationText}"`;
+                resultDiv.innerHTML = `<span class='text-lg'>${motivationText || 'You can do it! Have a great day!'}</span>`;
 
                 // Step 2: Generate TTS (Audio)
-                const ttsUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-tts:generateContent?key=${apiKey}`;
-                const ttsPayload = {
-                    contents: [{ parts: [{ text: `Say enthusiastically in Vietnamese: ${motivationText}` }] }],
-                    generationConfig: {
-                        responseModalities: ["AUDIO"],
-                        speechConfig: { voiceConfig: { prebuiltVoiceConfig: { voiceName: "Kore" } } }
+                if (motivationText) {
+                    const ttsUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-tts:generateContent?key=${apiKey}`;
+                    const ttsPayload = {
+                        contents: [{ parts: [{ text: `Say enthusiastically: ${motivationText}` }] }],
+                        generationConfig: {
+                            responseModalities: ["AUDIO"],
+                            speechConfig: { voiceConfig: { prebuiltVoiceConfig: { voiceName: "Aoede" } } } // Changed voice name to Aoede
+                        }
+                    };
+
+                    const ttsData = await fetchWithRetry(ttsUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(ttsPayload)
+                    });
+
+                    const audioData = ttsData.candidates?.[0]?.content?.parts?.[0]?.inlineData?.data;
+                    if (audioData) {
+                        const wavBlob = pcmToWav(audioData, 24000); // Assuming 24kHz
+                        const audioUrl = URL.createObjectURL(wavBlob);
+                        audioPlayer.src = audioUrl;
+                        audioContainer.classList.remove('hidden');
                     }
-                };
-
-                const ttsData = await fetchWithRetry(ttsUrl, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(ttsPayload)
-                });
-
-                const audioData = ttsData.candidates?.[0]?.content?.parts?.[0]?.inlineData?.data;
-                if (audioData) {
-                    const wavBlob = pcmToWav(audioData, 24000); // Assuming 24kHz
-                    const audioUrl = URL.createObjectURL(wavBlob);
-                    audioPlayer.src = audioUrl;
-                    audioContainer.classList.remove('hidden');
                 }
 
             } catch (error) {
-                resultDiv.innerHTML = "Có lỗi xảy ra khi gọi AI.";
+                resultDiv.innerHTML = "<span class='text-red-400'>Error connecting to AI. Please check your API key.</span>";
             } finally {
                 btn.disabled = false;
-                btn.innerHTML = '<span>Tạo lời chào truyền động lực ✨</span>';
+                btn.innerHTML = '<i class="fas fa-bullhorn text-gray-900"></i> <span class="text-gray-900">Create Motivation Speech ✨</span>';
             }
         }
 
@@ -319,35 +681,32 @@
             }
             const byteArray = new Uint8Array(byteNumbers);
             const pcmData = new Int16Array(byteArray.buffer);
-            
+
             const buffer = new ArrayBuffer(44 + pcmData.length * 2);
             const view = new DataView(buffer);
-            
-            // RIFF chunk descriptor
+
             writeString(view, 0, 'RIFF');
             view.setUint32(4, 36 + pcmData.length * 2, true);
             writeString(view, 8, 'WAVE');
-            
-            // FMT sub-chunk
+
             writeString(view, 12, 'fmt ');
             view.setUint32(16, 16, true);
-            view.setUint16(20, 1, true); // PCM
-            view.setUint16(22, 1, true); // Mono
+            view.setUint16(20, 1, true);
+            view.setUint16(22, 1, true);
             view.setUint32(24, sampleRate, true);
             view.setUint32(28, sampleRate * 2, true);
             view.setUint16(32, 2, true);
             view.setUint16(34, 16, true);
-            
-            // Data sub-chunk
+
             writeString(view, 36, 'data');
             view.setUint32(40, pcmData.length * 2, true);
-            
+
             let offset = 44;
             for (let i = 0; i < pcmData.length; i++) {
                 view.setInt16(offset, pcmData[i], true);
                 offset += 2;
             }
-            
+
             return new Blob([view], { type: 'audio/wav' });
         }
 
@@ -358,4 +717,5 @@
         }
     </script>
 </body>
+
 </html>
