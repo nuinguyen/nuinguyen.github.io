@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alarm Master - Extension Báo Thức AI Thông Minh</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/dist/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #4F46E5, #06B6D4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .hero-pattern {
+            background-color: #ffffff;
+            background-image: radial-gradient(#4f46e510 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            transition: all 0.3s ease;
+        }
+        .ai-glow {
+            box-shadow: 0 0 20px rgba(79, 70, 229, 0.4);
+        }
+        @keyframes pulse-ai {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.05); opacity: 0.8; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        .animate-ai {
+            animation: pulse-ai 2s infinite;
+        }
+    </style>
+</head>
+<body class="text-gray-900 hero-pattern">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center space-x-2">
+                    <div class="bg-indigo-600 p-2 rounded-lg">
+                        <i class="fas fa-clock text-white text-xl"></i>
+                    </div>
+                    <span class="text-xl font-bold tracking-tight">Alarm<span class="text-indigo-600">Master</span> <span class="text-xs bg-indigo-100 text-indigo-600 px-2 py-0.5 rounded-full ml-1">AI</span></span>
+                </div>
+                <div class="hidden md:flex space-x-8 font-medium">
+                    <a href="#features" class="hover:text-indigo-600 transition">Tính năng</a>
+                    <a href="#ai-tools" class="hover:text-indigo-600 transition">Công cụ ✨</a>
+                    <a href="#how-it-works" class="hover:text-indigo-600 transition">Cách hoạt động</a>
+                </div>
+                <div>
+                    <a href="#" class="bg-indigo-600 text-white px-5 py-2.5 rounded-full font-semibold hover:bg-indigo-700 transition shadow-lg shadow-indigo-200">
+                        Cài đặt ngay
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 px-4">
+        <div class="max-w-7xl mx-auto text-center">
+            <div class="inline-flex items-center space-x-2 bg-indigo-50 border border-indigo-100 px-4 py-1.5 rounded-full mb-6">
+                <span class="flex h-2 w-2 rounded-full bg-indigo-600"></span>
+                <span class="text-sm font-semibold text-indigo-600 uppercase tracking-wider">Mới: Tích hợp sức mạnh Gemini AI</span>
+            </div>
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-6">
+                Báo thức thông minh <br>
+                <span class="gradient-text">Vượt xa mong đợi.</span>
+            </h1>
+            <p class="text-xl text-gray-600 mb-10 max-w-2xl mx-auto leading-relaxed">
+                Không chỉ là một chiếc đồng hồ, AlarmMaster AI sử dụng trí tuệ nhân tạo để thiết kế lộ trình thức dậy hoàn hảo cho riêng bạn.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <button class="bg-gray-900 text-white px-8 py-4 rounded-xl font-bold flex items-center justify-center space-x-3 hover:bg-black transition">
+                    <i class="fab fa-chrome text-2xl"></i>
+                    <span>Thêm vào Chrome</span>
+                </button>
+                <button class="bg-white border-2 border-indigo-600 text-indigo-600 px-8 py-4 rounded-xl font-bold hover:bg-indigo-50 transition flex items-center justify-center space-x-2">
+                    <i class="fas fa-sparkles"></i>
+                    <span>Khám phá AI ✨</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Interactive Tools Section -->
+    <section id="ai-tools" class="py-24 bg-gray-50 border-y border-gray-100">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Sức mạnh từ Gemini AI ✨</h2>
+                <p class="text-gray-500 max-w-xl mx-auto">Trải nghiệm các tính năng độc quyền giúp mỗi buổi sáng trở nên đầy cảm hứng hơn bao giờ hết.</p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12">
+                <!-- Tool 1: AI Melody Gen -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="p-3 bg-purple-100 text-purple-600 rounded-2xl">
+                            <i class="fas fa-music text-xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold">Tạo nhạc chuông AI ✨</h3>
+                    </div>
+                    <p class="text-gray-600 mb-6">Mô tả cảm giác bạn muốn khi thức dậy, Gemini sẽ tạo ra giai điệu báo thức phù hợp nhất.</p>
+                    <div class="space-y-4">
+                        <textarea id="ai-mood-input" rows="2" class="w-full p-4 bg-gray-50 border border-gray-200 rounded-2xl focus:ring-2 focus:ring-indigo-500 outline-none" placeholder="Ví dụ: Một buổi sáng mùa hè bình yên ở bãi biển với tiếng sóng vỗ..."></textarea>
+                        <button onclick="generateAIMusic()" id="btn-gen-music" class="w-full bg-indigo-600 text-white py-3 rounded-xl font-bold hover:bg-indigo-700 transition flex items-center justify-center space-x-2">
+                            <span>Tạo âm báo ngay ✨</span>
+                        </button>
+                        <div id="ai-music-result" class="hidden p-4 bg-indigo-50 rounded-xl border border-indigo-100 text-sm text-indigo-800">
+                            <!-- AI Content will load here -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tool 2: AI Motivation -->
+                <div class="bg-white p-8 rounded-3xl shadow-sm border border-gray-100">
+                    <div class="flex items-center space-x-3 mb-6">
+                        <div class="p-3 bg-orange-100 text-orange-600 rounded-2xl">
+                            <i class="fas fa-microphone text-xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold">Lời chào buổi sáng AI ✨</h3>
+                    </div>
+                    <p class="text-gray-600 mb-6">Báo thức sẽ không còn khô khan. AI sẽ tạo lời chào truyền cảm hứng dựa trên công việc của bạn.</p>
+                    <div class="space-y-4">
+                        <input id="ai-task-input" type="text" class="w-full p-4 bg-gray-50 border border-gray-200 rounded-2xl focus:ring-2 focus:ring-indigo-500 outline-none" placeholder="Hôm nay bạn cần làm gì? (Vd: Thuyết trình dự án)">
+                        <button onclick="generateAIMotivation()" id="btn-gen-motivation" class="w-full bg-gray-900 text-white py-3 rounded-xl font-bold hover:bg-black transition flex items-center justify-center space-x-2">
+                            <span>Tạo lời chào truyền động lực ✨</span>
+                        </button>
+                        <div id="ai-motivation-result" class="hidden p-4 bg-orange-50 rounded-xl border border-orange-100 text-sm italic text-orange-800">
+                            <!-- AI Content will load here -->
+                        </div>
+                        <!-- TTS Audio Playback -->
+                        <div id="tts-audio-container" class="hidden mt-4">
+                            <p class="text-xs text-gray-400 mb-2">Nghe thử với giọng đọc AI ✨</p>
+                            <audio id="tts-audio" controls class="w-full h-8"></audio>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Original Features Section -->
+    <section id="features" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Tính năng vượt trội</h2>
+                <p class="text-gray-500">Được thiết kế để tối ưu hóa năng suất và thời gian của bạn.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="p-8 rounded-3xl border border-gray-100 bg-gray-50 feature-card">
+                    <div class="w-12 h-12 bg-indigo-100 rounded-2xl flex items-center justify-center text-indigo-600 mb-6 text-xl">
+                        <i class="fas fa-bell"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Thông báo thông minh</h3>
+                    <p class="text-gray-600">Nhận thông báo ngay cả khi trình duyệt đang ở chế độ nền. Luôn đúng giờ tuyệt đối.</p>
+                </div>
+                <!-- Feature 2 -->
+                <div class="p-8 rounded-3xl border border-gray-100 bg-gray-50 feature-card">
+                    <div class="w-12 h-12 bg-pink-100 rounded-2xl flex items-center justify-center text-pink-600 mb-6 text-xl">
+                        <i class="fas fa-sync"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Đồng bộ đám mây</h3>
+                    <p class="text-gray-600">Tất cả báo thức của bạn được đồng bộ hóa trên mọi thiết bị đăng nhập Chrome.</p>
+                </div>
+                <!-- Feature 3 -->
+                <div class="p-8 rounded-3xl border border-gray-100 bg-gray-50 feature-card">
+                    <div class="w-12 h-12 bg-emerald-100 rounded-2xl flex items-center justify-center text-emerald-600 mb-6 text-xl">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Phân tích giấc ngủ ✨</h3>
+                    <p class="text-gray-600">Sử dụng AI để phân tích thời gian thức dậy tối ưu nhất để bạn không cảm thấy mệt mỏi.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (Same as before) -->
+    <footer class="bg-gray-50 pt-20 pb-10 border-t border-gray-200">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-8">
+                 <p class="text-gray-400 text-sm">&copy; 2024 AlarmMaster. Powered by Gemini Pro AI ✨</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const apiKey = ""; // API Key sẽ được môi trường cung cấp
+
+        // Function for Exponential Backoff (Helper)
+        async function fetchWithRetry(url, options, retries = 5) {
+            let delay = 1000;
+            for (let i = 0; i < retries; i++) {
+                try {
+                    const response = await fetch(url, options);
+                    if (response.ok) return await response.json();
+                    if (response.status !== 429 && response.status < 500) break; 
+                } catch (e) {}
+                await new Promise(res => setTimeout(res, delay));
+                delay *= 2;
+            }
+            throw new Error("Không thể kết nối với AI sau nhiều lần thử.");
+        }
+
+        // Feature 1: AI Music Generator Description
+        async function generateAIMusic() {
+            const input = document.getElementById('ai-mood-input').value;
+            const resultDiv = document.getElementById('ai-music-result');
+            const btn = document.getElementById('btn-gen-music');
+            if (!input) return;
+
+            btn.disabled = true;
+            btn.innerHTML = '<i class="fas fa-spinner animate-spin"></i> <span>Đang sáng tác...</span>';
+            resultDiv.classList.remove('hidden');
+            resultDiv.innerHTML = "Đang phân tích tâm trạng của bạn...";
+
+            try {
+                const url = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
+                const payload = {
+                    contents: [{ parts: [{ text: `Dựa trên mô tả tâm trạng sau: "${input}", hãy đề xuất một cấu trúc âm nhạc báo thức (vòng hợp âm, nhạc cụ, nhịp điệu) và một vài từ khóa âm thanh cụ thể. Trả lời bằng tiếng Việt, ngắn gọn trong 3 câu.` }] }]
+                };
+
+                const data = await fetchWithRetry(url, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                const aiText = data.candidates?.[0]?.content?.parts?.[0]?.text;
+                resultDiv.innerHTML = `<strong>Đề xuất từ AI:</strong><br>${aiText}`;
+            } catch (error) {
+                resultDiv.innerHTML = "Có lỗi xảy ra. Vui lòng thử lại sau.";
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = '<span>Tạo âm báo ngay ✨</span>';
+            }
+        }
+
+        // Feature 2: AI Motivation + TTS
+        async function generateAIMotivation() {
+            const task = document.getElementById('ai-task-input').value;
+            const resultDiv = document.getElementById('ai-motivation-result');
+            const btn = document.getElementById('btn-gen-motivation');
+            const audioContainer = document.getElementById('tts-audio-container');
+            const audioPlayer = document.getElementById('tts-audio');
+
+            if (!task) return;
+
+            btn.disabled = true;
+            btn.innerHTML = '<i class="fas fa-spinner animate-spin"></i> <span>Đang suy nghĩ...</span>';
+            resultDiv.classList.remove('hidden');
+            resultDiv.innerHTML = "Đang soạn lời chúc...";
+
+            try {
+                // Step 1: Generate Motivation Text
+                const textUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-09-2025:generateContent?key=${apiKey}`;
+                const textPayload = {
+                    contents: [{ parts: [{ text: `Viết một câu chào buổi sáng cực kỳ truyền động lực và năng lượng cho một người hôm nay có nhiệm vụ: "${task}". Câu chào nên ngắn gọn (dưới 30 từ) và hào hứng.` }] }]
+                };
+
+                const textData = await fetchWithRetry(textUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(textPayload)
+                });
+
+                const motivationText = textData.candidates?.[0]?.content?.parts?.[0]?.text;
+                resultDiv.innerHTML = `"${motivationText}"`;
+
+                // Step 2: Generate TTS (Audio)
+                const ttsUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-tts:generateContent?key=${apiKey}`;
+                const ttsPayload = {
+                    contents: [{ parts: [{ text: `Say enthusiastically in Vietnamese: ${motivationText}` }] }],
+                    generationConfig: {
+                        responseModalities: ["AUDIO"],
+                        speechConfig: { voiceConfig: { prebuiltVoiceConfig: { voiceName: "Kore" } } }
+                    }
+                };
+
+                const ttsData = await fetchWithRetry(ttsUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(ttsPayload)
+                });
+
+                const audioData = ttsData.candidates?.[0]?.content?.parts?.[0]?.inlineData?.data;
+                if (audioData) {
+                    const wavBlob = pcmToWav(audioData, 24000); // Assuming 24kHz
+                    const audioUrl = URL.createObjectURL(wavBlob);
+                    audioPlayer.src = audioUrl;
+                    audioContainer.classList.remove('hidden');
+                }
+
+            } catch (error) {
+                resultDiv.innerHTML = "Có lỗi xảy ra khi gọi AI.";
+            } finally {
+                btn.disabled = false;
+                btn.innerHTML = '<span>Tạo lời chào truyền động lực ✨</span>';
+            }
+        }
+
+        // Helper: Convert PCM16 to WAV for playback
+        function pcmToWav(base64Data, sampleRate) {
+            const byteCharacters = atob(base64Data);
+            const byteNumbers = new Array(byteCharacters.length);
+            for (let i = 0; i < byteCharacters.length; i++) {
+                byteNumbers[i] = byteCharacters.charCodeAt(i);
+            }
+            const byteArray = new Uint8Array(byteNumbers);
+            const pcmData = new Int16Array(byteArray.buffer);
+            
+            const buffer = new ArrayBuffer(44 + pcmData.length * 2);
+            const view = new DataView(buffer);
+            
+            // RIFF chunk descriptor
+            writeString(view, 0, 'RIFF');
+            view.setUint32(4, 36 + pcmData.length * 2, true);
+            writeString(view, 8, 'WAVE');
+            
+            // FMT sub-chunk
+            writeString(view, 12, 'fmt ');
+            view.setUint32(16, 16, true);
+            view.setUint16(20, 1, true); // PCM
+            view.setUint16(22, 1, true); // Mono
+            view.setUint32(24, sampleRate, true);
+            view.setUint32(28, sampleRate * 2, true);
+            view.setUint16(32, 2, true);
+            view.setUint16(34, 16, true);
+            
+            // Data sub-chunk
+            writeString(view, 36, 'data');
+            view.setUint32(40, pcmData.length * 2, true);
+            
+            let offset = 44;
+            for (let i = 0; i < pcmData.length; i++) {
+                view.setInt16(offset, pcmData[i], true);
+                offset += 2;
+            }
+            
+            return new Blob([view], { type: 'audio/wav' });
+        }
+
+        function writeString(view, offset, string) {
+            for (let i = 0; i < string.length; i++) {
+                view.setUint8(offset + i, string.charCodeAt(i));
+            }
+        }
+    </script>
+</body>
+</html>
