@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chính sách Quyền riêng tư - Alarm & Reminder</title>
+    <meta name="description" content="Chính sách quyền riêng tư của tiện ích Alarm & Reminder.">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        gray: {
+                            900: '#0f111a',
+                            800: '#1a1d2d',
+                            700: '#2a2f45',
+                        },
+                        primary: {
+                            400: '#818cf8',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                        },
+                        accent: {
+                            400: '#2dd4bf',
+                            500: '#14b8a6',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            background-color: #050505;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        .text-gradient {
+            background: linear-gradient(to right, #818cf8, #2dd4bf);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .glass-panel {
+            background: rgba(26, 29, 45, 0.6);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .bg-grid {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+    <div class="absolute inset-0 bg-grid z-0 opacity-30 h-96"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-panel border-b border-white/5 top-0">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <a href="index.html" class="flex items-center space-x-3">
+                    <div class="bg-gradient-to-br from-primary-500 to-accent-500 p-1.5 rounded-lg shadow-lg">
+                        <i class="fas fa-clock text-white text-sm"></i>
+                    </div>
+                    <span class="text-xl font-bold tracking-tight text-white">Alarm<span class="text-primary-400">&Reminder</span></span>
+                </a>
+                <a href="index.html" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">
+                    <i class="fas fa-arrow-left mr-2"></i> Quay lại trang chủ
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="relative z-10 pt-32 pb-24">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="mb-12">
+                <h1 class="text-4xl md:text-5xl font-extrabold mb-4 text-gradient">Chính sách Quyền riêng tư</h1>
+                <p class="text-gray-400">Cập nhật lần cuối: 6 Tháng 4, 2026</p>
+            </div>
+
+            <div class="glass-card rounded-3xl p-8 md:p-12 space-y-12 text-gray-300 leading-relaxed text-lg">
+                <section>
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-xs font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-primary-500/20 text-primary-300 border border-primary-500/30">Việt</span>
+                    </div>
+                    <h2 class="text-2xl font-bold text-white mb-2">1. Thu thập Thông tin</h2>
+                    <p>Chúng tôi đề cao quyền riêng tư của bạn. Tiện ích "Alarm & Reminder" được thiết kế để hoạt động với nguyên tắc tối thiểu hóa dữ liệu:</p>
+                    <ul class="list-disc list-inside mt-4 space-y-2 text-gray-400">
+                        <li>Chúng tôi không yêu cầu bạn tạo tài khoản hoặc cung cấp thông tin cá nhân.</li>
+                        <li>Dữ liệu báo thức của bạn được lưu trữ cục bộ trên trình duyệt của bạn.</li>
+                    </ul>
+
+                    <div class="mt-8 flex items-center gap-3 mb-4">
+                        <span class="text-xs font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-accent-500/20 text-accent-300 border border-accent-500/30">Eng</span>
+                    </div>
+                    <h2 class="text-2xl font-bold text-white mb-2">1. Data Collection</h2>
+                    <p>We value your privacy. The "Alarm & Reminder" extension is designed with data minimization in mind:</p>
+                    <ul class="list-disc list-inside mt-4 space-y-2 text-gray-400">
+                        <li>We do not require you to create an account or provide personal information.</li>
+                        <li>Your alarm data is stored locally in your browser.</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-xs font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-primary-500/20 text-primary-300 border border-primary-500/30">Việt</span>
+                    </div>
+                    <h2 class="text-2xl font-bold text-white mb-2">2. Cách Sử dụng Dữ liệu</h2>
+                    <p>Dữ liệu báo thức chỉ được sử dụng để hiển thị danh sách báo thức và phát thông báo âm thanh đúng thời điểm.</p>
+                    
+                    <div class="mt-8 flex items-center gap-3 mb-4">
+                        <span class="text-xs font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-accent-500/20 text-accent-300 border border-accent-500/30">Eng</span>
+                    </div>
+                    <h2 class="text-2xl font-bold text-white mb-2">2. How Data is Used</h2>
+                    <p>Alarm data is only used to display your alarm list and trigger audio notifications at the correct time.</p>
+                </section>
+
+                <section>
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-xs font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-primary-500/20 text-primary-300 border border-primary-500/30">Việt</span>
+                    </div>
+                    <h2 class="text-2xl font-bold text-white mb-2">3. Dịch vụ Bên thứ ba</h2>
+                    <p>Trong trường hợp nâng cấp Premium, thanh toán được xử lý bảo mật bởi Lemon Squeezy. Chúng tôi không lưu trữ thông tin thẻ của bạn.</p>
+                    
+                    <div class="mt-8 flex items-center gap-3 mb-4">
+                        <span class="text-xs font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-accent-500/20 text-accent-300 border border-accent-500/30">Eng</span>
+                    </div>
+                    <h2 class="text-2xl font-bold text-white mb-2">3. Third-party Services</h2>
+                    <p>For Premium upgrades, payments are securely processed by Lemon Squeezy. We do not store your card information.</p>
+                </section>
+
+                <section>
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-xs font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-primary-500/20 text-primary-300 border border-primary-500/30">Việt</span>
+                    </div>
+                    <h2 class="text-2xl font-bold text-white mb-2">4. Liên hệ / Contact</h2>
+                    <p>Nếu bạn có thắc mắc, vui lòng liên hệ / If you have questions, please contact: <strong class="text-primary-400">support@alarm-reminder.com</strong></p>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer class="border-t border-white/10 py-12 bg-black/50">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="text-gray-500 text-sm">&copy; 2026 Alarm & Reminder Team. Tất cả quyền được bảo lưu.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
