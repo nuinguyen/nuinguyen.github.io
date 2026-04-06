@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Điều khoản và Điều kiện - Alarm & Reminder</title>
+    <meta name="description" content="Điều khoản và điều kiện sử dụng tiện ích Alarm & Reminder.">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                    },
+                    colors: {
+                        gray: {
+                            900: '#0f111a',
+                            800: '#1a1d2d',
+                            700: '#2a2f45',
+                        },
+                        primary: {
+                            400: '#818cf8',
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                        },
+                        accent: {
+                            400: '#2dd4bf',
+                            500: '#14b8a6',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            background-color: #050505;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        .text-gradient {
+            background: linear-gradient(to right, #818cf8, #2dd4bf);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .glass-panel {
+            background: rgba(26, 29, 45, 0.6);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .bg-grid {
+            background-size: 40px 40px;
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+    <div class="absolute inset-0 bg-grid z-0 opacity-30 h-96"></div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-panel border-b border-white/5 top-0">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <a href="index.html" class="flex items-center space-x-3">
+                    <div class="bg-gradient-to-br from-primary-500 to-accent-500 p-1.5 rounded-lg shadow-lg">
+                        <i class="fas fa-clock text-white text-sm"></i>
+                    </div>
+                    <span class="text-xl font-bold tracking-tight text-white">Alarm<span class="text-primary-400">&Reminder</span></span>
+                </a>
+                <a href="index.html" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">
+                    <i class="fas fa-arrow-left mr-2"></i> Quay lại trang chủ
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="relative z-10 pt-32 pb-24">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="mb-12">
+                <h1 class="text-4xl md:text-5xl font-extrabold mb-4 text-gradient">Điều khoản và Điều kiện</h1>
+                <p class="text-gray-400">Cập nhật lần cuối: 6 Tháng 4, 2026</p>
+            </div>
+
+            <div class="glass-card rounded-3xl p-8 md:p-12 space-y-12 text-gray-300 leading-relaxed">
+                <section>
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-xs font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-primary-500/20 text-primary-300 border border-primary-500/30">Việt</span>
+                    </div>
+                    <h2 class="text-2xl font-bold text-white mb-2">1. Chấp thuận Điều khoản</h2>
+                    <p>Bằng cách cài đặt và sử dụng tiện ích "Alarm & Reminder" (sau đây gọi là "Tiện ích"), bạn đồng ý tuân thủ và bị ràng buộc bởi các Điều khoản và Điều kiện này. Nếu bạn không đồng ý với bất kỳ phần nào của các điều khoản này, vui lòng không sử dụng Tiện ích.</p>
+                    
+                    <div class="mt-6 flex items-center gap-3 mb-4">
+                        <span class="text-xs font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-accent-500/20 text-accent-300 border border-accent-500/30">Eng</span>
+                    </div>
+                    <h2 class="text-2xl font-bold text-white mb-2">1. Acceptance of Terms</h2>
+                    <p>By installing and using the "Alarm & Reminder" extension (hereinafter referred to as the "Service"), you agree to comply with and be bound by these Terms and Conditions. If you do not agree to any part of these terms, please do not use the Service.</p>
+                </section>
+
+                <section>
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-xs font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-primary-500/20 text-primary-300 border border-primary-500/30">Việt</span>
+                    </div>
+                    <h2 class="text-2xl font-bold text-white mb-2">2. Mô tả Dịch vụ</h2>
+                    <p>Tiện ích cung cấp các tính năng báo thức và nhắc nhở trực tiếp trong trình duyệt Chrome. Các tính năng cốt lõi bao gồm cài đặt báo thức, lặp lại, và thông báo âm thanh. Các tính năng này có thể thay đổi hoặc cập nhật theo thời gian để cải thiện trải nghiệm người dùng.</p>
+                    
+                    <div class="mt-6 flex items-center gap-3 mb-4">
+                        <span class="text-xs font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-accent-500/20 text-accent-300 border border-accent-500/30">Eng</span>
+                    </div>
+                    <h2 class="text-2xl font-bold text-white mb-2">2. Description of Service</h2>
+                    <p>The Service provides alarm clock and reminder features directly within the Chrome browser. Core features include alarm settings, repetition, and audio notifications. These features may change or be updated over time to improve the user experience.</p>
+                </section>
+
+                <section>
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-xs font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-primary-500/20 text-primary-300 border border-primary-500/30">Việt</span>
+                    </div>
+                    <h2 class="text-2xl font-bold text-white mb-2">3. Tài khoản và Dữ liệu</h2>
+                    <p>Tiện ích hoạt động cục bộ trên trình duyệt của bạn. Chúng tôi không yêu cầu bạn tạo tài khoản để sử dụng các tính năng cơ bản. Dữ liệu báo thức của bạn được lưu trữ trong bộ nhớ đồng bộ của trình duyệt Chrome (Chrome Sync).</p>
+                    
+                    <div class="mt-6 flex items-center gap-3 mb-4">
+                        <span class="text-xs font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-accent-500/20 text-accent-300 border border-accent-500/30">Eng</span>
+                    </div>
+                    <h2 class="text-2xl font-bold text-white mb-2">3. Accounts and Data</h2>
+                    <p>The Service operates locally in your browser. We do not require you to create an account to use the basic features. Your alarm data is stored in the Chrome browser's synchronization memory (Chrome Sync).</p>
+                </section>
+
+                <section>
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-xs font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-primary-500/20 text-primary-300 border border-primary-500/30">Việt</span>
+                    </div>
+                    <h2 class="text-2xl font-bold text-white mb-2">4. Gói Premium và Thanh toán</h2>
+                    <p>Chúng tôi cung cấp gói nâng cấp Premium với các tính năng bổ sung như báo thức không giới hạn, âm thanh tùy chỉnh và giao diện đặc biệt. Việc thanh toán được xử lý thông qua Lemon Squeezy. Bạn đồng ý cung cấp thông tin thanh toán chính xác.</p>
+                    
+                    <div class="mt-6 flex items-center gap-3 mb-4">
+                        <span class="text-xs font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-accent-500/20 text-accent-300 border border-accent-500/30">Eng</span>
+                    </div>
+                    <h2 class="text-2xl font-bold text-white mb-2">4. Premium Plans and Payments</h2>
+                    <p>We offer a Premium upgrade with additional features such as unlimited alarms, custom sounds, and special interfaces. Payments are processed through Lemon Squeezy. You agree to provide accurate payment information.</p>
+                </section>
+
+                <section>
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-xs font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-primary-500/20 text-primary-300 border border-primary-500/30">Việt</span>
+                    </div>
+                    <h2 class="text-2xl font-bold text-white mb-2">5. Quyền Sở hữu Trí tuệ</h2>
+                    <p>Tất cả nội dung, logo, thiết kế và mã nguồn của Tiện ích là tài sản của đội ngũ Alarm & Reminder. Bạn không được phép sao chép, sửa đổi hoặc phân phối lại mà không có sự đồng ý.</p>
+                    
+                    <div class="mt-6 flex items-center gap-3 mb-4">
+                        <span class="text-xs font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-accent-500/20 text-accent-300 border border-accent-500/30">Eng</span>
+                    </div>
+                    <h2 class="text-2xl font-bold text-white mb-2">5. Intellectual Property Rights</h2>
+                    <p>All content, logos, designs, and source code of the Service are the property of the Alarm & Reminder team. You may not copy, modify, or redistribute them without consent.</p>
+                </section>
+
+                <section>
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-xs font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-primary-500/20 text-primary-300 border border-primary-500/30">Việt</span>
+                    </div>
+                    <h2 class="text-2xl font-bold text-white mb-2">6. Miễn trừ Trách nhiệm</h2>
+                    <p>Chúng tôi không chịu trách nhiệm cho bất kỳ tổn thất hoặc thiệt hại nào phát sinh do lỗi kỹ thuật hoặc báo thức không hoạt động như mong đợi.</p>
+                    
+                    <div class="mt-6 flex items-center gap-3 mb-4">
+                        <span class="text-xs font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-accent-500/20 text-accent-300 border border-accent-500/30">Eng</span>
+                    </div>
+                    <h2 class="text-2xl font-bold text-white mb-2">6. Disclaimer of Liability</h2>
+                    <p>We are not responsible for any loss or damage arising from technical failures or alarms not functioning as expected.</p>
+                </section>
+
+                <section>
+                    <div class="flex items-center gap-3 mb-4">
+                        <span class="text-xs font-bold uppercase tracking-wider px-2 py-0.5 rounded bg-primary-500/20 text-primary-300 border border-primary-500/30">Việt</span>
+                    </div>
+                    <h2 class="text-2xl font-bold text-white mb-2">7. Liên hệ / Contact</h2>
+                    <p>Nếu bạn có bất kỳ câu hỏi nào, vui lòng liên hệ / If you have any questions, please contact: <strong class="text-primary-400">support@alarm-reminder.com</strong></p>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer class="border-t border-white/10 py-12 bg-black/50">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p class="text-gray-500 text-sm">&copy; 2026 Alarm & Reminder Team. Tất cả quyền được bảo lưu.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
