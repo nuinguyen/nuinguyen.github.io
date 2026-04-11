@@ -1,150 +1,99 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - Alarm & Reminder</title>
-    <meta name="description" content="Privacy Policy for Alarm & Reminder Chrome Extension.">
-    
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Privacy Policy - Alarm & Reminders</title>
+    <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Outfit', 'sans-serif'],
-                    },
-                    colors: {
-                        gray: {
-                            900: '#0f111a',
-                            800: '#1a1d2d',
-                            700: '#2a2f45',
-                        },
-                        primary: {
-                            400: '#818cf8',
-                            500: '#6366f1',
-                            600: '#4f46e5',
-                        },
-                        accent: {
-                            400: '#2dd4bf',
-                            500: '#14b8a6',
-                        }
-                    }
-                }
-            }
-        }
-    </script>
-    
     <style>
-        body {
-            background-color: #050505;
-            color: #ffffff;
-            overflow-x: hidden;
+        .legal-content {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--surface);
+            padding: 60px;
+            border-radius: 40px;
+            border: 1px solid var(--border);
+            line-height: 1.8;
         }
-        .text-gradient {
-            background: linear-gradient(to right, #818cf8, #2dd4bf);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+        .legal-content h2 {
+            margin: 40px 0 20px;
+            color: var(--primary);
         }
-        .glass-panel {
-            background: rgba(26, 29, 45, 0.6);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+        .legal-content p {
+            color: var(--text-sec);
+            margin-bottom: 20px;
         }
-        .glass-card {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+        .legal-content ul {
+            margin-bottom: 20px;
+            padding-left: 20px;
+            color: var(--text-sec);
         }
-        .bg-grid {
-            background-size: 40px 40px;
-            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-                linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        .legal-content li {
+            margin-bottom: 10px;
         }
     </style>
 </head>
+<body>
 
-<body class="antialiased">
-    <div class="absolute inset-0 bg-grid z-0 opacity-30 h-96"></div>
-
-    <!-- Navigation -->
-    <nav class="fixed w-full z-50 glass-panel border-b border-white/5 top-0">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16 items-center">
-                <a href="index.html" class="flex items-center space-x-3">
-                    <div class="bg-gradient-to-br from-primary-500 to-accent-500 p-1.5 rounded-lg shadow-lg">
-                        <i class="fas fa-clock text-white text-sm"></i>
-                    </div>
-                    <span class="text-xl font-bold tracking-tight text-white">Alarm<span class="text-primary-400">&Reminder</span></span>
-                </a>
-                <a href="index.html" class="text-sm font-medium text-gray-300 hover:text-white transition-colors">
-                    <i class="fas fa-arrow-left mr-2"></i> Back to Home
-                </a>
-            </div>
+    <nav>
+        <div class="container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-clock"></i>
+                Alarm & Reminders<span>.</span>
+            </a>
+            <a href="index.html" class="btn-nav">Back to Home</a>
         </div>
     </nav>
 
-    <main class="relative z-10 pt-32 pb-24">
-        <div class="max-w-4xl mx-auto px-4">
-            <div class="mb-12">
-                <h1 class="text-4xl md:text-5xl font-extrabold mb-4 text-gradient">Privacy Policy</h1>
-                <p class="text-gray-400">Last Updated: April 6, 2026</p>
-            </div>
-
-            <div class="glass-card rounded-3xl p-8 md:p-12 space-y-12 text-gray-300 leading-relaxed text-lg">
-                <section>
-                    <h2 class="text-2xl font-bold text-white mb-4">1. Introduction</h2>
-                    <p>We value your privacy. This Privacy Policy explains how "Alarm & Reminder" (the "Extension") handles your information. Our primary goal is to provide a powerful utility while collecting as little data as possible.</p>
-                </section>
-
-                <section>
-                    <h2 class="text-2xl font-bold text-white mb-4">2. Data Collection & Storage</h2>
-                    <p>The Extension is designed to operate locally on your device. We do not require you to create an account or provide any personal identification information (PII) to use the core features of the Extension.</p>
-                    <ul class="list-disc list-inside mt-4 space-y-3 text-gray-400">
-                        <li><strong>Alarm Data:</strong> All your alarm settings, labels, and schedules are stored locally in your browser's storage (Chrome Storage API). This data is never sent to our servers.</li>
-                        <li><strong>Custom Audio:</strong> If you upload custom MP3 files (Premium feature), these are stored locally within your browser profile.</li>
-                        <li><strong>Voice Messages:</strong> TTS (Text-to-Speech) messages are processed by your browser's native API. No text data is recorded or transmitted by us.</li>
-                    </ul>
-                </section>
-
-                <section>
-                    <h2 class="text-2xl font-bold text-white mb-4">3. Security of Your Data</h2>
-                    <p>Since your data lives on your own device, its security depends on the security of your computer and browser. We do not have access to your alarms, labels, or browsing history.</p>
-                </section>
-
-                <section>
-                    <h2 class="text-2xl font-bold text-white mb-4">4. Third-Party Services</h2>
-                    <p>We use <strong>Lemon Squeezy</strong> as our Merchant of Record for Premium license processing. When you purchase a Premium license:</p>
-                    <ul class="list-disc list-inside mt-4 space-y-3 text-gray-400">
-                        <li>Your payment information (credit card details, address) is collected and processed securely by Lemon Squeezy. We do not store or see your full payment details.</li>
-                        <li>We receive your email address and a license key from Lemon Squeezy to verify your Premium status.</li>
-                    </ul>
-                </section>
-
-                <section>
-                    <h2 class="text-2xl font-bold text-white mb-4">5. Changes to This Policy</h2>
-                    <p>We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last Updated" date.</p>
-                </section>
-
-                <section>
-                    <h2 class="text-2xl font-bold text-white mb-4">6. Contact Us</h2>
-                    <p>If you have any questions about this Privacy Policy, please contact us at: <a href="mailto:nuinguyen01bv@gmail.com" class="text-primary-400 font-semibold hover:underline">nuinguyen01bv@gmail.com</a></p>
-                </section>
-            </div>
+    <section class="container" style="padding-top: 160px;">
+        <div class="section-title">
+            <h1 style="font-size: 3.5rem; margin-bottom: 16px;">Privacy Policy</h1>
+            <p>Transparency is our priority. Learn how we protect your data.</p>
         </div>
-    </main>
 
-    <footer class="border-t border-white/10 py-12 bg-black/50">
-        <div class="max-w-7xl mx-auto px-4 text-center">
-            <p class="text-gray-500 text-sm">&copy; 2026 Alarm & Reminder Team. All rights reserved.</p>
+        <div class="legal-content">
+            <p><strong>Effective Date:</strong> April 11, 2026</p>
+
+            <p>This Privacy Policy describes how <strong>Alarm & Reminders</strong> (the "Extension") handles your information. Our primary goal is to provide a premium utility while collecting as little data as possible. We believe your productivity data should belong to you alone.</p>
+
+            <h2>1. Data Collection & Local Storage</h2>
+            <p>The Extension is built with a "Local First" philosophy. We do not require you to create an account or provide any personal identification information (PII) to use our features.</p>
+            <ul>
+                <li><strong>Task & Alarm Data:</strong> All your reminders, alarm schedules, lists, and task labels are stored exclusively in your browser's local storage (Chrome Storage API). This data is never transmitted to our servers.</li>
+                <li><strong>Personalization Settings:</strong> Your choice of themes, accent colors, and custom list icons are stored on your device.</li>
+                <li><strong>Custom Audio:</strong> If you use the Premium custom MP3 feature, your audio files are stored locally within your Chrome profile.</li>
+            </ul>
+
+            <h2>2. Processing of Voice Data</h2>
+            <p>TTS (Text-to-Speech) notifications are processed locally using your browser's native Synthesis API. We do not record, transmit, or store the text used for these voice alerts.</p>
+
+            <h2>3. Third-Party Payments</h2>
+            <p>We use <strong>Lemon Squeezy</strong> as our Merchant of Record for Premium license processing. When you purchase a license:</p>
+            <ul>
+                <li>Your payment details are handled securely by Lemon Squeezy. We never see or store your credit card information.</li>
+                <li>We receive only your email address and a license key generation event to verify your access to Premium features.</li>
+            </ul>
+
+            <h2>4. Permissions Usage</h2>
+            <p>The Extension requires specific permissions to function correctly:</p>
+            <ul>
+                <li><strong>Alarms:</strong> To schedule background notifications.</li>
+                <li><strong>Storage:</strong> To save your tasks and settings.</li>
+                <li><strong>Notifications:</strong> To display alerts when a reminder or alarm is triggered.</li>
+                <li><strong>Offscreen:</strong> Used solely to play notification sounds reliably in the background.</li>
+            </ul>
+
+            <h2>5. Contact Information</h2>
+            <p>If you have questions about this policy or the Extension’s data practices, please contact us at <a href="mailto:nuinguyen01bv@gmail.com" style="color: var(--primary);">nuinguyen01bv@gmail.com</a>.</p>
+        </div>
+    </section>
+
+    <footer class="container">
+        <div class="footer-bottom">
+            <p>&copy; 2026 Alarm & Reminders Hub. All rights reserved.</p>
         </div>
     </footer>
+
 </body>
 </html>
