@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="Vrw7OPNliNr6Azu5WZKaImEuL8JjeZfeWrkTSvuzTV0" />
+    <title>Reminders - iOS Style Task Manager & Daily Planner for Chrome</title>
+    <meta name="description"
+        content="Organize your life with Reminders for Chrome. An elegant, iOS-inspired task manager with background alerts, custom lists, and rich notifications. Free and Premium tiers available.">
+    <link rel="canonical" href="https://alarm-reminder.com/reminders" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://alarm-reminder.com/reminders">
+    <meta property="og:title" content="Reminders - Elegant Task Manager for Chrome">
+    <meta property="og:description"
+        content="Stay productive with an iOS-inspired reminder extension. Create lists, set alerts, and never miss a task again.">
+    <meta property="og:image" content="https://alarm-reminder.com/hero.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://alarm-reminder.com/reminders">
+    <meta property="twitter:title" content="Reminders - Elegant Task Manager for Chrome">
+    <meta property="twitter:description"
+        content="The most elegant way to stay organized in Chrome. iOS-inspired UI, background alerts, and custom sounds.">
+    <meta property="twitter:image" content="https://alarm-reminder.com/hero.png">
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Reminders",
+      "operatingSystem": "ChromeOS, Windows, macOS, Linux",
+      "applicationCategory": "UtilitiesApplication",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "ratingCount": "850"
+      },
+      "description": "Premium task manager and reminder for Chrome. iOS-inspired interface, background notifications, and custom lists. Free version includes 3 reminders; Premium unlocks unlimited everything."
+    }
+    </script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700&display=swap');
+
+        :root {
+            --primary: #ff9f0a;
+            --primary-rgb: 255, 159, 10;
+            --bg: #000000;
+            --surface: #1c1c1e;
+            --text: #ffffff;
+            --text-sec: #8e8e93;
+            --border: rgba(255, 255, 255, 0.1);
+            --glass: rgba(28, 28, 30, 0.7);
+            --accent-blue: #007aff;
+            --accent-red: #ff3b30;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 700;
+        }
+
+        /* --- Layout --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        section {
+            padding: 100px 0;
+        }
+
+        /* --- Navigation --- */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: var(--glass);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            height: 80px;
+        }
+
+        nav .container {
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--text);
+            text-decoration: none;
+        }
+
+        .logo span {
+            color: var(--primary);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-sec);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover {
+            color: var(--text);
+        }
+
+        .btn-nav {
+            background: var(--primary);
+            color: white;
+            padding: 10px 24px;
+            border-radius: 99px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            box-shadow: 0 4px 20px rgba(var(--primary-rgb), 0.3);
+        }
+
+        .btn-nav:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(var(--primary-rgb), 0.5);
+        }
+
+        /* --- Hero --- */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding: 160px 0 100px;
+            overflow: hidden;
+            background: radial-gradient(circle at 0% 0%, rgba(var(--primary-rgb), 0.05) 0%, transparent 50%);
+        }
+
+        .hero .container {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            align-items: center;
+            gap: 48px;
+            width: 100%;
+        }
+
+        .hero-content {
+            z-index: 2;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(var(--primary-rgb), 0.1);
+            color: var(--primary);
+            padding: 8px 16px;
+            border-radius: 99px;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+            border: 1px solid rgba(var(--primary-rgb), 0.2);
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            background: linear-gradient(135deg, #fff 0%, #a1a1a1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--text-sec);
+            margin-bottom: 40px;
+            max-width: 540px;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 16px;
+        }
+
+        .btn-primary {
+            background: var(--primary);
+            color: white;
+            padding: 16px 40px;
+            border-radius: 12px;
+            font-size: 1.125rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .btn-primary:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 40px rgba(var(--primary-rgb), 0.4);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.05);
+            color: white;
+            padding: 16px 40px;
+            border-radius: 12px;
+            font-size: 1.125rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: var(--transition);
+            border: 1px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .hero-image {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1;
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 600px;
+            border-radius: 32px;
+            box-shadow: 0 50px 100px -20px rgba(0, 0, 0, 0.7), 0 0 40px rgba(var(--primary-rgb), 0.1);
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+
+        .hero-image:hover img {
+            transform: translateY(-10px);
+            box-shadow: 0 60px 120px -20px rgba(0, 0, 0, 0.8), 0 0 60px rgba(var(--primary-rgb), 0.2);
+        }
+
+        .hero-bg-glow {
+            position: absolute;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(var(--primary-rgb), 0.15) 0%, transparent 70%);
+            top: -200px;
+            right: -200px;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        /* --- Features --- */
+        .section-title {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+
+        .section-title h2 {
+            font-size: 3rem;
+            margin-bottom: 16px;
+        }
+
+        .section-title p {
+            color: var(--text-sec);
+            font-size: 1.125rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+        }
+
+        .feature-card {
+            background: var(--surface);
+            padding: 40px;
+            border-radius: 24px;
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(var(--primary-rgb), 0.3);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .feature-icon {
+            width: 56px;
+            height: 56px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 24px;
+            color: var(--primary);
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 16px;
+        }
+
+        .feature-card p {
+            color: var(--text-sec);
+        }
+
+        .premium {
+            background: linear-gradient(145deg, #0a0a0b 0%, #1c1c1e 100%);
+            border-radius: 48px;
+            border: 1px solid var(--border);
+            position: relative;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+
+        .premium::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at center, rgba(var(--primary-rgb), 0.05) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .premium-content {
+            display: flex;
+            align-items: center;
+            gap: 64px;
+            padding: 80px;
+        }
+
+        .premium-text {
+            flex: 1;
+        }
+
+        .premium-text h2 {
+            font-size: 3.5rem;
+            margin-bottom: 24px;
+        }
+
+        .premium-list {
+            list-style: none;
+            margin-bottom: 40px;
+        }
+
+        .premium-list li {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            font-size: 1.125rem;
+            margin-bottom: 16px;
+            color: var(--text-sec);
+        }
+
+        .premium-list li i {
+            color: var(--primary);
+        }
+
+        .premium-image {
+            flex: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .premium-gallery-item {
+            background: rgba(255, 255, 255, 0.03);
+            aspect-ratio: 1;
+            border-radius: 28px;
+            border: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 24px;
+            text-align: center;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .premium-gallery-item:hover {
+            background: rgba(var(--primary-rgb), 0.1);
+            border-color: rgba(var(--primary-rgb), 0.3);
+            transform: scale(1.05);
+        }
+
+        .premium-gallery-item i {
+            font-size: 2.25rem;
+            color: var(--primary);
+            margin-bottom: 16px;
+            text-shadow: 0 0 20px rgba(var(--primary-rgb), 0.5);
+        }
+
+        /* --- Pricing --- */
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 32px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .price-card {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 48px;
+            border-radius: 40px;
+            border: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            transition: var(--transition);
+            backdrop-filter: blur(10px);
+        }
+
+        .price-card.featured {
+            border-color: rgba(var(--primary-rgb), 0.4);
+            background: linear-gradient(145deg, rgba(var(--primary-rgb), 0.05) 0%, rgba(0, 0, 0, 0.5) 100%);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            transform: scale(1.02);
+        }
+
+        .price-header {
+            margin-bottom: 24px;
+        }
+
+        .price-name {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text-sec);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+
+        .price-value {
+            font-size: 3.5rem;
+            font-weight: 800;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .price-value span {
+            font-size: 1.125rem;
+            color: var(--text-sec);
+            font-weight: 400;
+        }
+
+        .price-features {
+            list-style: none;
+            margin-bottom: 40px;
+            flex: 1;
+        }
+
+        .price-features li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+            font-size: 1rem;
+            color: var(--text-sec);
+        }
+
+        .price-features li i {
+            color: var(--primary);
+            font-size: 0.875rem;
+        }
+
+        .btn-price {
+            width: 100%;
+            text-align: center;
+            padding: 16px;
+            border-radius: 16px;
+            font-weight: 700;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .btn-price-free {
+            background: rgba(255, 255, 255, 0.05);
+            color: white;
+            border: 1px solid var(--border);
+        }
+
+        .btn-price-free:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .btn-price-premium {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 10px 20px rgba(var(--primary-rgb), 0.2);
+        }
+
+        .btn-price-premium:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px rgba(var(--primary-rgb), 0.4);
+        }
+
+        /* --- Footer --- */
+        footer {
+            padding: 80px 0 40px;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 60px;
+        }
+
+        .footer-info p {
+            color: var(--text-sec);
+            max-width: 300px;
+            margin-top: 16px;
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 100px;
+        }
+
+        .footer-col h4 {
+            margin-bottom: 24px;
+            font-size: 1.125rem;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-col ul a {
+            color: var(--text-sec);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-col ul a:hover {
+            color: var(--text);
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            color: var(--text-sec);
+            font-size: 0.875rem;
+        }
+
+        /* --- Animations --- */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-content {
+            animation: fadeInUp 1s ease forwards;
+        }
+
+        .hero-image {
+            animation: fadeInUp 1s ease 0.2s forwards;
+            opacity: 0;
+        }
+
+        /* --- Responsive --- */
+        .hero .container {
+            grid-template-columns: 1fr;
+            text-align: center;
+            gap: 60px;
+        }
+
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+        }
+
+        .hero p {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-image {
+            order: 2;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+        }
+
+        .premium-content {
+            flex-direction: column;
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+        .premium-list li {
+            justify-content: center;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.75rem;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 48px;
+            }
+
+            .footer-links {
+                gap: 40px;
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <a href="#" class="logo">
+                <i class="fas fa-bell"></i>
+                Reminders<span>.</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#premium">Premium</a></li>
+                <li><a href="#how-it-works">How it Works</a></li>
+            </ul>
+            <a href="https://chromewebstore.google.com/detail/apbmibchnilnanhnaphgoojbjinkkabi" class="btn-nav">Add to
+                Chrome</a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="hero-bg-glow"></div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="badge">
+                    <i class="fab fa-chrome"></i>
+                    <span>Optimized for Google Chrome</span>
+                </div>
+                <h1>The Ultimate <br>Reminder Experience.</h1>
+                <p>Stay on track with an elegant, iOS-inspired task manager designed to fit perfectly into your browsing
+                    workflow.</p>
+                <div class="hero-btns">
+                    <a href="https://chromewebstore.google.com/detail/apbmibchnilnanhnaphgoojbjinkkabi"
+                        class="btn-primary">
+                        <i class="fab fa-chrome"></i>
+                        Add to Chrome
+                    </a>
+                    <a href="#features" class="btn-secondary">Explore Features</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="hero.png" alt="Reminders App Preview">
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section id="features" class="container">
+        <div class="section-title">
+            <h2>Built for Productivity.</h2>
+            <p>Experience a native-like task management interface with powerful tools to help you never miss a deadline
+                again.</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-layer-group"></i></div>
+                <h3>Smart Organization</h3>
+                <p>Organize your tasks using custom lists with dedicated colors and icons. Perfect for separating work,
+                    health, and personal goals.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-clock"></i></div>
+                <h3>Advanced Scheduling</h3>
+                <p>Set precise dates, times, and complex repetition rules. Get notified exactly when you need it with
+                    early reminder options.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-bell"></i></div>
+                <h3>Rich Notifications</h3>
+                <p>Background alerts ensure you never miss a task, while our dedicated ringing overlay provides a
+                    beautiful alert experience.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-shield-halved"></i></div>
+                <h3>Privacy First</h3>
+                <p>All your data is stored locally in your browser. No accounts, no tracking, and absolute privacy
+                    centered around you.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-palette"></i></div>
+                <h3>Pure Personalization</h3>
+                <p>Automatic dark and light mode adaptation with custom accent colors to make the app truly yours.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon"><i class="fas fa-bolt"></i></div>
+                <h3>Lightning Fast</h3>
+                <p>Designed with performance in mind. Access your tasks and set reminders in just a few clicks from your
+                    toolbar.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing -->
+    <section id="pricing" class="container">
+        <div class="section-title">
+            <h2>Choose Your Plan.</h2>
+            <p>Get started for free or unlock the full potential of Reminders with our premium features.</p>
+        </div>
+        <div class="pricing-grid">
+            <!-- Free Plan -->
+            <div class="price-card">
+                <div class="price-header">
+                    <div class="price-name">Free Tier</div>
+                    <div class="price-value">$0</div>
+                    <p style="color: var(--text-sec); font-size: 0.875rem; margin-top: 8px;">Essential tools for daily tasks</p>
+                </div>
+                <ul class="price-features">
+                    <li><i class="fas fa-check"></i> Up to 3 active reminders</li>
+                    <li><i class="fas fa-check"></i> Basic categorization</li>
+                    <li><i class="fas fa-check"></i> Standard notification sounds</li>
+                    <li><i class="fas fa-check"></i> Local browser storage</li>
+                </ul>
+                <a href="https://chromewebstore.google.com/detail/apbmibchnilnanhnaphgoojbjinkkabi" class="btn-price btn-price-free">Get Started</a>
+            </div>
+
+            <!-- Premium Plan -->
+            <div class="price-card featured">
+                <div class="price-header">
+                    <div class="price-name" style="color: var(--primary);">Full Access</div>
+                    <div class="price-value">$49<span> / lifetime</span></div>
+                    <p style="color: var(--text-sec); font-size: 0.875rem; margin-top: 8px;">One-time payment, forever yours</p>
+                </div>
+                <ul class="price-features">
+                    <li><i class="fas fa-check"></i> Unlimited active reminders</li>
+                    <li><i class="fas fa-check"></i> Unlimited custom lists</li>
+                    <li><i class="fas fa-check"></i> Custom MP3 notification sounds</li>
+                    <li><i class="fas fa-check"></i> Full color & icon personalization</li>
+                    <li><i class="fas fa-check"></i> Priority developer support</li>
+                </ul>
+                <a href="https://anuis.lemonsqueezy.com/checkout/buy/fcebd98b-ff41-431b-a1ec-48aa2521f540" class="btn-price btn-price-premium">Upgrade to Premium</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="premium" class="container" style="padding: 100px 24px;">
+        <div class="premium">
+            <div class="premium-content">
+                <div class="premium-text">
+                    <div class="badge"
+                        style="background: rgba(255, 215, 0, 0.1); color: #ffd700; border-color: rgba(255, 215, 0, 0.2);">
+                        <i class="fas fa-crown"></i>
+                        <span>Premium Exclusive</span>
+                    </div>
+                    <h2>Go Beyond Limits.</h2>
+                    <p>Unlock the full potential of Reminders with our Premium plan, designed for power users who want
+                        absolute control.</p>
+                    <ul class="premium-list">
+                        <li><i class="fas fa-check-circle"></i> <strong>Unlimited Everything:</strong> Create infinite
+                            tasks and lists.</li>
+                        <li><i class="fas fa-music"></i> <strong>Custom Sounds:</strong> Upload your favorite MP3 files
+                            for notification sounds.</li>
+                        <li><i class="fas fa-palette"></i> <strong>Infinite Custom Colors:</strong> Access the full HEX
+                            color picker for lists and themes.</li>
+                        <li><i class="fas fa-gem"></i> <strong>Premium Support:</strong> Priority assistance for any
+                            help you may need.</li>
+                    </ul>
+                    <a href="https://anuis.lemonsqueezy.com/checkout/buy/832ff7fd-00d7-45c9-a46d-68d097b9fe9b"
+                        class="btn-primary">
+                        Upgrade to Premium
+                    </a>
+                </div>
+                <div class="premium-image">
+                    <div class="premium-gallery-item">
+                        <i class="fas fa-infinity"></i>
+                        Unlimited Reminders
+                    </div>
+                    <div class="premium-gallery-item" style="transform: translateY(20px);">
+                        <i class="fas fa-file-audio"></i>
+                        Custom MP3 Sounds
+                    </div>
+                    <div class="premium-gallery-item">
+                        <i class="fas fa-swatchbook"></i>
+                        Hex Color Picker
+                    </div>
+                    <div class="premium-gallery-item" style="transform: translateY(20px);">
+                        <i class="fas fa-star-half-stroke"></i>
+                        Premium Features
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="container">
+        <div class="footer-content">
+            <div class="footer-info">
+                <a href="#" class="logo">
+                    <i class="fas fa-bell"></i>
+                    Reminders<span>.</span>
+                </a>
+                <p>The most elegant way to stay organized on the web. Built with love for the Chrome community.</p>
+            </div>
+            <div class="footer-links">
+                <div class="footer-col">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#premium">Premium</a></li>
+                        <li><a
+                                href="https://chromewebstore.google.com/detail/apbmibchnilnanhnaphgoojbjinkkabi">Download</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="mailto:nuinguyen01bv@gmail.com">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Reminders Extension. All rights reserved.</p>
+            <div class="social-links">
+                <a href="#" style="margin-left: 20px; color: var(--text-sec);"><i class="fab fa-twitter"></i></a>
+                <a href="#" style="margin-left: 20px; color: var(--text-sec);"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
