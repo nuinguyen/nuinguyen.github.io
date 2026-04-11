@@ -4,52 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="google-site-verification" content="Vrw7OPNliNr6Azu5WZKaImEuL8JjeZfeWrkTSvuzTV0" />
-    <title>Alarm & Reminders - Smart Alarm Clock & Task Manager for Chrome</title>
-    <meta name="description" content="The most elegant Alarm Clock and Task Manager for Google Chrome. iOS-inspired interface with background alerts, custom lists, and rich notifications. One extension, two powerful modes.">
+    <title>Alarm & Reminders - Smart Suite for Chrome</title>
+    <meta name="description" content="Choose your productivity mode. Explore our Smart Alarm Clock or Premium Task Manager for Google Chrome.">
     <link rel="canonical" href="https://alarm-reminder.com/" />
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://alarm-reminder.com/">
-    <meta property="og:title" content="Alarm & Reminders - Ultimate Productivity Suite for Chrome">
-    <meta property="og:description" content="Experience a seamless transition between a professional alarm clock and a sophisticated task manager. Built for focus and productivity.">
-    <meta property="og:image" content="https://alarm-reminder.com/suite-hero.png">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://alarm-reminder.com/">
-    <meta property="twitter:title" content="Alarm & Reminders - Ultimate Productivity Suite for Chrome">
-    <meta property="twitter:description" content="One extension, double power. The best way to stay organized and never miss a beat in Google Chrome.">
-    <meta property="twitter:image" content="https://alarm-reminder.com/suite-hero.png">
-
-    <!-- Schema.org JSON-LD -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "Alarm & Reminders",
-      "operatingSystem": "ChromeOS, Windows, macOS, Linux",
-      "applicationCategory": "UtilitiesApplication, ProductivityApplication",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.9",
-        "ratingCount": "2100"
-      },
-      "description": "A dual-mode productivity extension for Chrome featuring a high-performance Alarm Clock and an iOS-inspired Reminder system. Supports background alerts, custom MP3 sounds, and modular task lists."
-    }
-    </script>
-    
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
+<body style="min-height: 100vh; display: flex; flex-direction: column;">
 
-    <!-- Floating Background -->
     <div class="bg-blobs">
         <div class="blob blob-1"></div>
         <div class="blob blob-2"></div>
@@ -62,106 +25,55 @@
                 <i class="fas fa-clock"></i>
                 Alarm & Reminders<span>.</span>
             </a>
-            <a href="https://chromewebstore.google.com/detail/apbmibchnilnanhnaphgoojbjinkkabi" class="btn-nav">Add to Chrome</a>
+            <a href="https://chromewebstore.google.com/detail/apbmibchnilnanhnaphgoojbjinkkabi" class="btn-nav">Install</a>
         </div>
     </nav>
 
-    <!-- Hero -->
-    <section class="hero">
-        <div class="hero-bg-glow"></div>
+    <!-- Lean Hub Content -->
+    <main style="flex: 1; display: flex; align-items: center; padding: 120px 0 60px;">
         <div class="container">
-            <div class="hero-content">
-                <div class="badge">
+            <div class="section-title" style="margin-bottom: 40px; text-align: center;">
+                <div class="badge" style="margin-bottom: 16px;">
                     <i class="fas fa-rocket"></i>
-                    <span>One Extension, Double Power</span>
+                    <span>Dynamic Productivity Suite</span>
                 </div>
-                <h1>Choose Your <br>Workflow Mode.</h1>
-                <p>Reminders is built as a modular suite. Whether you need a simple alarm clock or a powerful task manager, we have you covered.</p>
-                <div class="hero-btns">
-                    <a href="https://chromewebstore.google.com/detail/apbmibchnilnanhnaphgoojbjinkkabi" class="btn-primary">
-                        <i class="fab fa-chrome"></i>
-                        Install Extension
-                    </a>
-                </div>
+                <h1 style="font-size: 3.5rem; margin-bottom: 12px;">Choose Your Mode.</h1>
+                <p style="max-width: 500px; margin: 0 auto;">One powerful extension with two specialized interfaces. Select a mode to explore features.</p>
             </div>
-            <div class="hero-image">
-                <img src="suite-hero.png" alt="Alarm & Reminders Suite Preview">
-            </div>
-        </div>
-    </section>
-
-    <!-- Portal Section -->
-    <section class="container" style="padding-top: 0;">
-        <div class="section-title">
-            <h2>Two Worlds, One App.</h2>
-            <p>Select a mode to learn more about how we help you stay productive.</p>
-        </div>
-        
-        <div class="portal-grid">
-            <!-- Alarm Clock Link -->
-            <a href="alarm.html" class="portal-card">
-                <div class="portal-icon">
-                    <i class="fas fa-hourglass-half"></i>
-                </div>
-                <h2>Smart Alarm Clock</h2>
-                <p>Perfect for quick timers, repeating alarms, and time-boxing your browser sessions.</p>
-                <div class="btn-portal">Explore Alarm Mode</div>
-            </a>
-
-            <!-- Reminders Link -->
-            <a href="reminders.html" class="portal-card">
-                <div class="portal-icon">
-                    <i class="fas fa-check-double"></i>
-                </div>
-                <h2>Premium Task Manager</h2>
-                <p>The ultimate iOS-style reminder system for organizing long-term goals and custom lists.</p>
-                <div class="btn-portal">Explore Reminder Mode</div>
-            </a>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="container">
-        <div class="footer-content">
-            <div class="footer-info">
-                <a href="#" class="logo">
-                    <i class="fas fa-clock"></i>
-                    Reminders<span>.</span>
+            
+            <div class="portal-grid">
+                <!-- Alarm Mode -->
+                <a href="alarm.html" class="portal-card">
+                    <div class="portal-icon">
+                        <i class="fas fa-hourglass-half"></i>
+                    </div>
+                    <h2>Alarm Clock</h2>
+                    <p>Focused timers, repeating schedules, and background alerts.</p>
+                    <div class="btn-portal">Explore Alarm</div>
                 </a>
-                <p>Elevating productivity through elegant design. One extension, unlimited possibilities.</p>
-                <div style="display: flex; gap: 16px; margin-top: 24px;">
-                    <a href="#" style="color: var(--text-sec); font-size: 1.25rem;"><i class="fab fa-chrome"></i></a>
-                    <a href="#" style="color: var(--text-sec); font-size: 1.25rem;"><i class="fab fa-twitter"></i></a>
-                    <a href="#" style="color: var(--text-sec); font-size: 1.25rem;"><i class="fab fa-github"></i></a>
-                </div>
-            </div>
-            <div class="footer-links">
-                <div class="footer-col">
-                    <h4>Suite</h4>
-                    <ul>
-                        <li><a href="alarm.html">Alarm Mode</a></li>
-                        <li><a href="reminders.html">Reminder Mode</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Legal</h4>
-                    <ul>
-                        <li><a href="privacy.html">Privacy Policy</a></li>
-                        <li><a href="terms.html">Terms of Service</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Support</h4>
-                    <ul>
-                        <li><a href="mailto:nuinguyen01bv@gmail.com">Contact Email</a></li>
-                        <li><a href="#">Help Center</a></li>
-                    </ul>
-                </div>
+
+                <!-- Reminders Mode -->
+                <a href="reminders.html" class="portal-card">
+                    <div class="portal-icon">
+                        <i class="fas fa-check-double"></i>
+                    </div>
+                    <h2>Reminders</h2>
+                    <p>Sophisticated task management, custom lists, and iOS-style planning.</p>
+                    <div class="btn-portal">Explore Reminders</div>
+                </a>
             </div>
         </div>
+    </main>
+
+    <!-- Minimal Footer -->
+    <footer class="container" style="padding: 40px 0; border-top: 1px solid var(--border);">
         <div class="footer-bottom">
-            <p>&copy; 2026 Reminders Extension Hub. All rights reserved.</p>
-            <p>Designed with <i class="fas fa-heart" style="color: var(--accent-red);"></i> for Chrome users.</p>
+            <p>&copy; 2026 Alarm & Reminders.</p>
+            <div style="display: flex; gap: 24px;">
+                <a href="privacy.html">Privacy</a>
+                <a href="terms.html">Terms</a>
+                <a href="mailto:nuinguyen01bv@gmail.com">Contact</a>
+            </div>
         </div>
     </footer>
 
