@@ -530,9 +530,9 @@ footer {
 /* --- Portal Styles --- */
 .portal-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 24px;
-    max-width: 1000px;
+    max-width: 1400px;
     margin: 40px auto;
 }
 
@@ -545,11 +545,13 @@ footer {
     transition: var(--transition);
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     align-items: center;
     text-align: center;
     position: relative;
     overflow: hidden;
     backdrop-filter: blur(10px);
+    height: 100%;
 }
 
 .portal-card::before {
@@ -618,6 +620,10 @@ footer {
     border: 1px solid var(--border);
     z-index: 1;
     transition: var(--transition);
+    display: inline-flex;
+    justify-content: center;
+    width: 220px;
+    text-align: center;
 }
 
 .portal-card:hover .btn-portal {
