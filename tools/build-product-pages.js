@@ -67,7 +67,7 @@ const COMMON = {
   getStarted: { en: 'Get started', vi: 'Bắt đầu ngay' },
   upgrade: { en: 'Upgrade to Premium', vi: 'Nâng cấp Premium' },
   faqTitle: { en: 'Frequently asked questions', vi: 'Câu hỏi thường gặp' },
-  moreTitle: { en: 'More from Smart Suite', vi: 'Các tiện ích khác của Smart Suite' },
+  moreTitle: { en: 'More from NAN Smart', vi: 'Các tiện ích khác của NAN Smart' },
   learnMore: { en: 'Learn more', vi: 'Tìm hiểu thêm' },
   helpTag: { en: 'Support', vi: 'Hỗ trợ' },
   helpTitle: { en: 'Questions or feedback?', vi: 'Bạn có câu hỏi hoặc góp ý?' },
@@ -355,12 +355,12 @@ function buildPage(p) {
         image: SITE + p.images[0][0],
         description: p.seoDesc,
         offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
-        publisher: { '@type': 'Organization', name: 'Smart Suite Team', url: SITE }
+        publisher: { '@type': 'Organization', name: 'NAN Smart Team', url: SITE }
       },
       {
         '@type': 'BreadcrumbList',
         itemListElement: [
-          { '@type': 'ListItem', position: 1, name: 'Smart Suite', item: SITE },
+          { '@type': 'ListItem', position: 1, name: 'NAN Smart', item: SITE },
           { '@type': 'ListItem', position: 2, name: p.name, item: url }
         ]
       },
@@ -430,7 +430,7 @@ ${pr.tiers.map(t => `            <div class="relative bg-white dark:bg-slate-900
   <link rel="canonical" href="${url}">
 
   <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Smart Suite">
+  <meta property="og:site_name" content="NAN Smart">
   <meta property="og:url" content="${url}">
   <meta property="og:title" content="${esc(p.seoTitle)}">
   <meta property="og:description" content="${esc(p.seoDesc)}">
@@ -469,9 +469,9 @@ ${JSON.stringify(ld, null, 2)}
   <header class="sticky top-0 z-40 w-full glass border-b border-slate-200/80 dark:border-slate-800/60">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between gap-3">
       <a href="index.html" class="flex items-center gap-3 group shrink-0">
-        <img src="images/logo-mark.png" width="480" height="105" alt="Smart Suite logo" class="h-6 sm:h-7 w-auto dark:invert group-hover:scale-105 transition-transform">
+        <img src="images/logo-mark.png" width="480" height="105" alt="NAN Smart logo" class="h-6 sm:h-7 w-auto dark:invert group-hover:scale-105 transition-transform">
         <div class="hidden sm:block">
-          <span class="text-xl font-extrabold tracking-tight bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:via-indigo-300 dark:to-purple-400 bg-clip-text text-transparent">Smart Suite</span>
+          <span class="text-xl font-extrabold tracking-tight bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:via-indigo-300 dark:to-purple-400 bg-clip-text text-transparent">NAN Smart</span>
           <span class="block text-[10px] text-slate-500 dark:text-slate-400 font-medium tracking-wider uppercase -mt-1"${tx(C.tagline)}</span>
         </div>
       </a>
@@ -665,9 +665,9 @@ ${others.map(o => `        <a href="${o.file}" class="glass p-5 rounded-2xl bord
   <footer class="border-t border-slate-200 dark:border-slate-800/80 mt-12 py-10 bg-slate-100 dark:bg-slate-950/80 text-slate-500 dark:text-slate-400 text-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
       <a href="index.html" class="flex flex-wrap items-center justify-center gap-3">
-        <img src="images/logo-mark.png" width="480" height="105" alt="Smart Suite logo" class="h-5 w-auto dark:invert">
-        <span class="font-bold text-slate-800 dark:text-slate-200">Smart Suite</span>
-        <span class="text-xs">&copy; 2026 Smart Suite Team.</span>
+        <img src="images/logo-mark.png" width="480" height="105" alt="NAN Smart logo" class="h-5 w-auto dark:invert">
+        <span class="font-bold text-slate-800 dark:text-slate-200">NAN Smart</span>
+        <span class="text-xs">&copy; 2026 NAN Smart Team.</span>
       </a>
       <div class="flex items-center gap-6 text-xs sm:text-sm">
         <a href="privacy.html" class="hover:text-blue-500 transition-colors"${tx(C.privacy)}</a>
