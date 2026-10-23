@@ -334,10 +334,9 @@ const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(
 
 function buildPage(p) {
   const a = ACCENTS[p.accent];
-  const vi = {};
-  let n = 0;
   // Returns ` data-i18n="kN">English` — use as <tag class="..."${tx(obj)}</tag>
-  const tx = o => { const k = 'k' + (++n); vi[k] = o.vi; return ` data-i18n="${k}">${esc(o.en)}`; };
+  // Marks translatable text; lang.js looks the English text up in i18n/<lang>.json at runtime.
+  const tx = o => { STRINGS[o.en] = o.vi; return ` data-i18n>${esc(o.en)}`; };
   const C = COMMON;
   const slug = p.file.replace('.html', ''); // GitHub Pages serves /alarm for alarm.html
   const url = SITE + slug;
@@ -490,11 +489,10 @@ ${JSON.stringify(ld, null, 2)}
       </nav>
 
       <div class="flex items-center gap-2 sm:gap-3">
-        <button onclick="toggleLanguage()" aria-label="Switch language"
-          class="p-2 rounded-lg bg-slate-200/80 dark:bg-slate-900/60 border border-slate-300 dark:border-slate-700 text-xs font-semibold flex items-center gap-1.5 hover:border-slate-400 transition-colors">
-          <i class="fa-solid fa-globe text-slate-500 dark:text-slate-400"></i>
-          <span id="langText">VI</span>
-        </button>
+        <label class="relative flex items-center">
+          <i class="fa-solid fa-globe text-xs text-slate-500 dark:text-slate-400 absolute left-2.5 pointer-events-none"></i>
+          <select class="lang-select appearance-none pl-7 pr-2 py-2 max-w-[8.5rem] rounded-lg bg-slate-200/80 dark:bg-slate-900/60 dark:[color-scheme:dark] border border-slate-300 dark:border-slate-700 text-xs font-semibold cursor-pointer hover:border-slate-400 transition-colors" aria-label="Language"></select>
+        </label>
         <button onclick="toggleTheme()" aria-label="Toggle dark mode"
           class="p-2.5 rounded-lg bg-slate-200/80 dark:bg-slate-900/60 border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors">
           <span class="dark:hidden"><i class="fa-solid fa-moon"></i></span>
@@ -715,8 +713,9 @@ ${others.map(o => `        <a href="${o.file.replace('.html', '')}" class="glass
   </div>
 
   <script>
-    window.PAGE = ${JSON.stringify({ title: p.name, ring: a.sel, images: p.images.map(i => i[0]), vi })};
+    window.PAGE = ${JSON.stringify({ title: p.name, ring: a.sel, images: p.images.map(i => i[0]) })};
   </script>
+  <script src="lang.js"></script>
   <script src="product.js"></script>
 </body>
 
@@ -724,8 +723,12 @@ ${others.map(o => `        <a href="${o.file.replace('.html', '')}" class="glass
 `;
 }
 
+// English -> Vietnamese pairs collected while building; tools/build-i18n.js turns them into i18n/*.json
+const STRINGS = {};
 const root = path.join(__dirname, '..');
 for (const p of PRODUCTS) {
   fs.writeFileSync(path.join(root, p.file), buildPage(p));
   console.log('wrote', p.file);
 }
+fs.writeFileSync(path.join(__dirname, 'strings-products.json'), JSON.stringify(STRINGS, null, 2));
+console.log('wrote tools/strings-products.json', Object.keys(STRINGS).length, 'strings');

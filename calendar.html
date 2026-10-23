@@ -139,24 +139,23 @@
         </div>
         <div class="hidden sm:block">
           <span class="text-xl font-extrabold tracking-tight text-slate-900 dark:text-white">NAN Smart</span>
-          <span class="block text-[10px] text-slate-500 dark:text-slate-400 font-medium tracking-wider uppercase -mt-1" data-i18n="k24">Chrome Extensions</span>
+          <span class="block text-[10px] text-slate-500 dark:text-slate-400 font-medium tracking-wider uppercase -mt-1" data-i18n>Chrome Extensions</span>
         </div>
       </a>
 
       <nav class="hidden lg:flex whitespace-nowrap items-center gap-7 font-medium text-sm text-slate-600 dark:text-slate-300">
-        <a href="#features" class="hover:text-slate-900 dark:hover:text-white transition-colors" data-i18n="k25">Features</a>
-        <a href="#screenshots" class="hover:text-slate-900 dark:hover:text-white transition-colors" data-i18n="k26">Screenshots</a>
-        <a href="#pricing" class="hover:text-slate-900 dark:hover:text-white transition-colors" data-i18n="k27">Pricing</a>
-        <a href="#faq" class="hover:text-slate-900 dark:hover:text-white transition-colors" data-i18n="k28">FAQ</a>
-        <a href="./#extensions" class="hover:text-slate-900 dark:hover:text-white transition-colors" data-i18n="k29">All extensions</a>
+        <a href="#features" class="hover:text-slate-900 dark:hover:text-white transition-colors" data-i18n>Features</a>
+        <a href="#screenshots" class="hover:text-slate-900 dark:hover:text-white transition-colors" data-i18n>Screenshots</a>
+        <a href="#pricing" class="hover:text-slate-900 dark:hover:text-white transition-colors" data-i18n>Pricing</a>
+        <a href="#faq" class="hover:text-slate-900 dark:hover:text-white transition-colors" data-i18n>FAQ</a>
+        <a href="./#extensions" class="hover:text-slate-900 dark:hover:text-white transition-colors" data-i18n>All extensions</a>
       </nav>
 
       <div class="flex items-center gap-2 sm:gap-3">
-        <button onclick="toggleLanguage()" aria-label="Switch language"
-          class="p-2 rounded-lg bg-slate-200/80 dark:bg-slate-900/60 border border-slate-300 dark:border-slate-700 text-xs font-semibold flex items-center gap-1.5 hover:border-slate-400 transition-colors">
-          <i class="fa-solid fa-globe text-slate-500 dark:text-slate-400"></i>
-          <span id="langText">VI</span>
-        </button>
+        <label class="relative flex items-center">
+          <i class="fa-solid fa-globe text-xs text-slate-500 dark:text-slate-400 absolute left-2.5 pointer-events-none"></i>
+          <select class="lang-select appearance-none pl-7 pr-2 py-2 max-w-[8.5rem] rounded-lg bg-slate-200/80 dark:bg-slate-900/60 dark:[color-scheme:dark] border border-slate-300 dark:border-slate-700 text-xs font-semibold cursor-pointer hover:border-slate-400 transition-colors" aria-label="Language"></select>
+        </label>
         <button onclick="toggleTheme()" aria-label="Toggle dark mode"
           class="p-2.5 rounded-lg bg-slate-200/80 dark:bg-slate-900/60 border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors">
           <span class="dark:hidden"><i class="fa-solid fa-moon"></i></span>
@@ -167,16 +166,16 @@
           <i class="fa-solid fa-bars"></i>
         </button>
         <a href="https://chromewebstore.google.com/detail/multi-calendar-%E2%80%94-lunar-hi/jelgahjncijhnkohohfdfhnadeohcdgk" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 text-xs font-bold bg-pink-500 hover:bg-pink-600 text-white shadow-pink-500/25 rounded-lg shadow-md transition-all hover:scale-105">
-          <i class="fa-brands fa-chrome"></i><span data-i18n="k30">Add to Chrome</span>
+          <i class="fa-brands fa-chrome"></i><span data-i18n>Add to Chrome</span>
         </a>
       </div>
     </div>
     <nav id="mobileMenu" class="hidden lg:hidden flex-col max-w-7xl mx-auto px-4 sm:px-6 pb-3 font-medium text-sm text-slate-600 dark:text-slate-300 border-t border-slate-200/80 dark:border-slate-800/60">
-        <a href="#features" class="py-2.5 hover:text-slate-900 dark:hover:text-white" data-i18n="k31">Features</a>
-        <a href="#screenshots" class="py-2.5 hover:text-slate-900 dark:hover:text-white" data-i18n="k32">Screenshots</a>
-        <a href="#pricing" class="py-2.5 hover:text-slate-900 dark:hover:text-white" data-i18n="k33">Pricing</a>
-        <a href="#faq" class="py-2.5 hover:text-slate-900 dark:hover:text-white" data-i18n="k34">FAQ</a>
-        <a href="./#extensions" class="py-2.5 hover:text-slate-900 dark:hover:text-white" data-i18n="k35">All extensions</a>
+        <a href="#features" class="py-2.5 hover:text-slate-900 dark:hover:text-white" data-i18n>Features</a>
+        <a href="#screenshots" class="py-2.5 hover:text-slate-900 dark:hover:text-white" data-i18n>Screenshots</a>
+        <a href="#pricing" class="py-2.5 hover:text-slate-900 dark:hover:text-white" data-i18n>Pricing</a>
+        <a href="#faq" class="py-2.5 hover:text-slate-900 dark:hover:text-white" data-i18n>FAQ</a>
+        <a href="./#extensions" class="py-2.5 hover:text-slate-900 dark:hover:text-white" data-i18n>All extensions</a>
       </nav>
   </header>
 
@@ -184,7 +183,7 @@
     <!-- HERO -->
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-16 md:pb-24">
       <nav aria-label="Breadcrumb" class="text-xs text-slate-500 dark:text-slate-400 mb-8 md:mb-12">
-        <a href="./" class="hover:text-slate-900 dark:hover:text-white" data-i18n="k36">Home</a>
+        <a href="./" class="hover:text-slate-900 dark:hover:text-white" data-i18n>Home</a>
         <i class="fa-solid fa-chevron-right text-[9px] mx-2"></i>
         <span class="text-slate-700 dark:text-slate-300">Multi Calendar — Lunar &amp; Hijri</span>
       </nav>
@@ -195,19 +194,19 @@
             <div class="w-12 h-12 p-2 rounded-xl bg-white dark:bg-slate-800 ring-1 ring-slate-200 dark:ring-slate-700 shadow-sm flex items-center justify-center shrink-0">
               <img src="images/icon-calendar.png" alt="" class="w-full h-full object-contain">
             </div>
-            <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-pink-500/10 text-pink-500 text-xs font-semibold" data-i18n="k37">Lunar, Hijri &amp; Jalali calendar for Chrome</span>
+            <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-pink-500/10 text-pink-500 text-xs font-semibold" data-i18n>Lunar, Hijri &amp; Jalali calendar for Chrome</span>
           </div>
           <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight mb-6">
-            <span data-i18n="k38">View every calendar,</span>
-            <span class="block text-pink-500 pb-1" data-i18n="k39">side by side.</span>
+            <span data-i18n>View every calendar,</span>
+            <span class="block text-pink-500 pb-1" data-i18n>side by side.</span>
           </h1>
-          <p class="text-base sm:text-lg text-slate-600 dark:text-slate-400 leading-relaxed mb-8 max-w-xl" data-i18n="k40">See the solar and lunar date at a glance, track birthdays and holidays with smart reminders, and count every day together with the anniversary counter.</p>
+          <p class="text-base sm:text-lg text-slate-600 dark:text-slate-400 leading-relaxed mb-8 max-w-xl" data-i18n>See the solar and lunar date at a glance, track birthdays and holidays with smart reminders, and count every day together with the anniversary counter.</p>
           <div class="flex flex-col sm:flex-row gap-3 sm:gap-4">
             <a href="https://chromewebstore.google.com/detail/multi-calendar-%E2%80%94-lunar-hi/jelgahjncijhnkohohfdfhnadeohcdgk" target="_blank" rel="noopener noreferrer" class="px-7 py-3.5 rounded-xl bg-pink-500 hover:bg-pink-600 text-white shadow-pink-500/25 font-semibold shadow-lg transition-all hover:scale-105 flex items-center justify-center gap-2">
-              <i class="fa-brands fa-chrome"></i><span data-i18n="k41">Add to Chrome</span>
+              <i class="fa-brands fa-chrome"></i><span data-i18n>Add to Chrome</span>
             </a>
             <a href="#pricing" class="px-7 py-3.5 rounded-xl glass hover:bg-slate-200/80 dark:hover:bg-slate-800/80 font-semibold border border-slate-300 dark:border-slate-700 transition-all flex items-center justify-center gap-2">
-              <i class="fa-solid fa-tag text-pink-500"></i><span data-i18n="k42">See pricing</span>
+              <i class="fa-solid fa-tag text-pink-500"></i><span data-i18n>See pricing</span>
             </a>
           </div>
         </div>
@@ -225,37 +224,37 @@
     <!-- FEATURES -->
     <section id="features" class="py-16 md:py-20 bg-slate-100/60 dark:bg-slate-900/40 border-y border-slate-200 dark:border-slate-800/80 scroll-mt-20">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl font-extrabold tracking-tight text-center mb-12" data-i18n="k43">Everything you need</h2>
+        <h2 class="text-3xl font-extrabold tracking-tight text-center mb-12" data-i18n>Everything you need</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <div class="glass p-7 rounded-2xl border border-slate-200 dark:border-slate-800 card-hover">
             <div class="w-12 h-12 rounded-xl bg-pink-500/10 text-pink-500 flex items-center justify-center text-xl mb-5"><i class="fa-solid fa-moon"></i></div>
-            <h3 class="text-lg font-bold mb-2" data-i18n="k44">Four calendar systems</h3>
-            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed" data-i18n="k45">Gregorian, Lunar (Vietnamese, Chinese, Korean, Japanese), Hijri and Jalali in one view.</p>
+            <h3 class="text-lg font-bold mb-2" data-i18n>Four calendar systems</h3>
+            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed" data-i18n>Gregorian, Lunar (Vietnamese, Chinese, Korean, Japanese), Hijri and Jalali in one view.</p>
           </div>
           <div class="glass p-7 rounded-2xl border border-slate-200 dark:border-slate-800 card-hover">
             <div class="w-12 h-12 rounded-xl bg-pink-500/10 text-pink-500 flex items-center justify-center text-xl mb-5"><i class="fa-solid fa-sun"></i></div>
-            <h3 class="text-lg font-bold mb-2" data-i18n="k46">Daily details</h3>
-            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed" data-i18n="k47">Day pillar, solar term and auspicious day info right on the home screen.</p>
+            <h3 class="text-lg font-bold mb-2" data-i18n>Daily details</h3>
+            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed" data-i18n>Day pillar, solar term and auspicious day info right on the home screen.</p>
           </div>
           <div class="glass p-7 rounded-2xl border border-slate-200 dark:border-slate-800 card-hover">
             <div class="w-12 h-12 rounded-xl bg-pink-500/10 text-pink-500 flex items-center justify-center text-xl mb-5"><i class="fa-solid fa-calendar-days"></i></div>
-            <h3 class="text-lg font-bold mb-2" data-i18n="k48">Month view</h3>
-            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed" data-i18n="k49">A clean month grid with the lunar date under every day and a Today button.</p>
+            <h3 class="text-lg font-bold mb-2" data-i18n>Month view</h3>
+            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed" data-i18n>A clean month grid with the lunar date under every day and a Today button.</p>
           </div>
           <div class="glass p-7 rounded-2xl border border-slate-200 dark:border-slate-800 card-hover">
             <div class="w-12 h-12 rounded-xl bg-pink-500/10 text-pink-500 flex items-center justify-center text-xl mb-5"><i class="fa-solid fa-bell"></i></div>
-            <h3 class="text-lg font-bold mb-2" data-i18n="k50">Events &amp; reminders</h3>
-            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed" data-i18n="k51">Birthdays, holidays and anniversaries — yearly or one-time — with smart notifications.</p>
+            <h3 class="text-lg font-bold mb-2" data-i18n>Events &amp; reminders</h3>
+            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed" data-i18n>Birthdays, holidays and anniversaries — yearly or one-time — with smart notifications.</p>
           </div>
           <div class="glass p-7 rounded-2xl border border-slate-200 dark:border-slate-800 card-hover">
             <div class="w-12 h-12 rounded-xl bg-pink-500/10 text-pink-500 flex items-center justify-center text-xl mb-5"><i class="fa-solid fa-heart"></i></div>
-            <h3 class="text-lg font-bold mb-2" data-i18n="k52">Anniversary counter</h3>
-            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed" data-i18n="k53">Count the days together with milestone badges, photos and names.</p>
+            <h3 class="text-lg font-bold mb-2" data-i18n>Anniversary counter</h3>
+            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed" data-i18n>Count the days together with milestone badges, photos and names.</p>
           </div>
           <div class="glass p-7 rounded-2xl border border-slate-200 dark:border-slate-800 card-hover">
             <div class="w-12 h-12 rounded-xl bg-pink-500/10 text-pink-500 flex items-center justify-center text-xl mb-5"><i class="fa-solid fa-globe"></i></div>
-            <h3 class="text-lg font-bold mb-2" data-i18n="k54">10+ languages &amp; themes</h3>
-            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed" data-i18n="k55">Use it in your language, in light or dark mode, with accent colors.</p>
+            <h3 class="text-lg font-bold mb-2" data-i18n>10+ languages &amp; themes</h3>
+            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed" data-i18n>Use it in your language, in light or dark mode, with accent colors.</p>
           </div>
         </div>
       </div>
@@ -263,22 +262,22 @@
 
     <!-- HOW IT WORKS -->
     <section class="py-16 md:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl font-extrabold tracking-tight text-center mb-12" data-i18n="k56">How it works</h2>
+      <h2 class="text-3xl font-extrabold tracking-tight text-center mb-12" data-i18n>How it works</h2>
       <ol class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <li class="relative glass p-7 rounded-2xl border border-slate-200 dark:border-slate-800">
           <span class="w-10 h-10 rounded-full bg-pink-500/10 text-pink-500 font-extrabold flex items-center justify-center mb-5 shadow-md">1</span>
-          <h3 class="text-lg font-bold mb-2" data-i18n="k57">Open from the toolbar</h3>
-          <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed" data-i18n="k58">See today’s date in every calendar, plus day pillar and solar term.</p>
+          <h3 class="text-lg font-bold mb-2" data-i18n>Open from the toolbar</h3>
+          <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed" data-i18n>See today’s date in every calendar, plus day pillar and solar term.</p>
         </li>
         <li class="relative glass p-7 rounded-2xl border border-slate-200 dark:border-slate-800">
           <span class="w-10 h-10 rounded-full bg-pink-500/10 text-pink-500 font-extrabold flex items-center justify-center mb-5 shadow-md">2</span>
-          <h3 class="text-lg font-bold mb-2" data-i18n="k59">Add your dates</h3>
-          <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed" data-i18n="k60">Add birthdays, holidays and anniversaries as yearly or one-time events.</p>
+          <h3 class="text-lg font-bold mb-2" data-i18n>Add your dates</h3>
+          <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed" data-i18n>Add birthdays, holidays and anniversaries as yearly or one-time events.</p>
         </li>
         <li class="relative glass p-7 rounded-2xl border border-slate-200 dark:border-slate-800">
           <span class="w-10 h-10 rounded-full bg-pink-500/10 text-pink-500 font-extrabold flex items-center justify-center mb-5 shadow-md">3</span>
-          <h3 class="text-lg font-bold mb-2" data-i18n="k61">Make it yours</h3>
-          <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed" data-i18n="k62">Pick your language, secondary calendar and theme in Settings.</p>
+          <h3 class="text-lg font-bold mb-2" data-i18n>Make it yours</h3>
+          <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed" data-i18n>Pick your language, secondary calendar and theme in Settings.</p>
         </li>
       </ol>
     </section>
@@ -286,39 +285,39 @@
     <!-- SCREENSHOTS -->
     <section id="screenshots" class="py-16 md:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-20">
       <div class="text-center mb-10">
-        <h2 class="text-3xl font-extrabold tracking-tight" data-i18n="k63">Screenshots</h2>
-        <p class="text-slate-600 dark:text-slate-400 mt-3" data-i18n="k64">Click any image to view it full size.</p>
+        <h2 class="text-3xl font-extrabold tracking-tight" data-i18n>Screenshots</h2>
+        <p class="text-slate-600 dark:text-slate-400 mt-3" data-i18n>Click any image to view it full size.</p>
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         <figure>
           <button onclick="openLightbox(0)" class="group block w-full rounded-2xl overflow-hidden ring-1 ring-slate-200 dark:ring-slate-800 shadow-sm hover:shadow-xl transition-all">
             <img src="images/thumbs/calendar-hero.webp" width="640" height="400" alt="Multi Calendar home with Gregorian, Lunar, Hijri and Jalali dates" loading="lazy" class="w-full aspect-[16/10] object-cover group-hover:scale-105 transition-transform duration-500">
           </button>
-          <figcaption class="text-sm text-slate-600 dark:text-slate-400 mt-3 px-1" data-i18n="k65">Multi Calendar home with Gregorian, Lunar, Hijri and Jalali dates</figcaption>
+          <figcaption class="text-sm text-slate-600 dark:text-slate-400 mt-3 px-1" data-i18n>Multi Calendar home with Gregorian, Lunar, Hijri and Jalali dates</figcaption>
         </figure>
         <figure>
           <button onclick="openLightbox(1)" class="group block w-full rounded-2xl overflow-hidden ring-1 ring-slate-200 dark:ring-slate-800 shadow-sm hover:shadow-xl transition-all">
             <img src="images/thumbs/calendar-month.webp" width="640" height="400" alt="Month view with lunar dates under each day" loading="lazy" class="w-full aspect-[16/10] object-cover group-hover:scale-105 transition-transform duration-500">
           </button>
-          <figcaption class="text-sm text-slate-600 dark:text-slate-400 mt-3 px-1" data-i18n="k66">Month view with lunar dates under each day</figcaption>
+          <figcaption class="text-sm text-slate-600 dark:text-slate-400 mt-3 px-1" data-i18n>Month view with lunar dates under each day</figcaption>
         </figure>
         <figure>
           <button onclick="openLightbox(2)" class="group block w-full rounded-2xl overflow-hidden ring-1 ring-slate-200 dark:ring-slate-800 shadow-sm hover:shadow-xl transition-all">
             <img src="images/thumbs/calendar-events.webp" width="640" height="400" alt="Events list with yearly and one-time events" loading="lazy" class="w-full aspect-[16/10] object-cover group-hover:scale-105 transition-transform duration-500">
           </button>
-          <figcaption class="text-sm text-slate-600 dark:text-slate-400 mt-3 px-1" data-i18n="k67">Events list with yearly and one-time events</figcaption>
+          <figcaption class="text-sm text-slate-600 dark:text-slate-400 mt-3 px-1" data-i18n>Events list with yearly and one-time events</figcaption>
         </figure>
         <figure>
           <button onclick="openLightbox(3)" class="group block w-full rounded-2xl overflow-hidden ring-1 ring-slate-200 dark:ring-slate-800 shadow-sm hover:shadow-xl transition-all">
             <img src="images/thumbs/calendar-love.webp" width="640" height="400" alt="Anniversary counter with days together" loading="lazy" class="w-full aspect-[16/10] object-cover group-hover:scale-105 transition-transform duration-500">
           </button>
-          <figcaption class="text-sm text-slate-600 dark:text-slate-400 mt-3 px-1" data-i18n="k68">Anniversary counter with days together</figcaption>
+          <figcaption class="text-sm text-slate-600 dark:text-slate-400 mt-3 px-1" data-i18n>Anniversary counter with days together</figcaption>
         </figure>
         <figure>
           <button onclick="openLightbox(4)" class="group block w-full rounded-2xl overflow-hidden ring-1 ring-slate-200 dark:ring-slate-800 shadow-sm hover:shadow-xl transition-all">
             <img src="images/thumbs/calendar-settings.webp" width="640" height="400" alt="Settings: language, secondary calendar, theme and accent color" loading="lazy" class="w-full aspect-[16/10] object-cover group-hover:scale-105 transition-transform duration-500">
           </button>
-          <figcaption class="text-sm text-slate-600 dark:text-slate-400 mt-3 px-1" data-i18n="k69">Settings: language, secondary calendar, theme and accent color</figcaption>
+          <figcaption class="text-sm text-slate-600 dark:text-slate-400 mt-3 px-1" data-i18n>Settings: language, secondary calendar, theme and accent color</figcaption>
         </figure>
       </div>
     </section>
@@ -327,74 +326,74 @@
     <section id="pricing" class="py-16 md:py-20 bg-slate-100/60 dark:bg-slate-900/40 border-y border-slate-200 dark:border-slate-800/80 scroll-mt-20">
       <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
-          <h2 class="text-3xl font-extrabold tracking-tight" data-i18n="k70">Simple pricing</h2>
-          <p class="text-slate-600 dark:text-slate-400 mt-3" data-i18n="k71">Start free. Pay once for Premium — choose how many browsers you need.</p>
+          <h2 class="text-3xl font-extrabold tracking-tight" data-i18n>Simple pricing</h2>
+          <p class="text-slate-600 dark:text-slate-400 mt-3" data-i18n>Start free. Pay once for Premium — choose how many browsers you need.</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div class="bg-white dark:bg-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 flex flex-col">
-            <h3 class="text-sm font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400" data-i18n="k72">Free</h3>
+            <h3 class="text-sm font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400" data-i18n>Free</h3>
             <div class="mt-3 mb-6"><span class="text-5xl font-extrabold">$0</span></div>
             <ul class="space-y-3 text-sm flex-1 mb-8">
-              <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-slate-400 mt-1"></i><span data-i18n="k73">Gregorian, Lunar, Hijri &amp; Jalali calendars</span></li>
-              <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-slate-400 mt-1"></i><span data-i18n="k74">Up to 3 events</span></li>
-              <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-slate-400 mt-1"></i><span data-i18n="k75">Anniversary counter</span></li>
-              <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-slate-400 mt-1"></i><span data-i18n="k76">10+ languages, light &amp; dark mode</span></li>
+              <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-slate-400 mt-1"></i><span data-i18n>Gregorian, Lunar, Hijri &amp; Jalali calendars</span></li>
+              <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-slate-400 mt-1"></i><span data-i18n>Up to 3 events</span></li>
+              <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-slate-400 mt-1"></i><span data-i18n>Anniversary counter</span></li>
+              <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-slate-400 mt-1"></i><span data-i18n>10+ languages, light &amp; dark mode</span></li>
             </ul>
-            <a href="https://chromewebstore.google.com/detail/multi-calendar-%E2%80%94-lunar-hi/jelgahjncijhnkohohfdfhnadeohcdgk" target="_blank" rel="noopener noreferrer" class="w-full text-center py-3.5 rounded-xl font-semibold border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" data-i18n="k77">Get started</a>
+            <a href="https://chromewebstore.google.com/detail/multi-calendar-%E2%80%94-lunar-hi/jelgahjncijhnkohohfdfhnadeohcdgk" target="_blank" rel="noopener noreferrer" class="w-full text-center py-3.5 rounded-xl font-semibold border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" data-i18n>Get started</a>
           </div>
           <div class="relative bg-white dark:bg-slate-900 p-8 rounded-3xl border-2 border-pink-500/40 shadow-xl flex flex-col overflow-hidden">
             <div class="absolute inset-0 bg-gradient-to-br from-pink-500/10 to-transparent pointer-events-none"></div>
-            <span class="absolute top-5 right-5 text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-pink-500/10 text-pink-500" data-i18n="k78">Popular</span>
-            <h3 class="relative text-sm font-bold uppercase tracking-wider text-pink-500" data-i18n="k79">Premium</h3>
-            <div class="relative mt-3 mb-1 flex items-baseline gap-2"><span class="text-slate-500 dark:text-slate-400 font-medium" data-i18n="k1">from</span><span class="text-5xl font-extrabold">$12</span><span class="text-slate-500 dark:text-slate-400 font-medium" data-i18n="k2">once</span></div>
-            <p class="relative text-xs text-slate-500 dark:text-slate-400 mb-6" data-i18n="k3">One-time payment · Lifetime updates · No recurring fees</p>
+            <span class="absolute top-5 right-5 text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-pink-500/10 text-pink-500" data-i18n>Popular</span>
+            <h3 class="relative text-sm font-bold uppercase tracking-wider text-pink-500" data-i18n>Premium</h3>
+            <div class="relative mt-3 mb-1 flex items-baseline gap-2"><span class="text-slate-500 dark:text-slate-400 font-medium" data-i18n>from</span><span class="text-5xl font-extrabold">$12</span><span class="text-slate-500 dark:text-slate-400 font-medium" data-i18n>once</span></div>
+            <p class="relative text-xs text-slate-500 dark:text-slate-400 mb-6" data-i18n>One-time payment · Lifetime updates · No recurring fees</p>
             <ul class="relative space-y-3 text-sm flex-1 mb-8">
-              <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-pink-500 mt-1"></i><span data-i18n="k80">Unlimited events</span></li>
-              <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-pink-500 mt-1"></i><span data-i18n="k81">Lunar-date events &amp; advance reminders</span></li>
-              <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-pink-500 mt-1"></i><span data-i18n="k82">Automatic local holidays &amp; countdown on icon</span></li>
-              <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-pink-500 mt-1"></i><span data-i18n="k83">Custom anniversary milestones, background &amp; notifications</span></li>
-              <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-pink-500 mt-1"></i><span data-i18n="k84">Export to .ics and custom colors</span></li>
+              <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-pink-500 mt-1"></i><span data-i18n>Unlimited events</span></li>
+              <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-pink-500 mt-1"></i><span data-i18n>Lunar-date events &amp; advance reminders</span></li>
+              <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-pink-500 mt-1"></i><span data-i18n>Automatic local holidays &amp; countdown on icon</span></li>
+              <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-pink-500 mt-1"></i><span data-i18n>Custom anniversary milestones, background &amp; notifications</span></li>
+              <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-pink-500 mt-1"></i><span data-i18n>Export to .ics and custom colors</span></li>
             </ul>
-            <a href="#plans" class="relative w-full text-center py-3.5 rounded-xl font-bold bg-pink-500 hover:bg-pink-600 text-white shadow-pink-500/25 shadow-lg transition-all" data-i18n="k4">Upgrade to Premium</a>
+            <a href="#plans" class="relative w-full text-center py-3.5 rounded-xl font-bold bg-pink-500 hover:bg-pink-600 text-white shadow-pink-500/25 shadow-lg transition-all" data-i18n>Upgrade to Premium</a>
           </div>
         </div>
         <div id="plans" class="mt-12 scroll-mt-24">
           <div class="text-center mb-6">
-            <h3 class="text-xl font-extrabold" data-i18n="k5">Choose your license pack</h3>
-            <p class="text-sm text-slate-500 dark:text-slate-400 mt-1" data-i18n="k6">One license activates Premium on one browser.</p>
+            <h3 class="text-xl font-extrabold" data-i18n>Choose your license pack</h3>
+            <p class="text-sm text-slate-500 dark:text-slate-400 mt-1" data-i18n>One license activates Premium on one browser.</p>
           </div>
           <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
             <div class="relative bg-white dark:bg-slate-900 rounded-2xl p-5 text-center flex flex-col border border-slate-200 dark:border-slate-800">
               
               <div class="text-4xl font-extrabold">1</div>
-              <div class="text-xs text-slate-500 dark:text-slate-400 mb-3" data-i18n="k7">license</div>
-              <div class="text-2xl font-extrabold">$12 <span class="text-xs font-medium text-slate-500 dark:text-slate-400" data-i18n="k8">once</span></div>
-              <div class="text-xs text-slate-500 dark:text-slate-400 mt-1 mb-4">$12 <span data-i18n="k9">per license</span></div>
-              <a href="https://anuis.lemonsqueezy.com/checkout/buy/99915296-4708-4840-8d67-b7ae2dcd28af" target="_blank" rel="noopener noreferrer" class="mt-auto py-2.5 rounded-xl text-sm font-bold border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all" data-i18n="k10">Buy</a>
+              <div class="text-xs text-slate-500 dark:text-slate-400 mb-3" data-i18n>license</div>
+              <div class="text-2xl font-extrabold">$12 <span class="text-xs font-medium text-slate-500 dark:text-slate-400" data-i18n>once</span></div>
+              <div class="text-xs text-slate-500 dark:text-slate-400 mt-1 mb-4">$12 <span data-i18n>per license</span></div>
+              <a href="https://anuis.lemonsqueezy.com/checkout/buy/99915296-4708-4840-8d67-b7ae2dcd28af" target="_blank" rel="noopener noreferrer" class="mt-auto py-2.5 rounded-xl text-sm font-bold border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all" data-i18n>Buy</a>
             </div>
             <div class="relative bg-white dark:bg-slate-900 rounded-2xl p-5 text-center flex flex-col border border-slate-200 dark:border-slate-800">
               
               <div class="text-4xl font-extrabold">2</div>
-              <div class="text-xs text-slate-500 dark:text-slate-400 mb-3" data-i18n="k11">licenses</div>
-              <div class="text-2xl font-extrabold">$19 <span class="text-xs font-medium text-slate-500 dark:text-slate-400" data-i18n="k12">once</span></div>
-              <div class="text-xs text-slate-500 dark:text-slate-400 mt-1 mb-4">$9.50 <span data-i18n="k13">per license</span></div>
-              <a href="https://anuis.lemonsqueezy.com/checkout/buy/15996a20-6aec-47c6-92b1-9985bd83c3c4" target="_blank" rel="noopener noreferrer" class="mt-auto py-2.5 rounded-xl text-sm font-bold border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all" data-i18n="k14">Buy</a>
+              <div class="text-xs text-slate-500 dark:text-slate-400 mb-3" data-i18n>licenses</div>
+              <div class="text-2xl font-extrabold">$19 <span class="text-xs font-medium text-slate-500 dark:text-slate-400" data-i18n>once</span></div>
+              <div class="text-xs text-slate-500 dark:text-slate-400 mt-1 mb-4">$9.50 <span data-i18n>per license</span></div>
+              <a href="https://anuis.lemonsqueezy.com/checkout/buy/15996a20-6aec-47c6-92b1-9985bd83c3c4" target="_blank" rel="noopener noreferrer" class="mt-auto py-2.5 rounded-xl text-sm font-bold border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all" data-i18n>Buy</a>
             </div>
             <div class="relative bg-white dark:bg-slate-900 rounded-2xl p-5 text-center flex flex-col border-2 border-pink-500/40 shadow-lg">
-              <span class="absolute -top-3 left-1/2 -translate-x-1/2 whitespace-nowrap text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-pink-500 hover:bg-pink-600 text-white shadow-pink-500/25" data-i18n="k15">Best value</span>
+              <span class="absolute -top-3 left-1/2 -translate-x-1/2 whitespace-nowrap text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-pink-500 hover:bg-pink-600 text-white shadow-pink-500/25" data-i18n>Best value</span>
               <div class="text-4xl font-extrabold">3</div>
-              <div class="text-xs text-slate-500 dark:text-slate-400 mb-3" data-i18n="k16">licenses</div>
-              <div class="text-2xl font-extrabold">$25 <span class="text-xs font-medium text-slate-500 dark:text-slate-400" data-i18n="k17">once</span></div>
-              <div class="text-xs text-slate-500 dark:text-slate-400 mt-1 mb-4">$8.33 <span data-i18n="k18">per license</span></div>
-              <a href="https://anuis.lemonsqueezy.com/checkout/buy/552141ae-40d0-4c7c-81f0-11ab78e60d2b" target="_blank" rel="noopener noreferrer" class="mt-auto py-2.5 rounded-xl text-sm font-bold bg-pink-500 hover:bg-pink-600 text-white shadow-pink-500/25 shadow-md transition-all" data-i18n="k19">Buy</a>
+              <div class="text-xs text-slate-500 dark:text-slate-400 mb-3" data-i18n>licenses</div>
+              <div class="text-2xl font-extrabold">$25 <span class="text-xs font-medium text-slate-500 dark:text-slate-400" data-i18n>once</span></div>
+              <div class="text-xs text-slate-500 dark:text-slate-400 mt-1 mb-4">$8.33 <span data-i18n>per license</span></div>
+              <a href="https://anuis.lemonsqueezy.com/checkout/buy/552141ae-40d0-4c7c-81f0-11ab78e60d2b" target="_blank" rel="noopener noreferrer" class="mt-auto py-2.5 rounded-xl text-sm font-bold bg-pink-500 hover:bg-pink-600 text-white shadow-pink-500/25 shadow-md transition-all" data-i18n>Buy</a>
             </div>
             <div class="relative bg-white dark:bg-slate-900 rounded-2xl p-5 text-center flex flex-col border border-slate-200 dark:border-slate-800">
               
               <div class="text-4xl font-extrabold">5</div>
-              <div class="text-xs text-slate-500 dark:text-slate-400 mb-3" data-i18n="k20">licenses</div>
-              <div class="text-2xl font-extrabold">$35 <span class="text-xs font-medium text-slate-500 dark:text-slate-400" data-i18n="k21">once</span></div>
-              <div class="text-xs text-slate-500 dark:text-slate-400 mt-1 mb-4">$7 <span data-i18n="k22">per license</span></div>
-              <a href="https://anuis.lemonsqueezy.com/checkout/buy/85950d9c-e65c-431c-9e03-972f7ff2ec27" target="_blank" rel="noopener noreferrer" class="mt-auto py-2.5 rounded-xl text-sm font-bold border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all" data-i18n="k23">Buy</a>
+              <div class="text-xs text-slate-500 dark:text-slate-400 mb-3" data-i18n>licenses</div>
+              <div class="text-2xl font-extrabold">$35 <span class="text-xs font-medium text-slate-500 dark:text-slate-400" data-i18n>once</span></div>
+              <div class="text-xs text-slate-500 dark:text-slate-400 mt-1 mb-4">$7 <span data-i18n>per license</span></div>
+              <a href="https://anuis.lemonsqueezy.com/checkout/buy/85950d9c-e65c-431c-9e03-972f7ff2ec27" target="_blank" rel="noopener noreferrer" class="mt-auto py-2.5 rounded-xl text-sm font-bold border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all" data-i18n>Buy</a>
             </div>
           </div>
         </div>
@@ -403,42 +402,42 @@
 
     <!-- FAQ -->
     <section id="faq" class="py-16 md:py-20 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-20">
-      <h2 class="text-3xl font-extrabold tracking-tight text-center mb-10" data-i18n="k85">Frequently asked questions</h2>
+      <h2 class="text-3xl font-extrabold tracking-tight text-center mb-10" data-i18n>Frequently asked questions</h2>
       <div class="space-y-3">
         <details class="group glass rounded-2xl border border-slate-200 dark:border-slate-800 px-6 py-4">
           <summary class="flex items-center justify-between gap-4 cursor-pointer font-semibold">
-            <span data-i18n="k86">Which lunar calendars are supported?</span>
+            <span data-i18n>Which lunar calendars are supported?</span>
             <i class="faq-chevron fa-solid fa-chevron-down text-xs text-slate-400 transition-transform"></i>
           </summary>
-          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mt-3" data-i18n="k87">Vietnamese, Chinese, Korean and Japanese lunar calendars, plus Hijri (Islamic) and Jalali (Persian).</p>
+          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mt-3" data-i18n>Vietnamese, Chinese, Korean and Japanese lunar calendars, plus Hijri (Islamic) and Jalali (Persian).</p>
         </details>
         <details class="group glass rounded-2xl border border-slate-200 dark:border-slate-800 px-6 py-4">
           <summary class="flex items-center justify-between gap-4 cursor-pointer font-semibold">
-            <span data-i18n="k88">Can I get reminders for lunar dates?</span>
+            <span data-i18n>Can I get reminders for lunar dates?</span>
             <i class="faq-chevron fa-solid fa-chevron-down text-xs text-slate-400 transition-transform"></i>
           </summary>
-          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mt-3" data-i18n="k89">Yes, with Premium: add events on lunar dates and get advance reminders before they arrive. The free plan includes up to 3 events.</p>
+          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mt-3" data-i18n>Yes, with Premium: add events on lunar dates and get advance reminders before they arrive. The free plan includes up to 3 events.</p>
         </details>
         <details class="group glass rounded-2xl border border-slate-200 dark:border-slate-800 px-6 py-4">
           <summary class="flex items-center justify-between gap-4 cursor-pointer font-semibold">
-            <span data-i18n="k90">Can I export my events?</span>
+            <span data-i18n>Can I export my events?</span>
             <i class="faq-chevron fa-solid fa-chevron-down text-xs text-slate-400 transition-transform"></i>
           </summary>
-          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mt-3" data-i18n="k91">Yes, Premium lets you export events to an .ics file to back them up or import elsewhere.</p>
+          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mt-3" data-i18n>Yes, Premium lets you export events to an .ics file to back them up or import elsewhere.</p>
         </details>
         <details class="group glass rounded-2xl border border-slate-200 dark:border-slate-800 px-6 py-4">
           <summary class="flex items-center justify-between gap-4 cursor-pointer font-semibold">
-            <span data-i18n="k92">Which languages are available?</span>
+            <span data-i18n>Which languages are available?</span>
             <i class="faq-chevron fa-solid fa-chevron-down text-xs text-slate-400 transition-transform"></i>
           </summary>
-          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mt-3" data-i18n="k93">More than 10 languages, including English and Vietnamese.</p>
+          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mt-3" data-i18n>More than 10 languages, including English and Vietnamese.</p>
         </details>
       </div>
     </section>
 
     <!-- MORE EXTENSIONS -->
     <section class="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-2xl font-extrabold tracking-tight mb-6" data-i18n="k94">More from NAN Smart</h2>
+      <h2 class="text-2xl font-extrabold tracking-tight mb-6" data-i18n>More from NAN Smart</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
         <a href="alarm" class="glass p-5 rounded-2xl border border-slate-200 dark:border-slate-800 card-hover flex items-start gap-4">
           <div class="w-11 h-11 p-2 rounded-xl bg-white dark:bg-slate-800 ring-1 ring-slate-200 dark:ring-slate-700 shadow-sm flex items-center justify-center shrink-0">
@@ -446,7 +445,7 @@
           </div>
           <div>
             <h3 class="font-bold">Alarm Clock &amp; Reminders</h3>
-            <p class="text-sm text-slate-600 dark:text-slate-400 mt-1" data-i18n="k95">Repeating alarms, fullscreen ringing and snooze — right in your toolbar.</p>
+            <p class="text-sm text-slate-600 dark:text-slate-400 mt-1" data-i18n>Repeating alarms, fullscreen ringing and snooze — right in your toolbar.</p>
           </div>
         </a>
         <a href="reminders" class="glass p-5 rounded-2xl border border-slate-200 dark:border-slate-800 card-hover flex items-start gap-4">
@@ -455,7 +454,7 @@
           </div>
           <div>
             <h3 class="font-bold">Reminders &amp; To-Do List</h3>
-            <p class="text-sm text-slate-600 dark:text-slate-400 mt-1" data-i18n="k96">An iOS-style task manager with smart lists and on-time alerts.</p>
+            <p class="text-sm text-slate-600 dark:text-slate-400 mt-1" data-i18n>An iOS-style task manager with smart lists and on-time alerts.</p>
           </div>
         </a>
         <a href="youtube" class="glass p-5 rounded-2xl border border-slate-200 dark:border-slate-800 card-hover flex items-start gap-4">
@@ -464,7 +463,7 @@
           </div>
           <div>
             <h3 class="font-bold">Playlist Manager for YouTube</h3>
-            <p class="text-sm text-slate-600 dark:text-slate-400 mt-1" data-i18n="k97">Save videos in one click, play playlists in order and group your channels.</p>
+            <p class="text-sm text-slate-600 dark:text-slate-400 mt-1" data-i18n>Save videos in one click, play playlists in order and group your channels.</p>
           </div>
         </a>
       </div>
@@ -474,12 +473,12 @@
     <section class="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="glass rounded-3xl p-8 md:p-12 border border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/60 flex flex-col md:flex-row items-center justify-between gap-8">
         <div class="max-w-2xl">
-          <span class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400" data-i18n="k98">Support</span>
-          <h2 class="text-2xl md:text-3xl font-extrabold mt-2 mb-4" data-i18n="k99">Questions or feedback?</h2>
-          <p class="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed" data-i18n="k100">Found a bug or have an idea for a new feature? Send us an email — we read every message.</p>
+          <span class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400" data-i18n>Support</span>
+          <h2 class="text-2xl md:text-3xl font-extrabold mt-2 mb-4" data-i18n>Questions or feedback?</h2>
+          <p class="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed" data-i18n>Found a bug or have an idea for a new feature? Send us an email — we read every message.</p>
         </div>
         <a href="mailto:nuinguyen01bv@gmail.com" class="w-full md:w-auto px-6 py-3.5 rounded-xl bg-pink-500 hover:bg-pink-600 text-white shadow-pink-500/25 font-semibold text-sm shadow-sm text-center transition-all">
-          <i class="fa-solid fa-envelope mr-2"></i><span data-i18n="k101">Contact us</span>
+          <i class="fa-solid fa-envelope mr-2"></i><span data-i18n>Contact us</span>
         </a>
       </div>
     </section>
@@ -494,9 +493,9 @@
         <span class="text-xs">&copy; 2026 NAN Smart Team.</span>
       </a>
       <div class="flex items-center gap-6 text-xs sm:text-sm">
-        <a href="privacy" class="hover:text-slate-900 dark:hover:text-white transition-colors" data-i18n="k102">Privacy</a>
-        <a href="terms" class="hover:text-slate-900 dark:hover:text-white transition-colors" data-i18n="k103">Terms</a>
-        <a href="mailto:nuinguyen01bv@gmail.com" class="hover:text-slate-900 dark:hover:text-white transition-colors" data-i18n="k104">Contact</a>
+        <a href="privacy" class="hover:text-slate-900 dark:hover:text-white transition-colors" data-i18n>Privacy</a>
+        <a href="terms" class="hover:text-slate-900 dark:hover:text-white transition-colors" data-i18n>Terms</a>
+        <a href="mailto:nuinguyen01bv@gmail.com" class="hover:text-slate-900 dark:hover:text-white transition-colors" data-i18n>Contact</a>
       </div>
     </div>
   </footer>
@@ -523,8 +522,9 @@
   </div>
 
   <script>
-    window.PAGE = {"title":"Multi Calendar — Lunar & Hijri","ring":"ring-pink-500","images":["images/calendar-hero.webp","images/calendar-month.webp","images/calendar-events.webp","images/calendar-love.webp","images/calendar-settings.webp"],"vi":{"k1":"từ","k2":"một lần","k3":"Thanh toán một lần · Cập nhật trọn đời · Không phí định kỳ","k4":"Nâng cấp Premium","k5":"Chọn gói bản quyền","k6":"Mỗi bản quyền kích hoạt Premium trên một trình duyệt.","k7":"bản quyền","k8":"một lần","k9":"mỗi bản quyền","k10":"Mua","k11":"bản quyền","k12":"một lần","k13":"mỗi bản quyền","k14":"Mua","k15":"Đáng giá nhất","k16":"bản quyền","k17":"một lần","k18":"mỗi bản quyền","k19":"Mua","k20":"bản quyền","k21":"một lần","k22":"mỗi bản quyền","k23":"Mua","k24":"Tiện ích Chrome","k25":"Tính năng","k26":"Hình ảnh","k27":"Bảng giá","k28":"Hỏi đáp","k29":"Tất cả tiện ích","k30":"Thêm vào Chrome","k31":"Tính năng","k32":"Hình ảnh","k33":"Bảng giá","k34":"Hỏi đáp","k35":"Tất cả tiện ích","k36":"Trang chủ","k37":"Lịch Âm, Hijri & Jalali cho Chrome","k38":"Xem mọi loại lịch,","k39":"cùng một lúc.","k40":"Xem ngày dương và âm lịch trong nháy mắt, theo dõi sinh nhật, ngày lễ với nhắc nhở thông minh và đếm từng ngày bên nhau với bộ đếm ngày yêu.","k41":"Thêm vào Chrome","k42":"Xem bảng giá","k43":"Mọi thứ bạn cần","k44":"Bốn hệ lịch","k45":"Dương lịch, Âm lịch (Việt Nam, Trung Quốc, Hàn Quốc, Nhật Bản), Hijri và Jalali trong một màn hình.","k46":"Thông tin trong ngày","k47":"Can chi, tiết khí và ngày hoàng đạo ngay trên màn hình chính.","k48":"Lịch tháng","k49":"Lưới lịch tháng gọn gàng, có ngày âm dưới mỗi ngày và nút Hôm nay.","k50":"Sự kiện & nhắc nhở","k51":"Sinh nhật, ngày lễ, kỷ niệm — hằng năm hoặc một lần — kèm thông báo thông minh.","k52":"Đếm ngày yêu","k53":"Đếm số ngày bên nhau với huy hiệu cột mốc, ảnh và tên.","k54":"Hơn 10 ngôn ngữ & giao diện","k55":"Dùng bằng ngôn ngữ của bạn, giao diện sáng hoặc tối, kèm màu nhấn.","k56":"Cách hoạt động","k57":"Mở từ thanh công cụ","k58":"Xem ngày hôm nay trên mọi hệ lịch, kèm can chi và tiết khí.","k59":"Thêm ngày quan trọng","k60":"Thêm sinh nhật, ngày lễ, kỷ niệm dưới dạng sự kiện hằng năm hoặc một lần.","k61":"Tùy chỉnh theo ý bạn","k62":"Chọn ngôn ngữ, lịch phụ và giao diện trong Cài đặt.","k63":"Hình ảnh thực tế","k64":"Bấm vào ảnh để xem kích thước đầy đủ.","k65":"Trang chính Multi Calendar với ngày Dương, Âm, Hijri và Jalali","k66":"Lịch tháng có ngày âm dưới mỗi ngày","k67":"Danh sách sự kiện hằng năm và một lần","k68":"Bộ đếm ngày yêu với số ngày bên nhau","k69":"Cài đặt: ngôn ngữ, lịch phụ, giao diện và màu nhấn","k70":"Bảng giá đơn giản","k71":"Bắt đầu miễn phí. Trả một lần cho Premium — chọn số trình duyệt bạn cần.","k72":"Miễn phí","k73":"Lịch Dương, Âm, Hijri & Jalali","k74":"Tối đa 3 sự kiện","k75":"Đếm ngày yêu","k76":"Hơn 10 ngôn ngữ, giao diện sáng & tối","k77":"Bắt đầu ngay","k78":"Phổ biến","k79":"Premium","k80":"Không giới hạn sự kiện","k81":"Sự kiện theo ngày âm & nhắc trước","k82":"Tự động thêm ngày lễ & đếm ngược trên biểu tượng","k83":"Cột mốc ngày yêu, ảnh nền & thông báo tùy chỉnh","k84":"Xuất file .ics và màu tùy chỉnh","k85":"Câu hỏi thường gặp","k86":"Hỗ trợ những loại âm lịch nào?","k87":"Âm lịch Việt Nam, Trung Quốc, Hàn Quốc và Nhật Bản, cùng lịch Hijri (Hồi giáo) và Jalali (Ba Tư).","k88":"Có nhắc được theo ngày âm lịch không?","k89":"Có, với Premium: thêm sự kiện theo ngày âm và nhận nhắc trước khi đến ngày. Bản miễn phí cho tối đa 3 sự kiện.","k90":"Tôi có xuất được sự kiện không?","k91":"Có, Premium cho phép xuất sự kiện ra file .ics để sao lưu hoặc nhập vào ứng dụng khác.","k92":"Có những ngôn ngữ nào?","k93":"Hơn 10 ngôn ngữ, bao gồm tiếng Anh và tiếng Việt.","k94":"Các tiện ích khác của NAN Smart","k95":"Báo thức lặp lại, chuông toàn màn hình và báo lại — ngay trên thanh công cụ.","k96":"Quản lý công việc phong cách iOS với danh sách thông minh và nhắc đúng giờ.","k97":"Lưu video một chạm, phát playlist theo thứ tự và nhóm kênh đăng ký.","k98":"Hỗ trợ","k99":"Bạn có câu hỏi hoặc góp ý?","k100":"Gặp lỗi hoặc có ý tưởng tính năng mới? Hãy gửi email cho chúng tôi — mọi thư đều được đọc.","k101":"Liên hệ","k102":"Bảo mật","k103":"Điều khoản","k104":"Liên hệ"}};
+    window.PAGE = {"title":"Multi Calendar — Lunar & Hijri","ring":"ring-pink-500","images":["images/calendar-hero.webp","images/calendar-month.webp","images/calendar-events.webp","images/calendar-love.webp","images/calendar-settings.webp"]};
   </script>
+  <script src="lang.js"></script>
   <script src="product.js"></script>
 </body>
 

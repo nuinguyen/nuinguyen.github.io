@@ -1,29 +1,9 @@
 // Shared behaviour for the product pages (alarm, reminders, youtube, calendar).
-// Each page defines window.PAGE = { title, images: [...], vi: { key: text } }.
+// Each page defines window.PAGE = { title, ring, images: [...] }. Translation is handled by lang.js.
 (function () {
   const PAGE = window.PAGE;
-  const en = {};
-  let lang = 'en';
   let mainIndex = 0;
   let lightboxIndex = 0;
-
-  // LANGUAGE
-  function applyLanguage(next) {
-    lang = next;
-    document.documentElement.lang = lang;
-    document.getElementById('langText').innerText = lang === 'vi' ? 'EN' : 'VI';
-    document.querySelectorAll('[data-i18n]').forEach(el => {
-      const key = el.getAttribute('data-i18n');
-      const text = lang === 'vi' ? PAGE.vi[key] : en[key];
-      if (text) el.innerText = text;
-    });
-  }
-
-  window.toggleLanguage = function () {
-    const next = lang === 'vi' ? 'en' : 'vi';
-    try { localStorage.setItem('lang', next); } catch (e) { }
-    applyLanguage(next);
-  };
 
   // THEME
   window.toggleTheme = function () {
@@ -95,10 +75,5 @@
   });
 
   // INIT
-  document.querySelectorAll('[data-i18n]').forEach(el => { en[el.getAttribute('data-i18n')] = el.innerText; });
   renderThumbs();
-  let saved = null;
-  try { saved = localStorage.getItem('lang'); } catch (e) { }
-  const initial = saved || ((navigator.language || '').toLowerCase().startsWith('vi') ? 'vi' : 'en');
-  if (initial === 'vi') applyLanguage('vi');
 })();
