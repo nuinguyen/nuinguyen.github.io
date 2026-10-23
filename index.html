@@ -189,7 +189,7 @@
 
       <nav class="hidden md:flex items-center gap-8 font-medium text-sm text-slate-600 dark:text-slate-300">
         <a href="#extensions" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors" data-i18n="nav_all">Extensions</a>
-        <a href="#spotlight" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors" data-i18n="nav_spotlight">Screenshots</a>
+        <a href="#gallery" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors" data-i18n="nav_spotlight">Screenshots</a>
         <a href="#features" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors" data-i18n="nav_features">Why Smart Suite</a>
         <a href="#support" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors" data-i18n="nav_support">Support</a>
       </nav>
@@ -396,6 +396,16 @@
       </div>
     </section>
 
+    <!-- GALLERY -->
+    <section id="gallery" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-20">
+      <div class="text-center max-w-3xl mx-auto mb-8">
+        <h2 class="text-3xl font-extrabold tracking-tight" data-i18n="gal_title">Screenshot gallery</h2>
+        <p class="text-slate-600 dark:text-slate-400 mt-3 text-base" data-i18n="gal_subtitle">Browse every screen of each extension. Click an image to view it full size.</p>
+      </div>
+      <div id="galleryTabs" class="flex items-center justify-start sm:justify-center gap-2 overflow-x-auto pb-4 mb-6 scrollbar-none"></div>
+      <div id="galleryGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"></div>
+    </section>
+
     <!-- FEATURES -->
     <section id="features" class="py-20 bg-slate-100/60 dark:bg-slate-900/40 border-y border-slate-200 dark:border-slate-800/80 my-16 scroll-mt-20">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -459,6 +469,27 @@
     </div>
   </footer>
 
+  <!-- LIGHTBOX -->
+  <div id="lightbox" onclick="if (event.target === this) closeLightbox()" role="dialog" aria-modal="true" aria-label="Screenshot viewer"
+    class="fixed inset-0 z-[60] hidden items-center justify-center p-4 sm:p-10 bg-slate-950/90 backdrop-blur-sm">
+    <button onclick="closeLightbox()" aria-label="Close"
+      class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center">
+      <i class="fa-solid fa-xmark text-lg"></i>
+    </button>
+    <button onclick="stepLightbox(-1)" aria-label="Previous"
+      class="absolute left-2 sm:left-6 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center">
+      <i class="fa-solid fa-chevron-left"></i>
+    </button>
+    <figure class="max-w-6xl w-full">
+      <img id="lightboxImg" src="" alt="" class="w-full max-h-[80vh] object-contain rounded-xl shadow-2xl">
+      <figcaption id="lightboxCaption" class="text-center text-slate-300 text-sm mt-3"></figcaption>
+    </figure>
+    <button onclick="stepLightbox(1)" aria-label="Next"
+      class="absolute right-2 sm:right-6 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center">
+      <i class="fa-solid fa-chevron-right"></i>
+    </button>
+  </div>
+
   <!-- MODAL -->
   <div id="extensionModal" onclick="if (event.target === this) closeModal()" role="dialog" aria-modal="true" aria-labelledby="modalTitle"
     class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-slate-950/70 backdrop-blur-md">
@@ -510,7 +541,7 @@
         categoryName: { en: "Time & Alarms", vi: "Thời gian & Báo thức" },
         icon: "images/icon-alarm.png",
         bgGradient: "from-red-500 to-orange-500",
-        images: ["images/alarm-hero.jpg", "images/alarm-themes.jpg", "images/alarm-banner.jpg"],
+        images: ["images/alarm-hero.jpg", "images/alarm-themes.jpg", "images/alarm-colors.jpg", "images/alarm-setup.jpg", "images/alarm-banner.jpg"],
         shortDesc: {
           en: "Turn your browser into a powerful alarm clock: recurring alarms, fullscreen ringing alerts with snooze, light & dark modes.",
           vi: "Biến trình duyệt thành đồng hồ báo thức mạnh mẽ: báo thức lặp lại, chuông toàn màn hình kèm báo lại, giao diện sáng & tối."
@@ -529,7 +560,7 @@
         categoryName: { en: "Productivity", vi: "Năng suất" },
         icon: "images/icon-reminders.png",
         bgGradient: "from-blue-500 to-indigo-600",
-        images: ["images/reminders-hero.jpg", "images/reminders-themes.jpg", "images/reminders-3.jpg"],
+        images: ["images/reminders-hero.jpg", "images/reminders-themes.jpg", "images/reminders-3.jpg", "images/reminders-alert.jpg", "images/reminders-calendar.jpg"],
         shortDesc: {
           en: "Capture tasks fast, organize them into lists with priorities and flags, and get reminded right on time.",
           vi: "Ghi nhanh công việc, sắp xếp theo danh sách với mức ưu tiên và cờ, nhận nhắc nhở đúng giờ."
@@ -548,7 +579,7 @@
         categoryName: { en: "Media", vi: "Giải trí" },
         icon: "images/icon-youtube.png",
         bgGradient: "from-rose-500 to-red-600",
-        images: ["images/youtube-hero.jpg", "images/youtube-save.jpg", "images/youtube-playlists.jpg"],
+        images: ["images/youtube-save.jpg", "images/youtube-playlists.jpg", "images/youtube-playback.jpg", "images/youtube-channels.jpg", "images/youtube-tools.jpg"],
         shortDesc: {
           en: "Save any YouTube video in one click, play your playlists in order and sort subscriptions into groups.",
           vi: "Lưu mọi video YouTube chỉ một cú nhấp, phát playlist theo thứ tự và gom kênh đăng ký thành nhóm."
@@ -637,6 +668,8 @@
         sp_cal_f3: "Anniversary counter",
         sp_cal_f4: "10+ languages",
         sp_more: "Learn more",
+        gal_title: "Screenshot gallery",
+        gal_subtitle: "Browse every screen of each extension. Click an image to view it full size.",
         features_title: "Why people choose Smart Suite",
         features_subtitle: "Built on Google's Manifest V3 with performance, privacy and a polished experience at the core.",
         feat1_title: "Manifest V3 & secure",
@@ -714,6 +747,8 @@
         sp_cal_f3: "Đếm ngày yêu",
         sp_cal_f4: "Hơn 10 ngôn ngữ",
         sp_more: "Tìm hiểu thêm",
+        gal_title: "Thư viện ảnh",
+        gal_subtitle: "Xem mọi màn hình của từng tiện ích. Bấm vào ảnh để xem kích thước đầy đủ.",
         features_title: "Vì sao chọn Smart Suite",
         features_subtitle: "Xây dựng trên Manifest V3 của Google, ưu tiên hiệu năng, quyền riêng tư và trải nghiệm mượt mà.",
         feat1_title: "Manifest V3 & an toàn",
@@ -861,7 +896,66 @@
       document.body.style.overflow = '';
     }
 
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+    // GALLERY + LIGHTBOX
+    let galleryId = extensionsData[0].id;
+    let lightboxIndex = 0;
+
+    function galleryExt() {
+      return extensionsData.find(item => item.id === galleryId);
+    }
+
+    function renderGallery() {
+      document.getElementById('galleryTabs').innerHTML = extensionsData.map(ext => `
+        <button onclick="setGallery('${ext.id}')" class="${ext.id === galleryId ? CAT_ACTIVE : CAT_IDLE} flex items-center gap-2">
+          ${ext.icon ? `<img src="${ext.icon}" alt="" class="w-5 h-5 rounded">` : ''}
+          <span>${ext.title}</span>
+        </button>`).join('');
+
+      const ext = galleryExt();
+      document.getElementById('galleryGrid').innerHTML = ext.images.map((src, i) => `
+        <button onclick="openLightbox(${i})" class="group block rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all">
+          <img src="${src}" width="1280" height="800" alt="${ext.title} screenshot ${i + 1}" loading="lazy"
+            class="w-full aspect-[16/10] object-cover group-hover:scale-105 transition-transform duration-500">
+        </button>`).join('');
+    }
+
+    function setGallery(id) {
+      galleryId = id;
+      renderGallery();
+    }
+
+    function openLightbox(i) {
+      lightboxIndex = i;
+      stepLightbox(0);
+      const box = document.getElementById('lightbox');
+      box.classList.remove('hidden');
+      box.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function stepLightbox(delta) {
+      const ext = galleryExt();
+      const n = ext.images.length;
+      lightboxIndex = (lightboxIndex + delta + n) % n;
+      const img = document.getElementById('lightboxImg');
+      img.src = ext.images[lightboxIndex];
+      img.alt = `${ext.title} screenshot ${lightboxIndex + 1}`;
+      document.getElementById('lightboxCaption').innerText = `${ext.title} · ${lightboxIndex + 1} / ${n}`;
+    }
+
+    function closeLightbox() {
+      const box = document.getElementById('lightbox');
+      box.classList.add('hidden');
+      box.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+
+    document.addEventListener('keydown', e => {
+      const lightboxOpen = !document.getElementById('lightbox').classList.contains('hidden');
+      if (e.key === 'Escape') { lightboxOpen ? closeLightbox() : closeModal(); }
+      if (lightboxOpen && e.key === 'ArrowLeft') stepLightbox(-1);
+      if (lightboxOpen && e.key === 'ArrowRight') stepLightbox(1);
+    });
 
     function applyLanguage(lang) {
       currentLang = lang;
@@ -895,6 +989,7 @@
       try { lang = localStorage.getItem('lang'); } catch (e) { }
       if (!lang) lang = (navigator.language || '').toLowerCase().startsWith('vi') ? 'vi' : 'en';
       setCategory('all');
+      renderGallery();
       applyLanguage(lang);
     })();
   </script>
