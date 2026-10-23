@@ -10,19 +10,19 @@ const EMAIL = 'nuinguyen01bv@gmail.com';
 // Tailwind classes are written out in full so the Tailwind scanner can find them.
 const ACCENTS = {
   red: {
-    text: 'text-red-500', soft: 'bg-red-500/10 text-red-500', btn: 'bg-slate-900 hover:bg-slate-700 text-white dark:bg-white dark:text-slate-900 dark:hover:bg-slate-200 shadow-slate-900/10',
+    text: 'text-red-500', soft: 'bg-red-500/10 text-red-500', btn: 'bg-red-500 hover:bg-red-600 text-white shadow-red-500/25', sel: 'ring-red-500',
     grad: 'from-red-500 to-orange-500', ring: 'ring-red-500/30', border: 'border-red-500/40', glow: 'from-red-500/10'
   },
   blue: {
-    text: 'text-blue-600 dark:text-blue-400', soft: 'bg-blue-500/10 text-blue-600 dark:text-blue-400', btn: 'bg-slate-900 hover:bg-slate-700 text-white dark:bg-white dark:text-slate-900 dark:hover:bg-slate-200 shadow-slate-900/10',
+    text: 'text-blue-600 dark:text-blue-400', soft: 'bg-blue-500/10 text-blue-600 dark:text-blue-400', btn: 'bg-blue-600 hover:bg-blue-700 text-white shadow-blue-600/25', sel: 'ring-blue-600',
     grad: 'from-blue-600 to-indigo-500', ring: 'ring-blue-500/30', border: 'border-blue-500/40', glow: 'from-blue-500/10'
   },
   rose: {
-    text: 'text-rose-500', soft: 'bg-rose-500/10 text-rose-500', btn: 'bg-slate-900 hover:bg-slate-700 text-white dark:bg-white dark:text-slate-900 dark:hover:bg-slate-200 shadow-slate-900/10',
+    text: 'text-rose-500', soft: 'bg-rose-500/10 text-rose-500', btn: 'bg-rose-500 hover:bg-rose-600 text-white shadow-rose-500/25', sel: 'ring-rose-500',
     grad: 'from-rose-500 to-orange-500', ring: 'ring-rose-500/30', border: 'border-rose-500/40', glow: 'from-rose-500/10'
   },
   pink: {
-    text: 'text-pink-500', soft: 'bg-pink-500/10 text-pink-500', btn: 'bg-slate-900 hover:bg-slate-700 text-white dark:bg-white dark:text-slate-900 dark:hover:bg-slate-200 shadow-slate-900/10',
+    text: 'text-pink-500', soft: 'bg-pink-500/10 text-pink-500', btn: 'bg-pink-500 hover:bg-pink-600 text-white shadow-pink-500/25', sel: 'ring-pink-500',
     grad: 'from-pink-500 to-rose-500', ring: 'ring-pink-500/30', border: 'border-pink-500/40', glow: 'from-pink-500/10'
   }
 };
@@ -466,7 +466,7 @@ ${JSON.stringify(ld, null, 2)}
   <link rel="preload" as="image" href="${p.images[0][0]}" fetchpriority="high">
 </head>
 
-<body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 min-h-screen bg-mesh transition-colors duration-300 selection:bg-slate-900 selection:text-white">
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 min-h-screen bg-mesh transition-colors duration-300 selection:bg-rose-500 selection:text-white">
 
   <!-- HEADER -->
   <header class="sticky top-0 z-40 w-full glass border-b border-slate-200/80 dark:border-slate-800/60">
@@ -481,7 +481,7 @@ ${JSON.stringify(ld, null, 2)}
         </div>
       </a>
 
-      <nav class="hidden md:flex items-center gap-7 font-medium text-sm text-slate-600 dark:text-slate-300">
+      <nav class="hidden lg:flex whitespace-nowrap items-center gap-7 font-medium text-sm text-slate-600 dark:text-slate-300">
         <a href="#features" class="hover:text-slate-900 dark:hover:text-white transition-colors"${tx(C.navFeatures)}</a>
         <a href="#screenshots" class="hover:text-slate-900 dark:hover:text-white transition-colors"${tx(C.navScreens)}</a>
         <a href="#pricing" class="hover:text-slate-900 dark:hover:text-white transition-colors"${tx(C.navPricing)}</a>
@@ -500,11 +500,22 @@ ${JSON.stringify(ld, null, 2)}
           <span class="dark:hidden"><i class="fa-solid fa-moon"></i></span>
           <span class="hidden dark:inline"><i class="fa-solid fa-sun text-amber-400"></i></span>
         </button>
+        <button id="menuBtn" onclick="toggleMenu()" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu"
+          class="lg:hidden p-2.5 rounded-lg bg-slate-200/80 dark:bg-slate-900/60 border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300">
+          <i class="fa-solid fa-bars"></i>
+        </button>
         <a href="${p.store}" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 text-xs font-bold ${a.btn} rounded-lg shadow-md transition-all hover:scale-105">
           <i class="fa-brands fa-chrome"></i><span${tx(C.addChrome)}</span>
         </a>
       </div>
     </div>
+    <nav id="mobileMenu" class="hidden lg:hidden flex-col max-w-7xl mx-auto px-4 sm:px-6 pb-3 font-medium text-sm text-slate-600 dark:text-slate-300 border-t border-slate-200/80 dark:border-slate-800/60">
+        <a href="#features" class="py-2.5 hover:text-slate-900 dark:hover:text-white"${tx(C.navFeatures)}</a>
+        <a href="#screenshots" class="py-2.5 hover:text-slate-900 dark:hover:text-white"${tx(C.navScreens)}</a>
+        <a href="#pricing" class="py-2.5 hover:text-slate-900 dark:hover:text-white"${tx(C.navPricing)}</a>
+        <a href="#faq" class="py-2.5 hover:text-slate-900 dark:hover:text-white"${tx(C.navFaq)}</a>
+        <a href="./#extensions" class="py-2.5 hover:text-slate-900 dark:hover:text-white"${tx(C.navAll)}</a>
+      </nav>
   </header>
 
   <main>
@@ -526,7 +537,7 @@ ${JSON.stringify(ld, null, 2)}
           </div>
           <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight mb-6">
             <span${tx(p.title1)}</span>
-            <span class="block text-slate-400 dark:text-slate-500 pb-1"${tx(p.title2)}</span>
+            <span class="block ${a.text} pb-1"${tx(p.title2)}</span>
           </h1>
           <p class="text-base sm:text-lg text-slate-600 dark:text-slate-400 leading-relaxed mb-8 max-w-xl"${tx(p.desc)}</p>
           <div class="flex flex-col sm:flex-row gap-3 sm:gap-4">
@@ -568,7 +579,7 @@ ${p.features.map(([icon, t, d]) => `          <div class="glass p-7 rounded-2xl 
       <h2 class="text-3xl font-extrabold tracking-tight text-center mb-12"${tx(C.howTitle)}</h2>
       <ol class="grid grid-cols-1 md:grid-cols-3 gap-6">
 ${p.steps.map(([t, d], i) => `        <li class="relative glass p-7 rounded-2xl border border-slate-200 dark:border-slate-800">
-          <span class="w-10 h-10 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-extrabold flex items-center justify-center mb-5 shadow-md">${i + 1}</span>
+          <span class="w-10 h-10 rounded-full ${a.soft} font-extrabold flex items-center justify-center mb-5 shadow-md">${i + 1}</span>
           <h3 class="text-lg font-bold mb-2"${tx(t)}</h3>
           <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed"${tx(d)}</p>
         </li>`).join('\n')}
@@ -659,7 +670,7 @@ ${others.map(o => `        <a href="${o.file.replace('.html', '')}" class="glass
           <h2 class="text-2xl md:text-3xl font-extrabold mt-2 mb-4"${tx(C.helpTitle)}</h2>
           <p class="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed"${tx(C.helpDesc)}</p>
         </div>
-        <a href="mailto:${EMAIL}" class="w-full md:w-auto px-6 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-700 text-white dark:bg-white dark:text-slate-900 dark:hover:bg-slate-200 font-semibold text-sm shadow-sm text-center transition-all">
+        <a href="mailto:${EMAIL}" class="w-full md:w-auto px-6 py-3.5 rounded-xl ${a.btn} font-semibold text-sm shadow-sm text-center transition-all">
           <i class="fa-solid fa-envelope mr-2"></i><span${tx(C.contact)}</span>
         </a>
       </div>
@@ -704,7 +715,7 @@ ${others.map(o => `        <a href="${o.file.replace('.html', '')}" class="glass
   </div>
 
   <script>
-    window.PAGE = ${JSON.stringify({ title: p.name, images: p.images.map(i => i[0]), vi })};
+    window.PAGE = ${JSON.stringify({ title: p.name, ring: a.sel, images: p.images.map(i => i[0]), vi })};
   </script>
   <script src="product.js"></script>
 </body>

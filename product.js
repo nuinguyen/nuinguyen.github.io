@@ -31,11 +31,21 @@
     try { localStorage.setItem('theme', isDark ? 'dark' : 'light'); } catch (e) { }
   };
 
+  // MOBILE MENU (below the lg breakpoint)
+  window.toggleMenu = function (open) {
+    const menu = document.getElementById('mobileMenu');
+    const show = open === undefined ? menu.classList.contains('hidden') : open;
+    menu.classList.toggle('hidden', !show);
+    menu.classList.toggle('flex', show);
+    document.getElementById('menuBtn').setAttribute('aria-expanded', show);
+  };
+  document.querySelectorAll('#mobileMenu a').forEach(a => a.addEventListener('click', () => toggleMenu(false)));
+
   // HERO IMAGE + THUMBNAILS
   function renderThumbs() {
     document.getElementById('heroThumbs').innerHTML = PAGE.images.slice(0, 5).map((src, i) => `
       <button onclick="setMain(${i})" aria-label="Show screenshot ${i + 1}"
-        class="rounded-lg overflow-hidden ring-2 transition-all ${i === mainIndex ? 'ring-slate-900 dark:ring-white opacity-100' : 'ring-transparent opacity-60 hover:opacity-100'}">
+        class="rounded-lg overflow-hidden ring-2 transition-all ${i === mainIndex ? PAGE.ring + ' opacity-100' : 'ring-transparent opacity-60 hover:opacity-100'}">
         <img src="${src.replace('images/', 'images/thumbs/')}" width="640" height="400" alt="" class="w-full aspect-[16/10] object-cover">
       </button>`).join('');
   }

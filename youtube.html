@@ -128,7 +128,7 @@
   <link rel="preload" as="image" href="images/youtube-save.webp" fetchpriority="high">
 </head>
 
-<body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 min-h-screen bg-mesh transition-colors duration-300 selection:bg-slate-900 selection:text-white">
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 min-h-screen bg-mesh transition-colors duration-300 selection:bg-rose-500 selection:text-white">
 
   <!-- HEADER -->
   <header class="sticky top-0 z-40 w-full glass border-b border-slate-200/80 dark:border-slate-800/60">
@@ -143,7 +143,7 @@
         </div>
       </a>
 
-      <nav class="hidden md:flex items-center gap-7 font-medium text-sm text-slate-600 dark:text-slate-300">
+      <nav class="hidden lg:flex whitespace-nowrap items-center gap-7 font-medium text-sm text-slate-600 dark:text-slate-300">
         <a href="#features" class="hover:text-slate-900 dark:hover:text-white transition-colors" data-i18n="k7">Features</a>
         <a href="#screenshots" class="hover:text-slate-900 dark:hover:text-white transition-colors" data-i18n="k8">Screenshots</a>
         <a href="#pricing" class="hover:text-slate-900 dark:hover:text-white transition-colors" data-i18n="k9">Pricing</a>
@@ -162,18 +162,29 @@
           <span class="dark:hidden"><i class="fa-solid fa-moon"></i></span>
           <span class="hidden dark:inline"><i class="fa-solid fa-sun text-amber-400"></i></span>
         </button>
-        <a href="https://chromewebstore.google.com/detail/playlist-manager-for-yout/lfhblickhegnbcelnahnjbgcgkjaigge" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 text-xs font-bold bg-slate-900 hover:bg-slate-700 text-white dark:bg-white dark:text-slate-900 dark:hover:bg-slate-200 shadow-slate-900/10 rounded-lg shadow-md transition-all hover:scale-105">
+        <button id="menuBtn" onclick="toggleMenu()" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu"
+          class="lg:hidden p-2.5 rounded-lg bg-slate-200/80 dark:bg-slate-900/60 border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <a href="https://chromewebstore.google.com/detail/playlist-manager-for-yout/lfhblickhegnbcelnahnjbgcgkjaigge" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 text-xs font-bold bg-rose-500 hover:bg-rose-600 text-white shadow-rose-500/25 rounded-lg shadow-md transition-all hover:scale-105">
           <i class="fa-brands fa-chrome"></i><span data-i18n="k12">Add to Chrome</span>
         </a>
       </div>
     </div>
+    <nav id="mobileMenu" class="hidden lg:hidden flex-col max-w-7xl mx-auto px-4 sm:px-6 pb-3 font-medium text-sm text-slate-600 dark:text-slate-300 border-t border-slate-200/80 dark:border-slate-800/60">
+        <a href="#features" class="py-2.5 hover:text-slate-900 dark:hover:text-white" data-i18n="k13">Features</a>
+        <a href="#screenshots" class="py-2.5 hover:text-slate-900 dark:hover:text-white" data-i18n="k14">Screenshots</a>
+        <a href="#pricing" class="py-2.5 hover:text-slate-900 dark:hover:text-white" data-i18n="k15">Pricing</a>
+        <a href="#faq" class="py-2.5 hover:text-slate-900 dark:hover:text-white" data-i18n="k16">FAQ</a>
+        <a href="./#extensions" class="py-2.5 hover:text-slate-900 dark:hover:text-white" data-i18n="k17">All extensions</a>
+      </nav>
   </header>
 
   <main>
     <!-- HERO -->
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-16 md:pb-24">
       <nav aria-label="Breadcrumb" class="text-xs text-slate-500 dark:text-slate-400 mb-8 md:mb-12">
-        <a href="./" class="hover:text-slate-900 dark:hover:text-white" data-i18n="k13">Home</a>
+        <a href="./" class="hover:text-slate-900 dark:hover:text-white" data-i18n="k18">Home</a>
         <i class="fa-solid fa-chevron-right text-[9px] mx-2"></i>
         <span class="text-slate-700 dark:text-slate-300">Playlist Manager for YouTube</span>
       </nav>
@@ -184,19 +195,19 @@
             <div class="w-12 h-12 p-2 rounded-xl bg-white dark:bg-slate-800 ring-1 ring-slate-200 dark:ring-slate-700 shadow-sm flex items-center justify-center shrink-0">
               <img src="images/icon-youtube.png" alt="" class="w-full h-full object-contain">
             </div>
-            <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-rose-500/10 text-rose-500 text-xs font-semibold" data-i18n="k14">Playlist manager for YouTube</span>
+            <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-rose-500/10 text-rose-500 text-xs font-semibold" data-i18n="k19">Playlist manager for YouTube</span>
           </div>
           <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight mb-6">
-            <span data-i18n="k15">Your YouTube,</span>
-            <span class="block text-slate-400 dark:text-slate-500 pb-1" data-i18n="k16">organized.</span>
+            <span data-i18n="k20">Your YouTube,</span>
+            <span class="block text-rose-500 pb-1" data-i18n="k21">organized.</span>
           </h1>
-          <p class="text-base sm:text-lg text-slate-600 dark:text-slate-400 leading-relaxed mb-8 max-w-xl" data-i18n="k17">Save any video in one click, organize playlists into folders, play them in order with YouTube’s own player and sort your subscriptions into channel groups.</p>
+          <p class="text-base sm:text-lg text-slate-600 dark:text-slate-400 leading-relaxed mb-8 max-w-xl" data-i18n="k22">Save any video in one click, organize playlists into folders, play them in order with YouTube’s own player and sort your subscriptions into channel groups.</p>
           <div class="flex flex-col sm:flex-row gap-3 sm:gap-4">
-            <a href="https://chromewebstore.google.com/detail/playlist-manager-for-yout/lfhblickhegnbcelnahnjbgcgkjaigge" target="_blank" rel="noopener noreferrer" class="px-7 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-700 text-white dark:bg-white dark:text-slate-900 dark:hover:bg-slate-200 shadow-slate-900/10 font-semibold shadow-lg transition-all hover:scale-105 flex items-center justify-center gap-2">
-              <i class="fa-brands fa-chrome"></i><span data-i18n="k18">Add to Chrome</span>
+            <a href="https://chromewebstore.google.com/detail/playlist-manager-for-yout/lfhblickhegnbcelnahnjbgcgkjaigge" target="_blank" rel="noopener noreferrer" class="px-7 py-3.5 rounded-xl bg-rose-500 hover:bg-rose-600 text-white shadow-rose-500/25 font-semibold shadow-lg transition-all hover:scale-105 flex items-center justify-center gap-2">
+              <i class="fa-brands fa-chrome"></i><span data-i18n="k23">Add to Chrome</span>
             </a>
             <a href="#pricing" class="px-7 py-3.5 rounded-xl glass hover:bg-slate-200/80 dark:hover:bg-slate-800/80 font-semibold border border-slate-300 dark:border-slate-700 transition-all flex items-center justify-center gap-2">
-              <i class="fa-solid fa-tag text-rose-500"></i><span data-i18n="k19">See pricing</span>
+              <i class="fa-solid fa-tag text-rose-500"></i><span data-i18n="k24">See pricing</span>
             </a>
           </div>
         </div>
@@ -214,37 +225,37 @@
     <!-- FEATURES -->
     <section id="features" class="py-16 md:py-20 bg-slate-100/60 dark:bg-slate-900/40 border-y border-slate-200 dark:border-slate-800/80 scroll-mt-20">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl font-extrabold tracking-tight text-center mb-12" data-i18n="k20">Everything you need</h2>
+        <h2 class="text-3xl font-extrabold tracking-tight text-center mb-12" data-i18n="k25">Everything you need</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <div class="glass p-7 rounded-2xl border border-slate-200 dark:border-slate-800 card-hover">
             <div class="w-12 h-12 rounded-xl bg-rose-500/10 text-rose-500 flex items-center justify-center text-xl mb-5"><i class="fa-solid fa-plus"></i></div>
-            <h3 class="text-lg font-bold mb-2" data-i18n="k21">One-click save</h3>
-            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed" data-i18n="k22">Add any video to a playlist from search results or the player, without leaving YouTube.</p>
+            <h3 class="text-lg font-bold mb-2" data-i18n="k26">One-click save</h3>
+            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed" data-i18n="k27">Add any video to a playlist from search results or the player, without leaving YouTube.</p>
           </div>
           <div class="glass p-7 rounded-2xl border border-slate-200 dark:border-slate-800 card-hover">
             <div class="w-12 h-12 rounded-xl bg-rose-500/10 text-rose-500 flex items-center justify-center text-xl mb-5"><i class="fa-solid fa-folder"></i></div>
-            <h3 class="text-lg font-bold mb-2" data-i18n="k23">Unlimited playlists</h3>
-            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed" data-i18n="k24">Unlimited playlists and videos for free, organized into folders with icons, colors, search and drag-and-drop.</p>
+            <h3 class="text-lg font-bold mb-2" data-i18n="k28">Unlimited playlists</h3>
+            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed" data-i18n="k29">Unlimited playlists and videos for free, organized into folders with icons, colors, search and drag-and-drop.</p>
           </div>
           <div class="glass p-7 rounded-2xl border border-slate-200 dark:border-slate-800 card-hover">
             <div class="w-12 h-12 rounded-xl bg-rose-500/10 text-rose-500 flex items-center justify-center text-xl mb-5"><i class="fa-solid fa-play"></i></div>
-            <h3 class="text-lg font-bold mb-2" data-i18n="k25">Play in order</h3>
-            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed" data-i18n="k26">Play, shuffle or repeat using YouTube’s own player, with a mini player, Up next and queue.</p>
+            <h3 class="text-lg font-bold mb-2" data-i18n="k30">Play in order</h3>
+            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed" data-i18n="k31">Play, shuffle or repeat using YouTube’s own player, with a mini player, Up next and queue.</p>
           </div>
           <div class="glass p-7 rounded-2xl border border-slate-200 dark:border-slate-800 card-hover">
             <div class="w-12 h-12 rounded-xl bg-rose-500/10 text-rose-500 flex items-center justify-center text-xl mb-5"><i class="fa-solid fa-users"></i></div>
-            <h3 class="text-lg font-bold mb-2" data-i18n="k27">Channel groups</h3>
-            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed" data-i18n="k28">Sync your subscriptions and sort channels into groups like Music, Learning or Tech.</p>
+            <h3 class="text-lg font-bold mb-2" data-i18n="k32">Channel groups</h3>
+            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed" data-i18n="k33">Sync your subscriptions and sort channels into groups like Music, Learning or Tech.</p>
           </div>
           <div class="glass p-7 rounded-2xl border border-slate-200 dark:border-slate-800 card-hover">
             <div class="w-12 h-12 rounded-xl bg-rose-500/10 text-rose-500 flex items-center justify-center text-xl mb-5"><i class="fa-solid fa-filter"></i></div>
-            <h3 class="text-lg font-bold mb-2" data-i18n="k29">Focused feed</h3>
-            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed" data-i18n="k30">See new videos per group and hide watched videos or Shorts.</p>
+            <h3 class="text-lg font-bold mb-2" data-i18n="k34">Focused feed</h3>
+            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed" data-i18n="k35">See new videos per group and hide watched videos or Shorts.</p>
           </div>
           <div class="glass p-7 rounded-2xl border border-slate-200 dark:border-slate-800 card-hover">
             <div class="w-12 h-12 rounded-xl bg-rose-500/10 text-rose-500 flex items-center justify-center text-xl mb-5"><i class="fa-solid fa-moon"></i></div>
-            <h3 class="text-lg font-bold mb-2" data-i18n="k31">Sleep timer</h3>
-            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed" data-i18n="k32">Pause playback automatically after a set time — perfect for music or podcasts at night.</p>
+            <h3 class="text-lg font-bold mb-2" data-i18n="k36">Sleep timer</h3>
+            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed" data-i18n="k37">Pause playback automatically after a set time — perfect for music or podcasts at night.</p>
           </div>
         </div>
       </div>
@@ -252,22 +263,22 @@
 
     <!-- HOW IT WORKS -->
     <section class="py-16 md:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl font-extrabold tracking-tight text-center mb-12" data-i18n="k33">How it works</h2>
+      <h2 class="text-3xl font-extrabold tracking-tight text-center mb-12" data-i18n="k38">How it works</h2>
       <ol class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <li class="relative glass p-7 rounded-2xl border border-slate-200 dark:border-slate-800">
-          <span class="w-10 h-10 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-extrabold flex items-center justify-center mb-5 shadow-md">1</span>
-          <h3 class="text-lg font-bold mb-2" data-i18n="k34">Save while you browse</h3>
-          <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed" data-i18n="k35">Click + on any video and pick a playlist — or create a new one on the spot.</p>
+          <span class="w-10 h-10 rounded-full bg-rose-500/10 text-rose-500 font-extrabold flex items-center justify-center mb-5 shadow-md">1</span>
+          <h3 class="text-lg font-bold mb-2" data-i18n="k39">Save while you browse</h3>
+          <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed" data-i18n="k40">Click + on any video and pick a playlist — or create a new one on the spot.</p>
         </li>
         <li class="relative glass p-7 rounded-2xl border border-slate-200 dark:border-slate-800">
-          <span class="w-10 h-10 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-extrabold flex items-center justify-center mb-5 shadow-md">2</span>
-          <h3 class="text-lg font-bold mb-2" data-i18n="k36">Organize your library</h3>
-          <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed" data-i18n="k37">Group playlists into folders and sort subscriptions into channel groups.</p>
+          <span class="w-10 h-10 rounded-full bg-rose-500/10 text-rose-500 font-extrabold flex items-center justify-center mb-5 shadow-md">2</span>
+          <h3 class="text-lg font-bold mb-2" data-i18n="k41">Organize your library</h3>
+          <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed" data-i18n="k42">Group playlists into folders and sort subscriptions into channel groups.</p>
         </li>
         <li class="relative glass p-7 rounded-2xl border border-slate-200 dark:border-slate-800">
-          <span class="w-10 h-10 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-extrabold flex items-center justify-center mb-5 shadow-md">3</span>
-          <h3 class="text-lg font-bold mb-2" data-i18n="k38">Press Play All</h3>
-          <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed" data-i18n="k39">Play in order, shuffle or repeat, and set a sleep timer if you need one.</p>
+          <span class="w-10 h-10 rounded-full bg-rose-500/10 text-rose-500 font-extrabold flex items-center justify-center mb-5 shadow-md">3</span>
+          <h3 class="text-lg font-bold mb-2" data-i18n="k43">Press Play All</h3>
+          <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed" data-i18n="k44">Play in order, shuffle or repeat, and set a sleep timer if you need one.</p>
         </li>
       </ol>
     </section>
@@ -275,39 +286,39 @@
     <!-- SCREENSHOTS -->
     <section id="screenshots" class="py-16 md:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-20">
       <div class="text-center mb-10">
-        <h2 class="text-3xl font-extrabold tracking-tight" data-i18n="k40">Screenshots</h2>
-        <p class="text-slate-600 dark:text-slate-400 mt-3" data-i18n="k41">Click any image to view it full size.</p>
+        <h2 class="text-3xl font-extrabold tracking-tight" data-i18n="k45">Screenshots</h2>
+        <p class="text-slate-600 dark:text-slate-400 mt-3" data-i18n="k46">Click any image to view it full size.</p>
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         <figure>
           <button onclick="openLightbox(0)" class="group block w-full rounded-2xl overflow-hidden ring-1 ring-slate-200 dark:ring-slate-800 shadow-sm hover:shadow-xl transition-all">
             <img src="images/thumbs/youtube-save.webp" width="640" height="400" alt="Save any YouTube video to a playlist in one click" loading="lazy" class="w-full aspect-[16/10] object-cover group-hover:scale-105 transition-transform duration-500">
           </button>
-          <figcaption class="text-sm text-slate-600 dark:text-slate-400 mt-3 px-1" data-i18n="k42">Save any YouTube video to a playlist in one click</figcaption>
+          <figcaption class="text-sm text-slate-600 dark:text-slate-400 mt-3 px-1" data-i18n="k47">Save any YouTube video to a playlist in one click</figcaption>
         </figure>
         <figure>
           <button onclick="openLightbox(1)" class="group block w-full rounded-2xl overflow-hidden ring-1 ring-slate-200 dark:ring-slate-800 shadow-sm hover:shadow-xl transition-all">
             <img src="images/thumbs/youtube-playlists.webp" width="640" height="400" alt="Playlist library with folders, icons and search" loading="lazy" class="w-full aspect-[16/10] object-cover group-hover:scale-105 transition-transform duration-500">
           </button>
-          <figcaption class="text-sm text-slate-600 dark:text-slate-400 mt-3 px-1" data-i18n="k43">Playlist library with folders, icons and search</figcaption>
+          <figcaption class="text-sm text-slate-600 dark:text-slate-400 mt-3 px-1" data-i18n="k48">Playlist library with folders, icons and search</figcaption>
         </figure>
         <figure>
           <button onclick="openLightbox(2)" class="group block w-full rounded-2xl overflow-hidden ring-1 ring-slate-200 dark:ring-slate-800 shadow-sm hover:shadow-xl transition-all">
             <img src="images/thumbs/youtube-playback.webp" width="640" height="400" alt="Play a playlist in order, shuffle or repeat" loading="lazy" class="w-full aspect-[16/10] object-cover group-hover:scale-105 transition-transform duration-500">
           </button>
-          <figcaption class="text-sm text-slate-600 dark:text-slate-400 mt-3 px-1" data-i18n="k44">Play a playlist in order, shuffle or repeat</figcaption>
+          <figcaption class="text-sm text-slate-600 dark:text-slate-400 mt-3 px-1" data-i18n="k49">Play a playlist in order, shuffle or repeat</figcaption>
         </figure>
         <figure>
           <button onclick="openLightbox(3)" class="group block w-full rounded-2xl overflow-hidden ring-1 ring-slate-200 dark:ring-slate-800 shadow-sm hover:shadow-xl transition-all">
             <img src="images/thumbs/youtube-channels.webp" width="640" height="400" alt="Sort subscriptions into channel groups" loading="lazy" class="w-full aspect-[16/10] object-cover group-hover:scale-105 transition-transform duration-500">
           </button>
-          <figcaption class="text-sm text-slate-600 dark:text-slate-400 mt-3 px-1" data-i18n="k45">Sort subscriptions into channel groups</figcaption>
+          <figcaption class="text-sm text-slate-600 dark:text-slate-400 mt-3 px-1" data-i18n="k50">Sort subscriptions into channel groups</figcaption>
         </figure>
         <figure>
           <button onclick="openLightbox(4)" class="group block w-full rounded-2xl overflow-hidden ring-1 ring-slate-200 dark:ring-slate-800 shadow-sm hover:shadow-xl transition-all">
             <img src="images/thumbs/youtube-tools.webp" width="640" height="400" alt="Group channels right on YouTube" loading="lazy" class="w-full aspect-[16/10] object-cover group-hover:scale-105 transition-transform duration-500">
           </button>
-          <figcaption class="text-sm text-slate-600 dark:text-slate-400 mt-3 px-1" data-i18n="k46">Group channels right on YouTube</figcaption>
+          <figcaption class="text-sm text-slate-600 dark:text-slate-400 mt-3 px-1" data-i18n="k51">Group channels right on YouTube</figcaption>
         </figure>
       </div>
     </section>
@@ -316,35 +327,35 @@
     <section id="pricing" class="py-16 md:py-20 bg-slate-100/60 dark:bg-slate-900/40 border-y border-slate-200 dark:border-slate-800/80 scroll-mt-20">
       <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
-          <h2 class="text-3xl font-extrabold tracking-tight" data-i18n="k47">Simple pricing</h2>
-          <p class="text-slate-600 dark:text-slate-400 mt-3" data-i18n="k48">Start free. Upgrade monthly or yearly — cancel anytime.</p>
+          <h2 class="text-3xl font-extrabold tracking-tight" data-i18n="k52">Simple pricing</h2>
+          <p class="text-slate-600 dark:text-slate-400 mt-3" data-i18n="k53">Start free. Upgrade monthly or yearly — cancel anytime.</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div class="bg-white dark:bg-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 flex flex-col">
-            <h3 class="text-sm font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400" data-i18n="k49">Free</h3>
+            <h3 class="text-sm font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400" data-i18n="k54">Free</h3>
             <div class="mt-3 mb-6"><span class="text-5xl font-extrabold">$0</span></div>
             <ul class="space-y-3 text-sm flex-1 mb-8">
-              <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-slate-400 mt-1"></i><span data-i18n="k50">Unlimited playlists &amp; videos</span></li>
-              <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-slate-400 mt-1"></i><span data-i18n="k51">Play in order, shuffle, repeat &amp; sleep timer</span></li>
-              <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-slate-400 mt-1"></i><span data-i18n="k52">Up to 5 channel groups</span></li>
-              <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-slate-400 mt-1"></i><span data-i18n="k53">One-click save on YouTube</span></li>
+              <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-slate-400 mt-1"></i><span data-i18n="k55">Unlimited playlists &amp; videos</span></li>
+              <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-slate-400 mt-1"></i><span data-i18n="k56">Play in order, shuffle, repeat &amp; sleep timer</span></li>
+              <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-slate-400 mt-1"></i><span data-i18n="k57">Up to 5 channel groups</span></li>
+              <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-slate-400 mt-1"></i><span data-i18n="k58">One-click save on YouTube</span></li>
             </ul>
-            <a href="https://chromewebstore.google.com/detail/playlist-manager-for-yout/lfhblickhegnbcelnahnjbgcgkjaigge" target="_blank" rel="noopener noreferrer" class="w-full text-center py-3.5 rounded-xl font-semibold border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" data-i18n="k54">Get started</a>
+            <a href="https://chromewebstore.google.com/detail/playlist-manager-for-yout/lfhblickhegnbcelnahnjbgcgkjaigge" target="_blank" rel="noopener noreferrer" class="w-full text-center py-3.5 rounded-xl font-semibold border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" data-i18n="k59">Get started</a>
           </div>
           <div class="relative bg-white dark:bg-slate-900 p-8 rounded-3xl border-2 border-rose-500/40 shadow-xl flex flex-col overflow-hidden">
             <div class="absolute inset-0 bg-gradient-to-br from-rose-500/10 to-transparent pointer-events-none"></div>
-            <span class="absolute top-5 right-5 text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-rose-500/10 text-rose-500" data-i18n="k55">Popular</span>
-            <h3 class="relative text-sm font-bold uppercase tracking-wider text-rose-500" data-i18n="k56">Premium</h3>
+            <span class="absolute top-5 right-5 text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-rose-500/10 text-rose-500" data-i18n="k60">Popular</span>
+            <h3 class="relative text-sm font-bold uppercase tracking-wider text-rose-500" data-i18n="k61">Premium</h3>
             <div class="relative mt-3 mb-1 flex items-baseline gap-1"><span class="text-5xl font-extrabold">$2.99</span><span class="text-slate-500 dark:text-slate-400 font-medium" data-i18n="k1">/ month</span></div>
             <p class="relative text-xs text-slate-500 dark:text-slate-400 mb-6" data-i18n="k2">or $19.99 / year ($1.67/month) — save 44%</p>
             <ul class="relative space-y-3 text-sm flex-1 mb-8">
-              <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-rose-500 mt-1"></i><span data-i18n="k57">Unlimited channel groups</span></li>
-              <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-rose-500 mt-1"></i><span data-i18n="k58">Folders inside folders</span></li>
-              <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-rose-500 mt-1"></i><span data-i18n="k59">Automatic daily backups</span></li>
-              <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-rose-500 mt-1"></i><span data-i18n="k60">One-click sorting by name, date and length</span></li>
+              <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-rose-500 mt-1"></i><span data-i18n="k62">Unlimited channel groups</span></li>
+              <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-rose-500 mt-1"></i><span data-i18n="k63">Folders inside folders</span></li>
+              <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-rose-500 mt-1"></i><span data-i18n="k64">Automatic daily backups</span></li>
+              <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-rose-500 mt-1"></i><span data-i18n="k65">One-click sorting by name, date and length</span></li>
             </ul>
             <div class="relative grid grid-cols-1 sm:grid-cols-2 gap-3">
-              <a href="https://anuis.lemonsqueezy.com/checkout/buy/e83f0a9f-219a-4f24-8fb5-4463b5c4a420" target="_blank" rel="noopener noreferrer" class="text-center py-3.5 rounded-xl font-bold bg-slate-900 hover:bg-slate-700 text-white dark:bg-white dark:text-slate-900 dark:hover:bg-slate-200 shadow-slate-900/10 shadow-lg transition-all" data-i18n="k3">Subscribe monthly</a>
+              <a href="https://anuis.lemonsqueezy.com/checkout/buy/e83f0a9f-219a-4f24-8fb5-4463b5c4a420" target="_blank" rel="noopener noreferrer" class="text-center py-3.5 rounded-xl font-bold bg-rose-500 hover:bg-rose-600 text-white shadow-rose-500/25 shadow-lg transition-all" data-i18n="k3">Subscribe monthly</a>
               <a href="https://anuis.lemonsqueezy.com/checkout/buy/388202ef-0528-41a1-bfd1-ba7ee3ffdd11" target="_blank" rel="noopener noreferrer" class="text-center py-3.5 rounded-xl font-bold border-2 border-rose-500/40 text-rose-500 hover:bg-slate-50 dark:hover:bg-slate-800 transition-all" data-i18n="k4">Subscribe yearly</a>
             </div>
             <p class="relative text-xs text-slate-500 dark:text-slate-400 text-center mt-3" data-i18n="k5">Cancel anytime. The license key arrives by email.</p>
@@ -355,42 +366,42 @@
 
     <!-- FAQ -->
     <section id="faq" class="py-16 md:py-20 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-20">
-      <h2 class="text-3xl font-extrabold tracking-tight text-center mb-10" data-i18n="k61">Frequently asked questions</h2>
+      <h2 class="text-3xl font-extrabold tracking-tight text-center mb-10" data-i18n="k66">Frequently asked questions</h2>
       <div class="space-y-3">
         <details class="group glass rounded-2xl border border-slate-200 dark:border-slate-800 px-6 py-4">
           <summary class="flex items-center justify-between gap-4 cursor-pointer font-semibold">
-            <span data-i18n="k62">How do I save a video to my playlist?</span>
+            <span data-i18n="k67">How do I save a video to my playlist?</span>
             <i class="faq-chevron fa-solid fa-chevron-down text-xs text-slate-400 transition-transform"></i>
           </summary>
-          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mt-3" data-i18n="k63">After installing, click the + button next to any video on YouTube and choose a playlist.</p>
+          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mt-3" data-i18n="k68">After installing, click the + button next to any video on YouTube and choose a playlist.</p>
         </details>
         <details class="group glass rounded-2xl border border-slate-200 dark:border-slate-800 px-6 py-4">
           <summary class="flex items-center justify-between gap-4 cursor-pointer font-semibold">
-            <span data-i18n="k64">Does the sleep timer work for music?</span>
+            <span data-i18n="k69">Does the sleep timer work for music?</span>
             <i class="faq-chevron fa-solid fa-chevron-down text-xs text-slate-400 transition-transform"></i>
           </summary>
-          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mt-3" data-i18n="k65">Yes. The sleep timer pauses any playing YouTube video or music track when the time runs out.</p>
+          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mt-3" data-i18n="k70">Yes. The sleep timer pauses any playing YouTube video or music track when the time runs out.</p>
         </details>
         <details class="group glass rounded-2xl border border-slate-200 dark:border-slate-800 px-6 py-4">
           <summary class="flex items-center justify-between gap-4 cursor-pointer font-semibold">
-            <span data-i18n="k66">Can I customize my playlist icons?</span>
+            <span data-i18n="k71">Can I customize my playlist icons?</span>
             <i class="faq-chevron fa-solid fa-chevron-down text-xs text-slate-400 transition-transform"></i>
           </summary>
-          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mt-3" data-i18n="k67">Yes. Choose from a range of colors and icons to make each playlist easy to find.</p>
+          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mt-3" data-i18n="k72">Yes. Choose from a range of colors and icons to make each playlist easy to find.</p>
         </details>
         <details class="group glass rounded-2xl border border-slate-200 dark:border-slate-800 px-6 py-4">
           <summary class="flex items-center justify-between gap-4 cursor-pointer font-semibold">
-            <span data-i18n="k68">What are the free limits?</span>
+            <span data-i18n="k73">What are the free limits?</span>
             <i class="faq-chevron fa-solid fa-chevron-down text-xs text-slate-400 transition-transform"></i>
           </summary>
-          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mt-3" data-i18n="k69">Playlists and videos are unlimited. The free plan allows up to 5 channel groups; Premium ($2.99/month or $19.99/year) removes the limit and adds subfolders, daily backups and sorting.</p>
+          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mt-3" data-i18n="k74">Playlists and videos are unlimited. The free plan allows up to 5 channel groups; Premium ($2.99/month or $19.99/year) removes the limit and adds subfolders, daily backups and sorting.</p>
         </details>
       </div>
     </section>
 
     <!-- MORE EXTENSIONS -->
     <section class="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-2xl font-extrabold tracking-tight mb-6" data-i18n="k70">More from NAN Smart</h2>
+      <h2 class="text-2xl font-extrabold tracking-tight mb-6" data-i18n="k75">More from NAN Smart</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
         <a href="alarm" class="glass p-5 rounded-2xl border border-slate-200 dark:border-slate-800 card-hover flex items-start gap-4">
           <div class="w-11 h-11 p-2 rounded-xl bg-white dark:bg-slate-800 ring-1 ring-slate-200 dark:ring-slate-700 shadow-sm flex items-center justify-center shrink-0">
@@ -398,7 +409,7 @@
           </div>
           <div>
             <h3 class="font-bold">Alarm Clock &amp; Reminders</h3>
-            <p class="text-sm text-slate-600 dark:text-slate-400 mt-1" data-i18n="k71">Repeating alarms, fullscreen ringing and snooze — right in your toolbar.</p>
+            <p class="text-sm text-slate-600 dark:text-slate-400 mt-1" data-i18n="k76">Repeating alarms, fullscreen ringing and snooze — right in your toolbar.</p>
           </div>
         </a>
         <a href="reminders" class="glass p-5 rounded-2xl border border-slate-200 dark:border-slate-800 card-hover flex items-start gap-4">
@@ -407,7 +418,7 @@
           </div>
           <div>
             <h3 class="font-bold">Reminders &amp; To-Do List</h3>
-            <p class="text-sm text-slate-600 dark:text-slate-400 mt-1" data-i18n="k72">An iOS-style task manager with smart lists and on-time alerts.</p>
+            <p class="text-sm text-slate-600 dark:text-slate-400 mt-1" data-i18n="k77">An iOS-style task manager with smart lists and on-time alerts.</p>
           </div>
         </a>
         <a href="calendar" class="glass p-5 rounded-2xl border border-slate-200 dark:border-slate-800 card-hover flex items-start gap-4">
@@ -416,7 +427,7 @@
           </div>
           <div>
             <h3 class="font-bold">Multi Calendar — Lunar &amp; Hijri</h3>
-            <p class="text-sm text-slate-600 dark:text-slate-400 mt-1" data-i18n="k73">Gregorian, Lunar, Hijri and Jalali calendars side by side.</p>
+            <p class="text-sm text-slate-600 dark:text-slate-400 mt-1" data-i18n="k78">Gregorian, Lunar, Hijri and Jalali calendars side by side.</p>
           </div>
         </a>
       </div>
@@ -426,12 +437,12 @@
     <section class="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="glass rounded-3xl p-8 md:p-12 border border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/60 flex flex-col md:flex-row items-center justify-between gap-8">
         <div class="max-w-2xl">
-          <span class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400" data-i18n="k74">Support</span>
-          <h2 class="text-2xl md:text-3xl font-extrabold mt-2 mb-4" data-i18n="k75">Questions or feedback?</h2>
-          <p class="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed" data-i18n="k76">Found a bug or have an idea for a new feature? Send us an email — we read every message.</p>
+          <span class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400" data-i18n="k79">Support</span>
+          <h2 class="text-2xl md:text-3xl font-extrabold mt-2 mb-4" data-i18n="k80">Questions or feedback?</h2>
+          <p class="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed" data-i18n="k81">Found a bug or have an idea for a new feature? Send us an email — we read every message.</p>
         </div>
-        <a href="mailto:nuinguyen01bv@gmail.com" class="w-full md:w-auto px-6 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-700 text-white dark:bg-white dark:text-slate-900 dark:hover:bg-slate-200 font-semibold text-sm shadow-sm text-center transition-all">
-          <i class="fa-solid fa-envelope mr-2"></i><span data-i18n="k77">Contact us</span>
+        <a href="mailto:nuinguyen01bv@gmail.com" class="w-full md:w-auto px-6 py-3.5 rounded-xl bg-rose-500 hover:bg-rose-600 text-white shadow-rose-500/25 font-semibold text-sm shadow-sm text-center transition-all">
+          <i class="fa-solid fa-envelope mr-2"></i><span data-i18n="k82">Contact us</span>
         </a>
       </div>
     </section>
@@ -446,9 +457,9 @@
         <span class="text-xs">&copy; 2026 NAN Smart Team.</span>
       </a>
       <div class="flex items-center gap-6 text-xs sm:text-sm">
-        <a href="privacy" class="hover:text-slate-900 dark:hover:text-white transition-colors" data-i18n="k78">Privacy</a>
-        <a href="terms" class="hover:text-slate-900 dark:hover:text-white transition-colors" data-i18n="k79">Terms</a>
-        <a href="mailto:nuinguyen01bv@gmail.com" class="hover:text-slate-900 dark:hover:text-white transition-colors" data-i18n="k80">Contact</a>
+        <a href="privacy" class="hover:text-slate-900 dark:hover:text-white transition-colors" data-i18n="k83">Privacy</a>
+        <a href="terms" class="hover:text-slate-900 dark:hover:text-white transition-colors" data-i18n="k84">Terms</a>
+        <a href="mailto:nuinguyen01bv@gmail.com" class="hover:text-slate-900 dark:hover:text-white transition-colors" data-i18n="k85">Contact</a>
       </div>
     </div>
   </footer>
@@ -475,7 +486,7 @@
   </div>
 
   <script>
-    window.PAGE = {"title":"Playlist Manager for YouTube","images":["images/youtube-save.webp","images/youtube-playlists.webp","images/youtube-playback.webp","images/youtube-channels.webp","images/youtube-tools.webp"],"vi":{"k1":"/ tháng","k2":"hoặc $19.99 / năm ($1.67/tháng) — tiết kiệm 44%","k3":"Đăng ký theo tháng","k4":"Đăng ký theo năm","k5":"Hủy bất cứ lúc nào. Mã bản quyền được gửi qua email.","k6":"Tiện ích Chrome","k7":"Tính năng","k8":"Hình ảnh","k9":"Bảng giá","k10":"Hỏi đáp","k11":"Tất cả tiện ích","k12":"Thêm vào Chrome","k13":"Trang chủ","k14":"Trình quản lý playlist cho YouTube","k15":"YouTube của bạn,","k16":"gọn gàng.","k17":"Lưu mọi video chỉ một cú nhấp, sắp playlist vào thư mục, phát theo thứ tự bằng chính trình phát của YouTube và gom kênh đăng ký thành nhóm.","k18":"Thêm vào Chrome","k19":"Xem bảng giá","k20":"Mọi thứ bạn cần","k21":"Lưu một chạm","k22":"Thêm mọi video vào playlist từ kết quả tìm kiếm hoặc trình phát, không cần rời YouTube.","k23":"Playlist không giới hạn","k24":"Playlist và video không giới hạn ngay cả bản miễn phí, sắp vào thư mục với biểu tượng, màu, tìm kiếm và kéo thả.","k25":"Phát theo thứ tự","k26":"Phát, trộn hoặc lặp bằng chính trình phát YouTube, kèm trình phát mini, Tiếp theo và hàng chờ.","k27":"Nhóm kênh","k28":"Đồng bộ kênh đăng ký và gom thành nhóm như Âm nhạc, Học tập hay Công nghệ.","k29":"Bảng tin tập trung","k30":"Xem video mới theo nhóm, ẩn video đã xem hoặc Shorts.","k31":"Hẹn giờ tắt","k32":"Tự dừng phát sau thời gian đặt trước — rất hợp nghe nhạc hay podcast buổi tối.","k33":"Cách hoạt động","k34":"Lưu khi đang xem","k35":"Bấm + trên video bất kỳ và chọn playlist — hoặc tạo playlist mới ngay tại chỗ.","k36":"Sắp xếp thư viện","k37":"Gom playlist vào thư mục và sắp xếp kênh đăng ký thành nhóm.","k38":"Bấm Phát tất cả","k39":"Phát theo thứ tự, ngẫu nhiên hoặc lặp lại, và đặt hẹn giờ tắt nếu cần.","k40":"Hình ảnh thực tế","k41":"Bấm vào ảnh để xem kích thước đầy đủ.","k42":"Lưu video YouTube vào playlist chỉ một cú nhấp","k43":"Thư viện playlist với thư mục, biểu tượng và tìm kiếm","k44":"Phát playlist theo thứ tự, ngẫu nhiên hoặc lặp lại","k45":"Sắp xếp kênh đăng ký thành nhóm","k46":"Nhóm kênh ngay trên YouTube","k47":"Bảng giá đơn giản","k48":"Bắt đầu miễn phí. Nâng cấp theo tháng hoặc năm — hủy bất cứ lúc nào.","k49":"Miễn phí","k50":"Không giới hạn playlist & video","k51":"Phát theo thứ tự, trộn, lặp & hẹn giờ tắt","k52":"Tối đa 5 nhóm kênh","k53":"Lưu một chạm trên YouTube","k54":"Bắt đầu ngay","k55":"Phổ biến","k56":"Premium","k57":"Không giới hạn nhóm kênh","k58":"Thư mục lồng trong thư mục","k59":"Tự động sao lưu hằng ngày","k60":"Sắp xếp một chạm theo tên, ngày và độ dài","k61":"Câu hỏi thường gặp","k62":"Làm sao để lưu video vào playlist?","k63":"Sau khi cài đặt, bấm nút + cạnh video bất kỳ trên YouTube và chọn playlist.","k64":"Hẹn giờ tắt có dùng được khi nghe nhạc không?","k65":"Có. Hẹn giờ tắt sẽ dừng mọi video hoặc bài nhạc YouTube đang phát khi hết giờ.","k66":"Tôi có thể đổi biểu tượng playlist không?","k67":"Có. Chọn từ nhiều màu và biểu tượng để mỗi playlist dễ tìm hơn.","k68":"Bản miễn phí có giới hạn gì?","k69":"Playlist và video không giới hạn. Bản miễn phí cho tối đa 5 nhóm kênh; Premium ($2.99/tháng hoặc $19.99/năm) bỏ giới hạn và thêm thư mục con, sao lưu hằng ngày và sắp xếp.","k70":"Các tiện ích khác của NAN Smart","k71":"Báo thức lặp lại, chuông toàn màn hình và báo lại — ngay trên thanh công cụ.","k72":"Quản lý công việc phong cách iOS với danh sách thông minh và nhắc đúng giờ.","k73":"Dương lịch, Âm lịch, Hijri và Jalali song song.","k74":"Hỗ trợ","k75":"Bạn có câu hỏi hoặc góp ý?","k76":"Gặp lỗi hoặc có ý tưởng tính năng mới? Hãy gửi email cho chúng tôi — mọi thư đều được đọc.","k77":"Liên hệ","k78":"Bảo mật","k79":"Điều khoản","k80":"Liên hệ"}};
+    window.PAGE = {"title":"Playlist Manager for YouTube","ring":"ring-rose-500","images":["images/youtube-save.webp","images/youtube-playlists.webp","images/youtube-playback.webp","images/youtube-channels.webp","images/youtube-tools.webp"],"vi":{"k1":"/ tháng","k2":"hoặc $19.99 / năm ($1.67/tháng) — tiết kiệm 44%","k3":"Đăng ký theo tháng","k4":"Đăng ký theo năm","k5":"Hủy bất cứ lúc nào. Mã bản quyền được gửi qua email.","k6":"Tiện ích Chrome","k7":"Tính năng","k8":"Hình ảnh","k9":"Bảng giá","k10":"Hỏi đáp","k11":"Tất cả tiện ích","k12":"Thêm vào Chrome","k13":"Tính năng","k14":"Hình ảnh","k15":"Bảng giá","k16":"Hỏi đáp","k17":"Tất cả tiện ích","k18":"Trang chủ","k19":"Trình quản lý playlist cho YouTube","k20":"YouTube của bạn,","k21":"gọn gàng.","k22":"Lưu mọi video chỉ một cú nhấp, sắp playlist vào thư mục, phát theo thứ tự bằng chính trình phát của YouTube và gom kênh đăng ký thành nhóm.","k23":"Thêm vào Chrome","k24":"Xem bảng giá","k25":"Mọi thứ bạn cần","k26":"Lưu một chạm","k27":"Thêm mọi video vào playlist từ kết quả tìm kiếm hoặc trình phát, không cần rời YouTube.","k28":"Playlist không giới hạn","k29":"Playlist và video không giới hạn ngay cả bản miễn phí, sắp vào thư mục với biểu tượng, màu, tìm kiếm và kéo thả.","k30":"Phát theo thứ tự","k31":"Phát, trộn hoặc lặp bằng chính trình phát YouTube, kèm trình phát mini, Tiếp theo và hàng chờ.","k32":"Nhóm kênh","k33":"Đồng bộ kênh đăng ký và gom thành nhóm như Âm nhạc, Học tập hay Công nghệ.","k34":"Bảng tin tập trung","k35":"Xem video mới theo nhóm, ẩn video đã xem hoặc Shorts.","k36":"Hẹn giờ tắt","k37":"Tự dừng phát sau thời gian đặt trước — rất hợp nghe nhạc hay podcast buổi tối.","k38":"Cách hoạt động","k39":"Lưu khi đang xem","k40":"Bấm + trên video bất kỳ và chọn playlist — hoặc tạo playlist mới ngay tại chỗ.","k41":"Sắp xếp thư viện","k42":"Gom playlist vào thư mục và sắp xếp kênh đăng ký thành nhóm.","k43":"Bấm Phát tất cả","k44":"Phát theo thứ tự, ngẫu nhiên hoặc lặp lại, và đặt hẹn giờ tắt nếu cần.","k45":"Hình ảnh thực tế","k46":"Bấm vào ảnh để xem kích thước đầy đủ.","k47":"Lưu video YouTube vào playlist chỉ một cú nhấp","k48":"Thư viện playlist với thư mục, biểu tượng và tìm kiếm","k49":"Phát playlist theo thứ tự, ngẫu nhiên hoặc lặp lại","k50":"Sắp xếp kênh đăng ký thành nhóm","k51":"Nhóm kênh ngay trên YouTube","k52":"Bảng giá đơn giản","k53":"Bắt đầu miễn phí. Nâng cấp theo tháng hoặc năm — hủy bất cứ lúc nào.","k54":"Miễn phí","k55":"Không giới hạn playlist & video","k56":"Phát theo thứ tự, trộn, lặp & hẹn giờ tắt","k57":"Tối đa 5 nhóm kênh","k58":"Lưu một chạm trên YouTube","k59":"Bắt đầu ngay","k60":"Phổ biến","k61":"Premium","k62":"Không giới hạn nhóm kênh","k63":"Thư mục lồng trong thư mục","k64":"Tự động sao lưu hằng ngày","k65":"Sắp xếp một chạm theo tên, ngày và độ dài","k66":"Câu hỏi thường gặp","k67":"Làm sao để lưu video vào playlist?","k68":"Sau khi cài đặt, bấm nút + cạnh video bất kỳ trên YouTube và chọn playlist.","k69":"Hẹn giờ tắt có dùng được khi nghe nhạc không?","k70":"Có. Hẹn giờ tắt sẽ dừng mọi video hoặc bài nhạc YouTube đang phát khi hết giờ.","k71":"Tôi có thể đổi biểu tượng playlist không?","k72":"Có. Chọn từ nhiều màu và biểu tượng để mỗi playlist dễ tìm hơn.","k73":"Bản miễn phí có giới hạn gì?","k74":"Playlist và video không giới hạn. Bản miễn phí cho tối đa 5 nhóm kênh; Premium ($2.99/tháng hoặc $19.99/năm) bỏ giới hạn và thêm thư mục con, sao lưu hằng ngày và sắp xếp.","k75":"Các tiện ích khác của NAN Smart","k76":"Báo thức lặp lại, chuông toàn màn hình và báo lại — ngay trên thanh công cụ.","k77":"Quản lý công việc phong cách iOS với danh sách thông minh và nhắc đúng giờ.","k78":"Dương lịch, Âm lịch, Hijri và Jalali song song.","k79":"Hỗ trợ","k80":"Bạn có câu hỏi hoặc góp ý?","k81":"Gặp lỗi hoặc có ý tưởng tính năng mới? Hãy gửi email cho chúng tôi — mọi thư đều được đọc.","k82":"Liên hệ","k83":"Bảo mật","k84":"Điều khoản","k85":"Liên hệ"}};
   </script>
   <script src="product.js"></script>
 </body>

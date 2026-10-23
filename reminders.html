@@ -128,7 +128,7 @@
   <link rel="preload" as="image" href="images/reminders-hero.webp" fetchpriority="high">
 </head>
 
-<body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 min-h-screen bg-mesh transition-colors duration-300 selection:bg-slate-900 selection:text-white">
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 min-h-screen bg-mesh transition-colors duration-300 selection:bg-rose-500 selection:text-white">
 
   <!-- HEADER -->
   <header class="sticky top-0 z-40 w-full glass border-b border-slate-200/80 dark:border-slate-800/60">
@@ -143,7 +143,7 @@
         </div>
       </a>
 
-      <nav class="hidden md:flex items-center gap-7 font-medium text-sm text-slate-600 dark:text-slate-300">
+      <nav class="hidden lg:flex whitespace-nowrap items-center gap-7 font-medium text-sm text-slate-600 dark:text-slate-300">
         <a href="#features" class="hover:text-slate-900 dark:hover:text-white transition-colors" data-i18n="k25">Features</a>
         <a href="#screenshots" class="hover:text-slate-900 dark:hover:text-white transition-colors" data-i18n="k26">Screenshots</a>
         <a href="#pricing" class="hover:text-slate-900 dark:hover:text-white transition-colors" data-i18n="k27">Pricing</a>
@@ -162,18 +162,29 @@
           <span class="dark:hidden"><i class="fa-solid fa-moon"></i></span>
           <span class="hidden dark:inline"><i class="fa-solid fa-sun text-amber-400"></i></span>
         </button>
-        <a href="https://chromewebstore.google.com/detail/reminders-chrome-extensio/ebjdfgcknblkogfgcpfplfgeanpbpdid" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 text-xs font-bold bg-slate-900 hover:bg-slate-700 text-white dark:bg-white dark:text-slate-900 dark:hover:bg-slate-200 shadow-slate-900/10 rounded-lg shadow-md transition-all hover:scale-105">
+        <button id="menuBtn" onclick="toggleMenu()" aria-label="Menu" aria-expanded="false" aria-controls="mobileMenu"
+          class="lg:hidden p-2.5 rounded-lg bg-slate-200/80 dark:bg-slate-900/60 border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <a href="https://chromewebstore.google.com/detail/reminders-chrome-extensio/ebjdfgcknblkogfgcpfplfgeanpbpdid" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 text-xs font-bold bg-blue-600 hover:bg-blue-700 text-white shadow-blue-600/25 rounded-lg shadow-md transition-all hover:scale-105">
           <i class="fa-brands fa-chrome"></i><span data-i18n="k30">Add to Chrome</span>
         </a>
       </div>
     </div>
+    <nav id="mobileMenu" class="hidden lg:hidden flex-col max-w-7xl mx-auto px-4 sm:px-6 pb-3 font-medium text-sm text-slate-600 dark:text-slate-300 border-t border-slate-200/80 dark:border-slate-800/60">
+        <a href="#features" class="py-2.5 hover:text-slate-900 dark:hover:text-white" data-i18n="k31">Features</a>
+        <a href="#screenshots" class="py-2.5 hover:text-slate-900 dark:hover:text-white" data-i18n="k32">Screenshots</a>
+        <a href="#pricing" class="py-2.5 hover:text-slate-900 dark:hover:text-white" data-i18n="k33">Pricing</a>
+        <a href="#faq" class="py-2.5 hover:text-slate-900 dark:hover:text-white" data-i18n="k34">FAQ</a>
+        <a href="./#extensions" class="py-2.5 hover:text-slate-900 dark:hover:text-white" data-i18n="k35">All extensions</a>
+      </nav>
   </header>
 
   <main>
     <!-- HERO -->
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-16 md:pb-24">
       <nav aria-label="Breadcrumb" class="text-xs text-slate-500 dark:text-slate-400 mb-8 md:mb-12">
-        <a href="./" class="hover:text-slate-900 dark:hover:text-white" data-i18n="k31">Home</a>
+        <a href="./" class="hover:text-slate-900 dark:hover:text-white" data-i18n="k36">Home</a>
         <i class="fa-solid fa-chevron-right text-[9px] mx-2"></i>
         <span class="text-slate-700 dark:text-slate-300">Reminders &amp; To-Do List</span>
       </nav>
@@ -184,19 +195,19 @@
             <div class="w-12 h-12 p-2 rounded-xl bg-white dark:bg-slate-800 ring-1 ring-slate-200 dark:ring-slate-700 shadow-sm flex items-center justify-center shrink-0">
               <img src="images/icon-reminders.png" alt="" class="w-full h-full object-contain">
             </div>
-            <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400 text-xs font-semibold" data-i18n="k32">iOS-style task manager for Chrome</span>
+            <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400 text-xs font-semibold" data-i18n="k37">iOS-style task manager for Chrome</span>
           </div>
           <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight mb-6">
-            <span data-i18n="k33">Simple. Beautiful.</span>
-            <span class="block text-slate-400 dark:text-slate-500 pb-1" data-i18n="k34">On time.</span>
+            <span data-i18n="k38">Simple. Beautiful.</span>
+            <span class="block text-blue-600 dark:text-blue-400 pb-1" data-i18n="k39">On time.</span>
           </h1>
-          <p class="text-base sm:text-lg text-slate-600 dark:text-slate-400 leading-relaxed mb-8 max-w-xl" data-i18n="k35">Stay on track with an elegant, iOS-inspired task manager that fits right into your browsing workflow. Capture tasks in seconds and get reminded exactly when it matters.</p>
+          <p class="text-base sm:text-lg text-slate-600 dark:text-slate-400 leading-relaxed mb-8 max-w-xl" data-i18n="k40">Stay on track with an elegant, iOS-inspired task manager that fits right into your browsing workflow. Capture tasks in seconds and get reminded exactly when it matters.</p>
           <div class="flex flex-col sm:flex-row gap-3 sm:gap-4">
-            <a href="https://chromewebstore.google.com/detail/reminders-chrome-extensio/ebjdfgcknblkogfgcpfplfgeanpbpdid" target="_blank" rel="noopener noreferrer" class="px-7 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-700 text-white dark:bg-white dark:text-slate-900 dark:hover:bg-slate-200 shadow-slate-900/10 font-semibold shadow-lg transition-all hover:scale-105 flex items-center justify-center gap-2">
-              <i class="fa-brands fa-chrome"></i><span data-i18n="k36">Add to Chrome</span>
+            <a href="https://chromewebstore.google.com/detail/reminders-chrome-extensio/ebjdfgcknblkogfgcpfplfgeanpbpdid" target="_blank" rel="noopener noreferrer" class="px-7 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white shadow-blue-600/25 font-semibold shadow-lg transition-all hover:scale-105 flex items-center justify-center gap-2">
+              <i class="fa-brands fa-chrome"></i><span data-i18n="k41">Add to Chrome</span>
             </a>
             <a href="#pricing" class="px-7 py-3.5 rounded-xl glass hover:bg-slate-200/80 dark:hover:bg-slate-800/80 font-semibold border border-slate-300 dark:border-slate-700 transition-all flex items-center justify-center gap-2">
-              <i class="fa-solid fa-tag text-blue-600 dark:text-blue-400"></i><span data-i18n="k37">See pricing</span>
+              <i class="fa-solid fa-tag text-blue-600 dark:text-blue-400"></i><span data-i18n="k42">See pricing</span>
             </a>
           </div>
         </div>
@@ -214,37 +225,37 @@
     <!-- FEATURES -->
     <section id="features" class="py-16 md:py-20 bg-slate-100/60 dark:bg-slate-900/40 border-y border-slate-200 dark:border-slate-800/80 scroll-mt-20">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl font-extrabold tracking-tight text-center mb-12" data-i18n="k38">Everything you need</h2>
+        <h2 class="text-3xl font-extrabold tracking-tight text-center mb-12" data-i18n="k43">Everything you need</h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           <div class="glass p-7 rounded-2xl border border-slate-200 dark:border-slate-800 card-hover">
             <div class="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-600 dark:text-blue-400 flex items-center justify-center text-xl mb-5"><i class="fa-solid fa-layer-group"></i></div>
-            <h3 class="text-lg font-bold mb-2" data-i18n="k39">Smart lists</h3>
-            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed" data-i18n="k40">Today, Scheduled, All and Flagged views show what needs your attention at a glance.</p>
+            <h3 class="text-lg font-bold mb-2" data-i18n="k44">Smart lists</h3>
+            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed" data-i18n="k45">Today, Scheduled, All and Flagged views show what needs your attention at a glance.</p>
           </div>
           <div class="glass p-7 rounded-2xl border border-slate-200 dark:border-slate-800 card-hover">
             <div class="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-600 dark:text-blue-400 flex items-center justify-center text-xl mb-5"><i class="fa-solid fa-folder-open"></i></div>
-            <h3 class="text-lg font-bold mb-2" data-i18n="k41">Custom lists</h3>
-            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed" data-i18n="k42">Separate work, health and personal goals with lists that have their own colors and icons.</p>
+            <h3 class="text-lg font-bold mb-2" data-i18n="k46">Custom lists</h3>
+            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed" data-i18n="k47">Separate work, health and personal goals with lists that have their own colors and icons.</p>
           </div>
           <div class="glass p-7 rounded-2xl border border-slate-200 dark:border-slate-800 card-hover">
             <div class="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-600 dark:text-blue-400 flex items-center justify-center text-xl mb-5"><i class="fa-solid fa-calendar-days"></i></div>
-            <h3 class="text-lg font-bold mb-2" data-i18n="k43">Advanced scheduling</h3>
-            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed" data-i18n="k44">Set precise dates and times, repeat rules and early reminders. See everything in the calendar view.</p>
+            <h3 class="text-lg font-bold mb-2" data-i18n="k48">Advanced scheduling</h3>
+            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed" data-i18n="k49">Set precise dates and times, repeat rules and early reminders. See everything in the calendar view.</p>
           </div>
           <div class="glass p-7 rounded-2xl border border-slate-200 dark:border-slate-800 card-hover">
             <div class="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-600 dark:text-blue-400 flex items-center justify-center text-xl mb-5"><i class="fa-solid fa-bell"></i></div>
-            <h3 class="text-lg font-bold mb-2" data-i18n="k45">Rich notifications</h3>
-            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed" data-i18n="k46">Background alerts plus a fullscreen reminder you can complete or dismiss in one tap.</p>
+            <h3 class="text-lg font-bold mb-2" data-i18n="k50">Rich notifications</h3>
+            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed" data-i18n="k51">Background alerts plus a fullscreen reminder you can complete or dismiss in one tap.</p>
           </div>
           <div class="glass p-7 rounded-2xl border border-slate-200 dark:border-slate-800 card-hover">
             <div class="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-600 dark:text-blue-400 flex items-center justify-center text-xl mb-5"><i class="fa-solid fa-flag"></i></div>
-            <h3 class="text-lg font-bold mb-2" data-i18n="k47">Priorities &amp; flags</h3>
-            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed" data-i18n="k48">Mark important tasks with priorities (!, !!, !!!) and flags so nothing slips.</p>
+            <h3 class="text-lg font-bold mb-2" data-i18n="k52">Priorities &amp; flags</h3>
+            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed" data-i18n="k53">Mark important tasks with priorities (!, !!, !!!) and flags so nothing slips.</p>
           </div>
           <div class="glass p-7 rounded-2xl border border-slate-200 dark:border-slate-800 card-hover">
             <div class="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-600 dark:text-blue-400 flex items-center justify-center text-xl mb-5"><i class="fa-solid fa-user-lock"></i></div>
-            <h3 class="text-lg font-bold mb-2" data-i18n="k49">Private &amp; fast</h3>
-            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed" data-i18n="k50">All data is stored locally in your browser — no account, no tracking. Light and dark mode included.</p>
+            <h3 class="text-lg font-bold mb-2" data-i18n="k54">Private &amp; fast</h3>
+            <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed" data-i18n="k55">All data is stored locally in your browser — no account, no tracking. Light and dark mode included.</p>
           </div>
         </div>
       </div>
@@ -252,22 +263,22 @@
 
     <!-- HOW IT WORKS -->
     <section class="py-16 md:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl font-extrabold tracking-tight text-center mb-12" data-i18n="k51">How it works</h2>
+      <h2 class="text-3xl font-extrabold tracking-tight text-center mb-12" data-i18n="k56">How it works</h2>
       <ol class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <li class="relative glass p-7 rounded-2xl border border-slate-200 dark:border-slate-800">
-          <span class="w-10 h-10 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-extrabold flex items-center justify-center mb-5 shadow-md">1</span>
-          <h3 class="text-lg font-bold mb-2" data-i18n="k52">Open from the toolbar</h3>
-          <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed" data-i18n="k53">Click the Reminders icon to see Today, Scheduled, All and Flagged at a glance.</p>
+          <span class="w-10 h-10 rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400 font-extrabold flex items-center justify-center mb-5 shadow-md">1</span>
+          <h3 class="text-lg font-bold mb-2" data-i18n="k57">Open from the toolbar</h3>
+          <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed" data-i18n="k58">Click the Reminders icon to see Today, Scheduled, All and Flagged at a glance.</p>
         </li>
         <li class="relative glass p-7 rounded-2xl border border-slate-200 dark:border-slate-800">
-          <span class="w-10 h-10 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-extrabold flex items-center justify-center mb-5 shadow-md">2</span>
-          <h3 class="text-lg font-bold mb-2" data-i18n="k54">Add a reminder</h3>
-          <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed" data-i18n="k55">Tap +, enter a title and notes, pick a list, date, time, priority and flag.</p>
+          <span class="w-10 h-10 rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400 font-extrabold flex items-center justify-center mb-5 shadow-md">2</span>
+          <h3 class="text-lg font-bold mb-2" data-i18n="k59">Add a reminder</h3>
+          <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed" data-i18n="k60">Tap +, enter a title and notes, pick a list, date, time, priority and flag.</p>
         </li>
         <li class="relative glass p-7 rounded-2xl border border-slate-200 dark:border-slate-800">
-          <span class="w-10 h-10 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-extrabold flex items-center justify-center mb-5 shadow-md">3</span>
-          <h3 class="text-lg font-bold mb-2" data-i18n="k56">Get reminded on time</h3>
-          <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed" data-i18n="k57">When it’s due, a fullscreen alert appears — complete or dismiss it in one tap.</p>
+          <span class="w-10 h-10 rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400 font-extrabold flex items-center justify-center mb-5 shadow-md">3</span>
+          <h3 class="text-lg font-bold mb-2" data-i18n="k61">Get reminded on time</h3>
+          <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed" data-i18n="k62">When it’s due, a fullscreen alert appears — complete or dismiss it in one tap.</p>
         </li>
       </ol>
     </section>
@@ -275,39 +286,39 @@
     <!-- SCREENSHOTS -->
     <section id="screenshots" class="py-16 md:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-20">
       <div class="text-center mb-10">
-        <h2 class="text-3xl font-extrabold tracking-tight" data-i18n="k58">Screenshots</h2>
-        <p class="text-slate-600 dark:text-slate-400 mt-3" data-i18n="k59">Click any image to view it full size.</p>
+        <h2 class="text-3xl font-extrabold tracking-tight" data-i18n="k63">Screenshots</h2>
+        <p class="text-slate-600 dark:text-slate-400 mt-3" data-i18n="k64">Click any image to view it full size.</p>
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         <figure>
           <button onclick="openLightbox(0)" class="group block w-full rounded-2xl overflow-hidden ring-1 ring-slate-200 dark:ring-slate-800 shadow-sm hover:shadow-xl transition-all">
             <img src="images/thumbs/reminders-hero.webp" width="640" height="400" alt="Reminders popup with Today, Scheduled, All and Flagged smart lists" loading="lazy" class="w-full aspect-[16/10] object-cover group-hover:scale-105 transition-transform duration-500">
           </button>
-          <figcaption class="text-sm text-slate-600 dark:text-slate-400 mt-3 px-1" data-i18n="k60">Reminders popup with Today, Scheduled, All and Flagged smart lists</figcaption>
+          <figcaption class="text-sm text-slate-600 dark:text-slate-400 mt-3 px-1" data-i18n="k65">Reminders popup with Today, Scheduled, All and Flagged smart lists</figcaption>
         </figure>
         <figure>
           <button onclick="openLightbox(1)" class="group block w-full rounded-2xl overflow-hidden ring-1 ring-slate-200 dark:ring-slate-800 shadow-sm hover:shadow-xl transition-all">
             <img src="images/thumbs/reminders-themes.webp" width="640" height="400" alt="Reminders in light and dark mode" loading="lazy" class="w-full aspect-[16/10] object-cover group-hover:scale-105 transition-transform duration-500">
           </button>
-          <figcaption class="text-sm text-slate-600 dark:text-slate-400 mt-3 px-1" data-i18n="k61">Reminders in light and dark mode</figcaption>
+          <figcaption class="text-sm text-slate-600 dark:text-slate-400 mt-3 px-1" data-i18n="k66">Reminders in light and dark mode</figcaption>
         </figure>
         <figure>
           <button onclick="openLightbox(2)" class="group block w-full rounded-2xl overflow-hidden ring-1 ring-slate-200 dark:ring-slate-800 shadow-sm hover:shadow-xl transition-all">
             <img src="images/thumbs/reminders-3.webp" width="640" height="400" alt="New reminder form with list, date, time, priority and flag" loading="lazy" class="w-full aspect-[16/10] object-cover group-hover:scale-105 transition-transform duration-500">
           </button>
-          <figcaption class="text-sm text-slate-600 dark:text-slate-400 mt-3 px-1" data-i18n="k62">New reminder form with list, date, time, priority and flag</figcaption>
+          <figcaption class="text-sm text-slate-600 dark:text-slate-400 mt-3 px-1" data-i18n="k67">New reminder form with list, date, time, priority and flag</figcaption>
         </figure>
         <figure>
           <button onclick="openLightbox(3)" class="group block w-full rounded-2xl overflow-hidden ring-1 ring-slate-200 dark:ring-slate-800 shadow-sm hover:shadow-xl transition-all">
             <img src="images/thumbs/reminders-alert.webp" width="640" height="400" alt="Fullscreen reminder alert with Complete and Dismiss" loading="lazy" class="w-full aspect-[16/10] object-cover group-hover:scale-105 transition-transform duration-500">
           </button>
-          <figcaption class="text-sm text-slate-600 dark:text-slate-400 mt-3 px-1" data-i18n="k63">Fullscreen reminder alert with Complete and Dismiss</figcaption>
+          <figcaption class="text-sm text-slate-600 dark:text-slate-400 mt-3 px-1" data-i18n="k68">Fullscreen reminder alert with Complete and Dismiss</figcaption>
         </figure>
         <figure>
           <button onclick="openLightbox(4)" class="group block w-full rounded-2xl overflow-hidden ring-1 ring-slate-200 dark:ring-slate-800 shadow-sm hover:shadow-xl transition-all">
             <img src="images/thumbs/reminders-calendar.webp" width="640" height="400" alt="Calendar view of scheduled reminders" loading="lazy" class="w-full aspect-[16/10] object-cover group-hover:scale-105 transition-transform duration-500">
           </button>
-          <figcaption class="text-sm text-slate-600 dark:text-slate-400 mt-3 px-1" data-i18n="k64">Calendar view of scheduled reminders</figcaption>
+          <figcaption class="text-sm text-slate-600 dark:text-slate-400 mt-3 px-1" data-i18n="k69">Calendar view of scheduled reminders</figcaption>
         </figure>
       </div>
     </section>
@@ -316,35 +327,35 @@
     <section id="pricing" class="py-16 md:py-20 bg-slate-100/60 dark:bg-slate-900/40 border-y border-slate-200 dark:border-slate-800/80 scroll-mt-20">
       <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
-          <h2 class="text-3xl font-extrabold tracking-tight" data-i18n="k65">Simple pricing</h2>
-          <p class="text-slate-600 dark:text-slate-400 mt-3" data-i18n="k66">Start free. Pay once for Premium — choose how many browsers you need.</p>
+          <h2 class="text-3xl font-extrabold tracking-tight" data-i18n="k70">Simple pricing</h2>
+          <p class="text-slate-600 dark:text-slate-400 mt-3" data-i18n="k71">Start free. Pay once for Premium — choose how many browsers you need.</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div class="bg-white dark:bg-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 flex flex-col">
-            <h3 class="text-sm font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400" data-i18n="k67">Free</h3>
+            <h3 class="text-sm font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400" data-i18n="k72">Free</h3>
             <div class="mt-3 mb-6"><span class="text-5xl font-extrabold">$0</span></div>
             <ul class="space-y-3 text-sm flex-1 mb-8">
-              <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-slate-400 mt-1"></i><span data-i18n="k68">Up to 3 reminders</span></li>
-              <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-slate-400 mt-1"></i><span data-i18n="k69">Up to 3 lists</span></li>
-              <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-slate-400 mt-1"></i><span data-i18n="k70">Up to 5 quick notes</span></li>
-              <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-slate-400 mt-1"></i><span data-i18n="k71">3 accent colors</span></li>
+              <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-slate-400 mt-1"></i><span data-i18n="k73">Up to 3 reminders</span></li>
+              <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-slate-400 mt-1"></i><span data-i18n="k74">Up to 3 lists</span></li>
+              <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-slate-400 mt-1"></i><span data-i18n="k75">Up to 5 quick notes</span></li>
+              <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-slate-400 mt-1"></i><span data-i18n="k76">3 accent colors</span></li>
             </ul>
-            <a href="https://chromewebstore.google.com/detail/reminders-chrome-extensio/ebjdfgcknblkogfgcpfplfgeanpbpdid" target="_blank" rel="noopener noreferrer" class="w-full text-center py-3.5 rounded-xl font-semibold border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" data-i18n="k72">Get started</a>
+            <a href="https://chromewebstore.google.com/detail/reminders-chrome-extensio/ebjdfgcknblkogfgcpfplfgeanpbpdid" target="_blank" rel="noopener noreferrer" class="w-full text-center py-3.5 rounded-xl font-semibold border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" data-i18n="k77">Get started</a>
           </div>
           <div class="relative bg-white dark:bg-slate-900 p-8 rounded-3xl border-2 border-blue-500/40 shadow-xl flex flex-col overflow-hidden">
             <div class="absolute inset-0 bg-gradient-to-br from-blue-500/10 to-transparent pointer-events-none"></div>
-            <span class="absolute top-5 right-5 text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400" data-i18n="k73">Popular</span>
-            <h3 class="relative text-sm font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400" data-i18n="k74">Premium</h3>
+            <span class="absolute top-5 right-5 text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-blue-500/10 text-blue-600 dark:text-blue-400" data-i18n="k78">Popular</span>
+            <h3 class="relative text-sm font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400" data-i18n="k79">Premium</h3>
             <div class="relative mt-3 mb-1 flex items-baseline gap-2"><span class="text-slate-500 dark:text-slate-400 font-medium" data-i18n="k1">from</span><span class="text-5xl font-extrabold">$12</span><span class="text-slate-500 dark:text-slate-400 font-medium" data-i18n="k2">once</span></div>
             <p class="relative text-xs text-slate-500 dark:text-slate-400 mb-6" data-i18n="k3">One-time payment · Lifetime updates · No recurring fees</p>
             <ul class="relative space-y-3 text-sm flex-1 mb-8">
-              <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-blue-600 dark:text-blue-400 mt-1"></i><span data-i18n="k75">Unlimited reminders</span></li>
-              <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-blue-600 dark:text-blue-400 mt-1"></i><span data-i18n="k76">Unlimited lists</span></li>
-              <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-blue-600 dark:text-blue-400 mt-1"></i><span data-i18n="k77">Unlimited notes — pin and color them</span></li>
-              <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-blue-600 dark:text-blue-400 mt-1"></i><span data-i18n="k78">Your own MP3 reminder sounds</span></li>
-              <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-blue-600 dark:text-blue-400 mt-1"></i><span data-i18n="k79">Any accent color</span></li>
+              <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-blue-600 dark:text-blue-400 mt-1"></i><span data-i18n="k80">Unlimited reminders</span></li>
+              <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-blue-600 dark:text-blue-400 mt-1"></i><span data-i18n="k81">Unlimited lists</span></li>
+              <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-blue-600 dark:text-blue-400 mt-1"></i><span data-i18n="k82">Unlimited notes — pin and color them</span></li>
+              <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-blue-600 dark:text-blue-400 mt-1"></i><span data-i18n="k83">Your own MP3 reminder sounds</span></li>
+              <li class="flex items-start gap-3"><i class="fa-solid fa-circle-check text-blue-600 dark:text-blue-400 mt-1"></i><span data-i18n="k84">Any accent color</span></li>
             </ul>
-            <a href="#plans" class="relative w-full text-center py-3.5 rounded-xl font-bold bg-slate-900 hover:bg-slate-700 text-white dark:bg-white dark:text-slate-900 dark:hover:bg-slate-200 shadow-slate-900/10 shadow-lg transition-all" data-i18n="k4">Upgrade to Premium</a>
+            <a href="#plans" class="relative w-full text-center py-3.5 rounded-xl font-bold bg-blue-600 hover:bg-blue-700 text-white shadow-blue-600/25 shadow-lg transition-all" data-i18n="k4">Upgrade to Premium</a>
           </div>
         </div>
         <div id="plans" class="mt-12 scroll-mt-24">
@@ -370,12 +381,12 @@
               <a href="https://anuis.lemonsqueezy.com/checkout/buy/8ee43132-3289-4829-b673-f88fe7564002" target="_blank" rel="noopener noreferrer" class="mt-auto py-2.5 rounded-xl text-sm font-bold border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all" data-i18n="k14">Buy</a>
             </div>
             <div class="relative bg-white dark:bg-slate-900 rounded-2xl p-5 text-center flex flex-col border-2 border-blue-500/40 shadow-lg">
-              <span class="absolute -top-3 left-1/2 -translate-x-1/2 whitespace-nowrap text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-slate-900 hover:bg-slate-700 text-white dark:bg-white dark:text-slate-900 dark:hover:bg-slate-200 shadow-slate-900/10" data-i18n="k15">Best value</span>
+              <span class="absolute -top-3 left-1/2 -translate-x-1/2 whitespace-nowrap text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full bg-blue-600 hover:bg-blue-700 text-white shadow-blue-600/25" data-i18n="k15">Best value</span>
               <div class="text-4xl font-extrabold">3</div>
               <div class="text-xs text-slate-500 dark:text-slate-400 mb-3" data-i18n="k16">licenses</div>
               <div class="text-2xl font-extrabold">$25 <span class="text-xs font-medium text-slate-500 dark:text-slate-400" data-i18n="k17">once</span></div>
               <div class="text-xs text-slate-500 dark:text-slate-400 mt-1 mb-4">$8.33 <span data-i18n="k18">per license</span></div>
-              <a href="https://anuis.lemonsqueezy.com/checkout/buy/aeb868f7-312c-4fa8-9450-7b0d89137d7d" target="_blank" rel="noopener noreferrer" class="mt-auto py-2.5 rounded-xl text-sm font-bold bg-slate-900 hover:bg-slate-700 text-white dark:bg-white dark:text-slate-900 dark:hover:bg-slate-200 shadow-slate-900/10 shadow-md transition-all" data-i18n="k19">Buy</a>
+              <a href="https://anuis.lemonsqueezy.com/checkout/buy/aeb868f7-312c-4fa8-9450-7b0d89137d7d" target="_blank" rel="noopener noreferrer" class="mt-auto py-2.5 rounded-xl text-sm font-bold bg-blue-600 hover:bg-blue-700 text-white shadow-blue-600/25 shadow-md transition-all" data-i18n="k19">Buy</a>
             </div>
             <div class="relative bg-white dark:bg-slate-900 rounded-2xl p-5 text-center flex flex-col border border-slate-200 dark:border-slate-800">
               
@@ -392,42 +403,42 @@
 
     <!-- FAQ -->
     <section id="faq" class="py-16 md:py-20 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-20">
-      <h2 class="text-3xl font-extrabold tracking-tight text-center mb-10" data-i18n="k80">Frequently asked questions</h2>
+      <h2 class="text-3xl font-extrabold tracking-tight text-center mb-10" data-i18n="k85">Frequently asked questions</h2>
       <div class="space-y-3">
         <details class="group glass rounded-2xl border border-slate-200 dark:border-slate-800 px-6 py-4">
           <summary class="flex items-center justify-between gap-4 cursor-pointer font-semibold">
-            <span data-i18n="k81">What do I get for free?</span>
+            <span data-i18n="k86">What do I get for free?</span>
             <i class="faq-chevron fa-solid fa-chevron-down text-xs text-slate-400 transition-transform"></i>
           </summary>
-          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mt-3" data-i18n="k82">Up to 3 reminders, 3 lists and 5 quick notes. Premium removes every limit.</p>
+          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mt-3" data-i18n="k87">Up to 3 reminders, 3 lists and 5 quick notes. Premium removes every limit.</p>
         </details>
         <details class="group glass rounded-2xl border border-slate-200 dark:border-slate-800 px-6 py-4">
           <summary class="flex items-center justify-between gap-4 cursor-pointer font-semibold">
-            <span data-i18n="k83">Do I need an account?</span>
+            <span data-i18n="k88">Do I need an account?</span>
             <i class="faq-chevron fa-solid fa-chevron-down text-xs text-slate-400 transition-transform"></i>
           </summary>
-          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mt-3" data-i18n="k84">No. Your reminders are stored locally in your browser.</p>
+          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mt-3" data-i18n="k89">No. Your reminders are stored locally in your browser.</p>
         </details>
         <details class="group glass rounded-2xl border border-slate-200 dark:border-slate-800 px-6 py-4">
           <summary class="flex items-center justify-between gap-4 cursor-pointer font-semibold">
-            <span data-i18n="k85">Can I use my own notification sound?</span>
+            <span data-i18n="k90">Can I use my own notification sound?</span>
             <i class="faq-chevron fa-solid fa-chevron-down text-xs text-slate-400 transition-transform"></i>
           </summary>
-          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mt-3" data-i18n="k86">Yes, with Premium you can upload MP3 files as reminder sounds.</p>
+          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mt-3" data-i18n="k91">Yes, with Premium you can upload MP3 files as reminder sounds.</p>
         </details>
         <details class="group glass rounded-2xl border border-slate-200 dark:border-slate-800 px-6 py-4">
           <summary class="flex items-center justify-between gap-4 cursor-pointer font-semibold">
-            <span data-i18n="k87">How much is Premium?</span>
+            <span data-i18n="k92">How much is Premium?</span>
             <i class="faq-chevron fa-solid fa-chevron-down text-xs text-slate-400 transition-transform"></i>
           </summary>
-          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mt-3" data-i18n="k88">A one-time payment from $12 for one browser — no subscription. Packs of 2, 3 and 5 licenses cost $19, $25 and $35.</p>
+          <p class="text-sm text-slate-600 dark:text-slate-400 leading-relaxed mt-3" data-i18n="k93">A one-time payment from $12 for one browser — no subscription. Packs of 2, 3 and 5 licenses cost $19, $25 and $35.</p>
         </details>
       </div>
     </section>
 
     <!-- MORE EXTENSIONS -->
     <section class="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-2xl font-extrabold tracking-tight mb-6" data-i18n="k89">More from NAN Smart</h2>
+      <h2 class="text-2xl font-extrabold tracking-tight mb-6" data-i18n="k94">More from NAN Smart</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
         <a href="alarm" class="glass p-5 rounded-2xl border border-slate-200 dark:border-slate-800 card-hover flex items-start gap-4">
           <div class="w-11 h-11 p-2 rounded-xl bg-white dark:bg-slate-800 ring-1 ring-slate-200 dark:ring-slate-700 shadow-sm flex items-center justify-center shrink-0">
@@ -435,7 +446,7 @@
           </div>
           <div>
             <h3 class="font-bold">Alarm Clock &amp; Reminders</h3>
-            <p class="text-sm text-slate-600 dark:text-slate-400 mt-1" data-i18n="k90">Repeating alarms, fullscreen ringing and snooze — right in your toolbar.</p>
+            <p class="text-sm text-slate-600 dark:text-slate-400 mt-1" data-i18n="k95">Repeating alarms, fullscreen ringing and snooze — right in your toolbar.</p>
           </div>
         </a>
         <a href="youtube" class="glass p-5 rounded-2xl border border-slate-200 dark:border-slate-800 card-hover flex items-start gap-4">
@@ -444,7 +455,7 @@
           </div>
           <div>
             <h3 class="font-bold">Playlist Manager for YouTube</h3>
-            <p class="text-sm text-slate-600 dark:text-slate-400 mt-1" data-i18n="k91">Save videos in one click, play playlists in order and group your channels.</p>
+            <p class="text-sm text-slate-600 dark:text-slate-400 mt-1" data-i18n="k96">Save videos in one click, play playlists in order and group your channels.</p>
           </div>
         </a>
         <a href="calendar" class="glass p-5 rounded-2xl border border-slate-200 dark:border-slate-800 card-hover flex items-start gap-4">
@@ -453,7 +464,7 @@
           </div>
           <div>
             <h3 class="font-bold">Multi Calendar — Lunar &amp; Hijri</h3>
-            <p class="text-sm text-slate-600 dark:text-slate-400 mt-1" data-i18n="k92">Gregorian, Lunar, Hijri and Jalali calendars side by side.</p>
+            <p class="text-sm text-slate-600 dark:text-slate-400 mt-1" data-i18n="k97">Gregorian, Lunar, Hijri and Jalali calendars side by side.</p>
           </div>
         </a>
       </div>
@@ -463,12 +474,12 @@
     <section class="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="glass rounded-3xl p-8 md:p-12 border border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/60 flex flex-col md:flex-row items-center justify-between gap-8">
         <div class="max-w-2xl">
-          <span class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400" data-i18n="k93">Support</span>
-          <h2 class="text-2xl md:text-3xl font-extrabold mt-2 mb-4" data-i18n="k94">Questions or feedback?</h2>
-          <p class="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed" data-i18n="k95">Found a bug or have an idea for a new feature? Send us an email — we read every message.</p>
+          <span class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400" data-i18n="k98">Support</span>
+          <h2 class="text-2xl md:text-3xl font-extrabold mt-2 mb-4" data-i18n="k99">Questions or feedback?</h2>
+          <p class="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed" data-i18n="k100">Found a bug or have an idea for a new feature? Send us an email — we read every message.</p>
         </div>
-        <a href="mailto:nuinguyen01bv@gmail.com" class="w-full md:w-auto px-6 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-700 text-white dark:bg-white dark:text-slate-900 dark:hover:bg-slate-200 font-semibold text-sm shadow-sm text-center transition-all">
-          <i class="fa-solid fa-envelope mr-2"></i><span data-i18n="k96">Contact us</span>
+        <a href="mailto:nuinguyen01bv@gmail.com" class="w-full md:w-auto px-6 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white shadow-blue-600/25 font-semibold text-sm shadow-sm text-center transition-all">
+          <i class="fa-solid fa-envelope mr-2"></i><span data-i18n="k101">Contact us</span>
         </a>
       </div>
     </section>
@@ -483,9 +494,9 @@
         <span class="text-xs">&copy; 2026 NAN Smart Team.</span>
       </a>
       <div class="flex items-center gap-6 text-xs sm:text-sm">
-        <a href="privacy" class="hover:text-slate-900 dark:hover:text-white transition-colors" data-i18n="k97">Privacy</a>
-        <a href="terms" class="hover:text-slate-900 dark:hover:text-white transition-colors" data-i18n="k98">Terms</a>
-        <a href="mailto:nuinguyen01bv@gmail.com" class="hover:text-slate-900 dark:hover:text-white transition-colors" data-i18n="k99">Contact</a>
+        <a href="privacy" class="hover:text-slate-900 dark:hover:text-white transition-colors" data-i18n="k102">Privacy</a>
+        <a href="terms" class="hover:text-slate-900 dark:hover:text-white transition-colors" data-i18n="k103">Terms</a>
+        <a href="mailto:nuinguyen01bv@gmail.com" class="hover:text-slate-900 dark:hover:text-white transition-colors" data-i18n="k104">Contact</a>
       </div>
     </div>
   </footer>
@@ -512,7 +523,7 @@
   </div>
 
   <script>
-    window.PAGE = {"title":"Reminders & To-Do List","images":["images/reminders-hero.webp","images/reminders-themes.webp","images/reminders-3.webp","images/reminders-alert.webp","images/reminders-calendar.webp"],"vi":{"k1":"từ","k2":"một lần","k3":"Thanh toán một lần · Cập nhật trọn đời · Không phí định kỳ","k4":"Nâng cấp Premium","k5":"Chọn gói bản quyền","k6":"Mỗi bản quyền kích hoạt Premium trên một trình duyệt.","k7":"bản quyền","k8":"một lần","k9":"mỗi bản quyền","k10":"Mua","k11":"bản quyền","k12":"một lần","k13":"mỗi bản quyền","k14":"Mua","k15":"Đáng giá nhất","k16":"bản quyền","k17":"một lần","k18":"mỗi bản quyền","k19":"Mua","k20":"bản quyền","k21":"một lần","k22":"mỗi bản quyền","k23":"Mua","k24":"Tiện ích Chrome","k25":"Tính năng","k26":"Hình ảnh","k27":"Bảng giá","k28":"Hỏi đáp","k29":"Tất cả tiện ích","k30":"Thêm vào Chrome","k31":"Trang chủ","k32":"Quản lý công việc phong cách iOS cho Chrome","k33":"Đơn giản. Đẹp.","k34":"Đúng giờ.","k35":"Luôn đúng tiến độ với trình quản lý công việc phong cách iOS, hòa vào thói quen duyệt web của bạn. Ghi công việc trong vài giây và được nhắc đúng lúc.","k36":"Thêm vào Chrome","k37":"Xem bảng giá","k38":"Mọi thứ bạn cần","k39":"Danh sách thông minh","k40":"Các mục Hôm nay, Đã lên lịch, Tất cả và Gắn cờ cho bạn thấy ngay việc cần làm.","k41":"Danh sách riêng","k42":"Tách công việc, sức khỏe và mục tiêu cá nhân bằng danh sách có màu và biểu tượng riêng.","k43":"Lên lịch nâng cao","k44":"Đặt ngày giờ chính xác, quy tắc lặp và nhắc sớm. Xem tất cả trên chế độ lịch.","k45":"Thông báo nổi bật","k46":"Thông báo chạy nền cùng màn hình nhắc toàn màn hình, hoàn thành hoặc bỏ qua chỉ một chạm.","k47":"Ưu tiên & gắn cờ","k48":"Đánh dấu việc quan trọng bằng mức ưu tiên (!, !!, !!!) và cờ để không bỏ sót.","k49":"Riêng tư & nhanh","k50":"Mọi dữ liệu lưu cục bộ trong trình duyệt — không tài khoản, không theo dõi. Có giao diện sáng và tối.","k51":"Cách hoạt động","k52":"Mở từ thanh công cụ","k53":"Bấm biểu tượng Reminders để xem ngay Hôm nay, Đã lên lịch, Tất cả và Gắn cờ.","k54":"Thêm nhắc nhở","k55":"Bấm +, nhập tiêu đề và ghi chú, chọn danh sách, ngày, giờ, mức ưu tiên và cờ.","k56":"Được nhắc đúng giờ","k57":"Đến hạn, thông báo toàn màn hình hiện lên — hoàn thành hoặc bỏ qua chỉ một chạm.","k58":"Hình ảnh thực tế","k59":"Bấm vào ảnh để xem kích thước đầy đủ.","k60":"Popup Reminders với các danh sách Hôm nay, Đã lên lịch, Tất cả và Gắn cờ","k61":"Reminders ở giao diện sáng và tối","k62":"Màn hình tạo nhắc nhở với danh sách, ngày, giờ, ưu tiên và cờ","k63":"Thông báo nhắc nhở toàn màn hình với nút Hoàn thành và Bỏ qua","k64":"Chế độ xem lịch các nhắc nhở đã lên lịch","k65":"Bảng giá đơn giản","k66":"Bắt đầu miễn phí. Trả một lần cho Premium — chọn số trình duyệt bạn cần.","k67":"Miễn phí","k68":"Tối đa 3 nhắc nhở","k69":"Tối đa 3 danh sách","k70":"Tối đa 5 ghi chú nhanh","k71":"3 màu nhấn","k72":"Bắt đầu ngay","k73":"Phổ biến","k74":"Premium","k75":"Không giới hạn nhắc nhở","k76":"Không giới hạn danh sách","k77":"Không giới hạn ghi chú — ghim và tô màu","k78":"Âm thanh nhắc nhở MP3 riêng","k79":"Màu nhấn bất kỳ","k80":"Câu hỏi thường gặp","k81":"Bản miễn phí có những gì?","k82":"Tối đa 3 nhắc nhở, 3 danh sách và 5 ghi chú nhanh. Premium bỏ mọi giới hạn.","k83":"Tôi có cần tài khoản không?","k84":"Không. Nhắc nhở được lưu cục bộ trong trình duyệt của bạn.","k85":"Tôi có thể dùng âm thanh thông báo riêng không?","k86":"Có, với Premium bạn có thể tải lên file MP3 làm âm thanh nhắc nhở.","k87":"Premium giá bao nhiêu?","k88":"Thanh toán một lần từ $12 cho một trình duyệt — không thuê bao. Gói 2, 3 và 5 bản quyền có giá $19, $25 và $35.","k89":"Các tiện ích khác của NAN Smart","k90":"Báo thức lặp lại, chuông toàn màn hình và báo lại — ngay trên thanh công cụ.","k91":"Lưu video một chạm, phát playlist theo thứ tự và nhóm kênh đăng ký.","k92":"Dương lịch, Âm lịch, Hijri và Jalali song song.","k93":"Hỗ trợ","k94":"Bạn có câu hỏi hoặc góp ý?","k95":"Gặp lỗi hoặc có ý tưởng tính năng mới? Hãy gửi email cho chúng tôi — mọi thư đều được đọc.","k96":"Liên hệ","k97":"Bảo mật","k98":"Điều khoản","k99":"Liên hệ"}};
+    window.PAGE = {"title":"Reminders & To-Do List","ring":"ring-blue-600","images":["images/reminders-hero.webp","images/reminders-themes.webp","images/reminders-3.webp","images/reminders-alert.webp","images/reminders-calendar.webp"],"vi":{"k1":"từ","k2":"một lần","k3":"Thanh toán một lần · Cập nhật trọn đời · Không phí định kỳ","k4":"Nâng cấp Premium","k5":"Chọn gói bản quyền","k6":"Mỗi bản quyền kích hoạt Premium trên một trình duyệt.","k7":"bản quyền","k8":"một lần","k9":"mỗi bản quyền","k10":"Mua","k11":"bản quyền","k12":"một lần","k13":"mỗi bản quyền","k14":"Mua","k15":"Đáng giá nhất","k16":"bản quyền","k17":"một lần","k18":"mỗi bản quyền","k19":"Mua","k20":"bản quyền","k21":"một lần","k22":"mỗi bản quyền","k23":"Mua","k24":"Tiện ích Chrome","k25":"Tính năng","k26":"Hình ảnh","k27":"Bảng giá","k28":"Hỏi đáp","k29":"Tất cả tiện ích","k30":"Thêm vào Chrome","k31":"Tính năng","k32":"Hình ảnh","k33":"Bảng giá","k34":"Hỏi đáp","k35":"Tất cả tiện ích","k36":"Trang chủ","k37":"Quản lý công việc phong cách iOS cho Chrome","k38":"Đơn giản. Đẹp.","k39":"Đúng giờ.","k40":"Luôn đúng tiến độ với trình quản lý công việc phong cách iOS, hòa vào thói quen duyệt web của bạn. Ghi công việc trong vài giây và được nhắc đúng lúc.","k41":"Thêm vào Chrome","k42":"Xem bảng giá","k43":"Mọi thứ bạn cần","k44":"Danh sách thông minh","k45":"Các mục Hôm nay, Đã lên lịch, Tất cả và Gắn cờ cho bạn thấy ngay việc cần làm.","k46":"Danh sách riêng","k47":"Tách công việc, sức khỏe và mục tiêu cá nhân bằng danh sách có màu và biểu tượng riêng.","k48":"Lên lịch nâng cao","k49":"Đặt ngày giờ chính xác, quy tắc lặp và nhắc sớm. Xem tất cả trên chế độ lịch.","k50":"Thông báo nổi bật","k51":"Thông báo chạy nền cùng màn hình nhắc toàn màn hình, hoàn thành hoặc bỏ qua chỉ một chạm.","k52":"Ưu tiên & gắn cờ","k53":"Đánh dấu việc quan trọng bằng mức ưu tiên (!, !!, !!!) và cờ để không bỏ sót.","k54":"Riêng tư & nhanh","k55":"Mọi dữ liệu lưu cục bộ trong trình duyệt — không tài khoản, không theo dõi. Có giao diện sáng và tối.","k56":"Cách hoạt động","k57":"Mở từ thanh công cụ","k58":"Bấm biểu tượng Reminders để xem ngay Hôm nay, Đã lên lịch, Tất cả và Gắn cờ.","k59":"Thêm nhắc nhở","k60":"Bấm +, nhập tiêu đề và ghi chú, chọn danh sách, ngày, giờ, mức ưu tiên và cờ.","k61":"Được nhắc đúng giờ","k62":"Đến hạn, thông báo toàn màn hình hiện lên — hoàn thành hoặc bỏ qua chỉ một chạm.","k63":"Hình ảnh thực tế","k64":"Bấm vào ảnh để xem kích thước đầy đủ.","k65":"Popup Reminders với các danh sách Hôm nay, Đã lên lịch, Tất cả và Gắn cờ","k66":"Reminders ở giao diện sáng và tối","k67":"Màn hình tạo nhắc nhở với danh sách, ngày, giờ, ưu tiên và cờ","k68":"Thông báo nhắc nhở toàn màn hình với nút Hoàn thành và Bỏ qua","k69":"Chế độ xem lịch các nhắc nhở đã lên lịch","k70":"Bảng giá đơn giản","k71":"Bắt đầu miễn phí. Trả một lần cho Premium — chọn số trình duyệt bạn cần.","k72":"Miễn phí","k73":"Tối đa 3 nhắc nhở","k74":"Tối đa 3 danh sách","k75":"Tối đa 5 ghi chú nhanh","k76":"3 màu nhấn","k77":"Bắt đầu ngay","k78":"Phổ biến","k79":"Premium","k80":"Không giới hạn nhắc nhở","k81":"Không giới hạn danh sách","k82":"Không giới hạn ghi chú — ghim và tô màu","k83":"Âm thanh nhắc nhở MP3 riêng","k84":"Màu nhấn bất kỳ","k85":"Câu hỏi thường gặp","k86":"Bản miễn phí có những gì?","k87":"Tối đa 3 nhắc nhở, 3 danh sách và 5 ghi chú nhanh. Premium bỏ mọi giới hạn.","k88":"Tôi có cần tài khoản không?","k89":"Không. Nhắc nhở được lưu cục bộ trong trình duyệt của bạn.","k90":"Tôi có thể dùng âm thanh thông báo riêng không?","k91":"Có, với Premium bạn có thể tải lên file MP3 làm âm thanh nhắc nhở.","k92":"Premium giá bao nhiêu?","k93":"Thanh toán một lần từ $12 cho một trình duyệt — không thuê bao. Gói 2, 3 và 5 bản quyền có giá $19, $25 và $35.","k94":"Các tiện ích khác của NAN Smart","k95":"Báo thức lặp lại, chuông toàn màn hình và báo lại — ngay trên thanh công cụ.","k96":"Lưu video một chạm, phát playlist theo thứ tự và nhóm kênh đăng ký.","k97":"Dương lịch, Âm lịch, Hijri và Jalali song song.","k98":"Hỗ trợ","k99":"Bạn có câu hỏi hoặc góp ý?","k100":"Gặp lỗi hoặc có ý tưởng tính năng mới? Hãy gửi email cho chúng tôi — mọi thư đều được đọc.","k101":"Liên hệ","k102":"Bảo mật","k103":"Điều khoản","k104":"Liên hệ"}};
   </script>
   <script src="product.js"></script>
 </body>
