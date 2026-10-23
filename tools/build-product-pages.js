@@ -42,11 +42,27 @@ const COMMON = {
   screensTitle: { en: 'Screenshots', vi: 'Hình ảnh thực tế' },
   screensSub: { en: 'Click any image to view it full size.', vi: 'Bấm vào ảnh để xem kích thước đầy đủ.' },
   pricingTitle: { en: 'Simple pricing', vi: 'Bảng giá đơn giản' },
-  pricingSub: { en: 'Start free. Upgrade once, keep it forever — no subscription.', vi: 'Bắt đầu miễn phí. Nâng cấp một lần, dùng mãi mãi — không thuê bao.' },
+  pricingSubLifetime: { en: 'Start free. Pay once for Premium — choose how many browsers you need.', vi: 'Bắt đầu miễn phí. Trả một lần cho Premium — chọn số trình duyệt bạn cần.' },
+  pricingSubSubscription: { en: 'Start free. Upgrade monthly or yearly — cancel anytime.', vi: 'Bắt đầu miễn phí. Nâng cấp theo tháng hoặc năm — hủy bất cứ lúc nào.' },
   free: { en: 'Free', vi: 'Miễn phí' },
   premium: { en: 'Premium', vi: 'Premium' },
-  lifetime: { en: 'lifetime', vi: 'trọn đời' },
-  oneTime: { en: 'One-time payment · No subscription', vi: 'Thanh toán một lần · Không thuê bao' },
+  from: { en: 'from', vi: 'từ' },
+  once: { en: 'once', vi: 'một lần' },
+  oneTime: { en: 'One-time payment · Lifetime updates · No recurring fees', vi: 'Thanh toán một lần · Cập nhật trọn đời · Không phí định kỳ' },
+  perMonth: { en: '/ month', vi: '/ tháng' },
+  perYear: { en: '/ year', vi: '/ năm' },
+  monthly: { en: 'Monthly', vi: 'Theo tháng' },
+  yearly: { en: 'Yearly', vi: 'Theo năm' },
+  cancelAnytime: { en: 'Cancel anytime. The license key arrives by email.', vi: 'Hủy bất cứ lúc nào. Mã bản quyền được gửi qua email.' },
+  subscribeMonthly: { en: 'Subscribe monthly', vi: 'Đăng ký theo tháng' },
+  subscribeYearly: { en: 'Subscribe yearly', vi: 'Đăng ký theo năm' },
+  tiersTitle: { en: 'Choose your license pack', vi: 'Chọn gói bản quyền' },
+  tiersSub: { en: 'One license activates Premium on one browser.', vi: 'Mỗi bản quyền kích hoạt Premium trên một trình duyệt.' },
+  license: { en: 'license', vi: 'bản quyền' },
+  licenses: { en: 'licenses', vi: 'bản quyền' },
+  perLicense: { en: 'per license', vi: 'mỗi bản quyền' },
+  bestValue: { en: 'Best value', vi: 'Đáng giá nhất' },
+  buy: { en: 'Buy', vi: 'Mua' },
   popular: { en: 'Popular', vi: 'Phổ biến' },
   getStarted: { en: 'Get started', vi: 'Bắt đầu ngay' },
   upgrade: { en: 'Upgrade to Premium', vi: 'Nâng cấp Premium' },
@@ -62,6 +78,10 @@ const COMMON = {
   footerContact: { en: 'Contact', vi: 'Liên hệ' }
 };
 
+// Prices mirror the plans shown inside each extension (features.js / popup.js / lib/store.js there).
+const LS = 'https://anuis.lemonsqueezy.com/checkout/buy/';
+const lifetimeTiers = ids => [[1, 12], [2, 19], [3, 25], [5, 35]].map(([n, price], i) => ({ n, price, url: LS + ids[i], best: n === 3 }));
+
 const PRODUCTS = [
   {
     id: 'alarm',
@@ -70,8 +90,10 @@ const PRODUCTS = [
     accent: 'red',
     icon: 'images/icon-alarm.png',
     store: 'https://chromewebstore.google.com/detail/alarm-clock-reminder-chro/apbmibchnilnanhnaphgoojbjinkkabi',
-    checkout: 'https://anuis.lemonsqueezy.com/checkout/buy/832ff7fd-00d7-45c9-a46d-68d097b9fe9b',
-    price: '$39',
+    pricing: {
+      type: 'lifetime',
+      tiers: lifetimeTiers(['832ff7fd-00d7-45c9-a46d-68d097b9fe9b', '2bd2ad7d-d9b0-46ba-9143-d4204c851243', '21c926e6-c78e-4035-91d9-a99c84f0cb82', '73b20b8a-c0b1-4876-abb4-30f9c3ac1760'])
+    },
     seoTitle: 'Alarm Clock & Reminders for Chrome — Repeating Alarms, Snooze & Themes',
     seoDesc: 'A lightweight alarm clock for Chrome: repeating alarms, fullscreen ringing with snooze, custom sounds, voice messages, 24h/12h and light & dark themes.',
     short: { en: 'Repeating alarms, fullscreen ringing and snooze — right in your toolbar.', vi: 'Báo thức lặp lại, chuông toàn màn hình và báo lại — ngay trên thanh công cụ.' },
@@ -93,7 +115,7 @@ const PRODUCTS = [
       ['fa-expand', { en: 'Fullscreen ringing view', vi: 'Màn hình chuông toàn màn hình' }, { en: 'A large ringing view with big Snooze and Stop buttons — optionally in its own window.', vi: 'Màn hình chuông lớn với nút Báo lại và Tắt to rõ — có thể mở trong cửa sổ riêng.' }],
       ['fa-rotate', { en: 'Repeat & snooze', vi: 'Lặp lại & báo lại' }, { en: 'Repeat by weekday and choose a snooze of 5, 10, 15 or 30 minutes.', vi: 'Lặp lại theo thứ trong tuần và chọn báo lại sau 5, 10, 15 hoặc 30 phút.' }],
       ['fa-music', { en: 'Sounds & icons', vi: 'Âm thanh & biểu tượng' }, { en: 'Built-in sounds, labels and emoji icons for every alarm. Premium adds custom MP3 and animated icons.', vi: 'Âm thanh có sẵn, nhãn và biểu tượng emoji cho từng báo thức. Premium thêm MP3 riêng và biểu tượng động.' }],
-      ['fa-microphone', { en: 'Voice messages', vi: 'Tin nhắn giọng nói' }, { en: 'Add text that is read aloud when the alarm rings (Premium).', vi: 'Thêm nội dung được đọc to khi báo thức reo (Premium).' }],
+      ['fa-microphone', { en: 'Spoken alarms', vi: 'Báo thức đọc thành tiếng' }, { en: 'Your message is read out loud when the alarm rings, in 20+ languages (Premium).', vi: 'Nội dung của bạn được đọc to khi báo thức reo, hơn 20 ngôn ngữ (Premium).' }],
       ['fa-palette', { en: 'Themes & time format', vi: 'Giao diện & định dạng giờ' }, { en: 'Light and dark mode, accent colors and a 24h or 12h AM/PM clock.', vi: 'Giao diện sáng và tối, màu nhấn và đồng hồ 24h hoặc 12h AM/PM.' }]
     ],
     steps: [
@@ -104,20 +126,20 @@ const PRODUCTS = [
     freeList: [
       { en: 'Up to 3 alarms', vi: 'Tối đa 3 báo thức' },
       { en: 'Built-in sounds, snooze, repeat by weekday', vi: 'Âm thanh có sẵn, báo lại, lặp theo thứ' },
-      { en: 'Dark / light theme + 3 accent presets', vi: 'Giao diện sáng / tối + 3 màu nhấn' },
+      { en: 'Dark / light theme + 3 accent colors', vi: 'Giao diện sáng / tối + 3 màu nhấn' },
       { en: 'Standard emoji icons', vi: 'Biểu tượng emoji tiêu chuẩn' }
     ],
     premiumList: [
       { en: 'Unlimited alarms', vi: 'Không giới hạn báo thức' },
-      { en: 'AI voice messages (any language)', vi: 'Tin nhắn giọng nói AI (mọi ngôn ngữ)' },
-      { en: 'Upload custom MP3 alarm sounds', vi: 'Tải lên âm thanh báo thức MP3 riêng' },
-      { en: 'Animated premium icons', vi: 'Biểu tượng động Premium' },
-      { en: 'Full accent picker + custom color', vi: 'Bảng chọn màu đầy đủ + màu tùy chỉnh' }
+      { en: 'Spoken alarms in 20+ languages', vi: 'Báo thức đọc thành tiếng, hơn 20 ngôn ngữ' },
+      { en: 'Your own MP3s for alarms and timers', vi: 'MP3 riêng cho báo thức và hẹn giờ' },
+      { en: '16 animated icons', vi: '16 biểu tượng động' },
+      { en: 'Any accent color', vi: 'Màu nhấn bất kỳ' }
     ],
     faq: [
       [{ en: 'Will the alarm ring if Chrome is minimized?', vi: 'Báo thức có reo khi Chrome đang thu nhỏ không?' }, { en: 'Yes. Alarms use Chrome’s alarms API and an offscreen page, so they ring while Chrome is running in the background or minimized.', vi: 'Có. Báo thức dùng Chrome alarms API và trang offscreen nên vẫn reo khi Chrome chạy nền hoặc đang thu nhỏ.' }],
       [{ en: 'How many alarms can I create for free?', vi: 'Bản miễn phí tạo được bao nhiêu báo thức?' }, { en: 'Up to 3 alarms. Premium removes the limit.', vi: 'Tối đa 3 báo thức. Premium bỏ giới hạn này.' }],
-      [{ en: 'Is Premium a subscription?', vi: 'Premium có phải trả hằng tháng không?' }, { en: 'No. Premium is a one-time $39 payment for lifetime access.', vi: 'Không. Premium thanh toán một lần $39 và dùng trọn đời.' }],
+      [{ en: 'How much is Premium?', vi: 'Premium giá bao nhiêu?' }, { en: 'A one-time payment from $12 for one browser — no subscription. Packs of 2, 3 and 5 licenses cost $19, $25 and $35.', vi: 'Thanh toán một lần từ $12 cho một trình duyệt — không thuê bao. Gói 2, 3 và 5 bản quyền có giá $19, $25 và $35.' }],
       [{ en: 'Where are my alarms stored?', vi: 'Báo thức của tôi được lưu ở đâu?' }, { en: 'Locally in your browser. There is no account and no tracking.', vi: 'Lưu cục bộ trong trình duyệt của bạn. Không cần tài khoản và không theo dõi.' }]
     ]
   },
@@ -128,8 +150,10 @@ const PRODUCTS = [
     accent: 'blue',
     icon: 'images/icon-reminders.png',
     store: 'https://chromewebstore.google.com/detail/reminders-chrome-extensio/ebjdfgcknblkogfgcpfplfgeanpbpdid',
-    checkout: 'https://anuis.lemonsqueezy.com/checkout/buy/fcebd98b-ff41-431b-a1ec-48aa2521f540',
-    price: '$39',
+    pricing: {
+      type: 'lifetime',
+      tiers: lifetimeTiers(['fcebd98b-ff41-431b-a1ec-48aa2521f540', '8ee43132-3289-4829-b673-f88fe7564002', 'aeb868f7-312c-4fa8-9450-7b0d89137d7d', 'ccc86c0d-6134-467e-b1da-48bc650d9aea'])
+    },
     seoTitle: 'Reminders & To-Do List for Chrome — iOS-Style Task Manager',
     seoDesc: 'An elegant, iOS-inspired task manager for Chrome: smart lists, custom lists, dates and repeats, fullscreen alerts and a calendar view. Free and Premium.',
     short: { en: 'An iOS-style task manager with smart lists and on-time alerts.', vi: 'Quản lý công việc phong cách iOS với danh sách thông minh và nhắc đúng giờ.' },
@@ -161,23 +185,23 @@ const PRODUCTS = [
       [{ en: 'Get reminded on time', vi: 'Được nhắc đúng giờ' }, { en: 'When it’s due, a fullscreen alert appears — complete or dismiss it in one tap.', vi: 'Đến hạn, thông báo toàn màn hình hiện lên — hoàn thành hoặc bỏ qua chỉ một chạm.' }]
     ],
     freeList: [
-      { en: 'Up to 3 active reminders', vi: 'Tối đa 3 nhắc nhở đang hoạt động' },
-      { en: 'Basic categorization', vi: 'Phân loại cơ bản' },
-      { en: 'Standard notification sounds', vi: 'Âm thanh thông báo tiêu chuẩn' },
-      { en: 'Local browser storage', vi: 'Lưu trữ cục bộ trong trình duyệt' }
+      { en: 'Up to 3 reminders', vi: 'Tối đa 3 nhắc nhở' },
+      { en: 'Up to 3 lists', vi: 'Tối đa 3 danh sách' },
+      { en: 'Up to 5 quick notes', vi: 'Tối đa 5 ghi chú nhanh' },
+      { en: '3 accent colors', vi: '3 màu nhấn' }
     ],
     premiumList: [
-      { en: 'Unlimited active reminders', vi: 'Không giới hạn nhắc nhở' },
-      { en: 'Unlimited custom lists', vi: 'Không giới hạn danh sách riêng' },
-      { en: 'Custom MP3 notification sounds', vi: 'Âm thanh thông báo MP3 riêng' },
-      { en: 'Full color & icon personalization', vi: 'Tùy chỉnh màu & biểu tượng đầy đủ' },
-      { en: 'Priority developer support', vi: 'Hỗ trợ ưu tiên từ nhà phát triển' }
+      { en: 'Unlimited reminders', vi: 'Không giới hạn nhắc nhở' },
+      { en: 'Unlimited lists', vi: 'Không giới hạn danh sách' },
+      { en: 'Unlimited notes — pin and color them', vi: 'Không giới hạn ghi chú — ghim và tô màu' },
+      { en: 'Your own MP3 reminder sounds', vi: 'Âm thanh nhắc nhở MP3 riêng' },
+      { en: 'Any accent color', vi: 'Màu nhấn bất kỳ' }
     ],
     faq: [
-      [{ en: 'How many reminders can I create for free?', vi: 'Bản miễn phí tạo được bao nhiêu nhắc nhở?' }, { en: 'Up to 3 active reminders. Premium unlocks unlimited reminders and lists.', vi: 'Tối đa 3 nhắc nhở đang hoạt động. Premium mở không giới hạn nhắc nhở và danh sách.' }],
+      [{ en: 'What do I get for free?', vi: 'Bản miễn phí có những gì?' }, { en: 'Up to 3 reminders, 3 lists and 5 quick notes. Premium removes every limit.', vi: 'Tối đa 3 nhắc nhở, 3 danh sách và 5 ghi chú nhanh. Premium bỏ mọi giới hạn.' }],
       [{ en: 'Do I need an account?', vi: 'Tôi có cần tài khoản không?' }, { en: 'No. Your reminders are stored locally in your browser.', vi: 'Không. Nhắc nhở được lưu cục bộ trong trình duyệt của bạn.' }],
-      [{ en: 'Can I use my own notification sound?', vi: 'Tôi có thể dùng âm thanh thông báo riêng không?' }, { en: 'Yes, with Premium you can upload MP3 files as notification sounds.', vi: 'Có, với Premium bạn có thể tải lên file MP3 làm âm thanh thông báo.' }],
-      [{ en: 'Is Premium a subscription?', vi: 'Premium có phải trả hằng tháng không?' }, { en: 'No. Premium is a one-time $39 payment for lifetime access.', vi: 'Không. Premium thanh toán một lần $39 và dùng trọn đời.' }]
+      [{ en: 'Can I use my own notification sound?', vi: 'Tôi có thể dùng âm thanh thông báo riêng không?' }, { en: 'Yes, with Premium you can upload MP3 files as reminder sounds.', vi: 'Có, với Premium bạn có thể tải lên file MP3 làm âm thanh nhắc nhở.' }],
+      [{ en: 'How much is Premium?', vi: 'Premium giá bao nhiêu?' }, { en: 'A one-time payment from $12 for one browser — no subscription. Packs of 2, 3 and 5 licenses cost $19, $25 and $35.', vi: 'Thanh toán một lần từ $12 cho một trình duyệt — không thuê bao. Gói 2, 3 và 5 bản quyền có giá $19, $25 và $35.' }]
     ]
   },
   {
@@ -187,8 +211,11 @@ const PRODUCTS = [
     accent: 'rose',
     icon: 'images/icon-youtube.png',
     store: 'https://chromewebstore.google.com/detail/playlist-manager-for-yout/lfhblickhegnbcelnahnjbgcgkjaigge',
-    checkout: 'https://anuis.lemonsqueezy.com/checkout/buy/e83f0a9f-219a-4f24-8fb5-4463b5c4a420',
-    price: '$39',
+    pricing: {
+      type: 'subscription',
+      month: { price: '$2.99', url: LS + 'e83f0a9f-219a-4f24-8fb5-4463b5c4a420' },
+      year: { price: '$19.99', perMonth: '$1.67', save: 44, url: LS + '388202ef-0528-41a1-bfd1-ba7ee3ffdd11' }
+    },
     seoTitle: 'Playlist Manager for YouTube — Save Videos, Playlists & Channel Groups',
     seoDesc: 'Save any YouTube video in one click, organize playlists into folders, play in order or shuffle, set a sleep timer and sort subscriptions into channel groups.',
     short: { en: 'Save videos in one click, play playlists in order and group your channels.', vi: 'Lưu video một chạm, phát playlist theo thứ tự và nhóm kênh đăng ký.' },
@@ -208,7 +235,7 @@ const PRODUCTS = [
     ],
     features: [
       ['fa-plus', { en: 'One-click save', vi: 'Lưu một chạm' }, { en: 'Add any video to a playlist from search results or the player, without leaving YouTube.', vi: 'Thêm mọi video vào playlist từ kết quả tìm kiếm hoặc trình phát, không cần rời YouTube.' }],
-      ['fa-folder', { en: 'Playlists & folders', vi: 'Playlist & thư mục' }, { en: 'Organize playlists into folders with icons, colors, search, sorting and drag-and-drop.', vi: 'Sắp xếp playlist vào thư mục với biểu tượng, màu, tìm kiếm, sắp xếp và kéo thả.' }],
+      ['fa-folder', { en: 'Unlimited playlists', vi: 'Playlist không giới hạn' }, { en: 'Unlimited playlists and videos for free, organized into folders with icons, colors, search and drag-and-drop.', vi: 'Playlist và video không giới hạn ngay cả bản miễn phí, sắp vào thư mục với biểu tượng, màu, tìm kiếm và kéo thả.' }],
       ['fa-play', { en: 'Play in order', vi: 'Phát theo thứ tự' }, { en: 'Play, shuffle or repeat using YouTube’s own player, with a mini player, Up next and queue.', vi: 'Phát, trộn hoặc lặp bằng chính trình phát YouTube, kèm trình phát mini, Tiếp theo và hàng chờ.' }],
       ['fa-users', { en: 'Channel groups', vi: 'Nhóm kênh' }, { en: 'Sync your subscriptions and sort channels into groups like Music, Learning or Tech.', vi: 'Đồng bộ kênh đăng ký và gom thành nhóm như Âm nhạc, Học tập hay Công nghệ.' }],
       ['fa-filter', { en: 'Focused feed', vi: 'Bảng tin tập trung' }, { en: 'See new videos per group and hide watched videos or Shorts.', vi: 'Xem video mới theo nhóm, ẩn video đã xem hoặc Shorts.' }],
@@ -220,22 +247,22 @@ const PRODUCTS = [
       [{ en: 'Press Play All', vi: 'Bấm Phát tất cả' }, { en: 'Play in order, shuffle or repeat, and set a sleep timer if you need one.', vi: 'Phát theo thứ tự, ngẫu nhiên hoặc lặp lại, và đặt hẹn giờ tắt nếu cần.' }]
     ],
     freeList: [
-      { en: 'Up to 3 playlists', vi: 'Tối đa 3 playlist' },
-      { en: 'Up to 6 videos per playlist', vi: 'Tối đa 6 video mỗi playlist' },
-      { en: 'Sleep timer', vi: 'Hẹn giờ tắt' },
-      { en: 'Standard icons', vi: 'Biểu tượng tiêu chuẩn' }
+      { en: 'Unlimited playlists & videos', vi: 'Không giới hạn playlist & video' },
+      { en: 'Play in order, shuffle, repeat & sleep timer', vi: 'Phát theo thứ tự, trộn, lặp & hẹn giờ tắt' },
+      { en: 'Up to 5 channel groups', vi: 'Tối đa 5 nhóm kênh' },
+      { en: 'One-click save on YouTube', vi: 'Lưu một chạm trên YouTube' }
     ],
     premiumList: [
-      { en: 'Unlimited playlists', vi: 'Không giới hạn playlist' },
-      { en: 'Unlimited videos', vi: 'Không giới hạn video' },
-      { en: 'Premium icons & custom colors', vi: 'Biểu tượng Premium & màu tùy chỉnh' },
-      { en: 'Priority cloud sync (coming soon)', vi: 'Đồng bộ đám mây ưu tiên (sắp có)' }
+      { en: 'Unlimited channel groups', vi: 'Không giới hạn nhóm kênh' },
+      { en: 'Folders inside folders', vi: 'Thư mục lồng trong thư mục' },
+      { en: 'Automatic daily backups', vi: 'Tự động sao lưu hằng ngày' },
+      { en: 'One-click sorting by name, date and length', vi: 'Sắp xếp một chạm theo tên, ngày và độ dài' }
     ],
     faq: [
       [{ en: 'How do I save a video to my playlist?', vi: 'Làm sao để lưu video vào playlist?' }, { en: 'After installing, click the + button next to any video on YouTube and choose a playlist.', vi: 'Sau khi cài đặt, bấm nút + cạnh video bất kỳ trên YouTube và chọn playlist.' }],
       [{ en: 'Does the sleep timer work for music?', vi: 'Hẹn giờ tắt có dùng được khi nghe nhạc không?' }, { en: 'Yes. The sleep timer pauses any playing YouTube video or music track when the time runs out.', vi: 'Có. Hẹn giờ tắt sẽ dừng mọi video hoặc bài nhạc YouTube đang phát khi hết giờ.' }],
       [{ en: 'Can I customize my playlist icons?', vi: 'Tôi có thể đổi biểu tượng playlist không?' }, { en: 'Yes. Choose from a range of colors and icons to make each playlist easy to find.', vi: 'Có. Chọn từ nhiều màu và biểu tượng để mỗi playlist dễ tìm hơn.' }],
-      [{ en: 'What are the free limits?', vi: 'Bản miễn phí có giới hạn gì?' }, { en: 'Up to 3 playlists with 6 videos each. Premium ($39 one-time) removes the limits.', vi: 'Tối đa 3 playlist, mỗi playlist 6 video. Premium ($39 một lần) bỏ mọi giới hạn.' }]
+      [{ en: 'What are the free limits?', vi: 'Bản miễn phí có giới hạn gì?' }, { en: 'Playlists and videos are unlimited. The free plan allows up to 5 channel groups; Premium ($2.99/month or $19.99/year) removes the limit and adds subfolders, daily backups and sorting.', vi: 'Playlist và video không giới hạn. Bản miễn phí cho tối đa 5 nhóm kênh; Premium ($2.99/tháng hoặc $19.99/năm) bỏ giới hạn và thêm thư mục con, sao lưu hằng ngày và sắp xếp.' }]
     ]
   },
   {
@@ -245,8 +272,10 @@ const PRODUCTS = [
     accent: 'pink',
     icon: 'images/icon-calendar.png',
     store: 'https://chromewebstore.google.com/detail/multi-calendar-%E2%80%94-lunar-hi/jelgahjncijhnkohohfdfhnadeohcdgk',
-    checkout: 'https://anuis.lemonsqueezy.com/checkout/buy/99915296-4708-4840-8d67-b7ae2dcd28af',
-    price: null,
+    pricing: {
+      type: 'lifetime',
+      tiers: lifetimeTiers(['99915296-4708-4840-8d67-b7ae2dcd28af', '15996a20-6aec-47c6-92b1-9985bd83c3c4', '552141ae-40d0-4c7c-81f0-11ab78e60d2b', '85950d9c-e65c-431c-9e03-972f7ff2ec27'])
+    },
     seoTitle: 'Multi Calendar for Chrome — Lunar, Hijri & Jalali Calendar',
     seoDesc: 'Gregorian, Lunar (Vietnamese, Chinese, Korean, Japanese), Hijri and Jalali calendars side by side in Chrome, with events, reminders and an anniversary counter.',
     short: { en: 'Gregorian, Lunar, Hijri and Jalali calendars side by side.', vi: 'Dương lịch, Âm lịch, Hijri và Jalali song song.' },
@@ -279,17 +308,20 @@ const PRODUCTS = [
     ],
     freeList: [
       { en: 'Gregorian, Lunar, Hijri & Jalali calendars', vi: 'Lịch Dương, Âm, Hijri & Jalali' },
-      { en: 'Events & smart reminders', vi: 'Sự kiện & nhắc nhở thông minh' },
+      { en: 'Up to 3 events', vi: 'Tối đa 3 sự kiện' },
       { en: 'Anniversary counter', vi: 'Đếm ngày yêu' },
       { en: '10+ languages, light & dark mode', vi: 'Hơn 10 ngôn ngữ, giao diện sáng & tối' }
     ],
     premiumList: [
-      { en: 'Export events to .ics', vi: 'Xuất sự kiện ra file .ics' },
-      { en: 'Custom accent colors', vi: 'Màu nhấn tùy chỉnh' }
+      { en: 'Unlimited events', vi: 'Không giới hạn sự kiện' },
+      { en: 'Lunar-date events & advance reminders', vi: 'Sự kiện theo ngày âm & nhắc trước' },
+      { en: 'Automatic local holidays & countdown on icon', vi: 'Tự động thêm ngày lễ & đếm ngược trên biểu tượng' },
+      { en: 'Custom anniversary milestones, background & notifications', vi: 'Cột mốc ngày yêu, ảnh nền & thông báo tùy chỉnh' },
+      { en: 'Export to .ics and custom colors', vi: 'Xuất file .ics và màu tùy chỉnh' }
     ],
     faq: [
       [{ en: 'Which lunar calendars are supported?', vi: 'Hỗ trợ những loại âm lịch nào?' }, { en: 'Vietnamese, Chinese, Korean and Japanese lunar calendars, plus Hijri (Islamic) and Jalali (Persian).', vi: 'Âm lịch Việt Nam, Trung Quốc, Hàn Quốc và Nhật Bản, cùng lịch Hijri (Hồi giáo) và Jalali (Ba Tư).' }],
-      [{ en: 'Can I get reminders for lunar dates?', vi: 'Có nhắc được theo ngày âm lịch không?' }, { en: 'Yes. Add events like birthdays or anniversaries and get notified before they arrive.', vi: 'Có. Thêm sự kiện như sinh nhật hay ngày kỷ niệm và nhận thông báo trước khi đến ngày.' }],
+      [{ en: 'Can I get reminders for lunar dates?', vi: 'Có nhắc được theo ngày âm lịch không?' }, { en: 'Yes, with Premium: add events on lunar dates and get advance reminders before they arrive. The free plan includes up to 3 events.', vi: 'Có, với Premium: thêm sự kiện theo ngày âm và nhận nhắc trước khi đến ngày. Bản miễn phí cho tối đa 3 sự kiện.' }],
       [{ en: 'Can I export my events?', vi: 'Tôi có xuất được sự kiện không?' }, { en: 'Yes, Premium lets you export events to an .ics file to back them up or import elsewhere.', vi: 'Có, Premium cho phép xuất sự kiện ra file .ics để sao lưu hoặc nhập vào ứng dụng khác.' }],
       [{ en: 'Which languages are available?', vi: 'Có những ngôn ngữ nào?' }, { en: 'More than 10 languages, including English and Vietnamese.', vi: 'Hơn 10 ngôn ngữ, bao gồm tiếng Anh và tiếng Việt.' }]
     ]
@@ -339,11 +371,43 @@ function buildPage(p) {
     ]
   };
 
-  // Calendar has no published price, so it shows a label instead of a price and skips the "one-time" line.
-  const priceBlock = p.price
-    ? `<div class="relative mt-3 mb-1"><span class="text-5xl font-extrabold">${p.price}</span> <span class="text-slate-500 dark:text-slate-400 font-medium"${tx(C.lifetime)}</span></div>
-            <p class="relative text-xs text-slate-500 dark:text-slate-400 mb-6"${tx(C.oneTime)}</p>`
-    : `<div class="relative mt-3 mb-6"><span class="text-3xl font-extrabold"${tx({ en: 'Unlock extras', vi: 'Mở khóa thêm' })}</span></div>`;
+  const pr = p.pricing;
+  const lifetime = pr.type === 'lifetime';
+  const muted = 'text-slate-500 dark:text-slate-400';
+
+  // Premium card: price line and call to action differ between one-time licenses and subscriptions.
+  const priceBlock = lifetime
+    ? `<div class="relative mt-3 mb-1 flex items-baseline gap-2"><span class="${muted} font-medium"${tx(C.from)}</span><span class="text-5xl font-extrabold">$${pr.tiers[0].price}</span><span class="${muted} font-medium"${tx(C.once)}</span></div>
+            <p class="relative text-xs ${muted} mb-6"${tx(C.oneTime)}</p>`
+    : `<div class="relative mt-3 mb-1 flex items-baseline gap-1"><span class="text-5xl font-extrabold">${pr.month.price}</span><span class="${muted} font-medium"${tx(C.perMonth)}</span></div>
+            <p class="relative text-xs ${muted} mb-6"${tx({ en: `or ${pr.year.price} / year (${pr.year.perMonth}/month) — save ${pr.year.save}%`, vi: `hoặc ${pr.year.price} / năm (${pr.year.perMonth}/tháng) — tiết kiệm ${pr.year.save}%` })}</p>`;
+
+  const premiumCta = lifetime
+    ? `<a href="#plans" class="relative w-full text-center py-3.5 rounded-xl font-bold text-white ${a.btn} shadow-lg transition-all"${tx(C.upgrade)}</a>`
+    : `<div class="relative grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <a href="${pr.month.url}" target="_blank" rel="noopener noreferrer" class="text-center py-3.5 rounded-xl font-bold text-white ${a.btn} shadow-lg transition-all"${tx(C.subscribeMonthly)}</a>
+              <a href="${pr.year.url}" target="_blank" rel="noopener noreferrer" class="text-center py-3.5 rounded-xl font-bold border-2 ${a.border} ${a.text} hover:bg-slate-50 dark:hover:bg-slate-800 transition-all"${tx(C.subscribeYearly)}</a>
+            </div>
+            <p class="relative text-xs ${muted} text-center mt-3"${tx(C.cancelAnytime)}</p>`;
+
+  // One-time products also get a row of license packs, matching the plan picker inside the extension.
+  const tiersBlock = lifetime ? `
+        <div id="plans" class="mt-12 scroll-mt-24">
+          <div class="text-center mb-6">
+            <h3 class="text-xl font-extrabold"${tx(C.tiersTitle)}</h3>
+            <p class="text-sm ${muted} mt-1"${tx(C.tiersSub)}</p>
+          </div>
+          <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
+${pr.tiers.map(t => `            <div class="relative bg-white dark:bg-slate-900 rounded-2xl p-5 text-center flex flex-col ${t.best ? `border-2 ${a.border} shadow-lg` : 'border border-slate-200 dark:border-slate-800'}">
+              ${t.best ? `<span class="absolute -top-3 left-1/2 -translate-x-1/2 whitespace-nowrap text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full text-white ${a.btn}"${tx(C.bestValue)}</span>` : ''}
+              <div class="text-4xl font-extrabold">${t.n}</div>
+              <div class="text-xs ${muted} mb-3"${tx(t.n === 1 ? C.license : C.licenses)}</div>
+              <div class="text-2xl font-extrabold">$${t.price} <span class="text-xs font-medium ${muted}"${tx(C.once)}</span></div>
+              <div class="text-xs ${muted} mt-1 mb-4">$${(t.price / t.n).toFixed(2).replace(/\.00$/, '')} <span${tx(C.perLicense)}</span></div>
+              <a href="${t.url}" target="_blank" rel="noopener noreferrer" class="mt-auto py-2.5 rounded-xl text-sm font-bold ${t.best ? `text-white ${a.btn} shadow-md` : 'border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800'} transition-all"${tx(C.buy)}</a>
+            </div>`).join('\n')}
+          </div>
+        </div>` : '';
 
   const check = cls => `<i class="fa-solid fa-circle-check ${cls} mt-1"></i>`;
 
@@ -529,7 +593,7 @@ ${p.images.map(([src, en, viText], i) => `        <figure>
       <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
           <h2 class="text-3xl font-extrabold tracking-tight"${tx(C.pricingTitle)}</h2>
-          <p class="text-slate-600 dark:text-slate-400 mt-3"${tx(C.pricingSub)}</p>
+          <p class="text-slate-600 dark:text-slate-400 mt-3"${tx(lifetime ? C.pricingSubLifetime : C.pricingSubSubscription)}</p>
         </div>
         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div class="bg-white dark:bg-slate-900 p-8 rounded-3xl border border-slate-200 dark:border-slate-800 flex flex-col">
@@ -548,9 +612,9 @@ ${p.freeList.map(f => `              <li class="flex items-start gap-3">${check(
             <ul class="relative space-y-3 text-sm flex-1 mb-8">
 ${p.premiumList.map(f => `              <li class="flex items-start gap-3">${check(a.text)}<span${tx(f)}</span></li>`).join('\n')}
             </ul>
-            <a href="${p.checkout}" target="_blank" rel="noopener noreferrer" class="relative w-full text-center py-3.5 rounded-xl font-bold text-white ${a.btn} shadow-lg transition-all"${tx(C.upgrade)}</a>
+            ${premiumCta}
           </div>
-        </div>
+        </div>${tiersBlock}
       </div>
     </section>
 
