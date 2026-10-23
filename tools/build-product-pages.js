@@ -470,11 +470,11 @@ ${JSON.stringify(ld, null, 2)}
   <header class="sticky top-0 z-40 w-full glass border-b border-slate-200/80 dark:border-slate-800/60">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between gap-3">
       <a href="./" class="flex items-center gap-3 group shrink-0">
-        <div class="w-10 h-10 p-1 rounded-xl bg-gradient-to-tr from-blue-600 via-indigo-500 to-purple-600 flex items-center justify-center shadow-lg shadow-blue-500/30 group-hover:scale-105 transition-transform shrink-0">
-          <img src="images/logo-mark.png" width="480" height="105" alt="NAN Smart logo" class="w-full h-auto brightness-0 invert">
+        <div class="w-10 h-10 p-1 rounded-xl bg-slate-900 dark:bg-white flex items-center justify-center shadow-sm group-hover:scale-105 transition-transform shrink-0">
+          <img src="images/logo-mark.png" width="480" height="105" alt="NAN Smart logo" class="w-full h-auto invert dark:invert-0">
         </div>
         <div class="hidden sm:block">
-          <span class="text-xl font-extrabold tracking-tight bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:via-indigo-300 dark:to-purple-400 bg-clip-text text-transparent">NAN Smart</span>
+          <span class="text-xl font-extrabold tracking-tight text-slate-900 dark:text-white">NAN Smart</span>
           <span class="block text-[10px] text-slate-500 dark:text-slate-400 font-medium tracking-wider uppercase -mt-1"${tx(C.tagline)}</span>
         </div>
       </a>
@@ -524,7 +524,7 @@ ${JSON.stringify(ld, null, 2)}
           </div>
           <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight mb-6">
             <span${tx(p.title1)}</span>
-            <span class="block bg-gradient-to-r ${a.grad} bg-clip-text text-transparent pb-1"${tx(p.title2)}</span>
+            <span class="block text-slate-400 dark:text-slate-500 pb-1"${tx(p.title2)}</span>
           </h1>
           <p class="text-base sm:text-lg text-slate-600 dark:text-slate-400 leading-relaxed mb-8 max-w-xl"${tx(p.desc)}</p>
           <div class="flex flex-col sm:flex-row gap-3 sm:gap-4">
@@ -566,7 +566,7 @@ ${p.features.map(([icon, t, d]) => `          <div class="glass p-7 rounded-2xl 
       <h2 class="text-3xl font-extrabold tracking-tight text-center mb-12"${tx(C.howTitle)}</h2>
       <ol class="grid grid-cols-1 md:grid-cols-3 gap-6">
 ${p.steps.map(([t, d], i) => `        <li class="relative glass p-7 rounded-2xl border border-slate-200 dark:border-slate-800">
-          <span class="w-10 h-10 rounded-full bg-gradient-to-br ${a.grad} text-white font-extrabold flex items-center justify-center mb-5 shadow-md">${i + 1}</span>
+          <span class="w-10 h-10 rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-extrabold flex items-center justify-center mb-5 shadow-md">${i + 1}</span>
           <h3 class="text-lg font-bold mb-2"${tx(t)}</h3>
           <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed"${tx(d)}</p>
         </li>`).join('\n')}
@@ -651,7 +651,7 @@ ${others.map(o => `        <a href="${o.file.replace('.html', '')}" class="glass
 
     <!-- SUPPORT -->
     <section class="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="glass rounded-3xl p-8 md:p-12 border border-blue-500/20 bg-gradient-to-r from-blue-100/60 via-indigo-50/40 to-white/40 dark:from-blue-900/20 dark:via-indigo-900/10 dark:to-slate-900/40 flex flex-col md:flex-row items-center justify-between gap-8">
+      <div class="glass rounded-3xl p-8 md:p-12 border border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/60 flex flex-col md:flex-row items-center justify-between gap-8">
         <div class="max-w-2xl">
           <span class="text-xs font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400"${tx(C.helpTag)}</span>
           <h2 class="text-2xl md:text-3xl font-extrabold mt-2 mb-4"${tx(C.helpTitle)}</h2>
@@ -668,7 +668,7 @@ ${others.map(o => `        <a href="${o.file.replace('.html', '')}" class="glass
   <footer class="border-t border-slate-200 dark:border-slate-800/80 mt-12 py-10 bg-slate-100 dark:bg-slate-950/80 text-slate-500 dark:text-slate-400 text-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
       <a href="./" class="flex flex-wrap items-center justify-center gap-3">
-        <div class="w-8 h-8 p-1 rounded-lg bg-gradient-to-tr from-blue-600 via-indigo-500 to-purple-600 flex items-center justify-center shrink-0"><img src="images/logo-mark.png" width="480" height="105" alt="NAN Smart logo" class="w-full h-auto brightness-0 invert"></div>
+        <div class="w-8 h-8 p-1 rounded-lg bg-slate-900 dark:bg-white flex items-center justify-center shrink-0"><img src="images/logo-mark.png" width="480" height="105" alt="NAN Smart logo" class="w-full h-auto invert dark:invert-0"></div>
         <span class="font-bold text-slate-800 dark:text-slate-200">NAN Smart</span>
         <span class="text-xs">&copy; 2026 NAN Smart Team.</span>
       </a>
