@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 
 # Sitemap
-Sitemap: https://alarm-reminder.com/sitemap.xml
+Sitemap: https://nuinguyen.github.io/sitemap.xml
