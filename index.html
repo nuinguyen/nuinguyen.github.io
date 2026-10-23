@@ -269,6 +269,28 @@
           <img src="images/youtube-playlists.jpg" alt="Playlist library" loading="lazy" class="hidden md:block absolute -bottom-10 -left-10 w-1/2 rounded-xl shadow-2xl border-4 border-white dark:border-slate-900">
         </div>
       </div>
+
+      <!-- Calendar -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+        <div class="lg:order-2">
+          <span class="text-xs font-bold uppercase tracking-wider text-pink-500" data-i18n="sp_cal_tag">Multi Calendar</span>
+          <h3 class="text-3xl md:text-4xl font-extrabold mt-2 mb-4" data-i18n="sp_cal_title">View every calendar, side by side.</h3>
+          <p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-6" data-i18n="sp_cal_desc">See the solar and lunar date at a glance, track birthdays and holidays with smart reminders, and count every day together with the anniversary counter.</p>
+          <ul class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8 text-sm">
+            <li class="flex items-center gap-2"><i class="fa-solid fa-moon text-pink-500"></i><span data-i18n="sp_cal_f1">Gregorian, Lunar, Hijri &amp; Jalali</span></li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-bell text-pink-500"></i><span data-i18n="sp_cal_f2">Events &amp; smart reminders</span></li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-heart text-pink-500"></i><span data-i18n="sp_cal_f3">Anniversary counter</span></li>
+            <li class="flex items-center gap-2"><i class="fa-solid fa-globe text-pink-500"></i><span data-i18n="sp_cal_f4">10+ languages</span></li>
+          </ul>
+          <a href="https://chromewebstore.google.com/detail/multi-calendar-%E2%80%94-lunar-hi/jelgahjncijhnkohohfdfhnadeohcdgk" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-pink-500 hover:bg-pink-400 text-white font-semibold text-sm shadow-lg shadow-pink-500/30 transition-all">
+            <i class="fa-brands fa-chrome"></i> <span data-i18n="btn_chrome">Add to Chrome</span>
+          </a>
+        </div>
+        <div class="relative lg:order-1">
+          <img src="images/calendar-hero.jpg" alt="Multi Calendar home and month view" loading="lazy" class="rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-800">
+          <img src="images/calendar-love.jpg" alt="Anniversary counter" loading="lazy" class="hidden md:block absolute -bottom-10 -right-10 w-1/2 rounded-xl shadow-2xl border-4 border-white dark:border-slate-900">
+        </div>
+      </div>
     </section>
 
     <!-- FEATURES -->
@@ -440,16 +462,16 @@
         title: "Multi Calendar — Lunar & Hijri",
         category: "time",
         categoryName: { en: "Time & Alarms", vi: "Thời gian & Báo thức" },
-        iconClass: "fa-solid fa-calendar-days",
-        bgGradient: "from-purple-600 to-pink-600",
-        images: [],
+        icon: "images/icon-calendar.png",
+        bgGradient: "from-pink-500 to-rose-600",
+        images: ["images/calendar-hero.jpg", "images/calendar-month.jpg", "images/calendar-events.jpg", "images/calendar-love.jpg", "images/calendar-settings.jpg"],
         shortDesc: {
-          en: "Gregorian, Lunar and Hijri calendars side by side, with holiday countdowns and quick event creation.",
-          vi: "Dương lịch, Âm lịch và lịch Hijri song song, đếm ngược ngày lễ và thêm sự kiện nhanh."
+          en: "Gregorian, Lunar, Hijri and Jalali calendars side by side, with events, smart reminders and an anniversary counter.",
+          vi: "Dương lịch, Âm lịch, lịch Hijri và Jalali song song, kèm sự kiện, nhắc nhở thông minh và bộ đếm ngày yêu."
         },
         features: {
-          en: ["Gregorian, Vietnamese Lunar & Hijri calendars", "Upcoming holiday countdowns", "Quick-add events", "Multi-timezone support"],
-          vi: ["Dương lịch, Âm lịch Việt Nam & lịch Hijri", "Đếm ngược ngày lễ sắp tới", "Thêm sự kiện nhanh", "Hỗ trợ nhiều múi giờ"]
+          en: ["Gregorian, Lunar (VN, CN, KR, JP), Hijri & Jalali calendars", "Events & smart reminders, yearly or one-time", "Anniversary counter with milestone badges", "10+ languages, light & dark modes"],
+          vi: ["Dương lịch, Âm lịch (VN, TQ, HQ, NB), Hijri & Jalali", "Sự kiện & nhắc nhở thông minh, hằng năm hoặc một lần", "Đếm ngày yêu với huy hiệu cột mốc", "Hơn 10 ngôn ngữ, giao diện sáng & tối"]
         },
         page: null,
         storeLink: "https://chromewebstore.google.com/detail/multi-calendar-%E2%80%94-lunar-hi/jelgahjncijhnkohohfdfhnadeohcdgk"
@@ -502,6 +524,13 @@
         sp_yt_f2: "Playlists & folders",
         sp_yt_f3: "Play in order",
         sp_yt_f4: "Channel groups",
+        sp_cal_tag: "Multi Calendar",
+        sp_cal_title: "View every calendar, side by side.",
+        sp_cal_desc: "See the solar and lunar date at a glance, track birthdays and holidays with smart reminders, and count every day together with the anniversary counter.",
+        sp_cal_f1: "Gregorian, Lunar, Hijri & Jalali",
+        sp_cal_f2: "Events & smart reminders",
+        sp_cal_f3: "Anniversary counter",
+        sp_cal_f4: "10+ languages",
         sp_more: "Learn more",
         features_title: "Why people choose Smart Suite",
         features_subtitle: "Built on Google's Manifest V3 with performance, privacy and a polished experience at the core.",
@@ -570,6 +599,13 @@
         sp_yt_f2: "Playlist & thư mục",
         sp_yt_f3: "Phát theo thứ tự",
         sp_yt_f4: "Nhóm kênh",
+        sp_cal_tag: "Multi Calendar",
+        sp_cal_title: "Xem mọi loại lịch cùng lúc.",
+        sp_cal_desc: "Xem ngày dương và âm lịch trong nháy mắt, theo dõi sinh nhật, ngày lễ với nhắc nhở thông minh và đếm từng ngày bên nhau với bộ đếm ngày yêu.",
+        sp_cal_f1: "Dương, Âm, Hijri & Jalali",
+        sp_cal_f2: "Sự kiện & nhắc nhở thông minh",
+        sp_cal_f3: "Đếm ngày yêu",
+        sp_cal_f4: "Hơn 10 ngôn ngữ",
         sp_more: "Tìm hiểu thêm",
         features_title: "Vì sao chọn Smart Suite",
         features_subtitle: "Xây dựng trên Manifest V3 của Google, ưu tiên hiệu năng, quyền riêng tư và trải nghiệm mượt mà.",
