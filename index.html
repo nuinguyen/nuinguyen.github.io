@@ -135,10 +135,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
-  <link rel="preload" as="image" href="images/alarm-hero.jpg" fetchpriority="high">
+  <link rel="preload" as="image" href="images/alarm-hero.webp" fetchpriority="high">
 </head>
 
-<body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 min-h-screen bg-mesh transition-colors duration-300 selection:bg-blue-500 selection:text-white">
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 min-h-screen bg-mesh transition-colors duration-300 selection:bg-slate-900 selection:text-white">
 
   <!-- HEADER -->
   <header class="sticky top-0 z-40 w-full glass border-b border-slate-200/80 dark:border-slate-800/60">
@@ -154,24 +154,24 @@
       </a>
 
       <nav class="hidden md:flex items-center gap-8 font-medium text-sm text-slate-600 dark:text-slate-300">
-        <a href="#extensions" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors" data-i18n="nav_all">Extensions</a>
-        <a href="#gallery" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors" data-i18n="nav_spotlight">Screenshots</a>
-        <a href="#features" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors" data-i18n="nav_features">Why NAN Smart</a>
-        <a href="#support" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors" data-i18n="nav_support">Support</a>
+        <a href="#extensions" class="hover:text-slate-900 dark:hover:text-white transition-colors" data-i18n="nav_all">Extensions</a>
+        <a href="#gallery" class="hover:text-slate-900 dark:hover:text-white transition-colors" data-i18n="nav_spotlight">Screenshots</a>
+        <a href="#features" class="hover:text-slate-900 dark:hover:text-white transition-colors" data-i18n="nav_features">Why NAN Smart</a>
+        <a href="#support" class="hover:text-slate-900 dark:hover:text-white transition-colors" data-i18n="nav_support">Support</a>
       </nav>
 
       <div class="flex items-center gap-2 sm:gap-3">
         <button id="langToggle" onclick="toggleLanguage()" aria-label="Switch language"
-          class="p-2 rounded-lg bg-slate-200/80 dark:bg-slate-900/60 border border-slate-300 dark:border-slate-700 text-xs font-semibold flex items-center gap-1.5 hover:border-blue-500 transition-colors">
-          <i class="fa-solid fa-globe text-blue-500 dark:text-blue-400"></i>
+          class="p-2 rounded-lg bg-slate-200/80 dark:bg-slate-900/60 border border-slate-300 dark:border-slate-700 text-xs font-semibold flex items-center gap-1.5 hover:border-slate-400 transition-colors">
+          <i class="fa-solid fa-globe text-slate-500 dark:text-slate-400"></i>
           <span id="langText">VI</span>
         </button>
         <button onclick="toggleTheme()" aria-label="Toggle dark mode"
-          class="p-2.5 rounded-lg bg-slate-200/80 dark:bg-slate-900/60 border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:text-blue-500 transition-colors">
+          class="p-2.5 rounded-lg bg-slate-200/80 dark:bg-slate-900/60 border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors">
           <span class="dark:hidden"><i class="fa-solid fa-moon"></i></span>
           <span class="hidden dark:inline"><i class="fa-solid fa-sun text-amber-400"></i></span>
         </button>
-        <a href="#extensions" class="hidden sm:inline-flex items-center px-4 py-2 text-xs font-bold text-white bg-blue-600 hover:bg-blue-500 rounded-lg shadow-md shadow-blue-600/30 transition-all hover:scale-105" data-i18n="cta_header">
+        <a href="#extensions" class="hidden sm:inline-flex items-center px-4 py-2 text-xs font-bold bg-slate-900 hover:bg-slate-700 text-white dark:bg-white dark:text-slate-900 dark:hover:bg-slate-200 rounded-lg shadow-sm transition-all hover:scale-105" data-i18n="cta_header">
           Explore
         </a>
       </div>
@@ -182,8 +182,8 @@
     <!-- HERO -->
     <section class="relative pt-16 pb-16 md:pt-24 md:pb-24 overflow-hidden">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-600 dark:text-blue-400 text-xs font-semibold mb-6">
-          <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/80 dark:bg-slate-900/80 border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 text-xs font-semibold mb-6">
+          <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
           <span data-i18n="hero_badge">Productivity Suite for Google Chrome</span>
         </div>
 
@@ -202,39 +202,39 @@
             <span data-i18n="hero_btn_explore">Explore all 4 extensions</span>
           </a>
           <a href="#spotlight" class="w-full sm:w-auto px-8 py-3.5 rounded-xl glass hover:bg-slate-200/80 dark:hover:bg-slate-800/80 font-semibold text-base transition-all flex items-center justify-center gap-2 border border-slate-300 dark:border-slate-700">
-            <i class="fa-solid fa-images text-red-500"></i>
+            <i class="fa-solid fa-images text-slate-500"></i>
             <span data-i18n="hero_btn_screens">See screenshots</span>
           </a>
         </div>
 
         <!-- Screenshot fan -->
         <div class="fan relative max-w-5xl mx-auto mb-14 hidden sm:block aspect-[16/7]">
-          <img src="images/reminders-hero.jpg" width="1280" height="800" alt="Reminders extension" loading="eager"
+          <img src="images/reminders-hero.webp" width="1280" height="800" alt="Reminders extension" loading="eager"
             class="fan-left absolute left-0 top-10 w-[46%] rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-800 -rotate-6">
-          <img src="images/youtube-save.jpg" width="1280" height="800" alt="Playlist Manager for YouTube" loading="eager"
+          <img src="images/youtube-save.webp" width="1280" height="800" alt="Playlist Manager for YouTube" loading="eager"
             class="fan-right absolute right-0 top-10 w-[46%] rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-800 rotate-6">
-          <img src="images/alarm-hero.jpg" width="1280" height="800" alt="Alarm Clock & Reminders extension" loading="eager"
-            fetchpriority="high" class="absolute left-1/2 -translate-x-1/2 top-0 w-[56%] rounded-2xl shadow-2xl shadow-blue-500/20 border border-slate-200 dark:border-slate-700 z-10">
+          <img src="images/alarm-hero.webp" width="1280" height="800" alt="Alarm Clock & Reminders extension" loading="eager"
+            fetchpriority="high" class="absolute left-1/2 -translate-x-1/2 top-0 w-[56%] rounded-2xl shadow-2xl shadow-slate-900/15 border border-slate-200 dark:border-slate-700 z-10">
         </div>
-        <img src="images/alarm-hero.jpg" width="1280" height="800" alt="Alarm Clock & Reminders extension"
+        <img src="images/alarm-hero.webp" width="1280" height="800" alt="Alarm Clock & Reminders extension"
           class="sm:hidden w-full rounded-2xl shadow-xl border border-slate-200 dark:border-slate-800 mb-10">
 
         <!-- Stats -->
         <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto glass p-6 rounded-2xl border border-slate-200 dark:border-slate-800/80">
           <div class="p-2 text-center">
-            <div class="text-2xl md:text-3xl font-extrabold text-blue-600 dark:text-blue-400">4</div>
+            <div class="text-2xl md:text-3xl font-extrabold text-slate-900 dark:text-white">4</div>
             <div class="text-xs text-slate-500 dark:text-slate-400 font-medium mt-1" data-i18n="stat_suite">Chrome Extensions</div>
           </div>
           <div class="p-2 text-center border-l border-slate-200 dark:border-slate-800">
-            <div class="text-2xl md:text-3xl font-extrabold text-emerald-500">100%</div>
+            <div class="text-2xl md:text-3xl font-extrabold text-slate-900 dark:text-white">100%</div>
             <div class="text-xs text-slate-500 dark:text-slate-400 font-medium mt-1" data-i18n="stat_privacy">Stored on your device</div>
           </div>
           <div class="p-2 text-center md:border-l border-slate-200 dark:border-slate-800">
-            <div class="text-2xl md:text-3xl font-extrabold text-purple-500">MV3</div>
+            <div class="text-2xl md:text-3xl font-extrabold text-slate-900 dark:text-white">MV3</div>
             <div class="text-xs text-slate-500 dark:text-slate-400 font-medium mt-1" data-i18n="stat_mv3">Manifest V3 ready</div>
           </div>
           <div class="p-2 text-center border-l border-slate-200 dark:border-slate-800">
-            <div class="text-2xl md:text-3xl font-extrabold text-amber-500"><i class="fa-solid fa-circle-half-stroke"></i></div>
+            <div class="text-2xl md:text-3xl font-extrabold text-slate-900 dark:text-white"><i class="fa-solid fa-circle-half-stroke"></i></div>
             <div class="text-xs text-slate-500 dark:text-slate-400 font-medium mt-1" data-i18n="stat_theme">Light &amp; Dark modes</div>
           </div>
         </div>
@@ -251,7 +251,7 @@
         <div class="relative w-full md:w-80">
           <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400"></i>
           <input type="text" id="searchInput" oninput="renderExtensions()" placeholder="Search extensions..." data-i18n-placeholder="search_placeholder"
-            class="w-full pl-10 pr-4 py-2.5 rounded-xl bg-white dark:bg-slate-900/80 border border-slate-300 dark:border-slate-800 focus:outline-none focus:border-blue-500 text-sm transition-all shadow-sm">
+            class="w-full pl-10 pr-4 py-2.5 rounded-xl bg-white dark:bg-slate-900/80 border border-slate-300 dark:border-slate-800 focus:outline-none focus:border-slate-400 text-sm transition-all shadow-sm">
         </div>
       </div>
 
@@ -285,14 +285,14 @@
             <li class="flex items-center gap-2"><i class="fa-solid fa-bell text-red-500"></i><span data-i18n="sp_alarm_f3">Fullscreen ringing alerts</span></li>
             <li class="flex items-center gap-2"><i class="fa-solid fa-shield-halved text-red-500"></i><span data-i18n="sp_alarm_f4">Privacy first — stored locally</span></li>
           </ul>
-          <a href="alarm" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-red-500 hover:bg-red-400 text-white font-semibold text-sm shadow-lg shadow-red-500/30 transition-all">
+          <a href="alarm" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-900 hover:bg-slate-700 text-white dark:bg-white dark:text-slate-900 dark:hover:bg-slate-200 font-semibold text-sm shadow-sm transition-all">
             <span data-i18n="sp_more">Learn more</span> <i class="fa-solid fa-arrow-right"></i>
           </a>
         </div>
         <div class="min-w-0" data-spot="alarm">
           <button onclick="openLightbox(spotIndex.alarm || 0, 'alarm')" aria-label="View full size"
-            class="block w-full rounded-2xl overflow-hidden bg-white dark:bg-slate-900 shadow-2xl shadow-slate-900/10 ring-1 ring-slate-200 dark:ring-slate-800 hover:ring-2 hover:ring-blue-500 transition-all">
-            <img src="images/alarm-hero.jpg" width="1280" height="800" alt="Alarm Clock &amp; Reminders Chrome extension: popup with alarms and fullscreen ringing screen" loading="lazy" class="spot-main w-full aspect-[16/10] object-cover">
+            class="block w-full rounded-2xl overflow-hidden bg-white dark:bg-slate-900 shadow-2xl shadow-slate-900/10 ring-1 ring-slate-200 dark:ring-slate-800 hover:ring-2 hover:ring-slate-400 transition-all">
+            <img src="images/alarm-hero.webp" width="1280" height="800" alt="Alarm Clock &amp; Reminders Chrome extension: popup with alarms and fullscreen ringing screen" loading="lazy" class="spot-main w-full aspect-[16/10] object-cover">
           </button>
           <div class="spot-thumbs grid grid-cols-5 gap-2 sm:gap-3 mt-4"></div>
         </div>
@@ -310,14 +310,14 @@
             <li class="flex items-center gap-2"><i class="fa-solid fa-flag text-blue-500"></i><span data-i18n="sp_rem_f3">Lists, priorities &amp; flags</span></li>
             <li class="flex items-center gap-2"><i class="fa-solid fa-moon text-blue-500"></i><span data-i18n="sp_rem_f4">Light &amp; dark modes</span></li>
           </ul>
-          <a href="reminders" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm shadow-lg shadow-blue-600/30 transition-all">
+          <a href="reminders" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-900 hover:bg-slate-700 text-white dark:bg-white dark:text-slate-900 dark:hover:bg-slate-200 font-semibold text-sm shadow-sm transition-all">
             <span data-i18n="sp_more">Learn more</span> <i class="fa-solid fa-arrow-right"></i>
           </a>
         </div>
         <div class="min-w-0 lg:order-1" data-spot="reminders">
           <button onclick="openLightbox(spotIndex.reminders || 0, 'reminders')" aria-label="View full size"
-            class="block w-full rounded-2xl overflow-hidden bg-white dark:bg-slate-900 shadow-2xl shadow-slate-900/10 ring-1 ring-slate-200 dark:ring-slate-800 hover:ring-2 hover:ring-blue-500 transition-all">
-            <img src="images/reminders-hero.jpg" width="1280" height="800" alt="Reminders &amp; To-Do List Chrome extension with Today, Scheduled, All and Flagged lists" loading="lazy" class="spot-main w-full aspect-[16/10] object-cover">
+            class="block w-full rounded-2xl overflow-hidden bg-white dark:bg-slate-900 shadow-2xl shadow-slate-900/10 ring-1 ring-slate-200 dark:ring-slate-800 hover:ring-2 hover:ring-slate-400 transition-all">
+            <img src="images/reminders-hero.webp" width="1280" height="800" alt="Reminders &amp; To-Do List Chrome extension with Today, Scheduled, All and Flagged lists" loading="lazy" class="spot-main w-full aspect-[16/10] object-cover">
           </button>
           <div class="spot-thumbs grid grid-cols-5 gap-2 sm:gap-3 mt-4"></div>
         </div>
@@ -335,14 +335,14 @@
             <li class="flex items-center gap-2"><i class="fa-solid fa-play text-rose-500"></i><span data-i18n="sp_yt_f3">Play in order</span></li>
             <li class="flex items-center gap-2"><i class="fa-solid fa-users text-rose-500"></i><span data-i18n="sp_yt_f4">Channel groups</span></li>
           </ul>
-          <a href="youtube" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-rose-500 hover:bg-rose-400 text-white font-semibold text-sm shadow-lg shadow-rose-500/30 transition-all">
+          <a href="youtube" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-900 hover:bg-slate-700 text-white dark:bg-white dark:text-slate-900 dark:hover:bg-slate-200 font-semibold text-sm shadow-sm transition-all">
             <span data-i18n="sp_more">Learn more</span> <i class="fa-solid fa-arrow-right"></i>
           </a>
         </div>
         <div class="min-w-0" data-spot="youtube">
           <button onclick="openLightbox(spotIndex.youtube || 0, 'youtube')" aria-label="View full size"
-            class="block w-full rounded-2xl overflow-hidden bg-white dark:bg-slate-900 shadow-2xl shadow-slate-900/10 ring-1 ring-slate-200 dark:ring-slate-800 hover:ring-2 hover:ring-blue-500 transition-all">
-            <img src="images/youtube-save.jpg" width="1280" height="800" alt="Playlist Manager for YouTube: save a video to a playlist in one click" loading="lazy" class="spot-main w-full aspect-[16/10] object-cover">
+            class="block w-full rounded-2xl overflow-hidden bg-white dark:bg-slate-900 shadow-2xl shadow-slate-900/10 ring-1 ring-slate-200 dark:ring-slate-800 hover:ring-2 hover:ring-slate-400 transition-all">
+            <img src="images/youtube-save.webp" width="1280" height="800" alt="Playlist Manager for YouTube: save a video to a playlist in one click" loading="lazy" class="spot-main w-full aspect-[16/10] object-cover">
           </button>
           <div class="spot-thumbs grid grid-cols-5 gap-2 sm:gap-3 mt-4"></div>
         </div>
@@ -360,14 +360,14 @@
             <li class="flex items-center gap-2"><i class="fa-solid fa-heart text-pink-500"></i><span data-i18n="sp_cal_f3">Anniversary counter</span></li>
             <li class="flex items-center gap-2"><i class="fa-solid fa-globe text-pink-500"></i><span data-i18n="sp_cal_f4">10+ languages</span></li>
           </ul>
-          <a href="calendar" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-pink-500 hover:bg-pink-400 text-white font-semibold text-sm shadow-lg shadow-pink-500/30 transition-all">
+          <a href="calendar" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-slate-900 hover:bg-slate-700 text-white dark:bg-white dark:text-slate-900 dark:hover:bg-slate-200 font-semibold text-sm shadow-sm transition-all">
             <span data-i18n="sp_more">Learn more</span> <i class="fa-solid fa-arrow-right"></i>
           </a>
         </div>
         <div class="min-w-0 lg:order-1" data-spot="calendar">
           <button onclick="openLightbox(spotIndex.calendar || 0, 'calendar')" aria-label="View full size"
-            class="block w-full rounded-2xl overflow-hidden bg-white dark:bg-slate-900 shadow-2xl shadow-slate-900/10 ring-1 ring-slate-200 dark:ring-slate-800 hover:ring-2 hover:ring-blue-500 transition-all">
-            <img src="images/calendar-hero.jpg" width="1280" height="800" alt="Multi Calendar Chrome extension showing Gregorian, Lunar, Hijri and Jalali dates" loading="lazy" class="spot-main w-full aspect-[16/10] object-cover">
+            class="block w-full rounded-2xl overflow-hidden bg-white dark:bg-slate-900 shadow-2xl shadow-slate-900/10 ring-1 ring-slate-200 dark:ring-slate-800 hover:ring-2 hover:ring-slate-400 transition-all">
+            <img src="images/calendar-hero.webp" width="1280" height="800" alt="Multi Calendar Chrome extension showing Gregorian, Lunar, Hijri and Jalali dates" loading="lazy" class="spot-main w-full aspect-[16/10] object-cover">
           </button>
           <div class="spot-thumbs grid grid-cols-5 gap-2 sm:gap-3 mt-4"></div>
         </div>
@@ -393,17 +393,17 @@
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div class="glass p-8 rounded-2xl border border-slate-200 dark:border-slate-800">
-            <div class="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-500 flex items-center justify-center text-xl mb-6"><i class="fa-solid fa-shield-halved"></i></div>
+            <div class="w-12 h-12 rounded-xl bg-slate-900 text-white dark:bg-white dark:text-slate-900 flex items-center justify-center text-xl mb-6"><i class="fa-solid fa-shield-halved"></i></div>
             <h3 class="text-lg font-bold mb-2" data-i18n="feat1_title">Manifest V3 &amp; secure</h3>
             <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed" data-i18n="feat1_desc">Every extension follows Chrome's latest security architecture with efficient background processing.</p>
           </div>
           <div class="glass p-8 rounded-2xl border border-slate-200 dark:border-slate-800">
-            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-500 flex items-center justify-center text-xl mb-6"><i class="fa-solid fa-user-lock"></i></div>
+            <div class="w-12 h-12 rounded-xl bg-slate-900 text-white dark:bg-white dark:text-slate-900 flex items-center justify-center text-xl mb-6"><i class="fa-solid fa-user-lock"></i></div>
             <h3 class="text-lg font-bold mb-2" data-i18n="feat2_title">Your data stays yours</h3>
             <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed" data-i18n="feat2_desc">Alarms, tasks and playlists are stored locally in your browser. We don't sell or share your data.</p>
           </div>
           <div class="glass p-8 rounded-2xl border border-slate-200 dark:border-slate-800">
-            <div class="w-12 h-12 rounded-xl bg-purple-500/10 text-purple-500 flex items-center justify-center text-xl mb-6"><i class="fa-solid fa-bolt"></i></div>
+            <div class="w-12 h-12 rounded-xl bg-slate-900 text-white dark:bg-white dark:text-slate-900 flex items-center justify-center text-xl mb-6"><i class="fa-solid fa-bolt"></i></div>
             <h3 class="text-lg font-bold mb-2" data-i18n="feat3_title">Light &amp; fast</h3>
             <p class="text-slate-600 dark:text-slate-400 text-sm leading-relaxed" data-i18n="feat3_desc">Optimized code means no browser lag, a small memory footprint and instant popups.</p>
           </div>
@@ -415,12 +415,12 @@
     <section id="support" class="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-20">
       <div class="glass rounded-3xl p-8 md:p-12 border border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/60 flex flex-col md:flex-row items-center justify-between gap-8">
         <div class="max-w-2xl">
-          <span class="text-xs font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400" data-i18n="help_tag">Support</span>
+          <span class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400" data-i18n="help_tag">Support</span>
           <h2 class="text-2xl md:text-3xl font-extrabold mt-2 mb-4" data-i18n="help_title">Questions or feedback?</h2>
           <p class="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed" data-i18n="help_desc">Found a bug or have an idea for a new feature? Send us an email — we read every message.</p>
         </div>
         <div class="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
-          <a href="mailto:nuinguyen01bv@gmail.com" class="px-6 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm shadow-lg shadow-blue-600/30 text-center transition-all">
+          <a href="mailto:nuinguyen01bv@gmail.com" class="px-6 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-700 text-white dark:bg-white dark:text-slate-900 dark:hover:bg-slate-200 font-semibold text-sm shadow-sm text-center transition-all">
             <i class="fa-solid fa-envelope mr-2"></i><span data-i18n="help_btn_contact">Contact us</span>
           </a>
           <a href="privacy" class="px-6 py-3.5 rounded-xl glass hover:bg-slate-200 dark:hover:bg-slate-800 font-semibold text-sm border border-slate-300 dark:border-slate-700 text-center transition-all">
@@ -440,9 +440,9 @@
         <span class="text-xs">&copy; 2026 NAN Smart Team.</span>
       </div>
       <div class="flex items-center gap-6 text-xs sm:text-sm">
-        <a href="privacy" class="hover:text-blue-500 transition-colors" data-i18n="footer_privacy">Privacy</a>
-        <a href="terms" class="hover:text-blue-500 transition-colors" data-i18n="footer_terms">Terms</a>
-        <a href="mailto:nuinguyen01bv@gmail.com" class="hover:text-blue-500 transition-colors" data-i18n="footer_contact">Contact</a>
+        <a href="privacy" class="hover:text-slate-900 dark:hover:text-white transition-colors" data-i18n="footer_privacy">Privacy</a>
+        <a href="terms" class="hover:text-slate-900 dark:hover:text-white transition-colors" data-i18n="footer_terms">Terms</a>
+        <a href="mailto:nuinguyen01bv@gmail.com" class="hover:text-slate-900 dark:hover:text-white transition-colors" data-i18n="footer_contact">Contact</a>
       </div>
     </div>
   </footer>
@@ -480,7 +480,7 @@
       <div class="flex items-start gap-4 mb-6 pr-10">
         <div id="modalIcon" class="w-16 h-16 rounded-2xl flex items-center justify-center text-3xl shadow-lg shrink-0 overflow-hidden"></div>
         <div>
-          <span id="modalCategory" class="inline-block px-2.5 py-0.5 rounded-md text-[11px] font-bold uppercase tracking-wider bg-blue-500/10 text-blue-600 dark:text-blue-400 mb-1"></span>
+          <span id="modalCategory" class="inline-block px-2.5 py-0.5 rounded-md text-[11px] font-bold uppercase tracking-wider bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 mb-1"></span>
           <h3 id="modalTitle" class="text-xl sm:text-2xl font-extrabold"></h3>
         </div>
       </div>
@@ -502,7 +502,7 @@
           <span data-i18n="sp_more">Learn more</span>
         </a>
         <a id="modalStoreLink" href="#" target="_blank" rel="noopener noreferrer"
-          class="w-full sm:w-auto px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm shadow-lg shadow-blue-600/30 text-center transition-all flex items-center justify-center gap-2">
+          class="w-full sm:w-auto px-6 py-3 rounded-xl bg-slate-900 hover:bg-slate-700 text-white dark:bg-white dark:text-slate-900 dark:hover:bg-slate-200 font-semibold text-sm shadow-sm text-center transition-all flex items-center justify-center gap-2">
           <i class="fa-brands fa-chrome"></i>
           <span data-i18n="modal_btn_chrome">Add to Chrome</span>
         </a>
@@ -519,7 +519,7 @@
         categoryName: { en: "Time & Alarms", vi: "Thời gian & Báo thức" },
         icon: "images/icon-alarm.png",
         bgGradient: "from-red-500 to-orange-500",
-        images: ["images/alarm-hero.jpg", "images/alarm-themes.jpg", "images/alarm-colors.jpg", "images/alarm-setup.jpg"],
+        images: ["images/alarm-hero.webp", "images/alarm-themes.webp", "images/alarm-colors.webp", "images/alarm-setup.webp"],
         shortDesc: {
           en: "Turn your browser into a powerful alarm clock: recurring alarms, fullscreen ringing alerts with snooze, light & dark modes.",
           vi: "Biến trình duyệt thành đồng hồ báo thức mạnh mẽ: báo thức lặp lại, chuông toàn màn hình kèm báo lại, giao diện sáng & tối."
@@ -538,7 +538,7 @@
         categoryName: { en: "Productivity", vi: "Năng suất" },
         icon: "images/icon-reminders.png",
         bgGradient: "from-blue-500 to-indigo-600",
-        images: ["images/reminders-hero.jpg", "images/reminders-themes.jpg", "images/reminders-3.jpg", "images/reminders-alert.jpg", "images/reminders-calendar.jpg"],
+        images: ["images/reminders-hero.webp", "images/reminders-themes.webp", "images/reminders-3.webp", "images/reminders-alert.webp", "images/reminders-calendar.webp"],
         shortDesc: {
           en: "Capture tasks fast, organize them into lists with priorities and flags, and get reminded right on time.",
           vi: "Ghi nhanh công việc, sắp xếp theo danh sách với mức ưu tiên và cờ, nhận nhắc nhở đúng giờ."
@@ -557,7 +557,7 @@
         categoryName: { en: "Media", vi: "Giải trí" },
         icon: "images/icon-youtube.png",
         bgGradient: "from-rose-500 to-red-600",
-        images: ["images/youtube-save.jpg", "images/youtube-playlists.jpg", "images/youtube-playback.jpg", "images/youtube-channels.jpg", "images/youtube-tools.jpg"],
+        images: ["images/youtube-save.webp", "images/youtube-playlists.webp", "images/youtube-playback.webp", "images/youtube-channels.webp", "images/youtube-tools.webp"],
         shortDesc: {
           en: "Save any YouTube video in one click, play your playlists in order and sort subscriptions into groups.",
           vi: "Lưu mọi video YouTube chỉ một cú nhấp, phát playlist theo thứ tự và gom kênh đăng ký thành nhóm."
@@ -576,7 +576,7 @@
         categoryName: { en: "Time & Alarms", vi: "Thời gian & Báo thức" },
         icon: "images/icon-calendar.png",
         bgGradient: "from-pink-500 to-rose-600",
-        images: ["images/calendar-hero.jpg", "images/calendar-month.jpg", "images/calendar-events.jpg", "images/calendar-love.jpg", "images/calendar-settings.jpg"],
+        images: ["images/calendar-hero.webp", "images/calendar-month.webp", "images/calendar-events.webp", "images/calendar-love.webp", "images/calendar-settings.webp"],
         shortDesc: {
           en: "Gregorian, Lunar, Hijri and Jalali calendars side by side, with events, smart reminders and an anniversary counter.",
           vi: "Dương lịch, Âm lịch, lịch Hijri và Jalali song song, kèm sự kiện, nhắc nhở thông minh và bộ đếm ngày yêu."
@@ -754,8 +754,11 @@
     let currentLang = 'en';
     let currentCategory = 'all';
 
-    const CAT_ACTIVE = "cat-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all whitespace-nowrap bg-blue-600 text-white shadow-md shadow-blue-600/20 border border-blue-600";
-    const CAT_IDLE = "cat-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all whitespace-nowrap bg-white dark:bg-slate-900/80 text-slate-700 dark:text-slate-300 hover:border-blue-500 border border-slate-300 dark:border-slate-800";
+    const CAT_ACTIVE = "cat-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all whitespace-nowrap bg-slate-900 text-white dark:bg-white dark:text-slate-900 border border-slate-900 dark:border-white";
+    const CAT_IDLE = "cat-btn px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all whitespace-nowrap bg-white dark:bg-slate-900/80 text-slate-700 dark:text-slate-300 hover:border-slate-400 border border-slate-300 dark:border-slate-800";
+
+    // Small 640px copies for thumbnails, cards and gallery tiles
+    const thumb = src => src.replace("images/", "images/thumbs/");
 
     function iconHtml(ext, size) {
       return ext.icon
@@ -788,7 +791,7 @@
         <div class="glass rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800/80 card-hover flex flex-col">
           <button onclick="openModal('${ext.id}')" class="block aspect-[16/10] overflow-hidden bg-gradient-to-tr ${ext.bgGradient}">
             ${ext.images.length
-              ? `<img src="${ext.images[0]}" alt="${ext.title}" loading="lazy" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">`
+              ? `<img src="${thumb(ext.images[0])}" alt="${ext.title}" loading="lazy" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500">`
               : `<div class="w-full h-full flex items-center justify-center text-white text-6xl opacity-90"><i class="${ext.iconClass}"></i></div>`}
           </button>
           <div class="p-5 flex flex-col flex-1">
@@ -804,7 +807,7 @@
               <button onclick="openModal('${ext.id}')" class="flex-1 py-2.5 rounded-xl hover:bg-slate-200 dark:hover:bg-slate-800 text-xs font-semibold transition-colors border border-slate-300 dark:border-slate-700">
                 ${t.btn_details}
               </button>
-              <a href="${ext.storeLink}" target="_blank" rel="noopener noreferrer" class="flex-1 py-2.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white text-xs font-semibold shadow-md shadow-blue-600/20 text-center transition-all flex items-center justify-center gap-1.5">
+              <a href="${ext.storeLink}" target="_blank" rel="noopener noreferrer" class="flex-1 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-700 text-white dark:bg-white dark:text-slate-900 dark:hover:bg-slate-200 text-xs font-semibold shadow-sm text-center transition-all flex items-center justify-center gap-1.5">
                 <i class="fa-brands fa-chrome"></i><span>${t.btn_chrome}</span>
               </a>
             </div>
@@ -845,13 +848,13 @@
         mainImg.src = ext.images[0];
         mainImg.alt = ext.title;
         thumbs.innerHTML = ext.images.map((src, i) => `
-          <button onclick="showImage(this, '${src}')" class="thumb shrink-0 w-28 rounded-lg overflow-hidden border-2 ${i === 0 ? 'border-blue-500' : 'border-transparent'}">
-            <img src="${src}" alt="" class="w-full aspect-[16/10] object-cover">
+          <button onclick="showImage(this, '${src}')" class="thumb shrink-0 w-28 rounded-lg overflow-hidden border-2 ${i === 0 ? 'border-slate-900 dark:border-white' : 'border-transparent'}">
+            <img src="${thumb(src)}" alt="" class="w-full aspect-[16/10] object-cover">
           </button>`).join('');
       }
 
       document.getElementById('modalFeatures').innerHTML = ext.features[currentLang].map(f => `
-        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-blue-500 text-xs"></i><span>${f}</span></li>`).join('');
+        <li class="flex items-center gap-2"><i class="fa-solid fa-circle-check text-emerald-500 text-xs"></i><span>${f}</span></li>`).join('');
 
       const modal = document.getElementById('extensionModal');
       modal.classList.remove('hidden');
@@ -862,7 +865,8 @@
     function showImage(btn, src) {
       document.getElementById('modalMainImg').src = src;
       document.querySelectorAll('#modalThumbs .thumb').forEach(b => {
-        b.classList.toggle('border-blue-500', b === btn);
+        b.classList.toggle('border-slate-900', b === btn);
+        b.classList.toggle('dark:border-white', b === btn);
         b.classList.toggle('border-transparent', b !== btn);
       });
     }
@@ -886,8 +890,8 @@
         thumbs.classList.toggle('grid-cols-5', ext.images.length !== 4);
         thumbs.innerHTML = ext.images.slice(0, 5).map((src, i) => `
           <button onclick="setSpot('${ext.id}', ${i})" aria-label="Show screenshot ${i + 1}"
-            class="rounded-lg overflow-hidden ring-2 transition-all ${i === active ? 'ring-blue-500 opacity-100' : 'ring-transparent opacity-60 hover:opacity-100'}">
-            <img src="${src}" width="1280" height="800" alt="" loading="lazy" class="w-full aspect-[16/10] object-cover">
+            class="rounded-lg overflow-hidden ring-2 transition-all ${i === active ? 'ring-slate-900 dark:ring-white opacity-100' : 'ring-transparent opacity-60 hover:opacity-100'}">
+            <img src="${thumb(src)}" width="640" height="400" alt="" loading="lazy" class="w-full aspect-[16/10] object-cover">
           </button>`).join('');
       });
     }
@@ -916,9 +920,13 @@
         </button>`).join('');
 
       const ext = galleryExt();
-      document.getElementById('galleryGrid').innerHTML = ext.images.map((src, i) => `
+      const grid = document.getElementById('galleryGrid');
+      // 4 images look best as 2x2; otherwise use 3 columns
+      grid.classList.toggle('lg:grid-cols-2', ext.images.length === 4);
+      grid.classList.toggle('lg:grid-cols-3', ext.images.length !== 4);
+      grid.innerHTML = ext.images.map((src, i) => `
         <button onclick="openLightbox(${i})" class="group block rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all">
-          <img src="${src}" width="1280" height="800" alt="${ext.title} screenshot ${i + 1}" loading="lazy"
+          <img src="${thumb(src)}" width="640" height="400" alt="${ext.title} screenshot ${i + 1}" loading="lazy"
             class="w-full aspect-[16/10] object-cover group-hover:scale-105 transition-transform duration-500">
         </button>`).join('');
     }

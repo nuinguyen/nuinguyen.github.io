@@ -35,8 +35,8 @@
   function renderThumbs() {
     document.getElementById('heroThumbs').innerHTML = PAGE.images.slice(0, 5).map((src, i) => `
       <button onclick="setMain(${i})" aria-label="Show screenshot ${i + 1}"
-        class="rounded-lg overflow-hidden ring-2 transition-all ${i === mainIndex ? 'ring-blue-500 opacity-100' : 'ring-transparent opacity-60 hover:opacity-100'}">
-        <img src="${src}" width="1280" height="800" alt="" class="w-full aspect-[16/10] object-cover">
+        class="rounded-lg overflow-hidden ring-2 transition-all ${i === mainIndex ? 'ring-slate-900 dark:ring-white opacity-100' : 'ring-transparent opacity-60 hover:opacity-100'}">
+        <img src="${src.replace('images/', 'images/thumbs/')}" width="640" height="400" alt="" class="w-full aspect-[16/10] object-cover">
       </button>`).join('');
   }
 

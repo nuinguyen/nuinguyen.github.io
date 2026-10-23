@@ -10,19 +10,19 @@ const EMAIL = 'nuinguyen01bv@gmail.com';
 // Tailwind classes are written out in full so the Tailwind scanner can find them.
 const ACCENTS = {
   red: {
-    text: 'text-red-500', soft: 'bg-red-500/10 text-red-500', btn: 'bg-red-500 hover:bg-red-400 shadow-red-500/30',
+    text: 'text-red-500', soft: 'bg-red-500/10 text-red-500', btn: 'bg-slate-900 hover:bg-slate-700 text-white dark:bg-white dark:text-slate-900 dark:hover:bg-slate-200 shadow-slate-900/10',
     grad: 'from-red-500 to-orange-500', ring: 'ring-red-500/30', border: 'border-red-500/40', glow: 'from-red-500/10'
   },
   blue: {
-    text: 'text-blue-600 dark:text-blue-400', soft: 'bg-blue-500/10 text-blue-600 dark:text-blue-400', btn: 'bg-blue-600 hover:bg-blue-500 shadow-blue-600/30',
+    text: 'text-blue-600 dark:text-blue-400', soft: 'bg-blue-500/10 text-blue-600 dark:text-blue-400', btn: 'bg-slate-900 hover:bg-slate-700 text-white dark:bg-white dark:text-slate-900 dark:hover:bg-slate-200 shadow-slate-900/10',
     grad: 'from-blue-600 to-indigo-500', ring: 'ring-blue-500/30', border: 'border-blue-500/40', glow: 'from-blue-500/10'
   },
   rose: {
-    text: 'text-rose-500', soft: 'bg-rose-500/10 text-rose-500', btn: 'bg-rose-500 hover:bg-rose-400 shadow-rose-500/30',
+    text: 'text-rose-500', soft: 'bg-rose-500/10 text-rose-500', btn: 'bg-slate-900 hover:bg-slate-700 text-white dark:bg-white dark:text-slate-900 dark:hover:bg-slate-200 shadow-slate-900/10',
     grad: 'from-rose-500 to-orange-500', ring: 'ring-rose-500/30', border: 'border-rose-500/40', glow: 'from-rose-500/10'
   },
   pink: {
-    text: 'text-pink-500', soft: 'bg-pink-500/10 text-pink-500', btn: 'bg-pink-500 hover:bg-pink-400 shadow-pink-500/30',
+    text: 'text-pink-500', soft: 'bg-pink-500/10 text-pink-500', btn: 'bg-slate-900 hover:bg-slate-700 text-white dark:bg-white dark:text-slate-900 dark:hover:bg-slate-200 shadow-slate-900/10',
     grad: 'from-pink-500 to-rose-500', ring: 'ring-pink-500/30', border: 'border-pink-500/40', glow: 'from-pink-500/10'
   }
 };
@@ -105,10 +105,10 @@ const PRODUCTS = [
       vi: 'Tiện ích đồng hồ báo thức và nhắc nhở nhẹ cho Chrome. Đặt báo thức trong vài giây, chọn âm thanh yêu thích, báo lại chỉ một chạm và mọi dữ liệu được lưu cục bộ.'
     },
     images: [
-      ['images/alarm-hero.jpg', 'Alarm Clock & Reminders popup with alarms and the fullscreen ringing screen', 'Popup báo thức và màn hình chuông toàn màn hình'],
-      ['images/alarm-themes.jpg', 'Alarm Clock in light and dark mode', 'Đồng hồ báo thức ở giao diện sáng và tối'],
-      ['images/alarm-colors.jpg', 'Custom accent colors and 24h / 12h time format', 'Màu nhấn tùy chỉnh và định dạng giờ 24h / 12h'],
-      ['images/alarm-setup.jpg', 'Alarm setup: icons, sounds, snooze, repeat and voice message', 'Cài đặt báo thức: biểu tượng, âm thanh, báo lại, lặp lại và tin nhắn giọng nói']
+      ['images/alarm-hero.webp', 'Alarm Clock & Reminders popup with alarms and the fullscreen ringing screen', 'Popup báo thức và màn hình chuông toàn màn hình'],
+      ['images/alarm-themes.webp', 'Alarm Clock in light and dark mode', 'Đồng hồ báo thức ở giao diện sáng và tối'],
+      ['images/alarm-colors.webp', 'Custom accent colors and 24h / 12h time format', 'Màu nhấn tùy chỉnh và định dạng giờ 24h / 12h'],
+      ['images/alarm-setup.webp', 'Alarm setup: icons, sounds, snooze, repeat and voice message', 'Cài đặt báo thức: biểu tượng, âm thanh, báo lại, lặp lại và tin nhắn giọng nói']
     ],
     features: [
       ['fa-bell', { en: 'Reliable background alarms', vi: 'Báo thức chạy nền ổn định' }, { en: 'Uses Chrome’s alarms API and an offscreen page, so alarms ring on time even when Chrome is minimized or you are in another tab.', vi: 'Dùng Chrome alarms API và trang offscreen nên báo thức vẫn reo đúng giờ khi Chrome thu nhỏ hoặc bạn đang ở tab khác.' }],
@@ -165,11 +165,11 @@ const PRODUCTS = [
       vi: 'Luôn đúng tiến độ với trình quản lý công việc phong cách iOS, hòa vào thói quen duyệt web của bạn. Ghi công việc trong vài giây và được nhắc đúng lúc.'
     },
     images: [
-      ['images/reminders-hero.jpg', 'Reminders popup with Today, Scheduled, All and Flagged smart lists', 'Popup Reminders với các danh sách Hôm nay, Đã lên lịch, Tất cả và Gắn cờ'],
-      ['images/reminders-themes.jpg', 'Reminders in light and dark mode', 'Reminders ở giao diện sáng và tối'],
-      ['images/reminders-3.jpg', 'New reminder form with list, date, time, priority and flag', 'Màn hình tạo nhắc nhở với danh sách, ngày, giờ, ưu tiên và cờ'],
-      ['images/reminders-alert.jpg', 'Fullscreen reminder alert with Complete and Dismiss', 'Thông báo nhắc nhở toàn màn hình với nút Hoàn thành và Bỏ qua'],
-      ['images/reminders-calendar.jpg', 'Calendar view of scheduled reminders', 'Chế độ xem lịch các nhắc nhở đã lên lịch']
+      ['images/reminders-hero.webp', 'Reminders popup with Today, Scheduled, All and Flagged smart lists', 'Popup Reminders với các danh sách Hôm nay, Đã lên lịch, Tất cả và Gắn cờ'],
+      ['images/reminders-themes.webp', 'Reminders in light and dark mode', 'Reminders ở giao diện sáng và tối'],
+      ['images/reminders-3.webp', 'New reminder form with list, date, time, priority and flag', 'Màn hình tạo nhắc nhở với danh sách, ngày, giờ, ưu tiên và cờ'],
+      ['images/reminders-alert.webp', 'Fullscreen reminder alert with Complete and Dismiss', 'Thông báo nhắc nhở toàn màn hình với nút Hoàn thành và Bỏ qua'],
+      ['images/reminders-calendar.webp', 'Calendar view of scheduled reminders', 'Chế độ xem lịch các nhắc nhở đã lên lịch']
     ],
     features: [
       ['fa-layer-group', { en: 'Smart lists', vi: 'Danh sách thông minh' }, { en: 'Today, Scheduled, All and Flagged views show what needs your attention at a glance.', vi: 'Các mục Hôm nay, Đã lên lịch, Tất cả và Gắn cờ cho bạn thấy ngay việc cần làm.' }],
@@ -227,11 +227,11 @@ const PRODUCTS = [
       vi: 'Lưu mọi video chỉ một cú nhấp, sắp playlist vào thư mục, phát theo thứ tự bằng chính trình phát của YouTube và gom kênh đăng ký thành nhóm.'
     },
     images: [
-      ['images/youtube-save.jpg', 'Save any YouTube video to a playlist in one click', 'Lưu video YouTube vào playlist chỉ một cú nhấp'],
-      ['images/youtube-playlists.jpg', 'Playlist library with folders, icons and search', 'Thư viện playlist với thư mục, biểu tượng và tìm kiếm'],
-      ['images/youtube-playback.jpg', 'Play a playlist in order, shuffle or repeat', 'Phát playlist theo thứ tự, ngẫu nhiên hoặc lặp lại'],
-      ['images/youtube-channels.jpg', 'Sort subscriptions into channel groups', 'Sắp xếp kênh đăng ký thành nhóm'],
-      ['images/youtube-tools.jpg', 'Group channels right on YouTube', 'Nhóm kênh ngay trên YouTube']
+      ['images/youtube-save.webp', 'Save any YouTube video to a playlist in one click', 'Lưu video YouTube vào playlist chỉ một cú nhấp'],
+      ['images/youtube-playlists.webp', 'Playlist library with folders, icons and search', 'Thư viện playlist với thư mục, biểu tượng và tìm kiếm'],
+      ['images/youtube-playback.webp', 'Play a playlist in order, shuffle or repeat', 'Phát playlist theo thứ tự, ngẫu nhiên hoặc lặp lại'],
+      ['images/youtube-channels.webp', 'Sort subscriptions into channel groups', 'Sắp xếp kênh đăng ký thành nhóm'],
+      ['images/youtube-tools.webp', 'Group channels right on YouTube', 'Nhóm kênh ngay trên YouTube']
     ],
     features: [
       ['fa-plus', { en: 'One-click save', vi: 'Lưu một chạm' }, { en: 'Add any video to a playlist from search results or the player, without leaving YouTube.', vi: 'Thêm mọi video vào playlist từ kết quả tìm kiếm hoặc trình phát, không cần rời YouTube.' }],
@@ -287,11 +287,11 @@ const PRODUCTS = [
       vi: 'Xem ngày dương và âm lịch trong nháy mắt, theo dõi sinh nhật, ngày lễ với nhắc nhở thông minh và đếm từng ngày bên nhau với bộ đếm ngày yêu.'
     },
     images: [
-      ['images/calendar-hero.jpg', 'Multi Calendar home with Gregorian, Lunar, Hijri and Jalali dates', 'Trang chính Multi Calendar với ngày Dương, Âm, Hijri và Jalali'],
-      ['images/calendar-month.jpg', 'Month view with lunar dates under each day', 'Lịch tháng có ngày âm dưới mỗi ngày'],
-      ['images/calendar-events.jpg', 'Events list with yearly and one-time events', 'Danh sách sự kiện hằng năm và một lần'],
-      ['images/calendar-love.jpg', 'Anniversary counter with days together', 'Bộ đếm ngày yêu với số ngày bên nhau'],
-      ['images/calendar-settings.jpg', 'Settings: language, secondary calendar, theme and accent color', 'Cài đặt: ngôn ngữ, lịch phụ, giao diện và màu nhấn']
+      ['images/calendar-hero.webp', 'Multi Calendar home with Gregorian, Lunar, Hijri and Jalali dates', 'Trang chính Multi Calendar với ngày Dương, Âm, Hijri và Jalali'],
+      ['images/calendar-month.webp', 'Month view with lunar dates under each day', 'Lịch tháng có ngày âm dưới mỗi ngày'],
+      ['images/calendar-events.webp', 'Events list with yearly and one-time events', 'Danh sách sự kiện hằng năm và một lần'],
+      ['images/calendar-love.webp', 'Anniversary counter with days together', 'Bộ đếm ngày yêu với số ngày bên nhau'],
+      ['images/calendar-settings.webp', 'Settings: language, secondary calendar, theme and accent color', 'Cài đặt: ngôn ngữ, lịch phụ, giao diện và màu nhấn']
     ],
     features: [
       ['fa-moon', { en: 'Four calendar systems', vi: 'Bốn hệ lịch' }, { en: 'Gregorian, Lunar (Vietnamese, Chinese, Korean, Japanese), Hijri and Jalali in one view.', vi: 'Dương lịch, Âm lịch (Việt Nam, Trung Quốc, Hàn Quốc, Nhật Bản), Hijri và Jalali trong một màn hình.' }],
@@ -342,6 +342,8 @@ function buildPage(p) {
   const slug = p.file.replace('.html', ''); // GitHub Pages serves /alarm for alarm.html
   const url = SITE + slug;
   const others = PRODUCTS.filter(o => o.id !== p.id);
+  const ogImage = p.images[0][0].replace('.webp', '.jpg'); // Facebook/Zalo previews use the JPG copy
+  const thumb = src => src.replace('images/', 'images/thumbs/');
 
   const ld = {
     '@context': 'https://schema.org',
@@ -353,7 +355,7 @@ function buildPage(p) {
         operatingSystem: 'Chrome',
         url,
         downloadUrl: p.store,
-        image: SITE + p.images[0][0],
+        image: SITE + ogImage,
         description: p.seoDesc,
         offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
         publisher: { '@type': 'Organization', name: 'NAN Smart Team', url: SITE }
@@ -384,9 +386,9 @@ function buildPage(p) {
             <p class="relative text-xs ${muted} mb-6"${tx({ en: `or ${pr.year.price} / year (${pr.year.perMonth}/month) — save ${pr.year.save}%`, vi: `hoặc ${pr.year.price} / năm (${pr.year.perMonth}/tháng) — tiết kiệm ${pr.year.save}%` })}</p>`;
 
   const premiumCta = lifetime
-    ? `<a href="#plans" class="relative w-full text-center py-3.5 rounded-xl font-bold text-white ${a.btn} shadow-lg transition-all"${tx(C.upgrade)}</a>`
+    ? `<a href="#plans" class="relative w-full text-center py-3.5 rounded-xl font-bold ${a.btn} shadow-lg transition-all"${tx(C.upgrade)}</a>`
     : `<div class="relative grid grid-cols-1 sm:grid-cols-2 gap-3">
-              <a href="${pr.month.url}" target="_blank" rel="noopener noreferrer" class="text-center py-3.5 rounded-xl font-bold text-white ${a.btn} shadow-lg transition-all"${tx(C.subscribeMonthly)}</a>
+              <a href="${pr.month.url}" target="_blank" rel="noopener noreferrer" class="text-center py-3.5 rounded-xl font-bold ${a.btn} shadow-lg transition-all"${tx(C.subscribeMonthly)}</a>
               <a href="${pr.year.url}" target="_blank" rel="noopener noreferrer" class="text-center py-3.5 rounded-xl font-bold border-2 ${a.border} ${a.text} hover:bg-slate-50 dark:hover:bg-slate-800 transition-all"${tx(C.subscribeYearly)}</a>
             </div>
             <p class="relative text-xs ${muted} text-center mt-3"${tx(C.cancelAnytime)}</p>`;
@@ -400,12 +402,12 @@ function buildPage(p) {
           </div>
           <div class="grid grid-cols-2 lg:grid-cols-4 gap-4">
 ${pr.tiers.map(t => `            <div class="relative bg-white dark:bg-slate-900 rounded-2xl p-5 text-center flex flex-col ${t.best ? `border-2 ${a.border} shadow-lg` : 'border border-slate-200 dark:border-slate-800'}">
-              ${t.best ? `<span class="absolute -top-3 left-1/2 -translate-x-1/2 whitespace-nowrap text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full text-white ${a.btn}"${tx(C.bestValue)}</span>` : ''}
+              ${t.best ? `<span class="absolute -top-3 left-1/2 -translate-x-1/2 whitespace-nowrap text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full ${a.btn}"${tx(C.bestValue)}</span>` : ''}
               <div class="text-4xl font-extrabold">${t.n}</div>
               <div class="text-xs ${muted} mb-3"${tx(t.n === 1 ? C.license : C.licenses)}</div>
               <div class="text-2xl font-extrabold">$${t.price} <span class="text-xs font-medium ${muted}"${tx(C.once)}</span></div>
               <div class="text-xs ${muted} mt-1 mb-4">$${(t.price / t.n).toFixed(2).replace(/\.00$/, '')} <span${tx(C.perLicense)}</span></div>
-              <a href="${t.url}" target="_blank" rel="noopener noreferrer" class="mt-auto py-2.5 rounded-xl text-sm font-bold ${t.best ? `text-white ${a.btn} shadow-md` : 'border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800'} transition-all"${tx(C.buy)}</a>
+              <a href="${t.url}" target="_blank" rel="noopener noreferrer" class="mt-auto py-2.5 rounded-xl text-sm font-bold ${t.best ? `${a.btn} shadow-md` : 'border border-slate-300 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800'} transition-all"${tx(C.buy)}</a>
             </div>`).join('\n')}
           </div>
         </div>` : '';
@@ -435,13 +437,13 @@ ${pr.tiers.map(t => `            <div class="relative bg-white dark:bg-slate-900
   <meta property="og:url" content="${url}">
   <meta property="og:title" content="${esc(p.seoTitle)}">
   <meta property="og:description" content="${esc(p.seoDesc)}">
-  <meta property="og:image" content="${SITE}${p.images[0][0]}">
+  <meta property="og:image" content="${SITE}${ogImage}">
   <meta property="og:image:width" content="1280">
   <meta property="og:image:height" content="800">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="${esc(p.seoTitle)}">
   <meta name="twitter:description" content="${esc(p.seoDesc)}">
-  <meta name="twitter:image" content="${SITE}${p.images[0][0]}">
+  <meta name="twitter:image" content="${SITE}${ogImage}">
 
   <script type="application/ld+json">
 ${JSON.stringify(ld, null, 2)}
@@ -464,7 +466,7 @@ ${JSON.stringify(ld, null, 2)}
   <link rel="preload" as="image" href="${p.images[0][0]}" fetchpriority="high">
 </head>
 
-<body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 min-h-screen bg-mesh transition-colors duration-300 selection:bg-blue-500 selection:text-white">
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 min-h-screen bg-mesh transition-colors duration-300 selection:bg-slate-900 selection:text-white">
 
   <!-- HEADER -->
   <header class="sticky top-0 z-40 w-full glass border-b border-slate-200/80 dark:border-slate-800/60">
@@ -480,25 +482,25 @@ ${JSON.stringify(ld, null, 2)}
       </a>
 
       <nav class="hidden md:flex items-center gap-7 font-medium text-sm text-slate-600 dark:text-slate-300">
-        <a href="#features" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"${tx(C.navFeatures)}</a>
-        <a href="#screenshots" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"${tx(C.navScreens)}</a>
-        <a href="#pricing" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"${tx(C.navPricing)}</a>
-        <a href="#faq" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"${tx(C.navFaq)}</a>
-        <a href="./#extensions" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"${tx(C.navAll)}</a>
+        <a href="#features" class="hover:text-slate-900 dark:hover:text-white transition-colors"${tx(C.navFeatures)}</a>
+        <a href="#screenshots" class="hover:text-slate-900 dark:hover:text-white transition-colors"${tx(C.navScreens)}</a>
+        <a href="#pricing" class="hover:text-slate-900 dark:hover:text-white transition-colors"${tx(C.navPricing)}</a>
+        <a href="#faq" class="hover:text-slate-900 dark:hover:text-white transition-colors"${tx(C.navFaq)}</a>
+        <a href="./#extensions" class="hover:text-slate-900 dark:hover:text-white transition-colors"${tx(C.navAll)}</a>
       </nav>
 
       <div class="flex items-center gap-2 sm:gap-3">
         <button onclick="toggleLanguage()" aria-label="Switch language"
-          class="p-2 rounded-lg bg-slate-200/80 dark:bg-slate-900/60 border border-slate-300 dark:border-slate-700 text-xs font-semibold flex items-center gap-1.5 hover:border-blue-500 transition-colors">
-          <i class="fa-solid fa-globe text-blue-500 dark:text-blue-400"></i>
+          class="p-2 rounded-lg bg-slate-200/80 dark:bg-slate-900/60 border border-slate-300 dark:border-slate-700 text-xs font-semibold flex items-center gap-1.5 hover:border-slate-400 transition-colors">
+          <i class="fa-solid fa-globe text-slate-500 dark:text-slate-400"></i>
           <span id="langText">VI</span>
         </button>
         <button onclick="toggleTheme()" aria-label="Toggle dark mode"
-          class="p-2.5 rounded-lg bg-slate-200/80 dark:bg-slate-900/60 border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:text-blue-500 transition-colors">
+          class="p-2.5 rounded-lg bg-slate-200/80 dark:bg-slate-900/60 border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors">
           <span class="dark:hidden"><i class="fa-solid fa-moon"></i></span>
           <span class="hidden dark:inline"><i class="fa-solid fa-sun text-amber-400"></i></span>
         </button>
-        <a href="${p.store}" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 text-xs font-bold text-white ${a.btn} rounded-lg shadow-md transition-all hover:scale-105">
+        <a href="${p.store}" target="_blank" rel="noopener noreferrer" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 text-xs font-bold ${a.btn} rounded-lg shadow-md transition-all hover:scale-105">
           <i class="fa-brands fa-chrome"></i><span${tx(C.addChrome)}</span>
         </a>
       </div>
@@ -509,7 +511,7 @@ ${JSON.stringify(ld, null, 2)}
     <!-- HERO -->
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-16 md:pb-24">
       <nav aria-label="Breadcrumb" class="text-xs text-slate-500 dark:text-slate-400 mb-8 md:mb-12">
-        <a href="./" class="hover:text-blue-500"${tx(C.home)}</a>
+        <a href="./" class="hover:text-slate-900 dark:hover:text-white"${tx(C.home)}</a>
         <i class="fa-solid fa-chevron-right text-[9px] mx-2"></i>
         <span class="text-slate-700 dark:text-slate-300">${esc(p.name)}</span>
       </nav>
@@ -528,7 +530,7 @@ ${JSON.stringify(ld, null, 2)}
           </h1>
           <p class="text-base sm:text-lg text-slate-600 dark:text-slate-400 leading-relaxed mb-8 max-w-xl"${tx(p.desc)}</p>
           <div class="flex flex-col sm:flex-row gap-3 sm:gap-4">
-            <a href="${p.store}" target="_blank" rel="noopener noreferrer" class="px-7 py-3.5 rounded-xl ${a.btn} text-white font-semibold shadow-lg transition-all hover:scale-105 flex items-center justify-center gap-2">
+            <a href="${p.store}" target="_blank" rel="noopener noreferrer" class="px-7 py-3.5 rounded-xl ${a.btn} font-semibold shadow-lg transition-all hover:scale-105 flex items-center justify-center gap-2">
               <i class="fa-brands fa-chrome"></i><span${tx(C.addChrome)}</span>
             </a>
             <a href="#pricing" class="px-7 py-3.5 rounded-xl glass hover:bg-slate-200/80 dark:hover:bg-slate-800/80 font-semibold border border-slate-300 dark:border-slate-700 transition-all flex items-center justify-center gap-2">
@@ -539,7 +541,7 @@ ${JSON.stringify(ld, null, 2)}
 
         <div class="min-w-0">
           <button onclick="openLightbox()" aria-label="View full size"
-            class="block w-full rounded-2xl overflow-hidden bg-white dark:bg-slate-900 shadow-2xl shadow-slate-900/10 ring-1 ring-slate-200 dark:ring-slate-800 hover:ring-2 hover:ring-blue-500 transition-all">
+            class="block w-full rounded-2xl overflow-hidden bg-white dark:bg-slate-900 shadow-2xl shadow-slate-900/10 ring-1 ring-slate-200 dark:ring-slate-800 hover:ring-2 hover:ring-slate-400 transition-all">
             <img id="heroImg" src="${p.images[0][0]}" width="1280" height="800" alt="${esc(p.images[0][1])}" fetchpriority="high" class="w-full aspect-[16/10] object-cover">
           </button>
           <div id="heroThumbs" class="grid ${p.images.length === 4 ? 'grid-cols-4' : 'grid-cols-5'} gap-2 sm:gap-3 mt-4"></div>
@@ -582,7 +584,7 @@ ${p.steps.map(([t, d], i) => `        <li class="relative glass p-7 rounded-2xl 
       <div class="grid grid-cols-1 sm:grid-cols-2 ${p.images.length === 4 ? 'lg:grid-cols-2' : 'lg:grid-cols-3'} gap-6">
 ${p.images.map(([src, en, viText], i) => `        <figure>
           <button onclick="openLightbox(${i})" class="group block w-full rounded-2xl overflow-hidden ring-1 ring-slate-200 dark:ring-slate-800 shadow-sm hover:shadow-xl transition-all">
-            <img src="${src}" width="1280" height="800" alt="${esc(en)}" loading="lazy" class="w-full aspect-[16/10] object-cover group-hover:scale-105 transition-transform duration-500">
+            <img src="${thumb(src)}" width="640" height="400" alt="${esc(en)}" loading="lazy" class="w-full aspect-[16/10] object-cover group-hover:scale-105 transition-transform duration-500">
           </button>
           <figcaption class="text-sm text-slate-600 dark:text-slate-400 mt-3 px-1"${tx({ en, vi: viText })}</figcaption>
         </figure>`).join('\n')}
@@ -653,11 +655,11 @@ ${others.map(o => `        <a href="${o.file.replace('.html', '')}" class="glass
     <section class="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="glass rounded-3xl p-8 md:p-12 border border-slate-200 dark:border-slate-800 bg-white/70 dark:bg-slate-900/60 flex flex-col md:flex-row items-center justify-between gap-8">
         <div class="max-w-2xl">
-          <span class="text-xs font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400"${tx(C.helpTag)}</span>
+          <span class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400"${tx(C.helpTag)}</span>
           <h2 class="text-2xl md:text-3xl font-extrabold mt-2 mb-4"${tx(C.helpTitle)}</h2>
           <p class="text-slate-600 dark:text-slate-300 text-sm sm:text-base leading-relaxed"${tx(C.helpDesc)}</p>
         </div>
-        <a href="mailto:${EMAIL}" class="w-full md:w-auto px-6 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm shadow-lg shadow-blue-600/30 text-center transition-all">
+        <a href="mailto:${EMAIL}" class="w-full md:w-auto px-6 py-3.5 rounded-xl bg-slate-900 hover:bg-slate-700 text-white dark:bg-white dark:text-slate-900 dark:hover:bg-slate-200 font-semibold text-sm shadow-sm text-center transition-all">
           <i class="fa-solid fa-envelope mr-2"></i><span${tx(C.contact)}</span>
         </a>
       </div>
@@ -673,9 +675,9 @@ ${others.map(o => `        <a href="${o.file.replace('.html', '')}" class="glass
         <span class="text-xs">&copy; 2026 NAN Smart Team.</span>
       </a>
       <div class="flex items-center gap-6 text-xs sm:text-sm">
-        <a href="privacy" class="hover:text-blue-500 transition-colors"${tx(C.privacy)}</a>
-        <a href="terms" class="hover:text-blue-500 transition-colors"${tx(C.terms)}</a>
-        <a href="mailto:${EMAIL}" class="hover:text-blue-500 transition-colors"${tx(C.footerContact)}</a>
+        <a href="privacy" class="hover:text-slate-900 dark:hover:text-white transition-colors"${tx(C.privacy)}</a>
+        <a href="terms" class="hover:text-slate-900 dark:hover:text-white transition-colors"${tx(C.terms)}</a>
+        <a href="mailto:${EMAIL}" class="hover:text-slate-900 dark:hover:text-white transition-colors"${tx(C.footerContact)}</a>
       </div>
     </div>
   </footer>
