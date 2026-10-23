@@ -323,9 +323,12 @@
             <span data-i18n="sp_more">Learn more</span> <i class="fa-solid fa-arrow-right"></i>
           </a>
         </div>
-        <div class="relative">
-          <img src="images/alarm-hero.jpg" width="1280" height="800" alt="Alarm Clock &amp; Reminders Chrome extension: popup with alarms and fullscreen ringing screen" loading="lazy" class="rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-800">
-          <img src="images/alarm-themes.jpg" width="1280" height="800" alt="Alarm Clock in dark and light modes" loading="lazy" class="hidden md:block absolute -bottom-10 -left-10 w-1/2 rounded-xl shadow-2xl border-4 border-white dark:border-slate-900">
+        <div class="min-w-0" data-spot="alarm">
+          <button onclick="openLightbox(spotIndex.alarm || 0, 'alarm')" aria-label="View full size"
+            class="block w-full rounded-2xl overflow-hidden bg-white dark:bg-slate-900 shadow-2xl shadow-slate-900/10 ring-1 ring-slate-200 dark:ring-slate-800 hover:ring-2 hover:ring-blue-500 transition-all">
+            <img src="images/alarm-hero.jpg" width="1280" height="800" alt="Alarm Clock &amp; Reminders Chrome extension: popup with alarms and fullscreen ringing screen" loading="lazy" class="spot-main w-full aspect-[16/10] object-cover">
+          </button>
+          <div class="spot-thumbs grid grid-cols-5 gap-2 sm:gap-3 mt-4"></div>
         </div>
       </div>
 
@@ -345,9 +348,12 @@
             <span data-i18n="sp_more">Learn more</span> <i class="fa-solid fa-arrow-right"></i>
           </a>
         </div>
-        <div class="relative lg:order-1">
-          <img src="images/reminders-hero.jpg" width="1280" height="800" alt="Reminders &amp; To-Do List Chrome extension with Today, Scheduled, All and Flagged lists" loading="lazy" class="rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-800">
-          <img src="images/reminders-3.jpg" width="1280" height="800" alt="New reminder form" loading="lazy" class="hidden md:block absolute -bottom-10 -right-10 w-1/2 rounded-xl shadow-2xl border-4 border-white dark:border-slate-900">
+        <div class="min-w-0 lg:order-1" data-spot="reminders">
+          <button onclick="openLightbox(spotIndex.reminders || 0, 'reminders')" aria-label="View full size"
+            class="block w-full rounded-2xl overflow-hidden bg-white dark:bg-slate-900 shadow-2xl shadow-slate-900/10 ring-1 ring-slate-200 dark:ring-slate-800 hover:ring-2 hover:ring-blue-500 transition-all">
+            <img src="images/reminders-hero.jpg" width="1280" height="800" alt="Reminders &amp; To-Do List Chrome extension with Today, Scheduled, All and Flagged lists" loading="lazy" class="spot-main w-full aspect-[16/10] object-cover">
+          </button>
+          <div class="spot-thumbs grid grid-cols-5 gap-2 sm:gap-3 mt-4"></div>
         </div>
       </div>
 
@@ -367,9 +373,12 @@
             <span data-i18n="sp_more">Learn more</span> <i class="fa-solid fa-arrow-right"></i>
           </a>
         </div>
-        <div class="relative">
-          <img src="images/youtube-save.jpg" width="1280" height="800" alt="Playlist Manager for YouTube: save a video to a playlist in one click" loading="lazy" class="rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-800">
-          <img src="images/youtube-playlists.jpg" width="1280" height="800" alt="YouTube playlist library organized into folders" loading="lazy" class="hidden md:block absolute -bottom-10 -left-10 w-1/2 rounded-xl shadow-2xl border-4 border-white dark:border-slate-900">
+        <div class="min-w-0" data-spot="youtube">
+          <button onclick="openLightbox(spotIndex.youtube || 0, 'youtube')" aria-label="View full size"
+            class="block w-full rounded-2xl overflow-hidden bg-white dark:bg-slate-900 shadow-2xl shadow-slate-900/10 ring-1 ring-slate-200 dark:ring-slate-800 hover:ring-2 hover:ring-blue-500 transition-all">
+            <img src="images/youtube-save.jpg" width="1280" height="800" alt="Playlist Manager for YouTube: save a video to a playlist in one click" loading="lazy" class="spot-main w-full aspect-[16/10] object-cover">
+          </button>
+          <div class="spot-thumbs grid grid-cols-5 gap-2 sm:gap-3 mt-4"></div>
         </div>
       </div>
 
@@ -389,9 +398,12 @@
             <i class="fa-brands fa-chrome"></i> <span data-i18n="btn_chrome">Add to Chrome</span>
           </a>
         </div>
-        <div class="relative lg:order-1">
-          <img src="images/calendar-hero.jpg" width="1280" height="800" alt="Multi Calendar Chrome extension showing Gregorian, Lunar, Hijri and Jalali dates" loading="lazy" class="rounded-2xl shadow-2xl border border-slate-200 dark:border-slate-800">
-          <img src="images/calendar-love.jpg" width="1280" height="800" alt="Multi Calendar anniversary day counter" loading="lazy" class="hidden md:block absolute -bottom-10 -right-10 w-1/2 rounded-xl shadow-2xl border-4 border-white dark:border-slate-900">
+        <div class="min-w-0 lg:order-1" data-spot="calendar">
+          <button onclick="openLightbox(spotIndex.calendar || 0, 'calendar')" aria-label="View full size"
+            class="block w-full rounded-2xl overflow-hidden bg-white dark:bg-slate-900 shadow-2xl shadow-slate-900/10 ring-1 ring-slate-200 dark:ring-slate-800 hover:ring-2 hover:ring-blue-500 transition-all">
+            <img src="images/calendar-hero.jpg" width="1280" height="800" alt="Multi Calendar Chrome extension showing Gregorian, Lunar, Hijri and Jalali dates" loading="lazy" class="spot-main w-full aspect-[16/10] object-cover">
+          </button>
+          <div class="spot-thumbs grid grid-cols-5 gap-2 sm:gap-3 mt-4"></div>
         </div>
       </div>
     </section>
@@ -781,7 +793,7 @@
 
     function iconHtml(ext, size) {
       return ext.icon
-        ? `<img src="${ext.icon}" alt="" class="w-full h-full object-cover">`
+        ? `<img src="${ext.icon}" alt="" class="w-full h-full object-contain">`
         : `<i class="${ext.iconClass}"></i>`;
     }
 
@@ -815,7 +827,7 @@
           </button>
           <div class="p-5 flex flex-col flex-1">
             <div class="flex items-center gap-3 mb-3">
-              <div class="w-10 h-10 rounded-xl overflow-hidden bg-gradient-to-tr ${ext.bgGradient} flex items-center justify-center text-white shadow-md shrink-0">
+              <div class="w-11 h-11 p-2 rounded-xl bg-white dark:bg-slate-800 ring-1 ring-slate-200 dark:ring-slate-700 shadow-sm flex items-center justify-center shrink-0">
                 ${iconHtml(ext)}
               </div>
               <span class="text-[11px] font-semibold px-2.5 py-1 rounded-md bg-slate-200/80 dark:bg-slate-800/80 text-slate-700 dark:text-slate-300">${ext.categoryName[currentLang]}</span>
@@ -847,7 +859,7 @@
       if (!ext) return;
 
       const icon = document.getElementById('modalIcon');
-      icon.className = `w-16 h-16 rounded-2xl flex items-center justify-center text-3xl shadow-lg shrink-0 overflow-hidden text-white bg-gradient-to-tr ${ext.bgGradient}`;
+      icon.className = "w-16 h-16 p-3 rounded-2xl bg-white dark:bg-slate-800 ring-1 ring-slate-200 dark:ring-slate-700 shadow-sm flex items-center justify-center shrink-0";
       icon.innerHTML = iconHtml(ext);
 
       document.getElementById('modalCategory').innerText = ext.categoryName[currentLang];
@@ -896,8 +908,31 @@
       document.body.style.overflow = '';
     }
 
+    // SPOTLIGHT THUMBNAILS
+    const spotIndex = {};
+
+    function renderSpotlights() {
+      document.querySelectorAll('[data-spot]').forEach(box => {
+        const ext = extensionsData.find(item => item.id === box.dataset.spot);
+        const active = spotIndex[ext.id] || 0;
+        box.querySelector('.spot-thumbs').innerHTML = ext.images.slice(0, 5).map((src, i) => `
+          <button onclick="setSpot('${ext.id}', ${i})" aria-label="Show screenshot ${i + 1}"
+            class="rounded-lg overflow-hidden ring-2 transition-all ${i === active ? 'ring-blue-500 opacity-100' : 'ring-transparent opacity-60 hover:opacity-100'}">
+            <img src="${src}" width="1280" height="800" alt="" loading="lazy" class="w-full aspect-[16/10] object-cover">
+          </button>`).join('');
+      });
+    }
+
+    function setSpot(id, i) {
+      const ext = extensionsData.find(item => item.id === id);
+      spotIndex[id] = i;
+      document.querySelector(`[data-spot="${id}"] .spot-main`).src = ext.images[i];
+      renderSpotlights();
+    }
+
     // GALLERY + LIGHTBOX
     let galleryId = extensionsData[0].id;
+    let lightboxId = galleryId;
     let lightboxIndex = 0;
 
     function galleryExt() {
@@ -924,7 +959,8 @@
       renderGallery();
     }
 
-    function openLightbox(i) {
+    function openLightbox(i, id = galleryId) {
+      lightboxId = id;
       lightboxIndex = i;
       stepLightbox(0);
       const box = document.getElementById('lightbox');
@@ -934,7 +970,7 @@
     }
 
     function stepLightbox(delta) {
-      const ext = galleryExt();
+      const ext = extensionsData.find(item => item.id === lightboxId);
       const n = ext.images.length;
       lightboxIndex = (lightboxIndex + delta + n) % n;
       const img = document.getElementById('lightboxImg');
@@ -990,6 +1026,7 @@
       if (!lang) lang = (navigator.language || '').toLowerCase().startsWith('vi') ? 'vi' : 'en';
       setCategory('all');
       renderGallery();
+      renderSpotlights();
       applyLanguage(lang);
     })();
   </script>
