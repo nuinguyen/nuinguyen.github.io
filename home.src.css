@@ -1,3 +1,40 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Shared custom styles for every page */
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', sans-serif; }
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+.dark .glass { background: rgba(255, 255, 255, 0.04); }
+.bg-mesh {
+  background-image:
+    radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.12) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(239, 68, 68, 0.10) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(147, 51, 234, 0.08) 0px, transparent 50%);
+  background-attachment: fixed;
+}
+.dark .bg-mesh {
+  background-image:
+    radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.20) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(239, 68, 68, 0.16) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(147, 51, 234, 0.15) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, rgba(16, 185, 129, 0.12) 0px, transparent 50%);
+}
+.card-hover { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+.card-hover:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 30px -10px rgba(59, 130, 246, 0.25);
+}
+.scrollbar-none::-webkit-scrollbar { display: none; }
+.scrollbar-none { scrollbar-width: none; }
+.fan img { transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+.fan:hover .fan-left { transform: translateX(-24px) rotate(-8deg); }
+.fan:hover .fan-right { transform: translateX(24px) rotate(8deg); }
+details > summary { list-style: none; }
+details > summary::-webkit-details-marker { display: none; }
+details[open] .faq-chevron { transform: rotate(180deg); }

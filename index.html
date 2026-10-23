@@ -136,40 +136,6 @@
   <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
   <link rel="preload" as="image" href="images/alarm-hero.jpg" fetchpriority="high">
-  <style>
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Inter', sans-serif; }
-    .glass {
-      background: rgba(255, 255, 255, 0.7);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-    }
-    .dark .glass { background: rgba(255, 255, 255, 0.04); }
-    .bg-mesh {
-      background-image:
-        radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.12) 0px, transparent 50%),
-        radial-gradient(at 100% 0%, rgba(239, 68, 68, 0.10) 0px, transparent 50%),
-        radial-gradient(at 100% 100%, rgba(147, 51, 234, 0.08) 0px, transparent 50%);
-      background-attachment: fixed;
-    }
-    .dark .bg-mesh {
-      background-image:
-        radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.20) 0px, transparent 50%),
-        radial-gradient(at 100% 0%, rgba(239, 68, 68, 0.16) 0px, transparent 50%),
-        radial-gradient(at 100% 100%, rgba(147, 51, 234, 0.15) 0px, transparent 50%),
-        radial-gradient(at 0% 100%, rgba(16, 185, 129, 0.12) 0px, transparent 50%);
-    }
-    .card-hover { transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
-    .card-hover:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 20px 30px -10px rgba(59, 130, 246, 0.25);
-    }
-    .scrollbar-none::-webkit-scrollbar { display: none; }
-    .scrollbar-none { scrollbar-width: none; }
-    .fan img { transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
-    .fan:hover .fan-left { transform: translateX(-24px) rotate(-8deg); }
-    .fan:hover .fan-right { transform: translateX(24px) rotate(8deg); }
-  </style>
 </head>
 
 <body class="bg-slate-50 text-slate-800 dark:bg-slate-950 dark:text-slate-100 min-h-screen bg-mesh transition-colors duration-300 selection:bg-blue-500 selection:text-white">
@@ -394,8 +360,8 @@
             <li class="flex items-center gap-2"><i class="fa-solid fa-heart text-pink-500"></i><span data-i18n="sp_cal_f3">Anniversary counter</span></li>
             <li class="flex items-center gap-2"><i class="fa-solid fa-globe text-pink-500"></i><span data-i18n="sp_cal_f4">10+ languages</span></li>
           </ul>
-          <a href="https://chromewebstore.google.com/detail/multi-calendar-%E2%80%94-lunar-hi/jelgahjncijhnkohohfdfhnadeohcdgk" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-pink-500 hover:bg-pink-400 text-white font-semibold text-sm shadow-lg shadow-pink-500/30 transition-all">
-            <i class="fa-brands fa-chrome"></i> <span data-i18n="btn_chrome">Add to Chrome</span>
+          <a href="calendar.html" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-pink-500 hover:bg-pink-400 text-white font-semibold text-sm shadow-lg shadow-pink-500/30 transition-all">
+            <span data-i18n="sp_more">Learn more</span> <i class="fa-solid fa-arrow-right"></i>
           </a>
         </div>
         <div class="min-w-0 lg:order-1" data-spot="calendar">
@@ -553,7 +519,7 @@
         categoryName: { en: "Time & Alarms", vi: "Thời gian & Báo thức" },
         icon: "images/icon-alarm.png",
         bgGradient: "from-red-500 to-orange-500",
-        images: ["images/alarm-hero.jpg", "images/alarm-themes.jpg", "images/alarm-colors.jpg", "images/alarm-setup.jpg", "images/alarm-banner.jpg"],
+        images: ["images/alarm-hero.jpg", "images/alarm-themes.jpg", "images/alarm-colors.jpg", "images/alarm-setup.jpg"],
         shortDesc: {
           en: "Turn your browser into a powerful alarm clock: recurring alarms, fullscreen ringing alerts with snooze, light & dark modes.",
           vi: "Biến trình duyệt thành đồng hồ báo thức mạnh mẽ: báo thức lặp lại, chuông toàn màn hình kèm báo lại, giao diện sáng & tối."
@@ -619,7 +585,7 @@
           en: ["Gregorian, Lunar (VN, CN, KR, JP), Hijri & Jalali calendars", "Events & smart reminders, yearly or one-time", "Anniversary counter with milestone badges", "10+ languages, light & dark modes"],
           vi: ["Dương lịch, Âm lịch (VN, TQ, HQ, NB), Hijri & Jalali", "Sự kiện & nhắc nhở thông minh, hằng năm hoặc một lần", "Đếm ngày yêu với huy hiệu cột mốc", "Hơn 10 ngôn ngữ, giao diện sáng & tối"]
         },
-        page: null,
+        page: "calendar.html",
         storeLink: "https://chromewebstore.google.com/detail/multi-calendar-%E2%80%94-lunar-hi/jelgahjncijhnkohohfdfhnadeohcdgk"
       }
     ];
@@ -915,7 +881,10 @@
       document.querySelectorAll('[data-spot]').forEach(box => {
         const ext = extensionsData.find(item => item.id === box.dataset.spot);
         const active = spotIndex[ext.id] || 0;
-        box.querySelector('.spot-thumbs').innerHTML = ext.images.slice(0, 5).map((src, i) => `
+        const thumbs = box.querySelector('.spot-thumbs');
+        thumbs.classList.toggle('grid-cols-4', ext.images.length === 4);
+        thumbs.classList.toggle('grid-cols-5', ext.images.length !== 4);
+        thumbs.innerHTML = ext.images.slice(0, 5).map((src, i) => `
           <button onclick="setSpot('${ext.id}', ${i})" aria-label="Show screenshot ${i + 1}"
             class="rounded-lg overflow-hidden ring-2 transition-all ${i === active ? 'ring-blue-500 opacity-100' : 'ring-transparent opacity-60 hover:opacity-100'}">
             <img src="${src}" width="1280" height="800" alt="" loading="lazy" class="w-full aspect-[16/10] object-cover">
