@@ -339,7 +339,8 @@ function buildPage(p) {
   // Returns ` data-i18n="kN">English` — use as <tag class="..."${tx(obj)}</tag>
   const tx = o => { const k = 'k' + (++n); vi[k] = o.vi; return ` data-i18n="${k}">${esc(o.en)}`; };
   const C = COMMON;
-  const url = SITE + p.file;
+  const slug = p.file.replace('.html', ''); // GitHub Pages serves /alarm for alarm.html
+  const url = SITE + slug;
   const others = PRODUCTS.filter(o => o.id !== p.id);
 
   const ld = {
@@ -468,8 +469,10 @@ ${JSON.stringify(ld, null, 2)}
   <!-- HEADER -->
   <header class="sticky top-0 z-40 w-full glass border-b border-slate-200/80 dark:border-slate-800/60">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between gap-3">
-      <a href="index.html" class="flex items-center gap-3 group shrink-0">
-        <img src="images/logo-mark.png" width="480" height="105" alt="NAN Smart logo" class="h-6 sm:h-7 w-auto dark:invert group-hover:scale-105 transition-transform">
+      <a href="./" class="flex items-center gap-3 group shrink-0">
+        <div class="w-10 h-10 p-1 rounded-xl bg-gradient-to-tr from-blue-600 via-indigo-500 to-purple-600 flex items-center justify-center shadow-lg shadow-blue-500/30 group-hover:scale-105 transition-transform shrink-0">
+          <img src="images/logo-mark.png" width="480" height="105" alt="NAN Smart logo" class="w-full h-auto brightness-0 invert">
+        </div>
         <div class="hidden sm:block">
           <span class="text-xl font-extrabold tracking-tight bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:via-indigo-300 dark:to-purple-400 bg-clip-text text-transparent">NAN Smart</span>
           <span class="block text-[10px] text-slate-500 dark:text-slate-400 font-medium tracking-wider uppercase -mt-1"${tx(C.tagline)}</span>
@@ -481,7 +484,7 @@ ${JSON.stringify(ld, null, 2)}
         <a href="#screenshots" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"${tx(C.navScreens)}</a>
         <a href="#pricing" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"${tx(C.navPricing)}</a>
         <a href="#faq" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"${tx(C.navFaq)}</a>
-        <a href="index.html#extensions" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"${tx(C.navAll)}</a>
+        <a href="./#extensions" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"${tx(C.navAll)}</a>
       </nav>
 
       <div class="flex items-center gap-2 sm:gap-3">
@@ -506,7 +509,7 @@ ${JSON.stringify(ld, null, 2)}
     <!-- HERO -->
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-16 md:pb-24">
       <nav aria-label="Breadcrumb" class="text-xs text-slate-500 dark:text-slate-400 mb-8 md:mb-12">
-        <a href="index.html" class="hover:text-blue-500"${tx(C.home)}</a>
+        <a href="./" class="hover:text-blue-500"${tx(C.home)}</a>
         <i class="fa-solid fa-chevron-right text-[9px] mx-2"></i>
         <span class="text-slate-700 dark:text-slate-300">${esc(p.name)}</span>
       </nav>
@@ -634,7 +637,7 @@ ${p.faq.map(([q, ans]) => `        <details class="group glass rounded-2xl borde
     <section class="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 class="text-2xl font-extrabold tracking-tight mb-6"${tx(C.moreTitle)}</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-${others.map(o => `        <a href="${o.file}" class="glass p-5 rounded-2xl border border-slate-200 dark:border-slate-800 card-hover flex items-start gap-4">
+${others.map(o => `        <a href="${o.file.replace('.html', '')}" class="glass p-5 rounded-2xl border border-slate-200 dark:border-slate-800 card-hover flex items-start gap-4">
           <div class="w-11 h-11 p-2 rounded-xl bg-white dark:bg-slate-800 ring-1 ring-slate-200 dark:ring-slate-700 shadow-sm flex items-center justify-center shrink-0">
             <img src="${o.icon}" alt="" class="w-full h-full object-contain">
           </div>
@@ -664,14 +667,14 @@ ${others.map(o => `        <a href="${o.file}" class="glass p-5 rounded-2xl bord
   <!-- FOOTER -->
   <footer class="border-t border-slate-200 dark:border-slate-800/80 mt-12 py-10 bg-slate-100 dark:bg-slate-950/80 text-slate-500 dark:text-slate-400 text-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
-      <a href="index.html" class="flex flex-wrap items-center justify-center gap-3">
-        <img src="images/logo-mark.png" width="480" height="105" alt="NAN Smart logo" class="h-5 w-auto dark:invert">
+      <a href="./" class="flex flex-wrap items-center justify-center gap-3">
+        <div class="w-8 h-8 p-1 rounded-lg bg-gradient-to-tr from-blue-600 via-indigo-500 to-purple-600 flex items-center justify-center shrink-0"><img src="images/logo-mark.png" width="480" height="105" alt="NAN Smart logo" class="w-full h-auto brightness-0 invert"></div>
         <span class="font-bold text-slate-800 dark:text-slate-200">NAN Smart</span>
         <span class="text-xs">&copy; 2026 NAN Smart Team.</span>
       </a>
       <div class="flex items-center gap-6 text-xs sm:text-sm">
-        <a href="privacy.html" class="hover:text-blue-500 transition-colors"${tx(C.privacy)}</a>
-        <a href="terms.html" class="hover:text-blue-500 transition-colors"${tx(C.terms)}</a>
+        <a href="privacy" class="hover:text-blue-500 transition-colors"${tx(C.privacy)}</a>
+        <a href="terms" class="hover:text-blue-500 transition-colors"${tx(C.terms)}</a>
         <a href="mailto:${EMAIL}" class="hover:text-blue-500 transition-colors"${tx(C.footerContact)}</a>
       </div>
     </div>

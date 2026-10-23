@@ -144,7 +144,9 @@
   <header class="sticky top-0 z-40 w-full glass border-b border-slate-200/80 dark:border-slate-800/60">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
       <a href="#" class="flex items-center gap-3 group">
-        <img src="images/logo-mark.png" width="480" height="105" alt="NAN Smart logo" class="h-6 sm:h-7 w-auto dark:invert group-hover:scale-105 transition-transform">
+        <div class="w-10 h-10 p-1 rounded-xl bg-gradient-to-tr from-blue-600 via-indigo-500 to-purple-600 flex items-center justify-center shadow-lg shadow-blue-500/30 group-hover:scale-105 transition-transform shrink-0">
+          <img src="images/logo-mark.png" width="480" height="105" alt="NAN Smart logo" class="w-full h-auto brightness-0 invert">
+        </div>
         <div>
           <span class="text-xl font-extrabold tracking-tight bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:via-indigo-300 dark:to-purple-400 bg-clip-text text-transparent">NAN Smart</span>
           <span class="block text-[10px] text-slate-500 dark:text-slate-400 font-medium tracking-wider uppercase -mt-1" data-i18n="tagline">Chrome Extensions</span>
@@ -283,7 +285,7 @@
             <li class="flex items-center gap-2"><i class="fa-solid fa-bell text-red-500"></i><span data-i18n="sp_alarm_f3">Fullscreen ringing alerts</span></li>
             <li class="flex items-center gap-2"><i class="fa-solid fa-shield-halved text-red-500"></i><span data-i18n="sp_alarm_f4">Privacy first — stored locally</span></li>
           </ul>
-          <a href="alarm.html" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-red-500 hover:bg-red-400 text-white font-semibold text-sm shadow-lg shadow-red-500/30 transition-all">
+          <a href="alarm" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-red-500 hover:bg-red-400 text-white font-semibold text-sm shadow-lg shadow-red-500/30 transition-all">
             <span data-i18n="sp_more">Learn more</span> <i class="fa-solid fa-arrow-right"></i>
           </a>
         </div>
@@ -308,7 +310,7 @@
             <li class="flex items-center gap-2"><i class="fa-solid fa-flag text-blue-500"></i><span data-i18n="sp_rem_f3">Lists, priorities &amp; flags</span></li>
             <li class="flex items-center gap-2"><i class="fa-solid fa-moon text-blue-500"></i><span data-i18n="sp_rem_f4">Light &amp; dark modes</span></li>
           </ul>
-          <a href="reminders.html" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm shadow-lg shadow-blue-600/30 transition-all">
+          <a href="reminders" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm shadow-lg shadow-blue-600/30 transition-all">
             <span data-i18n="sp_more">Learn more</span> <i class="fa-solid fa-arrow-right"></i>
           </a>
         </div>
@@ -333,7 +335,7 @@
             <li class="flex items-center gap-2"><i class="fa-solid fa-play text-rose-500"></i><span data-i18n="sp_yt_f3">Play in order</span></li>
             <li class="flex items-center gap-2"><i class="fa-solid fa-users text-rose-500"></i><span data-i18n="sp_yt_f4">Channel groups</span></li>
           </ul>
-          <a href="youtube.html" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-rose-500 hover:bg-rose-400 text-white font-semibold text-sm shadow-lg shadow-rose-500/30 transition-all">
+          <a href="youtube" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-rose-500 hover:bg-rose-400 text-white font-semibold text-sm shadow-lg shadow-rose-500/30 transition-all">
             <span data-i18n="sp_more">Learn more</span> <i class="fa-solid fa-arrow-right"></i>
           </a>
         </div>
@@ -358,7 +360,7 @@
             <li class="flex items-center gap-2"><i class="fa-solid fa-heart text-pink-500"></i><span data-i18n="sp_cal_f3">Anniversary counter</span></li>
             <li class="flex items-center gap-2"><i class="fa-solid fa-globe text-pink-500"></i><span data-i18n="sp_cal_f4">10+ languages</span></li>
           </ul>
-          <a href="calendar.html" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-pink-500 hover:bg-pink-400 text-white font-semibold text-sm shadow-lg shadow-pink-500/30 transition-all">
+          <a href="calendar" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-pink-500 hover:bg-pink-400 text-white font-semibold text-sm shadow-lg shadow-pink-500/30 transition-all">
             <span data-i18n="sp_more">Learn more</span> <i class="fa-solid fa-arrow-right"></i>
           </a>
         </div>
@@ -421,7 +423,7 @@
           <a href="mailto:nuinguyen01bv@gmail.com" class="px-6 py-3.5 rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm shadow-lg shadow-blue-600/30 text-center transition-all">
             <i class="fa-solid fa-envelope mr-2"></i><span data-i18n="help_btn_contact">Contact us</span>
           </a>
-          <a href="privacy.html" class="px-6 py-3.5 rounded-xl glass hover:bg-slate-200 dark:hover:bg-slate-800 font-semibold text-sm border border-slate-300 dark:border-slate-700 text-center transition-all">
+          <a href="privacy" class="px-6 py-3.5 rounded-xl glass hover:bg-slate-200 dark:hover:bg-slate-800 font-semibold text-sm border border-slate-300 dark:border-slate-700 text-center transition-all">
             <i class="fa-solid fa-user-shield mr-2"></i><span data-i18n="help_btn_privacy">Privacy policy</span>
           </a>
         </div>
@@ -433,13 +435,13 @@
   <footer class="border-t border-slate-200 dark:border-slate-800/80 mt-20 py-10 bg-slate-100 dark:bg-slate-950/80 text-slate-500 dark:text-slate-400 text-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
       <div class="flex flex-wrap items-center justify-center gap-3">
-        <img src="images/logo-mark.png" width="480" height="105" alt="NAN Smart logo" class="h-5 w-auto dark:invert">
+        <div class="w-8 h-8 p-1 rounded-lg bg-gradient-to-tr from-blue-600 via-indigo-500 to-purple-600 flex items-center justify-center shrink-0"><img src="images/logo-mark.png" width="480" height="105" alt="NAN Smart logo" class="w-full h-auto brightness-0 invert"></div>
         <span class="font-bold text-slate-800 dark:text-slate-200">NAN Smart</span>
         <span class="text-xs">&copy; 2026 NAN Smart Team.</span>
       </div>
       <div class="flex items-center gap-6 text-xs sm:text-sm">
-        <a href="privacy.html" class="hover:text-blue-500 transition-colors" data-i18n="footer_privacy">Privacy</a>
-        <a href="terms.html" class="hover:text-blue-500 transition-colors" data-i18n="footer_terms">Terms</a>
+        <a href="privacy" class="hover:text-blue-500 transition-colors" data-i18n="footer_privacy">Privacy</a>
+        <a href="terms" class="hover:text-blue-500 transition-colors" data-i18n="footer_terms">Terms</a>
         <a href="mailto:nuinguyen01bv@gmail.com" class="hover:text-blue-500 transition-colors" data-i18n="footer_contact">Contact</a>
       </div>
     </div>
@@ -526,7 +528,7 @@
           en: ["iOS-inspired design", "Smart recurring alarms", "Fullscreen ringing alerts with snooze", "Privacy first — stored locally"],
           vi: ["Thiết kế phong cách iOS", "Báo thức lặp lại thông minh", "Chuông báo toàn màn hình, có báo lại", "Ưu tiên quyền riêng tư — lưu cục bộ"]
         },
-        page: "alarm.html",
+        page: "alarm",
         storeLink: "https://chromewebstore.google.com/detail/alarm-clock-reminder-chro/apbmibchnilnanhnaphgoojbjinkkabi"
       },
       {
@@ -545,7 +547,7 @@
           en: ["Today, Scheduled, All & Flagged smart lists", "Pick date and time for every reminder", "Custom lists, priorities & flags", "Light & dark modes"],
           vi: ["Danh sách thông minh: Hôm nay, Đã lên lịch, Tất cả, Gắn cờ", "Chọn ngày giờ cho từng lời nhắc", "Danh sách tùy chỉnh, mức ưu tiên & cờ", "Giao diện sáng & tối"]
         },
-        page: "reminders.html",
+        page: "reminders",
         storeLink: "https://chromewebstore.google.com/detail/reminders-chrome-extensio/ebjdfgcknblkogfgcpfplfgeanpbpdid"
       },
       {
@@ -564,7 +566,7 @@
           en: ["One-click save from anywhere on YouTube", "Playlists and folders", "Play your playlists in order", "Channel groups for subscriptions"],
           vi: ["Lưu một chạm ở mọi nơi trên YouTube", "Playlist và thư mục", "Phát playlist theo thứ tự", "Nhóm kênh đăng ký"]
         },
-        page: "youtube.html",
+        page: "youtube",
         storeLink: "https://chromewebstore.google.com/detail/playlist-manager-for-yout/lfhblickhegnbcelnahnjbgcgkjaigge"
       },
       {
@@ -583,7 +585,7 @@
           en: ["Gregorian, Lunar (VN, CN, KR, JP), Hijri & Jalali calendars", "Events & smart reminders, yearly or one-time", "Anniversary counter with milestone badges", "10+ languages, light & dark modes"],
           vi: ["Dương lịch, Âm lịch (VN, TQ, HQ, NB), Hijri & Jalali", "Sự kiện & nhắc nhở thông minh, hằng năm hoặc một lần", "Đếm ngày yêu với huy hiệu cột mốc", "Hơn 10 ngôn ngữ, giao diện sáng & tối"]
         },
-        page: "calendar.html",
+        page: "calendar",
         storeLink: "https://chromewebstore.google.com/detail/multi-calendar-%E2%80%94-lunar-hi/jelgahjncijhnkohohfdfhnadeohcdgk"
       }
     ];

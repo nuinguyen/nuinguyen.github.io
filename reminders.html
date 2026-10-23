@@ -14,11 +14,11 @@
   <meta name="description" content="An elegant, iOS-inspired task manager for Chrome: smart lists, custom lists, dates and repeats, fullscreen alerts and a calendar view. Free and Premium.">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="theme-color" content="#2563eb">
-  <link rel="canonical" href="https://nuinguyen.github.io/reminders.html">
+  <link rel="canonical" href="https://nuinguyen.github.io/reminders">
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="NAN Smart">
-  <meta property="og:url" content="https://nuinguyen.github.io/reminders.html">
+  <meta property="og:url" content="https://nuinguyen.github.io/reminders">
   <meta property="og:title" content="Reminders &amp; To-Do List for Chrome — iOS-Style Task Manager">
   <meta property="og:description" content="An elegant, iOS-inspired task manager for Chrome: smart lists, custom lists, dates and repeats, fullscreen alerts and a calendar view. Free and Premium.">
   <meta property="og:image" content="https://nuinguyen.github.io/images/reminders-hero.jpg">
@@ -38,7 +38,7 @@
       "name": "Reminders & To-Do List",
       "applicationCategory": "BrowserApplication",
       "operatingSystem": "Chrome",
-      "url": "https://nuinguyen.github.io/reminders.html",
+      "url": "https://nuinguyen.github.io/reminders",
       "downloadUrl": "https://chromewebstore.google.com/detail/reminders-chrome-extensio/ebjdfgcknblkogfgcpfplfgeanpbpdid",
       "image": "https://nuinguyen.github.io/images/reminders-hero.jpg",
       "description": "An elegant, iOS-inspired task manager for Chrome: smart lists, custom lists, dates and repeats, fullscreen alerts and a calendar view. Free and Premium.",
@@ -66,7 +66,7 @@
           "@type": "ListItem",
           "position": 2,
           "name": "Reminders & To-Do List",
-          "item": "https://nuinguyen.github.io/reminders.html"
+          "item": "https://nuinguyen.github.io/reminders"
         }
       ]
     },
@@ -133,8 +133,10 @@
   <!-- HEADER -->
   <header class="sticky top-0 z-40 w-full glass border-b border-slate-200/80 dark:border-slate-800/60">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between gap-3">
-      <a href="index.html" class="flex items-center gap-3 group shrink-0">
-        <img src="images/logo-mark.png" width="480" height="105" alt="NAN Smart logo" class="h-6 sm:h-7 w-auto dark:invert group-hover:scale-105 transition-transform">
+      <a href="./" class="flex items-center gap-3 group shrink-0">
+        <div class="w-10 h-10 p-1 rounded-xl bg-gradient-to-tr from-blue-600 via-indigo-500 to-purple-600 flex items-center justify-center shadow-lg shadow-blue-500/30 group-hover:scale-105 transition-transform shrink-0">
+          <img src="images/logo-mark.png" width="480" height="105" alt="NAN Smart logo" class="w-full h-auto brightness-0 invert">
+        </div>
         <div class="hidden sm:block">
           <span class="text-xl font-extrabold tracking-tight bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-400 dark:via-indigo-300 dark:to-purple-400 bg-clip-text text-transparent">NAN Smart</span>
           <span class="block text-[10px] text-slate-500 dark:text-slate-400 font-medium tracking-wider uppercase -mt-1" data-i18n="k24">Chrome Extensions</span>
@@ -146,7 +148,7 @@
         <a href="#screenshots" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors" data-i18n="k26">Screenshots</a>
         <a href="#pricing" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors" data-i18n="k27">Pricing</a>
         <a href="#faq" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors" data-i18n="k28">FAQ</a>
-        <a href="index.html#extensions" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors" data-i18n="k29">All extensions</a>
+        <a href="./#extensions" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors" data-i18n="k29">All extensions</a>
       </nav>
 
       <div class="flex items-center gap-2 sm:gap-3">
@@ -171,7 +173,7 @@
     <!-- HERO -->
     <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-16 md:pb-24">
       <nav aria-label="Breadcrumb" class="text-xs text-slate-500 dark:text-slate-400 mb-8 md:mb-12">
-        <a href="index.html" class="hover:text-blue-500" data-i18n="k31">Home</a>
+        <a href="./" class="hover:text-blue-500" data-i18n="k31">Home</a>
         <i class="fa-solid fa-chevron-right text-[9px] mx-2"></i>
         <span class="text-slate-700 dark:text-slate-300">Reminders &amp; To-Do List</span>
       </nav>
@@ -427,7 +429,7 @@
     <section class="py-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 class="text-2xl font-extrabold tracking-tight mb-6" data-i18n="k89">More from NAN Smart</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
-        <a href="alarm.html" class="glass p-5 rounded-2xl border border-slate-200 dark:border-slate-800 card-hover flex items-start gap-4">
+        <a href="alarm" class="glass p-5 rounded-2xl border border-slate-200 dark:border-slate-800 card-hover flex items-start gap-4">
           <div class="w-11 h-11 p-2 rounded-xl bg-white dark:bg-slate-800 ring-1 ring-slate-200 dark:ring-slate-700 shadow-sm flex items-center justify-center shrink-0">
             <img src="images/icon-alarm.png" alt="" class="w-full h-full object-contain">
           </div>
@@ -436,7 +438,7 @@
             <p class="text-sm text-slate-600 dark:text-slate-400 mt-1" data-i18n="k90">Repeating alarms, fullscreen ringing and snooze — right in your toolbar.</p>
           </div>
         </a>
-        <a href="youtube.html" class="glass p-5 rounded-2xl border border-slate-200 dark:border-slate-800 card-hover flex items-start gap-4">
+        <a href="youtube" class="glass p-5 rounded-2xl border border-slate-200 dark:border-slate-800 card-hover flex items-start gap-4">
           <div class="w-11 h-11 p-2 rounded-xl bg-white dark:bg-slate-800 ring-1 ring-slate-200 dark:ring-slate-700 shadow-sm flex items-center justify-center shrink-0">
             <img src="images/icon-youtube.png" alt="" class="w-full h-full object-contain">
           </div>
@@ -445,7 +447,7 @@
             <p class="text-sm text-slate-600 dark:text-slate-400 mt-1" data-i18n="k91">Save videos in one click, play playlists in order and group your channels.</p>
           </div>
         </a>
-        <a href="calendar.html" class="glass p-5 rounded-2xl border border-slate-200 dark:border-slate-800 card-hover flex items-start gap-4">
+        <a href="calendar" class="glass p-5 rounded-2xl border border-slate-200 dark:border-slate-800 card-hover flex items-start gap-4">
           <div class="w-11 h-11 p-2 rounded-xl bg-white dark:bg-slate-800 ring-1 ring-slate-200 dark:ring-slate-700 shadow-sm flex items-center justify-center shrink-0">
             <img src="images/icon-calendar.png" alt="" class="w-full h-full object-contain">
           </div>
@@ -475,14 +477,14 @@
   <!-- FOOTER -->
   <footer class="border-t border-slate-200 dark:border-slate-800/80 mt-12 py-10 bg-slate-100 dark:bg-slate-950/80 text-slate-500 dark:text-slate-400 text-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-6">
-      <a href="index.html" class="flex flex-wrap items-center justify-center gap-3">
-        <img src="images/logo-mark.png" width="480" height="105" alt="NAN Smart logo" class="h-5 w-auto dark:invert">
+      <a href="./" class="flex flex-wrap items-center justify-center gap-3">
+        <div class="w-8 h-8 p-1 rounded-lg bg-gradient-to-tr from-blue-600 via-indigo-500 to-purple-600 flex items-center justify-center shrink-0"><img src="images/logo-mark.png" width="480" height="105" alt="NAN Smart logo" class="w-full h-auto brightness-0 invert"></div>
         <span class="font-bold text-slate-800 dark:text-slate-200">NAN Smart</span>
         <span class="text-xs">&copy; 2026 NAN Smart Team.</span>
       </a>
       <div class="flex items-center gap-6 text-xs sm:text-sm">
-        <a href="privacy.html" class="hover:text-blue-500 transition-colors" data-i18n="k97">Privacy</a>
-        <a href="terms.html" class="hover:text-blue-500 transition-colors" data-i18n="k98">Terms</a>
+        <a href="privacy" class="hover:text-blue-500 transition-colors" data-i18n="k97">Privacy</a>
+        <a href="terms" class="hover:text-blue-500 transition-colors" data-i18n="k98">Terms</a>
         <a href="mailto:nuinguyen01bv@gmail.com" class="hover:text-blue-500 transition-colors" data-i18n="k99">Contact</a>
       </div>
     </div>
